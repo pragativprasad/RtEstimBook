@@ -1,0 +1,24 @@
+project:
+  type: book
+
+book:
+  title: "Methods for estimating Reproduction Number, R(t)"
+  author: "Laura White, PhD"
+  date: "2/14/2025"
+  chapters:
+    - index.qmd
+    - decisiontree.qmd
+    - packages.qmd
+    - methods.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

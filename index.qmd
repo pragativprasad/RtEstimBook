@@ -1,0 +1,17 @@
+# Preface {.unnumbered}
+
+This is a Quarto book.
+
+To learn more about Quarto books visit <https://quarto.org/docs/books>.
+
+```{r setup, include = FALSE}
+knitr::knit_engines$set(python = reticulate::eng_python)
+```
+
+```{r}
+1 + 1
+```
+
+```{python}
+1 + 1
+```
