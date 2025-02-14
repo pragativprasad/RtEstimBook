@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -66,7 +32,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./decisiontree.html" rel="next">
+<link href="./introduction.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -149,22 +115,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./decisiontree.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Decision Tree</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Packages</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Packages</span></span></a>
+  <a href="./package_EpiNow2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiNow2</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Methods</span></span></a>
+  <a href="./package_EpiEstim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiEstim</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_RtEstim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RtEstim</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Methods</span></span>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -221,20 +214,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="preface" class="level1 unnumbered">
 <h1 class="unnumbered">Preface</h1>
-<p>This is a Quarto book.</p>
-<p>To learn more about Quarto books visit <a href="https://quarto.org/docs/books" class="uri">https://quarto.org/docs/books</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2</code></pre>
-</div>
-</div>
+<p>Since the onset of the COVID-19 pandemic in early 2020, there has been a proliferation of software packages that make inference about the current state of an infectious disease outbreak based on daily counts of disease cases. An important and widely used parameter is the instantaneous or effective reproduction number, R(t), defined in Gostic et. al.&nbsp;(2020) 1 as follows:</p>
+<p>“The effective reproductive number, denoted as Re or Rt, is the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible.”</p>
+<p>Defined as such, R(t) is an unobserved quantity that captures the aggregated combination of disease characteristics (e.g., infectiousness under controlled conditions, mode of transport) and extrinsic factors (e.g., lockdowns that reduce person-to-person contact). An R(t) = 1 indicates a “stable” epidemic at time t, where each infected person infects on average one additional person; R(t) values above or below 1 represent a growing or a shrinking epidemic respectively. We focus on R(t) given its relevance for time-sensitive decision-making, and summarize the currently used inputs, data, methods and assumptions in R(t) estimation across the following categories:</p>
+<ul>
+<li>How the relationship between R(t) and infections is defined</li>
+<li>How R(t) is constrained using distributions for key variables</li>
+<li>How R(t) is constrained over time</li>
+<li>Additional data and distributions that are used to constrain R(t)</li>
+<li>Inference frameworks that are used to estimate R(t) ** is constrained the right word?</li>
+</ul>
+<p>In this paper we provide a theoretical comparison of the current field of methods for estimating R(t), with the goal of informing user decision-making about which package to choose and in interpreting package outputs. For reference, Table 1 lists packages with an accompanying peer-reviewed journal manuscript, Table 2 lists packages without a peer-reviewed journal manuscript, and Table S1 contains R(t) packages that calculate R(t) but were excluded from this summary. In the text, the package citation is given the first time each package is referenced.</p>
+<p>We limit the methods discussed here to those for estimating historical to present-day R(t) values using daily case count data, where a case can be flexibly defined as an individual with a reported positive test (either through healthcare-seeking behavior, routine surveillance, or a hospital admission). Other methods not discussed here include inference of R(t) exclusively from alternative data sources (e.g., genetic data,2 behavioral data,3 or viral loads in waste-water4), or calculations from compartmental, agent-based models, or network.5–7 We also limit the discussion to packages in the statistical software R,8 which may exclude some packages in other software programs that combine many of the methodological considerations discussed below.9 We do not discuss any packages for now-casting or forecasting, though a number of R(t) estimation packages can be used for this purpose. The methods discussed below and references to specific R packages are current as of December 1, 2024. We attempt to harmonize the mathematical choices between each package using terminology from each.</p>
+<p>An evaluative comparison of the performance of these methods would be highly complex, given the following challenges. Some of the most widely-used packages are not accompanied with a peer-reviewed manuscript that describes or evaluates the theory behind modeling choices. Each package contains a subset of the methods below for constraining R(t) in time, but with subtle variations in implementation that are often not well-documented. Most packages have not been recently updated, and even those that have are not maintained on CRAN, instead leaving updates on a development version on GitHub. The combination of differing model frameworks associated with each package make it challenging to easily compare the impacts on estimated R(t), especially when considering additional factors like ease of implementation and computational time</p>
 
 
 </section>
@@ -661,8 +653,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./decisiontree.html" class="pagination-link" aria-label="Decision Tree">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Decision Tree</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./introduction.html" class="pagination-link" aria-label="Introduction">
+        <span class="nav-page-text">Introduction</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

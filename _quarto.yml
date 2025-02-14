@@ -1,5 +1,6 @@
 project:
-  type: book
+  type: website
+  output-dir: docs
 
 book:
   title: "Methods for estimating Reproduction Number, R(t)"
@@ -7,9 +8,14 @@ book:
   date: "2/14/2025"
   chapters:
     - index.qmd
+    - introduction.qmd
     - decisiontree.qmd
-    - packages.qmd
-    - methods.qmd
+    - part: packages.qmd
+      chapters:
+      - package_EpiNow2.qmd
+      - package_EpiEstim.qmd
+      - package_RtEstim.qmd
+    - part: methods.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -19,6 +25,7 @@ format:
     theme: cosmo
   pdf:
     documentclass: scrreprt
+
 
 
 
