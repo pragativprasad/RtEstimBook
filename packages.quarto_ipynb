@@ -1,0 +1,45 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Packages\n",
+        "\n",
+        "Here's where we will have a table of packages\n"
+      ],
+      "id": "8366ce92"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: tbl-planets\n",
+        "#| tbl-cap: Astronomical object\n",
+        "\n",
+        "from IPython.display import Markdown\n",
+        "from tabulate import tabulate\n",
+        "table = [[\"Sun\",\"696,000\",1.989e30],\n",
+        "         [\"Earth\",\"6,371\",5.972e24],\n",
+        "         [\"Moon\",\"1,737\",7.34e22],\n",
+        "         [\"Mars\",\"3,390\",6.39e23]]\n",
+        "Markdown(tabulate(\n",
+        "  table, \n",
+        "  headers=[\"Astronomical object\",\"R (km)\", \"mass (kg)\"]\n",
+        "))"
+      ],
+      "id": "tbl-planets",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
