@@ -14,9 +14,83 @@
     "href": "packages.html",
     "title": "Packages",
     "section": "",
-    "text": "Here’s where we will have a table of packages\n\n\n\nTable 1: R(t) estimation packages with a peer-reviewed journal reference describing the underlying methods. We include the date of last update as of December 13, 2024\n\n\n\n\n\nPackage name\nReference and Github link\nLast update as of Dec 13, 2024\n\n\n\n\nAPEestim\nParag KV, Donnelly CA. Using information theory to optimise epidemic models for real-time prediction and estimation. PLoS Comput Biol. 2020 Jul 1;16(7):e1007990. PMCID: PMC7360089. Link\nFeb 12, 2021\n\n\nEpidemia\nFlaxman S, Mishra S, Gandy A, Unwin HJT, Mellan TA, Coupland H, Whittaker C, Zhu H, Berah T, Eaton JW, Monod M, Ghani AC, Donnelly CA, Riley S, Vollmer MAC, Ferguson NM, Okell LC, Bhatt S. Estimating the effects of non-pharmaceutical interventions on COVID-19 in Europe. Nature. Nature Publishing Group; 2020 Aug;584(7820):257–261. Link\nJun 23, 2021\n\n\nEpiEstim\nNash RK, Bhatt S, Cori A, Nouvellet P. Estimating the epidemic reproduction number from temporally aggregated incidence data: A statistical modelling approach and software tool. PLOS Computational Biology. Public Library of Science; 2023 Aug 28;19(8):e1011439. Link\nAug 30, 2024\n\n\n\n\n\n\nSee Table 1.",
+    "text": "Here’s where we will have a table of packages\nSee Table 1.",
     "crumbs": [
       "Packages"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Cori A, Ferguson NM, Fraser C, Cauchemez S. 2013. A New\nFramework and Software to\nEstimate Time-Varying\nReproduction Numbers During\nEpidemics. American Journal of Epidemiology 178:1505–1512;\ndoi:10.1093/aje/kwt133.\n\n\nFlaxman S, Mishra S, Gandy A, Unwin HJT, Mellan TA, Coupland H, et al.\n2020. Estimating the effects of non-pharmaceutical interventions on\nCOVID-19 in Europe. Nature 584:257–261; doi:10.1038/s41586-020-2405-7.\n\n\nNash RK, Bhatt S, Cori A, Nouvellet P. 2023. Estimating the epidemic\nreproduction number from temporally aggregated incidence data: A\nstatistical modelling approach and software tool. PLOS Computational\nBiology 19:e1011439; doi:10.1371/journal.pcbi.1011439.\n\n\nParag KV, Donnelly CA. 2020. Using information theory to optimise\nepidemic models for real-time prediction and estimation. PLoS\nComputational Biology 16:e1007990; doi:10.1371/journal.pcbi.1007990.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "packages.html#footnotes",
+    "href": "packages.html#footnotes",
+    "title": "Packages",
+    "section": "",
+    "text": "As of Dec 13, 2024↩︎",
+    "crumbs": [
+      "Packages"
+    ]
+  },
+  {
+    "objectID": "package_EpiEstim.html",
+    "href": "package_EpiEstim.html",
+    "title": "3  EpiEstim",
+    "section": "",
+    "text": "3.1 Brief description",
+    "crumbs": [
+      "Packages",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>EpiEstim</span>"
+    ]
+  },
+  {
+    "objectID": "decisiontree.html",
+    "href": "decisiontree.html",
+    "title": "2  Decision Tree",
+    "section": "",
+    "text": "Here’s where we will have the decision tree",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Decision Tree</span>"
+    ]
+  },
+  {
+    "objectID": "package_EpiEstim.html#link-to-cran",
+    "href": "package_EpiEstim.html#link-to-cran",
+    "title": "3  EpiEstim",
+    "section": "3.2 Link to cran",
+    "text": "3.2 Link to cran",
+    "crumbs": [
+      "Packages",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>EpiEstim</span>"
+    ]
+  },
+  {
+    "objectID": "package_EpiEstim.html#methods",
+    "href": "package_EpiEstim.html#methods",
+    "title": "3  EpiEstim",
+    "section": "3.3 Methods",
+    "text": "3.3 Methods\nThis package contains the following methods:\n\nfixed sliding windows",
+    "crumbs": [
+      "Packages",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>EpiEstim</span>"
+    ]
+  },
+  {
+    "objectID": "method_fixedwindow.html",
+    "href": "method_fixedwindow.html",
+    "title": "4  Fixed sliding windows",
+    "section": "",
+    "text": "A straightforward method of imposing structure on R(t) over time involves constraining R(t) to be drawn from the same distribution within moving time subsets, called sliding windows. We add the prefix of “fixed-size” to distinguish from methods that may adapt the size of the sliding window over time. &gt;&gt; make a destinction between deriving it and doing it by Bayesian.\nConsider the scenario where I(t) are drawn from a series of Poisson distributions and where R(t) are drawn from a series of Gamma distributions. Using a sliding window size, τ, of 5 days, R(t) on days 2 to 6 are assumed to be drawn from the Gamma distribution with parameters a_1 and b_1, R(t) days 3 to 7 are drawn from a Gamma distribution with parameters a_2 and b_2, and so on. In the above scenario, days 3 through 6 are in both windows and thus will be values that could be reasonably drawn from Gamma distributions with either a_1 and b_1 or a_2 and b_2. Using an assumption of Gamma distributions for the prior distribution of ω and R(t), Cori et. al. (2013)18 analytically derived a posterior distribution R(t) using fixed-size sliding windows, which has the following directly calculated (rather than inferred) mean and coefficient of variation of R(t):\nE[R(t)]=[a+ ∑_(i=max⁡(1, t-τ))^t▒I(i) ]/[1/b+∑_(i=max⁡(1, t-τ))^t▒Λ(i) ] (Eq.6) C.V.[R(t)]=[a+ ∑_(i=max⁡(1, t-τ))^t▒I(i) ]^(-1) (Eq.7)\nThus, sliding windows with larger τ improve the stability of the estimate of R(t) over smaller τ because the coefficient of variation of R(t) decreases as number of infections increases (see Web Appendix 1 of Cori et. al., 2013).18 Sliding windows are a key feature of EpiEstim.21 There are limitations of this derived sliding window approach, articulated well in Gostic et. al., (2020)1 and summarized here. There is no posterior distribution for the expected value of incidence In the fixed size sliding window approach, τ must be explicitly defined prior to inference. Shorter τ will lead to quicker response but more variable estimates of R(t), which increases the risk of over-fitting. At the extreme, if the τ is set to 1 day, the resulting R(t) will recover exactly the infection data. In addition, there is debate in the literature about where in time the estimate of R(t) for each window should go: Gostic et. al., (2020)1 recommends using the midpoint of each sliding window rather than time t. The choice of both τ and the location of the estimate of R(t) within each window results in gaps in predictions for R(t), barring other modifications: at the end of the modeling period to account for reporting delays or time between the midpoint of τ and the end of τ, and at the beginning of the time period to allow for enough cases to materialize. Web Appendix 4 of Cori. et. al (2013) gives the following recommendation for when to calculate R(t): “Overall, we suggest starting estimating once those three criteria are fulfilled: at least after , at least after one mean serial interval, and when at least 12 cases have been observed since the beginning of the epidemic.” The default recommendation for τ is one week (7 days);18 alternatively the package APEestim integrates with EpiEstim to propose a non-default choice of τ that minimizes one-step-ahead prediction errors.22",
+    "crumbs": [
+      "Methods",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Fixed sliding windows</span>"
     ]
   }
 ]

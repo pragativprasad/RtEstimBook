@@ -4,7 +4,20 @@ project:
 
 book:
   title: "Methods for estimating Reproduction Number, R(t)"
-  author: "Laura White, PhD"
+  author:
+    - name: Chad Milando
+      email: cmilando@bu.edu
+      degrees: PhD
+      attributes:
+        corresponding: true
+      affiliations:
+        - Boston University, School of Public Health
+    - name: Laura White
+      degrees: PhD
+      affiliations:
+        - Boston University, School of Public Health
+
+
   date: "2/14/2025"
   chapters:
     - index.qmd
@@ -16,9 +29,12 @@ book:
       - package_EpiEstim.qmd
       - package_RtEstim.qmd
     - part: methods.qmd
+      chapters:
+        - method_fixedwindow.qmd
     - references.qmd
 
 bibliography: references.bib
+csl: nature.csl
 
 format:
   html:

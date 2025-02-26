@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -142,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_EpiEstim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">EpiEstim</span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -154,8 +173,21 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Methods</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="./methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method_fixedwindow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Fixed sliding windows</span></span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -197,32 +229,36 @@ ul.task-list li input[type="checkbox"] {
 <div id="tbl-packages" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-packages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: R(t) estimation packages with a peer-reviewed journal reference describing the underlying methods. We include the date of last update as of December 13, 2024
+Table&nbsp;1: R(t) estimation packages with a <strong>peer-reviewed</strong> journal reference describing the underlying methods.
 </figcaption>
 <div aria-describedby="tbl-packages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Package name</th>
-<th>Reference and Github link</th>
-<th>Last update as of Dec 13, 2024</th>
+<th style="text-align: left;">Package name</th>
+<th style="text-align: left;">Peer-reviewed reference</th>
+<th style="text-align: left;">Github</th>
+<th style="text-align: left;">Last update<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>APEestim</td>
-<td>Parag KV, Donnelly CA. Using information theory to optimise epidemic models for real-time prediction and estimation. PLoS Comput Biol. 2020 Jul 1;16(7):e1007990. PMCID: PMC7360089. <a href="https://github.com/kpzoo/model-selection-for-epidemic-renewal-models">Link</a></td>
-<td>Feb 12, 2021</td>
+<td style="text-align: left;">APEestim</td>
+<td style="text-align: left;"><span class="citation" data-cites="Parag2020Using">Parag and Donnelly (<a href="references.html#ref-Parag2020Using" role="doc-biblioref">2020</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/kpzoo/model-selection-for-epidemic-renewal-models">Link</a></td>
+<td style="text-align: left;">Feb 12, 2021</td>
 </tr>
 <tr class="even">
-<td>Epidemia</td>
-<td>Flaxman S, Mishra S, Gandy A, Unwin HJT, Mellan TA, Coupland H, Whittaker C, Zhu H, Berah T, Eaton JW, Monod M, Ghani AC, Donnelly CA, Riley S, Vollmer MAC, Ferguson NM, Okell LC, Bhatt S. Estimating the effects of non-pharmaceutical interventions on COVID-19 in Europe. Nature. Nature Publishing Group; 2020 Aug;584(7820):257–261. <a href="https://github.com/ImperialCollegeLondon/epidemia">Link</a></td>
-<td>Jun 23, 2021</td>
+<td style="text-align: left;">Epidemia</td>
+<td style="text-align: left;"><span class="citation" data-cites="Flaxman2020Estimating">Flaxman et al. (<a href="references.html#ref-Flaxman2020Estimating" role="doc-biblioref">2020</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/ImperialCollegeLondon/epidemia">Link</a></td>
+<td style="text-align: left;">Jun 23, 2021</td>
 </tr>
 <tr class="odd">
-<td>EpiEstim</td>
-<td>Nash RK, Bhatt S, Cori A, Nouvellet P. Estimating the epidemic reproduction number from temporally aggregated incidence data: A statistical modelling approach and software tool. PLOS Computational Biology. Public Library of Science; 2023 Aug 28;19(8):e1011439. <a href="https://github.com/mrc-ide/EpiEstim">Link</a></td>
-<td>Aug 30, 2024</td>
+<td style="text-align: left;"><a href="./package_EpiEstim.html#sec-top">EpiEstim</a></td>
+<td style="text-align: left;"><span class="citation" data-cites="Cori2013New">Cori et al. (<a href="references.html#ref-Cori2013New" role="doc-biblioref">2013</a>)</span>, <span class="citation" data-cites="Nash2023Estimating">Nash et al. (<a href="references.html#ref-Nash2023Estimating" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/mrc-ide/EpiEstim">Link</a></td>
+<td style="text-align: left;">Aug 30, 2024</td>
 </tr>
 </tbody>
 </table>
@@ -232,6 +268,26 @@ Table&nbsp;1: R(t) estimation packages with a peer-reviewed journal reference de
 <p>See <a href="#tbl-packages" class="quarto-xref">Table&nbsp;<span>1</span></a>.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Cori2013New" class="csl-entry" role="listitem">
+Cori A, Ferguson NM, Fraser C, Cauchemez S. 2013. A <span>New</span> <span>Framework</span> and <span>Software</span> to <span>Estimate</span> <span>Time</span>-<span>Varying</span> <span>Reproduction</span> <span>Numbers</span> <span>During</span> <span>Epidemics</span>. American Journal of Epidemiology 178:1505–1512; doi:<a href="https://doi.org/10.1093/aje/kwt133">10.1093/aje/kwt133</a>.
+</div>
+<div id="ref-Flaxman2020Estimating" class="csl-entry" role="listitem">
+Flaxman S, Mishra S, Gandy A, Unwin HJT, Mellan TA, Coupland H, et al. 2020. Estimating the effects of non-pharmaceutical interventions on <span>COVID</span>-19 in <span>Europe</span>. Nature 584:257–261; doi:<a href="https://doi.org/10.1038/s41586-020-2405-7">10.1038/s41586-020-2405-7</a>.
+</div>
+<div id="ref-Nash2023Estimating" class="csl-entry" role="listitem">
+Nash RK, Bhatt S, Cori A, Nouvellet P. 2023. Estimating the epidemic reproduction number from temporally aggregated incidence data: A statistical modelling approach and software tool. PLOS Computational Biology 19:e1011439; doi:<a href="https://doi.org/10.1371/journal.pcbi.1011439">10.1371/journal.pcbi.1011439</a>.
+</div>
+<div id="ref-Parag2020Using" class="csl-entry" role="listitem">
+Parag KV, Donnelly CA. 2020. Using information theory to optimise epidemic models for real-time prediction and estimation. PLoS Computational Biology 16:e1007990; doi:<a href="https://doi.org/10.1371/journal.pcbi.1007990">10.1371/journal.pcbi.1007990</a>.
+</div>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>As of Dec 13, 2024<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

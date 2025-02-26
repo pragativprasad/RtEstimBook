@@ -3,12 +3,15 @@
 Here's where we will have a table of packages
 
 
-| Package name  | Reference and Github link  | Last update as of Dec 13, 2024 | 
-|--------|--------|--------|
-| APEestim  | Parag KV, Donnelly CA. Using information theory to optimise epidemic models for real-time prediction and estimation. PLoS Comput Biol. 2020 Jul 1;16(7):e1007990. PMCID: PMC7360089. [Link](https://github.com/kpzoo/model-selection-for-epidemic-renewal-models)   | Feb 12, 2021 |
-| Epidemia  | Flaxman S, Mishra S, Gandy A, Unwin HJT, Mellan TA, Coupland H, Whittaker C, Zhu H, Berah T, Eaton JW, Monod M, Ghani AC, Donnelly CA, Riley S, Vollmer MAC, Ferguson NM, Okell LC, Bhatt S. Estimating the effects of non-pharmaceutical interventions on COVID-19 in Europe. Nature. Nature Publishing Group; 2020 Aug;584(7820):257–261. [Link](https://github.com/ImperialCollegeLondon/epidemia)   | Jun 23, 2021 |
-| EpiEstim  | Nash RK, Bhatt S, Cori A, Nouvellet P. Estimating the epidemic reproduction number from temporally aggregated incidence data: A statistical modelling approach and software tool. PLOS Computational Biology. Public Library of Science; 2023 Aug 28;19(8):e1011439. [Link](https://github.com/mrc-ide/EpiEstim )   | Aug 30, 2024 |
+| Package name  | Peer-reviewed reference | Github | Last update[^1] | 
+|:--------|:--------|:--------|:--------|
+| APEestim | @Parag2020Using | [Link](https://github.com/kpzoo/model-selection-for-epidemic-renewal-models)   | Feb 12, 2021 |
+| Epidemia  | @Flaxman2020Estimating | [Link](https://github.com/ImperialCollegeLondon/epidemia)   | Jun 23, 2021 |
+| [EpiEstim](package_EpiEstim.qmd#sec-top)  | @Cori2013New, @Nash2023Estimating | [Link](https://github.com/mrc-ide/EpiEstim )   | Aug 30, 2024 |
 
-: R(t) estimation packages with a peer-reviewed journal reference describing the underlying methods. We include the date of last update as of December 13, 2024 {#tbl-packages}
+: R(t) estimation packages with a **peer-reviewed** journal reference describing the underlying methods. {#tbl-packages}
+
+[^1]: As of Dec 13, 2024
 
 See @tbl-packages.
+

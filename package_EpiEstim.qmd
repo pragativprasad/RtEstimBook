@@ -1,1 +1,12 @@
-# EpiEstim {.unnumbered}
+# EpiEstim {#sec-top}
+
+
+## Brief description
+
+## Link to cran
+
+## Methods
+
+This package contains the following methods:
+
+- [fixed sliding windows](method_fixedwindow.qmd#sec-top)
