@@ -1,13 +1,13 @@
-# EpiNow2 {.unnumbered}
+# R0 {#sec-top .unnumbered}
 
 ### Brief description
 
-### Link to cran
+### Assessment table
 
 ### Methods
 
 This package contains the following methods:
 
-- Method 1
+- 
 
-### Starter code
+### Sample code

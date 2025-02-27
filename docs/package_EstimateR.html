@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Decision Tree – Estimating Reproductive Number $R(t)$</title>
+<title>EstimateR – Estimating Reproductive Number $R(t)$</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./packages.html" rel="next">
-<link href="./introduction.html" rel="prev">
+<link href="./package_R0.html" rel="next">
+<link href="./package_ern.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./decisiontree.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Decision Tree</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_EstimateR.html">EstimateR</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -149,7 +149,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./decisiontree.html" class="sidebar-item-text sidebar-link active">
+  <a href="./decisiontree.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Decision Tree</span></span></a>
   </div>
 </li>
@@ -165,25 +165,37 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_APEstim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">APEstim</span></span></a>
+ <span class="menu-text">APEstim</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_bayEStim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">bayEStim</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_earlyR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">earlyR</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_Epidemia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Epidemia</span></span></a>
+ <span class="menu-text">Epidemia</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_EpiEstim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
+ <span class="menu-text">EpiEstim</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_EpiFilter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">EpiFilter</span></span></a>
+ <span class="menu-text">EpiFilter</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -200,8 +212,26 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./package_EpiInvert.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiInvert</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./package_EpiLPS.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EpiLPS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiNow2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiNow2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_epinowcast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">epinowcast</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -212,8 +242,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./package_EstimateR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
+  <a href="./package_EstimateR.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">EstimateR</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_R0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R0</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -224,26 +260,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./package_R0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./package_EpiInvert.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./package_WhiteLabRt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./package_EpiNow2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">EpiNow2</span></a>
+ <span class="menu-text">EpiEstim</span></a>
   </div>
 </li>
       </ul>
@@ -260,7 +278,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./method_fixedwindow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Fixed sliding windows</span></span></a>
+ <span class="menu-text">Fixed sliding windows</span></a>
   </div>
 </li>
       </ul>
@@ -276,15 +294,24 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#brief-description" id="toc-brief-description" class="nav-link active" data-scroll-target="#brief-description">Brief description</a></li>
+  <li><a href="#assessment-table" id="toc-assessment-table" class="nav-link" data-scroll-target="#assessment-table">Assessment table</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
+  <li><a href="#sample-code" id="toc-sample-code" class="nav-link" data-scroll-target="#sample-code">Sample code</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_EstimateR.html">EstimateR</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Decision Tree</span></h1>
+<h1 class="title"><span id="sec-top" class="quarto-section-identifier">EstimateR</span></h1>
 </div>
 
 
@@ -301,9 +328,24 @@ window.Quarto = {
 </header>
 
 
-<p>Here’s where we will have the decision tree</p>
+<section id="brief-description" class="level3">
+<h3 class="anchored" data-anchor-id="brief-description">Brief description</h3>
+</section>
+<section id="assessment-table" class="level3">
+<h3 class="anchored" data-anchor-id="assessment-table">Assessment table</h3>
+</section>
+<section id="methods" class="level3">
+<h3 class="anchored" data-anchor-id="methods">Methods</h3>
+<p>This package contains the following methods:</p>
+<ul>
+<li></li>
+</ul>
+</section>
+<section id="sample-code" class="level3">
+<h3 class="anchored" data-anchor-id="sample-code">Sample code</h3>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -725,13 +767,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./introduction.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./package_ern.html" class="pagination-link" aria-label="ern">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">ern</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./packages.html" class="pagination-link" aria-label="Packages">
-        <span class="nav-page-text">Packages</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./package_R0.html" class="pagination-link" aria-label="R0">
+        <span class="nav-page-text">R0</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

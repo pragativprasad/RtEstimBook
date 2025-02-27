@@ -1,17 +1,41 @@
 # Packages
 
-Here's where we will have a table of packages
+This page contains:
 
+- @tbl-packages, R packages with an accompanying peer-reviewed journal manuscript 
+- @tbl-packages2, R packages without a peer-reviewed journal manuscript.
 
-| Package name  | Peer-reviewed reference | Github | Last update[^1] | 
+An evaluative comparison of the performance of the methods in these packages would be highly complex, given the following challenges. Some of the most widely-used packages are not accompanied with a peer-reviewed manuscript that describes or evaluates the theory behind modeling choices. Each package contains a subset of the methods below for constraining $R(t)$ in time, but with subtle variations in implementation that are often not well-documented. Many packages have not been recently updated, and even those that have are not maintained on CRAN, instead leaving updates on a development version on GitHub. The combination of differing model frameworks associated with each package make it challenging to easily compare the impacts on estimated $R(t)$, especially when considering additional factors like ease of implementation and computational time.
+
+| Package name  | Peer-reviewed reference | Github link | Last update[^1] | 
 |:--------|:--------|:--------|:--------|
-| APEestim | @Parag2020Using | [Link](https://github.com/kpzoo/model-selection-for-epidemic-renewal-models)   | Feb 12, 2021 |
-| Epidemia  | @Flaxman2020Estimating | [Link](https://github.com/ImperialCollegeLondon/epidemia)   | Jun 23, 2021 |
-| [EpiEstim](package_EpiEstim.qmd#sec-top)  | @Cori2013New, @Nash2023Estimating | [Link](https://github.com/mrc-ide/EpiEstim )   | Aug 30, 2024 |
+| [APEestim](package_APEstim.qmd#sec-top) | @Parag2020Using | [🔗](https://github.com/kpzoo/model-selection-for-epidemic-renewal-models)   | Feb 12, 2021 |
+| [Epidemia](package_Epidemia.qmd#sec-top)  | @Flaxman2020Estimating | [🔗](https://github.com/ImperialCollegeLondon/epidemia)   | Jun 23, 2021 |
+| [EpiEstim](package_EpiEstim.qmd#sec-top)  | @Cori2013New, @Nash2023Estimating | [🔗](https://github.com/mrc-ide/EpiEstim) | Aug 30, 2024 |
+| [EpiFilter](package_EpiFilter.qmd#sec-top) | @Parag2021Improved | [🔗](https://github.com/kpzoo/EpiFilter) | Dec 9, 2023 |
+| [EpiFusion](package_EpiFusion.qmd#sec-top) | @Judge2024EpiFusion | [🔗](https://github.com/ciarajudge/EpiFusion) | Nov 30, 2024|
+| [epigrowthfit](package_epigrowthfit.qmd#sec-top) | @Earn2020Acceleration | [🔗](https://github.com/davidearn/epigrowthfit) | Aug 12, 2024|
+| [EpiLPS](package_EpiLPS.qmd#sec-top) | @Gressani2022EpiLPS | [🔗](https://github.com/oswaldogressani/EpiLPS) | Oct 24, 2024|
+| [ern](package_ern.qmd#sec-top) | @Champredon2024ern | [🔗](https://github.com/phac-nml-phrsd/ern) | May 22, 2024|
+| [EstimateR](package_EstimateR.qmd#sec-top) | @Scire2023estimateR | [🔗](https://github.com/covid-19-Re/estimateR) | Sep 10, 2024|
+| [R0](package_R0.qmd#sec-top) | @obadia2012r0 | [🔗](https://github.com/tobadia/R0) | Sep 20, 2023|
+| [RtEstim](package_RtEstim.qmd#sec-top) | @Liu2024rtestim | [🔗](https://github.com/dajmcdon/rtestim) | Sep 25, 2024|
+| [EpiInvert](package_EpiInvert.qmd#sec-top) | @Alvarez2021Computing | [🔗](https://github.com/lalvarezmat/EpiInvert) | Dec 31, 2023|
+| [WhiteLabRt](package_WhiteLabRt.qmd#sec-top) | @Li2021Bayesian | [🔗](https://github.com/cmilando/WhiteLabRt) | Aug 16, 2024|
 
-: R(t) estimation packages with a **peer-reviewed** journal reference describing the underlying methods. {#tbl-packages}
+: R(t) estimation packages with a **peer-reviewed** journal reference describing the underlying methods {#tbl-packages}
+
+| Package name  | Developers | Github link | Last update[^1] | 
+|:--------|:--------|:--------|:--------|
+| [bayEStim](package_bayEStim.qmd#sec-top) |	Lytras T, Sypsa V, Demosthenes P, Tsiodr S |	[🔗](https://github.com/thlytras/bayEStim) | Aug 3, 2020 |
+| [earlyR](package_earlyR.qmd#sec-top) |	Jombart T, Cori A, Nouvellet P, Skarp, J |	[🔗](https://github.com/reconhub/earlyR) |  Oct 27, 2020 |
+| [EpiNow2](package_EpiNow2.qmd#sec-top)	| Abbott S, Hellewell J, Sherratt K, Gostic K, Hickson J, Badr HS, DeWitt M, Azam JM, Funk S | [🔗](https://github.com/epiforecasts/EpiNow2) | Dec 6, 2024 |
+| [epinowcast](package_epinowcast.qmd#sec-top) | Abbott S, Lison A, Funk S, Pearson C, Gruson H, Guenther F, DeWitt M	| [🔗](https://github.com/epinowcast/epinowcast)| Sep 30, 2024 |
+
+: R(t) estimation packages without a peer-reviewed journal reference describing the underlying methods {#tbl-packages2}
 
 [^1]: As of Dec 13, 2024
 
-See @tbl-packages.
+
+
 

@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  title: "Methods for estimating Reproduction Number, R(t)"
+  title: "Estimating Reproductive Number $R(t)$"
   author:
     - name: Chad Milando
       email: cmilando@bu.edu
@@ -16,6 +16,9 @@ book:
       degrees: PhD
       affiliations:
         - Boston University, School of Public Health
+    - name: Christine Sangphet
+      affiliations:
+        - Boston University, School of Public Health
 
 
   date: "2/14/2025"
@@ -25,9 +28,23 @@ book:
     - decisiontree.qmd
     - part: packages.qmd
       chapters:
-      - package_EpiNow2.qmd
+      - package_APEstim.qmd
+      - package_bayEStim.qmd
+      - package_earlyR.qmd
+      - package_Epidemia.qmd
       - package_EpiEstim.qmd
+      - package_EpiFilter.qmd
+      - package_EpiFusion.qmd
+      - package_epigrowthfit.qmd
+      - package_EpiInvert.qmd
+      - package_EpiLPS.qmd
+      - package_EpiNow2.qmd
+      - package_epinowcast.qmd
+      - package_ern.qmd
+      - package_EstimateR.qmd
+      - package_R0.qmd
       - package_RtEstim.qmd
+      - package_WhiteLabRt.qmd
     - part: methods.qmd
       chapters:
         - method_fixedwindow.qmd
@@ -38,7 +55,9 @@ csl: nature.csl
 
 format:
   html:
-    theme: cosmo
+    theme:
+      - cosmo
+      - markdown-style.scss
   pdf:
     documentclass: scrreprt
   epub:

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; EpiEstim – Methods for estimating Reproduction Number, R(t)</title>
+<title>EpiEstim – Estimating Reproductive Number $R(t)$</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./package_RtEstim.html" rel="next">
-<link href="./package_EpiNow2.html" rel="prev">
+<link href="./package_EpiFilter.html" rel="next">
+<link href="./package_Epidemia.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0cf689a55be479424c678364b03aab18.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_EpiEstim.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">EpiEstim</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_EpiEstim.html">EpiEstim</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -96,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Methods for estimating Reproduction Number, R(t)</a> 
+      <a href="./">Estimating Reproductive Number <span class="math inline">\(R(t)\)</span></a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -135,20 +164,104 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./package_APEstim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">APEstim</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_bayEStim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">bayEStim</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_earlyR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">earlyR</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_Epidemia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Epidemia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiEstim.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">EpiEstim</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiFilter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">EpiFilter</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiFusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiFusion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_epigrowthfit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">epigrowthfit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiInvert.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiLPS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiLPS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./package_EpiNow2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EpiNow2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./package_EpiEstim.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
+  <a href="./package_epinowcast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">epinowcast</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_ern.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ern</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EstimateR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_R0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_RtEstim.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RtEstim</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_WhiteLabRt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
   </div>
 </li>
       </ul>
@@ -165,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./method_fixedwindow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Fixed sliding windows</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Fixed sliding windows</span></span></a>
   </div>
 </li>
       </ul>
@@ -186,18 +299,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#brief-description" id="toc-brief-description" class="nav-link active" data-scroll-target="#brief-description"><span class="header-section-number">3.1</span> Brief description</a></li>
-  <li><a href="#link-to-cran" id="toc-link-to-cran" class="nav-link" data-scroll-target="#link-to-cran"><span class="header-section-number">3.2</span> Link to cran</a></li>
-  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">3.3</span> Methods</a></li>
+  <li><a href="#brief-description" id="toc-brief-description" class="nav-link active" data-scroll-target="#brief-description">Brief description</a></li>
+  <li><a href="#assessment-table" id="toc-assessment-table" class="nav-link" data-scroll-target="#assessment-table">Assessment table</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
+  <li><a href="#sample-code" id="toc-sample-code" class="nav-link" data-scroll-target="#sample-code">Sample code</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_EpiEstim.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">EpiEstim</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_EpiEstim.html">EpiEstim</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-top" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></h1>
+<h1 class="title"><span id="sec-top" class="quarto-section-identifier">EpiEstim</span></h1>
 </div>
 
 
@@ -214,18 +328,21 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="brief-description" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="brief-description"><span class="header-section-number">3.1</span> Brief description</h2>
+<section id="brief-description" class="level3">
+<h3 class="anchored" data-anchor-id="brief-description">Brief description</h3>
 </section>
-<section id="link-to-cran" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="link-to-cran"><span class="header-section-number">3.2</span> Link to cran</h2>
+<section id="assessment-table" class="level3">
+<h3 class="anchored" data-anchor-id="assessment-table">Assessment table</h3>
 </section>
-<section id="methods" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="methods"><span class="header-section-number">3.3</span> Methods</h2>
+<section id="methods" class="level3">
+<h3 class="anchored" data-anchor-id="methods">Methods</h3>
 <p>This package contains the following methods:</p>
 <ul>
 <li><a href="./method_fixedwindow.html#sec-top">fixed sliding windows</a></li>
 </ul>
+</section>
+<section id="sample-code" class="level3">
+<h3 class="anchored" data-anchor-id="sample-code">Sample code</h3>
 
 
 </section>
@@ -650,13 +767,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./package_EpiNow2.html" class="pagination-link" aria-label="EpiNow2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">EpiNow2</span>
+      <a href="./package_Epidemia.html" class="pagination-link" aria-label="Epidemia">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Epidemia</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./package_RtEstim.html" class="pagination-link" aria-label="RtEstim">
-        <span class="nav-page-text">RtEstim</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./package_EpiFilter.html" class="pagination-link" aria-label="EpiFilter">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">EpiFilter</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

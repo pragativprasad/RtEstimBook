@@ -1,4 +1,4 @@
-# Fixed sliding windows {#sec-top}
+# Fixed sliding windows {#sec-top .unnumbered}
 
 A straightforward method of imposing structure on R(t) over time involves constraining R(t) to be drawn from the same distribution within moving time subsets, called sliding windows. We add the prefix of “fixed-size” to distinguish from methods that may adapt the size of the sliding window over time. >> make a destinction between deriving it and doing it by Bayesian.
 

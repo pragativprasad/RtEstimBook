@@ -1,4 +1,5 @@
-# EpiNow2 {.unnumbered}
+# EpiLPS {#sec-top .unnumbered}
+
 
 ### Brief description
 
@@ -11,3 +12,5 @@ This package contains the following methods:
 - Method 1
 
 ### Starter code
+
+

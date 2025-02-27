@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Packages – Methods for estimating Reproduction Number, R(t)</title>
+<title>Packages – Estimating Reproductive Number \(R(t)\)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,7 +49,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./package_EpiNow2.html" rel="next">
+<link href="./package_APEstim.html" rel="next">
 <link href="./decisiontree.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -59,7 +59,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0cf689a55be479424c678364b03aab18.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,6 +88,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -115,7 +144,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Methods for estimating Reproduction Number, R(t)</a> 
+      <a href="./">Estimating Reproductive Number <span class="math inline">\(R(t)\)</span></a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -154,20 +183,104 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./package_APEstim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">APEstim</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_bayEStim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">bayEStim</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_earlyR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">earlyR</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_Epidemia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Epidemia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiEstim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiEstim</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiFilter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiFilter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiFusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiFusion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_epigrowthfit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">epigrowthfit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiInvert.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiInvert</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiLPS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiLPS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./package_EpiNow2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EpiNow2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./package_EpiEstim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
+  <a href="./package_epinowcast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">epinowcast</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_ern.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ern</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EstimateR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EstimateR</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_R0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R0</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_RtEstim.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RtEstim</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_WhiteLabRt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiEstim</span></a>
   </div>
 </li>
       </ul>
@@ -184,7 +297,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./method_fixedwindow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Fixed sliding windows</span></span></a>
+ <span class="menu-text">Fixed sliding windows</span></a>
   </div>
 </li>
       </ul>
@@ -225,11 +338,16 @@ div.csl-indent {
 </header>
 
 
-<p>Here’s where we will have a table of packages</p>
+<p>This page contains:</p>
+<ul>
+<li><a href="#tbl-packages" class="quarto-xref">Table&nbsp;<span>1</span></a>, R packages with an accompanying peer-reviewed journal manuscript</li>
+<li><a href="#tbl-packages2" class="quarto-xref">Table&nbsp;<span>2</span></a>, R packages without a peer-reviewed journal manuscript.</li>
+</ul>
+<p>An evaluative comparison of the performance of the methods in these packages would be highly complex, given the following challenges. Some of the most widely-used packages are not accompanied with a peer-reviewed manuscript that describes or evaluates the theory behind modeling choices. Each package contains a subset of the methods below for constraining <span class="math inline">\(R(t)\)</span> in time, but with subtle variations in implementation that are often not well-documented. Many packages have not been recently updated, and even those that have are not maintained on CRAN, instead leaving updates on a development version on GitHub. The combination of differing model frameworks associated with each package make it challenging to easily compare the impacts on estimated <span class="math inline">\(R(t)\)</span>, especially when considering additional factors like ease of implementation and computational time.</p>
 <div id="tbl-packages" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-packages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: R(t) estimation packages with a <strong>peer-reviewed</strong> journal reference describing the underlying methods.
+Table&nbsp;1: R(t) estimation packages with a <strong>peer-reviewed</strong> journal reference describing the underlying methods
 </figcaption>
 <div aria-describedby="tbl-packages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -237,55 +355,190 @@ Table&nbsp;1: R(t) estimation packages with a <strong>peer-reviewed</strong> jou
 <tr class="header">
 <th style="text-align: left;">Package name</th>
 <th style="text-align: left;">Peer-reviewed reference</th>
-<th style="text-align: left;">Github</th>
+<th style="text-align: left;">Github link</th>
 <th style="text-align: left;">Last update<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">APEestim</td>
+<td style="text-align: left;"><a href="./package_APEstim.html#sec-top">APEestim</a></td>
 <td style="text-align: left;"><span class="citation" data-cites="Parag2020Using">Parag and Donnelly (<a href="references.html#ref-Parag2020Using" role="doc-biblioref">2020</a>)</span></td>
-<td style="text-align: left;"><a href="https://github.com/kpzoo/model-selection-for-epidemic-renewal-models">Link</a></td>
+<td style="text-align: left;"><a href="https://github.com/kpzoo/model-selection-for-epidemic-renewal-models">🔗</a></td>
 <td style="text-align: left;">Feb 12, 2021</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Epidemia</td>
+<td style="text-align: left;"><a href="./package_Epidemia.html#sec-top">Epidemia</a></td>
 <td style="text-align: left;"><span class="citation" data-cites="Flaxman2020Estimating">Flaxman et al. (<a href="references.html#ref-Flaxman2020Estimating" role="doc-biblioref">2020</a>)</span></td>
-<td style="text-align: left;"><a href="https://github.com/ImperialCollegeLondon/epidemia">Link</a></td>
+<td style="text-align: left;"><a href="https://github.com/ImperialCollegeLondon/epidemia">🔗</a></td>
 <td style="text-align: left;">Jun 23, 2021</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="./package_EpiEstim.html#sec-top">EpiEstim</a></td>
 <td style="text-align: left;"><span class="citation" data-cites="Cori2013New">Cori et al. (<a href="references.html#ref-Cori2013New" role="doc-biblioref">2013</a>)</span>, <span class="citation" data-cites="Nash2023Estimating">Nash et al. (<a href="references.html#ref-Nash2023Estimating" role="doc-biblioref">2023</a>)</span></td>
-<td style="text-align: left;"><a href="https://github.com/mrc-ide/EpiEstim">Link</a></td>
+<td style="text-align: left;"><a href="https://github.com/mrc-ide/EpiEstim">🔗</a></td>
 <td style="text-align: left;">Aug 30, 2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="./package_EpiFilter.html#sec-top">EpiFilter</a></td>
+<td style="text-align: left;"><span class="citation" data-cites="Parag2021Improved">Parag (<a href="references.html#ref-Parag2021Improved" role="doc-biblioref">2021</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/kpzoo/EpiFilter">🔗</a></td>
+<td style="text-align: left;">Dec 9, 2023</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="./package_EpiFusion.html#sec-top">EpiFusion</a></td>
+<td style="text-align: left;"><span class="citation" data-cites="Judge2024EpiFusion">Judge et al. (<a href="references.html#ref-Judge2024EpiFusion" role="doc-biblioref">2024</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/ciarajudge/EpiFusion">🔗</a></td>
+<td style="text-align: left;">Nov 30, 2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="./package_epigrowthfit.html#sec-top">epigrowthfit</a></td>
+<td style="text-align: left;"><span class="citation" data-cites="Earn2020Acceleration">Earn et al. (<a href="references.html#ref-Earn2020Acceleration" role="doc-biblioref">2020</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/davidearn/epigrowthfit">🔗</a></td>
+<td style="text-align: left;">Aug 12, 2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="./package_EpiLPS.html#sec-top">EpiLPS</a></td>
+<td style="text-align: left;"><span class="citation" data-cites="Gressani2022EpiLPS">Gressani et al. (<a href="references.html#ref-Gressani2022EpiLPS" role="doc-biblioref">2022</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/oswaldogressani/EpiLPS">🔗</a></td>
+<td style="text-align: left;">Oct 24, 2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="./package_ern.html#sec-top">ern</a></td>
+<td style="text-align: left;"><span class="citation" data-cites="Champredon2024ern">Champredon et al. (<a href="references.html#ref-Champredon2024ern" role="doc-biblioref">2024</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/phac-nml-phrsd/ern">🔗</a></td>
+<td style="text-align: left;">May 22, 2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="./package_EstimateR.html#sec-top">EstimateR</a></td>
+<td style="text-align: left;"><span class="citation" data-cites="Scire2023estimateR">Scire et al. (<a href="references.html#ref-Scire2023estimateR" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/covid-19-Re/estimateR">🔗</a></td>
+<td style="text-align: left;">Sep 10, 2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="./package_R0.html#sec-top">R0</a></td>
+<td style="text-align: left;"><span class="citation" data-cites="obadia2012r0">Obadia et al. (<a href="references.html#ref-obadia2012r0" role="doc-biblioref">2012</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/tobadia/R0">🔗</a></td>
+<td style="text-align: left;">Sep 20, 2023</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="./package_RtEstim.html#sec-top">RtEstim</a></td>
+<td style="text-align: left;"><span class="citation" data-cites="Liu2024rtestim">Liu et al. (<a href="references.html#ref-Liu2024rtestim" role="doc-biblioref">2024</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/dajmcdon/rtestim">🔗</a></td>
+<td style="text-align: left;">Sep 25, 2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="./package_EpiInvert.html#sec-top">EpiInvert</a></td>
+<td style="text-align: left;"><span class="citation" data-cites="Alvarez2021Computing">Alvarez et al. (<a href="references.html#ref-Alvarez2021Computing" role="doc-biblioref">2021</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/lalvarezmat/EpiInvert">🔗</a></td>
+<td style="text-align: left;">Dec 31, 2023</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="./package_WhiteLabRt.html#sec-top">WhiteLabRt</a></td>
+<td style="text-align: left;"><span class="citation" data-cites="Li2021Bayesian">Li and White (<a href="references.html#ref-Li2021Bayesian" role="doc-biblioref">2021</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/cmilando/WhiteLabRt">🔗</a></td>
+<td style="text-align: left;">Aug 16, 2024</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
 </div>
-<p>See <a href="#tbl-packages" class="quarto-xref">Table&nbsp;<span>1</span></a>.</p>
+<div id="tbl-packages2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-packages2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: R(t) estimation packages without a peer-reviewed journal reference describing the underlying methods
+</figcaption>
+<div aria-describedby="tbl-packages2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Package name</th>
+<th style="text-align: left;">Developers</th>
+<th style="text-align: left;">Github link</th>
+<th style="text-align: left;">Last update<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a href="./package_bayEStim.html#sec-top">bayEStim</a></td>
+<td style="text-align: left;">Lytras T, Sypsa V, Demosthenes P, Tsiodr S</td>
+<td style="text-align: left;"><a href="https://github.com/thlytras/bayEStim">🔗</a></td>
+<td style="text-align: left;">Aug 3, 2020</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="./package_earlyR.html#sec-top">earlyR</a></td>
+<td style="text-align: left;">Jombart T, Cori A, Nouvellet P, Skarp, J</td>
+<td style="text-align: left;"><a href="https://github.com/reconhub/earlyR">🔗</a></td>
+<td style="text-align: left;">Oct 27, 2020</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="./package_EpiNow2.html#sec-top">EpiNow2</a></td>
+<td style="text-align: left;">Abbott S, Hellewell J, Sherratt K, Gostic K, Hickson J, Badr HS, DeWitt M, Azam JM, Funk S</td>
+<td style="text-align: left;"><a href="https://github.com/epiforecasts/EpiNow2">🔗</a></td>
+<td style="text-align: left;">Dec 6, 2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="./package_epinowcast.html#sec-top">epinowcast</a></td>
+<td style="text-align: left;">Abbott S, Lison A, Funk S, Pearson C, Gruson H, Guenther F, DeWitt M</td>
+<td style="text-align: left;"><a href="https://github.com/epinowcast/epinowcast">🔗</a></td>
+<td style="text-align: left;">Sep 30, 2024</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Alvarez2021Computing" class="csl-entry" role="listitem">
+Alvarez L, Colom M, Morel J-D, Morel J-M. 2021. Computing the daily reproduction number of <span>COVID</span>-19 by inverting the renewal equation using a variational technique. Proceedings of the National Academy of Sciences 118:e2105112118; doi:<a href="https://doi.org/10.1073/pnas.2105112118">10.1073/pnas.2105112118</a>.
+</div>
+<div id="ref-Champredon2024ern" class="csl-entry" role="listitem">
+Champredon D, Papst I, Yusuf W. 2024. Ern: An <span>R</span> package to estimate the effective reproduction number using clinical and wastewater surveillance data. PLOS ONE 19:e0305550; doi:<a href="https://doi.org/10.1371/journal.pone.0305550">10.1371/journal.pone.0305550</a>.
+</div>
 <div id="ref-Cori2013New" class="csl-entry" role="listitem">
 Cori A, Ferguson NM, Fraser C, Cauchemez S. 2013. A <span>New</span> <span>Framework</span> and <span>Software</span> to <span>Estimate</span> <span>Time</span>-<span>Varying</span> <span>Reproduction</span> <span>Numbers</span> <span>During</span> <span>Epidemics</span>. American Journal of Epidemiology 178:1505–1512; doi:<a href="https://doi.org/10.1093/aje/kwt133">10.1093/aje/kwt133</a>.
+</div>
+<div id="ref-Earn2020Acceleration" class="csl-entry" role="listitem">
+Earn DJD, Ma J, Poinar H, Dushoff J, Bolker BM. 2020. Acceleration of plague outbreaks in the second pandemic. Proceedings of the National Academy of Sciences 117:27703–27711; doi:<a href="https://doi.org/10.1073/pnas.2004904117">10.1073/pnas.2004904117</a>.
 </div>
 <div id="ref-Flaxman2020Estimating" class="csl-entry" role="listitem">
 Flaxman S, Mishra S, Gandy A, Unwin HJT, Mellan TA, Coupland H, et al. 2020. Estimating the effects of non-pharmaceutical interventions on <span>COVID</span>-19 in <span>Europe</span>. Nature 584:257–261; doi:<a href="https://doi.org/10.1038/s41586-020-2405-7">10.1038/s41586-020-2405-7</a>.
 </div>
+<div id="ref-Gressani2022EpiLPS" class="csl-entry" role="listitem">
+Gressani O, Wallinga J, Althaus CL, Hens N, Faes C. 2022. EpiLPS: A fast and flexible <span>Bayesian</span> tool for estimation of the time-varying reproduction number. PLOS Computational Biology 18:e1010618; doi:<a href="https://doi.org/10.1371/journal.pcbi.1010618">10.1371/journal.pcbi.1010618</a>.
+</div>
+<div id="ref-Judge2024EpiFusion" class="csl-entry" role="listitem">
+Judge C, Vaughan T, Russell T, Abbott S, Plessis L, Stadler T, et al. 2024. EpiFusion: Joint inference of the effective reproduction number by integrating phylodynamic and epidemiological modelling with particle filtering. PLOS Computational Biology 20:e1012528; doi:<a href="https://doi.org/10.1371/journal.pcbi.1012528">10.1371/journal.pcbi.1012528</a>.
+</div>
+<div id="ref-Li2021Bayesian" class="csl-entry" role="listitem">
+Li T, White LF. 2021. Bayesian back-calculation and nowcasting for line list data during the <span>COVID</span>-19 pandemic. PLOS Computational Biology 17:e1009210; doi:<a href="https://doi.org/10.1371/journal.pcbi.1009210">10.1371/journal.pcbi.1009210</a>.
+</div>
+<div id="ref-Liu2024rtestim" class="csl-entry" role="listitem">
+Liu J, Cai Z, Gustafson P, McDonald DJ. 2024. Rtestim: Time-varying reproduction number estimation with trend filtering. PLOS Computational Biology 20:e1012324; doi:<a href="https://doi.org/10.1371/journal.pcbi.1012324">10.1371/journal.pcbi.1012324</a>.
+</div>
 <div id="ref-Nash2023Estimating" class="csl-entry" role="listitem">
 Nash RK, Bhatt S, Cori A, Nouvellet P. 2023. Estimating the epidemic reproduction number from temporally aggregated incidence data: A statistical modelling approach and software tool. PLOS Computational Biology 19:e1011439; doi:<a href="https://doi.org/10.1371/journal.pcbi.1011439">10.1371/journal.pcbi.1011439</a>.
 </div>
+<div id="ref-obadia2012r0" class="csl-entry" role="listitem">
+Obadia T, Haneef R, Boëlle P-Y. 2012. The R0 package: A toolbox to estimate reproduction numbers for epidemic outbreaks. BMC medical informatics and decision making 12: 1–9.
+</div>
+<div id="ref-Parag2021Improved" class="csl-entry" role="listitem">
+Parag KV. 2021. Improved estimation of time-varying reproduction numbers at low case incidence and between epidemic waves. PLOS Computational Biology 17:e1009347; doi:<a href="https://doi.org/10.1371/journal.pcbi.1009347">10.1371/journal.pcbi.1009347</a>.
+</div>
 <div id="ref-Parag2020Using" class="csl-entry" role="listitem">
 Parag KV, Donnelly CA. 2020. Using information theory to optimise epidemic models for real-time prediction and estimation. PLoS Computational Biology 16:e1007990; doi:<a href="https://doi.org/10.1371/journal.pcbi.1007990">10.1371/journal.pcbi.1007990</a>.
+</div>
+<div id="ref-Scire2023estimateR" class="csl-entry" role="listitem">
+Scire J, Huisman JS, Grosu A, Angst DC, Lison A, Li J, et al. 2023. estimateR: An <span>R</span> package to estimate and monitor the effective reproductive number. BMC Bioinformatics 24:310; doi:<a href="https://doi.org/10.1186/s12859-023-05428-4">10.1186/s12859-023-05428-4</a>.
 </div>
 </div>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>As of Dec 13, 2024<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>As of Dec 13, 2024<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -714,8 +967,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./package_EpiNow2.html" class="pagination-link" aria-label="EpiNow2">
-        <span class="nav-page-text">EpiNow2</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./package_APEstim.html" class="pagination-link" aria-label="APEstim">
+        <span class="nav-page-text">APEstim</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

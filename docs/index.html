@@ -8,9 +8,10 @@
 
 <meta name="author" content="Chad Milando">
 <meta name="author" content="Laura White">
+<meta name="author" content="Christine Sangphet">
 <meta name="dcterms.date" content="2025-02-14">
 
-<title>Methods for estimating Reproduction Number, R(t)</title>
+<title>Estimating Reproductive Number R(t)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +24,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -42,7 +62,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0cf689a55be479424c678364b03aab18.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,6 +91,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -98,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Methods for estimating Reproduction Number, R(t)</a> 
+      <a href="./">Estimating Reproductive Number <span class="math inline">\(R(t)\)</span></a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -137,20 +186,86 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./package_EpiNow2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">EpiNow2</span></a>
+  <a href="./package_APEstim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">APEstim</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_Epidemia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Epidemia</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_EpiEstim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiFilter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">EpiFilter</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiFusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiFusion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_epigrowthfit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">epigrowthfit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiLPS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiLPS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_ern.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ern</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EstimateR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_RtEstim.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RtEstim</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_R0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiInvert.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_WhiteLabRt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiNow2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiNow2</span></a>
   </div>
 </li>
       </ul>
@@ -167,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./method_fixedwindow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Fixed sliding windows</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Fixed sliding windows</span></span></a>
   </div>
 </li>
       </ul>
@@ -197,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Methods for estimating Reproduction Number, R(t)</h1>
+<h1 class="title">Estimating Reproductive Number <span class="math inline">\(R(t)\)</span></h1>
 </div>
 
 
@@ -215,6 +330,14 @@ ul.task-list li input[type="checkbox"] {
       </div>
     <div class="quarto-title-meta-contents">
     <p class="author">Laura White, PhD </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Boston University, School of Public Health
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Christine Sangphet </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -243,21 +366,29 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="preface" class="level1 unnumbered">
 <h1 class="unnumbered">Preface</h1>
-<p>Since the onset of the COVID-19 pandemic in early 2020, there has been a proliferation of software packages that make inference about the current state of an infectious disease outbreak based on daily counts of disease cases. An important and widely used parameter is the instantaneous or effective reproduction number, R(t), defined in Gostic et. al.&nbsp;(2020) 1 as follows:</p>
-<p>“The effective reproductive number, denoted as Re or Rt, is the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible.”</p>
-<p>Defined as such, R(t) is an unobserved quantity that captures the aggregated combination of disease characteristics (e.g., infectiousness under controlled conditions, mode of transport) and extrinsic factors (e.g., lockdowns that reduce person-to-person contact). An R(t) = 1 indicates a “stable” epidemic at time t, where each infected person infects on average one additional person; R(t) values above or below 1 represent a growing or a shrinking epidemic respectively. We focus on R(t) given its relevance for time-sensitive decision-making, and summarize the currently used inputs, data, methods and assumptions in R(t) estimation across the following categories:</p>
+<p>Since the onset of the COVID-19 pandemic in early 2020, there has been a proliferation of software packages that make inference about the current state of an infectious disease outbreak based on daily counts of disease cases. An important and widely used parameter is the instantaneous or effective reproductive number, <span class="math inline">\(R(t)\)</span>, defined in <span class="citation" data-cites="Gostic2020Practical">Gostic et al. (<a href="references.html#ref-Gostic2020Practical" role="doc-biblioref">2020</a>)</span> as follows:</p>
+<blockquote class="blockquote">
+<p>“The effective reproductive number, denoted as <span class="math inline">\(R_e\)</span> or <span class="math inline">\(R_t\)</span>, is the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible.”</p>
+</blockquote>
+<p>Defined as such, <span class="math inline">\(R(t)\)</span> is an unobserved quantity that captures the aggregated combination of disease characteristics (e.g., infectiousness under controlled conditions, mode of transport) and extrinsic factors (e.g., lockdowns that reduce person-to-person contact).</p>
+<p>An <span class="math inline">\(R(t)\)</span> = 1 indicates a “stable” epidemic at time t, where each infected person infects on average one additional person; <span class="math inline">\(R(t)\)</span> values above or below 1 represent a growing or a shrinking epidemic respectively.</p>
+<p>We focus on <span class="math inline">\(R(t)\)</span> given its relevance for time-sensitive decision-making, and summarize the currently used inputs, data, methods and assumptions in <span class="math inline">\(R(t)\)</span> estimation across the following categories:</p>
 <ul>
-<li>How the relationship between R(t) and infections is defined</li>
-<li>How R(t) is constrained using distributions for key variables</li>
-<li>How R(t) is constrained over time</li>
-<li>Additional data and distributions that are used to constrain R(t)</li>
-<li>Inference frameworks that are used to estimate R(t) ** is constrained the right word?</li>
+<li>How the relationship between <span class="math inline">\(R(t)\)</span> and infections is defined</li>
+<li>How <span class="math inline">\(R(t)\)</span> is constrained using distributions for key variables</li>
+<li>How <span class="math inline">\(R(t)\)</span> is constrained over time</li>
+<li>Additional data and distributions that are used to constrain <span class="math inline">\(R(t)\)</span></li>
+<li>Inference frameworks that are used to estimate <span class="math inline">\(R(t)\)</span></li>
 </ul>
-<p>In this paper we provide a theoretical comparison of the current field of methods for estimating R(t), with the goal of informing user decision-making about which package to choose and in interpreting package outputs. For reference, Table 1 lists packages with an accompanying peer-reviewed journal manuscript, Table 2 lists packages without a peer-reviewed journal manuscript, and Table S1 contains R(t) packages that calculate R(t) but were excluded from this summary. In the text, the package citation is given the first time each package is referenced.</p>
-<p>We limit the methods discussed here to those for estimating historical to present-day R(t) values using daily case count data, where a case can be flexibly defined as an individual with a reported positive test (either through healthcare-seeking behavior, routine surveillance, or a hospital admission). Other methods not discussed here include inference of R(t) exclusively from alternative data sources (e.g., genetic data,2 behavioral data,3 or viral loads in waste-water4), or calculations from compartmental, agent-based models, or network.5–7 We also limit the discussion to packages in the statistical software R,8 which may exclude some packages in other software programs that combine many of the methodological considerations discussed below.9 We do not discuss any packages for now-casting or forecasting, though a number of R(t) estimation packages can be used for this purpose. The methods discussed below and references to specific R packages are current as of December 1, 2024. We attempt to harmonize the mathematical choices between each package using terminology from each.</p>
-<p>An evaluative comparison of the performance of these methods would be highly complex, given the following challenges. Some of the most widely-used packages are not accompanied with a peer-reviewed manuscript that describes or evaluates the theory behind modeling choices. Each package contains a subset of the methods below for constraining R(t) in time, but with subtle variations in implementation that are often not well-documented. Most packages have not been recently updated, and even those that have are not maintained on CRAN, instead leaving updates on a development version on GitHub. The combination of differing model frameworks associated with each package make it challenging to easily compare the impacts on estimated R(t), especially when considering additional factors like ease of implementation and computational time</p>
+<p>In this paper we provide a theoretical comparison of the current field of methods for estimating <span class="math inline">\(R(t)\)</span>, with the goal of informing user decision-making about which package to choose and in interpreting package outputs. <a href="packages.html#tbl-packages" class="quarto-xref">Table&nbsp;<span>1</span></a> lists packages with an accompanying peer-reviewed journal manuscript, Table 2 lists packages without a peer-reviewed journal manuscript, and Table S1 contains R(t) packages that calculate <span class="math inline">\(R(t)\)</span> but were excluded from this summary. In the text, the package citation is given the first time each package is referenced.</p>
+<p>We limit the methods discussed here to those for estimating historical to present-day <span class="math inline">\(R(t)\)</span> values using daily case count data, where a case can be flexibly defined as an individual with a reported positive test (either through healthcare-seeking behavior, routine surveillance, or a hospital admission). Other methods not discussed here include inference of <span class="math inline">\(R(t)\)</span> exclusively from alternative data sources (e.g., genetic data,2 behavioral data,3 or viral loads in waste-water4), or calculations from compartmental, agent-based models, or network.5–7 We also limit the discussion to packages in the statistical software R,8 which may exclude some packages in other software programs that combine many of the methodological considerations discussed below.9 We do not discuss any packages for now-casting or forecasting, though a number of R(t) estimation packages can be used for this purpose. The methods discussed below and references to specific R packages are current as of December 1, 2024. We attempt to harmonize the mathematical choices between each package using terminology from each.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Gostic2020Practical" class="csl-entry" role="listitem">
+Gostic KM, McGough L, Baskerville EB, Abbott S, Joshi K, Tedijanto C, et al. 2020. Practical considerations for measuring the effective reproductive number, <span>Rt</span>. PLOS Computational Biology 16:e1008409; doi:<a href="https://doi.org/10.1371/journal.pcbi.1008409">10.1371/journal.pcbi.1008409</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
