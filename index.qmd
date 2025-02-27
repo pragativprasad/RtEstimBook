@@ -1,4 +1,4 @@
-### Overview {.unnumbered}
+## Overview {.unnumbered}
 
 Since the onset of the COVID-19 pandemic in early 2020, there has been a proliferation of software tools that make inference about the current state of an infectious disease outbreak. 
 
@@ -40,7 +40,7 @@ Each software package that estimates $R(t)$ makes different assumptions, which l
 Therefore, the purpose of this document is provide guidance about which software packages to choose for different analytical goals: see our [Decision Matrix](decisiontree.qmd).
 </div>
 
-### Funding, authors, and acknowledgements
+## Funding, authors, and acknowledgements
 
 This work is supported by InsightNet grant #
 

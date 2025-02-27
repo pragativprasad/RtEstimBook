@@ -6,12 +6,12 @@ You can use the decision tool below to help choose which R packages may be right
 1. Then see which set of required data you have. If you do not have the required data for a specific package, use a different one
 1. Finally, estimate $R(t)$ using the packages that are appropriate for your use case
 
+<small>See below the table for the assessment framework used to decide which packages to recommend.</small>
+
 ::: {.callout-important}
 ## Strong recommendation
 **Use multiple packages** in your analysis; an ensemble of approaches will be the best way to ensure a robust estimate of $R(t)$ for your use case. 
 :::
-
-See below the table for the @sec-assessment used to decide which packages to recommend.
 
 ```{=html}
 <table>
