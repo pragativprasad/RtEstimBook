@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; EpiEstim – Estimating Reproductive Number $R(t)$</title>
+<title>R0 – Estimating Reproductive Number $R(t)$</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_R0.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R0</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_R0.html">R0</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,13 +155,30 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Packages</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <a href="./methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method_fixedwindow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fixed sliding windows</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Packages</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_APEstim.html" class="sidebar-item-text sidebar-link">
@@ -195,7 +212,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_EpiFilter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">EpiFilter</span></span></a>
+ <span class="menu-text">EpiFilter</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -213,7 +230,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_EpiInvert.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">EpiInvert</span></span></a>
+ <span class="menu-text">EpiInvert</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -243,13 +260,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_EstimateR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">EstimateR</span></span></a>
+ <span class="menu-text">EstimateR</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_R0.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R0</span></span></a>
+ <span class="menu-text">R0</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -261,24 +278,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_WhiteLabRt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Methods</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./method_fixedwindow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Fixed sliding windows</span></span></a>
+ <span class="menu-text">EpiEstim</span></a>
   </div>
 </li>
       </ul>
@@ -299,18 +299,19 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#brief-description" id="toc-brief-description" class="nav-link active" data-scroll-target="#brief-description"><span class="header-section-number">6.1</span> Brief description</a></li>
-  <li><a href="#link-to-cran" id="toc-link-to-cran" class="nav-link" data-scroll-target="#link-to-cran"><span class="header-section-number">6.2</span> Link to cran</a></li>
-  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">6.3</span> Methods</a></li>
+  <li><a href="#brief-description" id="toc-brief-description" class="nav-link active" data-scroll-target="#brief-description">Brief description</a></li>
+  <li><a href="#assessment-table" id="toc-assessment-table" class="nav-link" data-scroll-target="#assessment-table">Assessment table</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
+  <li><a href="#sample-code" id="toc-sample-code" class="nav-link" data-scroll-target="#sample-code">Sample code</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_R0.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R0</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_R0.html">R0</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-top" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></h1>
+<h1 class="title"><span id="sec-top" class="quarto-section-identifier">R0</span></h1>
 </div>
 
 
@@ -327,18 +328,21 @@ window.Quarto = {
 </header>
 
 
-<section id="brief-description" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="brief-description"><span class="header-section-number">6.1</span> Brief description</h2>
+<section id="brief-description" class="level3">
+<h3 class="anchored" data-anchor-id="brief-description">Brief description</h3>
 </section>
-<section id="link-to-cran" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="link-to-cran"><span class="header-section-number">6.2</span> Link to cran</h2>
+<section id="assessment-table" class="level3">
+<h3 class="anchored" data-anchor-id="assessment-table">Assessment table</h3>
 </section>
-<section id="methods" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="methods"><span class="header-section-number">6.3</span> Methods</h2>
+<section id="methods" class="level3">
+<h3 class="anchored" data-anchor-id="methods">Methods</h3>
 <p>This package contains the following methods:</p>
 <ul>
-<li><a href="./method_fixedwindow.html#sec-top">fixed sliding windows</a></li>
+<li></li>
 </ul>
+</section>
+<section id="sample-code" class="level3">
+<h3 class="anchored" data-anchor-id="sample-code">Sample code</h3>
 
 
 </section>
@@ -764,7 +768,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./package_EstimateR.html" class="pagination-link" aria-label="EstimateR">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">EstimateR</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">EstimateR</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -1,4 +1,4 @@
-# Introduction
+# Introduction {.unnumbered}
 
 There are two primary classes methods of estimating R(t) from case count data that are used in most R software packages. The first class of methods assumes there is a formulaic relationship between infections and reproduction number, a relationship known as the renewal equation.10  These infections are then assumed to result in (some fraction of) the observed cases. A second class of methods involves empirically calculating a quantity that approximates the latent quantity represented by a reproduction number by fitting a curve to the case count time-series and finding the time-varying slope in log space (and then performing other transformations). Empirical calculations are discussed in detail below in our examination of ways in which R(t) is constrained over time.
 

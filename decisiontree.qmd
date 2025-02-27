@@ -1,4 +1,4 @@
-# Decision Tree
+# Decision Tree {.unnumbered}
 
 Here's where we will have the decision tree
 
