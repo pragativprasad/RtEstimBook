@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Methods – Estimating Reproductive Number \(R(t)\)</title>
+<title>Methods for estimating R(t) – Reproductive Number $R(t)$</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./method_fixedwindow.html" rel="next">
+<link href="./methods_introduction.html" rel="next">
 <link href="./decisiontree.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0cf689a55be479424c678364b03aab18.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-bc11f644e0fd71aaf667f8c23dea1f98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./methods.html">Methods</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./methods.html">Methods for estimating R(t)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,7 +125,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Estimating Reproductive Number <span class="math inline">\(R(t)\)</span></a> 
+      <a href="./">Reproductive Number <span class="math inline">\(R(t)\)</span></a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -138,25 +138,19 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./decisiontree.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Decision Tree</span></a>
+ <span class="menu-text">Decision tool</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./methods.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Methods</span></a>
+ <span class="menu-text">Methods for estimating R(t)</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -164,8 +158,32 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./method_fixedwindow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fixed sliding windows</span></a>
+  <a href="./methods_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Relating infections to <span class="math inline">\(R(t)\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods_distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Distributions for key variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods_time.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Constraining <span class="math inline">\(R(t)\)</span> over time</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods_additionaldata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Additional data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods_inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inference frameworks</span></a>
   </div>
 </li>
       </ul>
@@ -278,11 +296,17 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_WhiteLabRt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">EpiEstim</span></a>
+ <span class="menu-text">WhiteLabRt</span></a>
   </div>
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -302,7 +326,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Methods</h1>
+<h1 class="title"><span id="sec-top" class="quarto-section-identifier">Methods for estimating R(t)</span></h1>
 </div>
 
 
@@ -319,7 +343,16 @@ window.Quarto = {
 </header>
 
 
-<p>Here’s where we will talk about the methods</p>
+<p>To aid with interpretation of package outputs, we summarize the currently used inputs, data, methods and assumptions in <span class="math inline">\(R(t)\)</span> estimation across the following categories:</p>
+<p> <a href="./methods_introduction.html#sec-top">⎘</a>: How the relationship between <span class="math inline">\(R(t)\)</span> and infections is defined <br>  <a href="./methods_distributions.html#sec-top">⎘</a>: How <span class="math inline">\(R(t)\)</span> is constrained using distributions for key variables<br>  <a href="./methods_time.html#sec-top">⎘</a>: How <span class="math inline">\(R(t)\)</span> is constrained over time<br>  <a href="./methods_additionaldata.html#sec-top">⎘</a>: Additional data and distributions that are used to constrain <span class="math inline">\(R(t)\)</span><br>  <a href="./methods_inference.html#sec-top">⎘</a>: Inference frameworks that are used to estimate <span class="math inline">\(R(t)\)</span><br></p>
+<p>We limit the methods discussed here to those for estimating historical to present-day <span class="math inline">\(R(t)\)</span> values using <strong>daily case count data</strong>, where a case can be flexibly defined as an individual with a reported positive test (either through healthcare-seeking behavior, routine surveillance, or a hospital admission).</p>
+<p>Other methods not discussed here include:</p>
+<ul>
+<li>inference of <span class="math inline">\(R(t)\)</span> exclusively from alternative data sources (e.g., genetic data,2 behavioral data,3 or viral loads in waste-water4),</li>
+<li>calculations from compartmental, agent-based models, or network.5–7</li>
+</ul>
+<p>We also limit the discussion to packages in the statistical software R,8 which may exclude some packages in other software programs that combine many of the methodological considerations discussed below.9</p>
+<p>The methods discussed below and references to specific R packages are current as of December 1, 2024. We attempt to harmonize the mathematical choices between each package using terminology from each.</p>
 
 
 
@@ -743,13 +776,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./decisiontree.html" class="pagination-link" aria-label="Decision Tree">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Decision Tree</span>
+      <a href="./decisiontree.html" class="pagination-link" aria-label="Decision tool">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Decision tool</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./method_fixedwindow.html" class="pagination-link" aria-label="Fixed sliding windows">
-        <span class="nav-page-text">Fixed sliding windows</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./methods_introduction.html" class="pagination-link" aria-label="Relating infections to $R(t)$">
+        <span class="nav-page-text">Relating infections to <span class="math inline">\(R(t)\)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

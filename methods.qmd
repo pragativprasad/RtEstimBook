@@ -1,3 +1,21 @@
-# Methods
+# Methods for estimating R(t) {#sec-top .unnumbered}
 
-Here's where we will talk about the methods
+To aid with interpretation of package outputs, we summarize the currently used inputs, data, methods and assumptions in $R(t)$ estimation across the following categories:
+
+&emsp;[⎘](methods_introduction.qmd#sec-top): How the relationship between $R(t)$ and infections is defined <br>
+&emsp;[⎘](methods_distributions.qmd#sec-top): How $R(t)$ is constrained using distributions for key variables<br>
+&emsp;[⎘](methods_time.qmd#sec-top): How $R(t)$ is constrained over time<br>
+&emsp;[⎘](methods_additionaldata.qmd#sec-top): Additional data and distributions that are used to constrain $R(t)$<br>
+&emsp;[⎘](methods_inference.qmd#sec-top): Inference frameworks that are used to estimate $R(t)$<br>
+
+We limit the methods discussed here to those for estimating historical to present-day $R(t)$ values using **daily case count data**, where a case can be flexibly defined as an individual with a reported positive test (either through healthcare-seeking behavior, routine surveillance, or a hospital admission). 
+
+Other methods not discussed here include:
+
+- inference of $R(t)$ exclusively from alternative data sources (e.g., genetic data,2 behavioral data,3 or viral loads in waste-water4), 
+- calculations from compartmental, agent-based models, or network.5–7 
+
+We also limit the discussion to packages in the statistical software R,8 which may exclude some packages in other software programs that combine many of the methodological considerations discussed below.9 
+
+The methods discussed below and references to specific R packages are current as of December 1, 2024. We attempt to harmonize the mathematical choices between each package using terminology from each.
+

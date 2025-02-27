@@ -1,8 +1,8 @@
 # EpiNow2 {.unnumbered}
 
-### Brief description
+### Description
 
-### Link to cran
+### Assessment table
 
 ### Methods
 

@@ -11,6 +11,6 @@
 
 This package contains the following methods:
 
-- [fixed sliding windows](method_fixedwindow.qmd#sec-top)
+- [fixed sliding windows](methods_time.qmd#sec-fixedwindow)
 
 ### Sample code

@@ -5,8 +5,6 @@ This page contains:
 - @tbl-packages, R packages with an accompanying peer-reviewed journal manuscript 
 - @tbl-packages2, R packages without a peer-reviewed journal manuscript.
 
-An evaluative comparison of the performance of the methods in these packages would be highly complex, given the following challenges. Some of the most widely-used packages are not accompanied with a peer-reviewed manuscript that describes or evaluates the theory behind modeling choices. Each package contains a subset of the methods below for constraining $R(t)$ in time, but with subtle variations in implementation that are often not well-documented. Many packages have not been recently updated, and even those that have are not maintained on CRAN, instead leaving updates on a development version on GitHub. The combination of differing model frameworks associated with each package make it challenging to easily compare the impacts on estimated $R(t)$, especially when considering additional factors like ease of implementation and computational time.
-
 | Package name  | Peer-reviewed reference | Github link | Last update[^1] | 
 |:--------|:--------|:--------|:--------|
 | [APEestim](package_APEstim.qmd#sec-top) | @Parag2020Using | [🔗](https://github.com/kpzoo/model-selection-for-epidemic-renewal-models)   | Feb 12, 2021 |
@@ -23,7 +21,7 @@ An evaluative comparison of the performance of the methods in these packages wou
 | [EpiInvert](package_EpiInvert.qmd#sec-top) | @Alvarez2021Computing | [🔗](https://github.com/lalvarezmat/EpiInvert) | Dec 31, 2023|
 | [WhiteLabRt](package_WhiteLabRt.qmd#sec-top) | @Li2021Bayesian | [🔗](https://github.com/cmilando/WhiteLabRt) | Aug 16, 2024|
 
-: R(t) estimation packages with a **peer-reviewed** journal reference describing the underlying methods {#tbl-packages}
+: R(t) estimation packages with a peer-reviewed journal reference describing the underlying methods {#tbl-packages}
 
 | Package name  | Developers | Github link | Last update[^1] | 
 |:--------|:--------|:--------|:--------|

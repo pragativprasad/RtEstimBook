@@ -3,7 +3,21 @@
     line-height: 1;
     font-size: 1em;          /* Increase font size */
     color: #333;               /* Dark gray text */
+    font-weight: bold;
     text-align: left;        /* Center align */
     padding: 5px;              /* Add padding */
     border-radius: 5px;        /* Rounded corners */
+}
+
+a.definition {
+    color: #145;               /* Dark gray text */
+    text-decoration-style: dotted;
+    font-weight: 400;
+}
+
+h5 {
+    color: #145;               /* Dark gray text */
+    font-weight: bold;
+    line-height: 1;
+    padding: 1px;              /* Add padding */
 }

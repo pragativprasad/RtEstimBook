@@ -1,0 +1,25 @@
+instantaneous reproduction number: |
+  The effective reproductive number, denoted as $R_e$ or $R(t)$, is the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible.
+  Also called the effective reproduction number. Definition from @Gostic2020Practical
+
+effective reproduction number: |
+  The effective reproductive number, denoted as $R_e$ or $R_t$, is the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible
+
+effect size: |
+  'quantitative reflection of the magnitude of some phenomenon that is used for the purpose of addressing a question of interest' (Kelley & Preacher, 2012)
+
+power: |
+  The probability of rejecting the null hypothesis when it is false, for a specific analysis, effect size, sample size, and criteria for significance.
+
+SESOI: |
+  Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful
+
+  See [Equivalence Testing for Psychological Research](https://doi.org/10.1177/2515245918770963) for a tutorial on methods for choosing an SESOI.
+
+html: |
+  This is a paragraph with a [link](https://url.com).
+
+  And another paragraph before a list:
+
+  * Item 1
+  * List 2

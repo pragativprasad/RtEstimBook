@@ -1,23 +1,55 @@
-# Preface {.unnumbered}
+### Overview {.unnumbered}
 
-Since the onset of the COVID-19 pandemic in early 2020, there has been a proliferation of software packages that make inference about the current state of an infectious disease outbreak based on daily counts of disease cases. An important and widely used parameter is the instantaneous or effective reproductive number, $R(t)$, defined in @Gostic2020Practical as follows:
+Since the onset of the COVID-19 pandemic in early 2020, there has been a proliferation of software tools that make inference about the current state of an infectious disease outbreak. 
 
-> “The effective reproductive number, denoted as $R_e$ or $R_t$, is the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible.”
+A widely used parameter in these tools is the <a class="definition" href="glossary.qmd#effectiveRt">effective reproductive number</a>, $R(t)$, defined in @Gostic2020Practical as: "... the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible." $R(t)$ has the following values and interpretations:
 
-Defined as such, $R(t)$ is an unobserved quantity that captures the aggregated combination of disease characteristics (e.g., infectiousness under controlled conditions, mode of transport) and extrinsic factors (e.g., lockdowns that reduce person-to-person contact). 
+```{=html}
+<table>
+    <!---HEADING --->
+    <tr style="border-top: none; line-height: 1; padding: 2;">
+      <th style="font-weight: 470; width: 10%">R(t)</th>
+      <th style="font-weight: 470; width: 70%">Interpretation at time t</th>
+      <th style="font-weight: 470; width: 20%">Outbreak is ...</th>
+    </tr>
+    <tr style="line-height: 1; padding: 2;">
+      <td>< 1</td>
+      <td style="font-size: 0.9em;">Each infected person infects <em>on average</em> less than one additional person</td>
+      <td>shrinking</td>
+    </tr>
+    <tr style="line-height: 1; padding: 2;">
+      <td>= 1</td>
+      <td style="font-size: 0.9em;">Each infected person infects <em>on average</em> about one additional person</td>
+      <td>stable</td>
+    </tr>
+    <tr style="line-height: 1; padding: 2;">
+      <td>> 1</td>
+      <td style="font-size: 0.9em;">Each infected person infects <em>on average</em> more than one additional person</td>
+       <td>growing</td>
+    </tr>
+</table>
+```
+<div style="height:15px;"><br></div>
 
-An $R(t)$ = 1 indicates a “stable” epidemic at time t, where each infected person infects on average one additional person; $R(t)$ values above or below 1 represent a growing or a shrinking epidemic respectively. 
+Importantly, $R(t)$ *cannot be measured directly*, it can only be estimated from observable variables (like reported case counts). It  represents a combination of dynamic processes, including disease characteristics (e.g., infectiousness under various conditions, mode of transport) and extrinsic factors (e.g., lockdowns that reduce person-to-person contact). 
 
-We focus on $R(t)$ given its relevance for time-sensitive decision-making, and summarize the currently used inputs, data, methods and assumptions in $R(t)$ estimation across the following categories:
+<div style="border: 2px dotted black; border-radius: 15px;padding: 5px; background-color: lightyellow;">
+<h3 style="margin-top: 5px; font-size: 1.25em;">The purpose of this document</h3>
+Each software package that estimates $R(t)$ makes different assumptions, which leads to variations in estimated $R(t)$ _even if the same input data are used_. 
 
-- How the relationship between $R(t)$ and infections is defined 
-- How $R(t)$ is constrained using distributions for key variables
-- How $R(t)$ is constrained over time
-- Additional data and distributions that are used to constrain $R(t)$
-- Inference frameworks that are used to estimate $R(t)$
+Therefore, the purpose of this document is provide guidance about which software packages to choose for different analytical goals: see our [Decision Matrix](decisiontree.qmd).
+</div>
 
-In this paper we provide a theoretical comparison of the current field of methods for estimating $R(t)$, with the goal of informing user decision-making about which package to choose and in interpreting package outputs. 
+### Funding, authors, and acknowledgements
 
-We limit the methods discussed here to those for estimating historical to present-day $R(t)$ values using daily case count data, where a case can be flexibly defined as an individual with a reported positive test (either through healthcare-seeking behavior, routine surveillance, or a hospital admission). Other methods not discussed here include inference of $R(t)$ exclusively from alternative data sources (e.g., genetic data,2 behavioral data,3 or viral loads in waste-water4), or calculations from compartmental, agent-based models, or network.5–7 We also limit the discussion to packages in the statistical software R,8 which may exclude some packages in other software programs that combine many of the methodological considerations discussed below.9 We do not discuss any packages for now-casting or forecasting, though a number of R(t) estimation packages can be used for this purpose. The methods discussed below and references to specific R packages are current as of December 1, 2024. We attempt to harmonize the mathematical choices between each package using terminology from each.
+This work is supported by InsightNet grant #
+
+The lead authors of this document are at Boston University in the School of Public Health:
+
+- Chad Milando, Laura White, and Christine Sangphet
+
+Many additional co-authors contributed to this document including:
+
+- Anne Cori, Brennan Klein, Katelyn Gostic, Alessandra Urbinati, Guillaume St-Onge, George Vega Yon, Kaitlyn Johnson, ...
 
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – Methods for estimating Reproduction Number, R(t)</title>
+<title>References – Estimating Reproductive Number \(R(t)\)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,7 +49,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./method_fixedwindow.html" rel="prev">
+<link href="./package_WhiteLabRt.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -87,6 +87,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -114,7 +143,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Methods for estimating Reproduction Number, R(t)</a> 
+      <a href="./">Estimating Reproductive Number <span class="math inline">\(R(t)\)</span></a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -132,25 +161,102 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./decisiontree.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Decision Tree</span></span></a>
+ <span class="menu-text">Decision Tree</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Packages</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <a href="./methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method_fixedwindow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fixed sliding windows</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Packages</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_APEstim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">APEstim</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_bayEStim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">bayEStim</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_earlyR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">earlyR</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_Epidemia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Epidemia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiEstim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiEstim</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiFilter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiFilter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiFusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiFusion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_epigrowthfit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">epigrowthfit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiInvert.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiInvert</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EpiLPS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EpiLPS</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_EpiNow2.html" class="sidebar-item-text sidebar-link">
@@ -159,8 +265,26 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./package_EpiEstim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">EpiEstim</span></span></a>
+  <a href="./package_epinowcast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">epinowcast</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_ern.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ern</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_EstimateR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EstimateR</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./package_R0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R0</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -169,21 +293,10 @@ div.csl-indent {
  <span class="menu-text">RtEstim</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Methods</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./method_fixedwindow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Fixed sliding windows</span></span></a>
+  <a href="./package_WhiteLabRt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">WhiteLabRt</span></a>
   </div>
 </li>
       </ul>
@@ -225,6 +338,17 @@ div.csl-indent {
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Alvarez2021Computing" class="csl-entry" role="listitem">
+Alvarez L, Colom M, Morel J-D, Morel J-M. 2021. Computing the daily
+reproduction number of <span>COVID</span>-19 by inverting the renewal
+equation using a variational technique. Proceedings of the National
+Academy of Sciences 118:e2105112118; doi:<a href="https://doi.org/10.1073/pnas.2105112118">10.1073/pnas.2105112118</a>.
+</div>
+<div id="ref-Champredon2024ern" class="csl-entry" role="listitem">
+Champredon D, Papst I, Yusuf W. 2024. Ern: An <span>R</span> package to
+estimate the effective reproduction number using clinical and wastewater
+surveillance data. PLOS ONE 19:e0305550; doi:<a href="https://doi.org/10.1371/journal.pone.0305550">10.1371/journal.pone.0305550</a>.
+</div>
 <div id="ref-Cori2013New" class="csl-entry" role="listitem">
 Cori A, Ferguson NM, Fraser C, Cauchemez S. 2013. A <span>New</span>
 <span>Framework</span> and <span>Software</span> to
@@ -233,10 +357,43 @@ Cori A, Ferguson NM, Fraser C, Cauchemez S. 2013. A <span>New</span>
 <span>Epidemics</span>. American Journal of Epidemiology 178:1505–1512;
 doi:<a href="https://doi.org/10.1093/aje/kwt133">10.1093/aje/kwt133</a>.
 </div>
+<div id="ref-Earn2020Acceleration" class="csl-entry" role="listitem">
+Earn DJD, Ma J, Poinar H, Dushoff J, Bolker BM. 2020. Acceleration of
+plague outbreaks in the second pandemic. Proceedings of the National
+Academy of Sciences 117:27703–27711; doi:<a href="https://doi.org/10.1073/pnas.2004904117">10.1073/pnas.2004904117</a>.
+</div>
 <div id="ref-Flaxman2020Estimating" class="csl-entry" role="listitem">
 Flaxman S, Mishra S, Gandy A, Unwin HJT, Mellan TA, Coupland H, et al.
 2020. Estimating the effects of non-pharmaceutical interventions on
 <span>COVID</span>-19 in <span>Europe</span>. Nature 584:257–261; doi:<a href="https://doi.org/10.1038/s41586-020-2405-7">10.1038/s41586-020-2405-7</a>.
+</div>
+<div id="ref-Gostic2020Practical" class="csl-entry" role="listitem">
+Gostic KM, McGough L, Baskerville EB, Abbott S, Joshi K, Tedijanto C, et
+al. 2020. Practical considerations for measuring the effective
+reproductive number, <span>Rt</span>. PLOS Computational Biology
+16:e1008409; doi:<a href="https://doi.org/10.1371/journal.pcbi.1008409">10.1371/journal.pcbi.1008409</a>.
+</div>
+<div id="ref-Gressani2022EpiLPS" class="csl-entry" role="listitem">
+Gressani O, Wallinga J, Althaus CL, Hens N, Faes C. 2022. EpiLPS: A fast
+and flexible <span>Bayesian</span> tool for estimation of the
+time-varying reproduction number. PLOS Computational Biology
+18:e1010618; doi:<a href="https://doi.org/10.1371/journal.pcbi.1010618">10.1371/journal.pcbi.1010618</a>.
+</div>
+<div id="ref-Judge2024EpiFusion" class="csl-entry" role="listitem">
+Judge C, Vaughan T, Russell T, Abbott S, Plessis L, Stadler T, et al.
+2024. EpiFusion: Joint inference of the effective reproduction number by
+integrating phylodynamic and epidemiological modelling with particle
+filtering. PLOS Computational Biology 20:e1012528; doi:<a href="https://doi.org/10.1371/journal.pcbi.1012528">10.1371/journal.pcbi.1012528</a>.
+</div>
+<div id="ref-Li2021Bayesian" class="csl-entry" role="listitem">
+Li T, White LF. 2021. Bayesian back-calculation and nowcasting for line
+list data during the <span>COVID</span>-19 pandemic. PLOS Computational
+Biology 17:e1009210; doi:<a href="https://doi.org/10.1371/journal.pcbi.1009210">10.1371/journal.pcbi.1009210</a>.
+</div>
+<div id="ref-Liu2024rtestim" class="csl-entry" role="listitem">
+Liu J, Cai Z, Gustafson P, McDonald DJ. 2024. Rtestim: Time-varying
+reproduction number estimation with trend filtering. PLOS Computational
+Biology 20:e1012324; doi:<a href="https://doi.org/10.1371/journal.pcbi.1012324">10.1371/journal.pcbi.1012324</a>.
 </div>
 <div id="ref-Nash2023Estimating" class="csl-entry" role="listitem">
 Nash RK, Bhatt S, Cori A, Nouvellet P. 2023. Estimating the epidemic
@@ -244,10 +401,25 @@ reproduction number from temporally aggregated incidence data: A
 statistical modelling approach and software tool. PLOS Computational
 Biology 19:e1011439; doi:<a href="https://doi.org/10.1371/journal.pcbi.1011439">10.1371/journal.pcbi.1011439</a>.
 </div>
+<div id="ref-obadia2012r0" class="csl-entry" role="listitem">
+Obadia T, Haneef R, Boëlle P-Y. 2012. The R0 package: A toolbox to
+estimate reproduction numbers for epidemic outbreaks. BMC medical
+informatics and decision making 12: 1–9.
+</div>
+<div id="ref-Parag2021Improved" class="csl-entry" role="listitem">
+Parag KV. 2021. Improved estimation of time-varying reproduction numbers
+at low case incidence and between epidemic waves. PLOS Computational
+Biology 17:e1009347; doi:<a href="https://doi.org/10.1371/journal.pcbi.1009347">10.1371/journal.pcbi.1009347</a>.
+</div>
 <div id="ref-Parag2020Using" class="csl-entry" role="listitem">
 Parag KV, Donnelly CA. 2020. Using information theory to optimise
 epidemic models for real-time prediction and estimation. PLoS
 Computational Biology 16:e1007990; doi:<a href="https://doi.org/10.1371/journal.pcbi.1007990">10.1371/journal.pcbi.1007990</a>.
+</div>
+<div id="ref-Scire2023estimateR" class="csl-entry" role="listitem">
+Scire J, Huisman JS, Grosu A, Angst DC, Lison A, Li J, et al. 2023.
+estimateR: An <span>R</span> package to estimate and monitor the
+effective reproductive number. BMC Bioinformatics 24:310; doi:<a href="https://doi.org/10.1186/s12859-023-05428-4">10.1186/s12859-023-05428-4</a>.
 </div>
 </div>
 
@@ -673,8 +845,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./method_fixedwindow.html" class="pagination-link" aria-label="Fixed sliding windows">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Fixed sliding windows</span></span>
+      <a href="./package_WhiteLabRt.html" class="pagination-link" aria-label="WhiteLabRt">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">WhiteLabRt</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

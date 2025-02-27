@@ -1,4 +1,4 @@
-# EpiEstim {#sec-top .unnumbered}
+# WhiteLabRt {#sec-top .unnumbered}
 
 
 ### Brief description
