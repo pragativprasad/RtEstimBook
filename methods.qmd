@@ -1,4 +1,4 @@
-# Methods for estimating R(t) {#sec-top .unnumbered}
+# Estimating R(t) {#sec-top .unnumbered}
 
 To aid with interpretation of package outputs, we summarize the currently used inputs, data, methods and assumptions in $R(t)$ estimation across the following categories:
 
