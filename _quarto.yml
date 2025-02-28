@@ -17,6 +17,7 @@ book:
         - methods_additionaldata.qmd
         - methods_inference.qmd
         - simulation_tool.qmd
+        - methods_research.qmd
     - part: packages.qmd
       chapters:
       - package_APEstim.qmd
