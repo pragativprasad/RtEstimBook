@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -192,6 +211,12 @@ window.Quarto = {
  <span class="menu-text">Simulation tool</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open research questions</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -360,6 +385,7 @@ window.Quarto = {
 
 <section id="brief-description" class="level3">
 <h3 class="anchored" data-anchor-id="brief-description">Brief description</h3>
+<div class="line-block"><a href="./package_R0.html#sec-top">R0</a> | <span class="citation" data-cites="obadia2012r0">Obadia et al. (<a href="references.html#ref-obadia2012r0" role="doc-biblioref">2012</a>)</span> | <a href="https://github.com/tobadia/R0">🔗</a> | Sep 20, 2023|</div>
 </section>
 <section id="assessment-table" class="level3">
 <h3 class="anchored" data-anchor-id="assessment-table">Assessment table</h3>
@@ -375,6 +401,11 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="sample-code">Sample code</h3>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-obadia2012r0" class="csl-entry" role="listitem">
+Obadia T, Haneef R, Boëlle P-Y. 2012. The R0 package: A toolbox to estimate reproduction numbers for epidemic outbreaks. BMC medical informatics and decision making 12: 1–9.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

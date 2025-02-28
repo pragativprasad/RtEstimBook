@@ -12,10 +12,9 @@ Forecasting is also supported for the time-varying reproduction number, infectio
 <small style="font-weight: bold;margin-bottom: 0;">Important links:</small>
 
 | | | | |
-|:-------------|:--------|:-------------|:--------|
-|<small>REF: </small> [Wellcome report](https://wellcomeopenresearch.org/articles/5-112) <br><small>(Peer reviewed: ❌)</small> | [Github](https://github.com/epiforecasts/EpiNow2) <small><br>(Updated: Mar 2025)</small>| [CRAN](https://cran.r-project.org/web/packages/EpiNow2/index.html) <small><br>(Updated: Feb 2025)</small>|  [Docs](https://epiforecasts.io/EpiNow2/) |
-
-
+|:---|:--|:----|:----|
+|<small>REF: </small> [Wellcome report](https://wellcomeopenresearch.org/articles/5-112) <br><small>(Peer reviewed: ❌)</small> | [Docs](https://epiforecasts.io/EpiNow2/) | [Github](https://github.com/epiforecasts/EpiNow2) <small><br>(Updated: Mar 2025)</small>| [CRAN](https://cran.r-project.org/web/packages/EpiNow2/index.html) <small><br>(Updated: Feb 2025)</small>|  
+: {tbl-colwidths="[30,10,30,30]"}
 
 
 ### Methods

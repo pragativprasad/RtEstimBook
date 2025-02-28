@@ -10,44 +10,23 @@
     ]
   },
   {
-    "objectID": "packages.html",
-    "href": "packages.html",
-    "title": "Packages",
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Reproductive Number \\(R(t)\\)",
     "section": "",
-    "text": "Table 1. R(t) estimation R packages with a peer-reviewed journal reference describing the underlying methods \n  \n  \n    APEestim\n    Epidemia\n    EpiEstim\n    EpiFilter\n    EpiFusion\n    epigrowthfit\n    EpiLPS\n    ern\n    EstimateR\n    R0\n    RtEstim\n    EpiInvert\n    WhiteLabRt\n  \n  \n\n\n\n   Table 2. R(t) estimation R packages without a peer-reviewed journal reference describing the underlying methods \n  \n  \n    bayEStim\n    earlyR\n    EpiNow2\n    epinowcast",
+    "text": "R(t)\nInterpretation at time t\nOutbreak is ...\n\n\n&lt; 1\nEach infected person infects on average less than one additional person\nshrinking\n\n\n= 1\nEach infected person infects on average about one additional person\nstable\n\n\n&gt; 1\nEach infected person infects on average more than one additional person\ngrowing\n\n\n\n\n\n\n\n\n\nThe purpose of this document\n\nEach software package that estimates \\(R(t)\\) makes different assumptions, which leads to variations in estimated \\(R(t)\\) even if the same input data are used.\nTherefore, the purpose of this document is provide guidance about which software packages to choose for different analytical goals: see our Decision Matrix.",
     "crumbs": [
-      "Packages"
+      "Overview"
     ]
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Alvarez L, Colom M, Morel J-D, Morel J-M. 2021. Computing the daily\nreproduction number of COVID-19 by inverting the renewal\nequation using a variational technique. Proceedings of the National\nAcademy of Sciences 118:e2105112118; doi:10.1073/pnas.2105112118.\n\n\nChampredon D, Papst I, Yusuf W. 2024. Ern: An R package to\nestimate the effective reproduction number using clinical and wastewater\nsurveillance data. PLOS ONE 19:e0305550; doi:10.1371/journal.pone.0305550.\n\n\nCori A, Ferguson NM, Fraser C, Cauchemez S. 2013. A New\nFramework and Software to\nEstimate Time-Varying\nReproduction Numbers During\nEpidemics. American Journal of Epidemiology 178:1505–1512;\ndoi:10.1093/aje/kwt133.\n\n\nEarn DJD, Ma J, Poinar H, Dushoff J, Bolker BM. 2020. Acceleration of\nplague outbreaks in the second pandemic. Proceedings of the National\nAcademy of Sciences 117:27703–27711; doi:10.1073/pnas.2004904117.\n\n\nFlaxman S, Mishra S, Gandy A, Unwin HJT, Mellan TA, Coupland H, et al.\n2020. Estimating the effects of non-pharmaceutical interventions on\nCOVID-19 in Europe. Nature 584:257–261; doi:10.1038/s41586-020-2405-7.\n\n\nGostic KM, McGough L, Baskerville EB, Abbott S, Joshi K, Tedijanto C, et\nal. 2020. Practical considerations for measuring the effective\nreproductive number, Rt. PLOS Computational Biology\n16:e1008409; doi:10.1371/journal.pcbi.1008409.\n\n\nGressani O, Wallinga J, Althaus CL, Hens N, Faes C. 2022. EpiLPS: A fast\nand flexible Bayesian tool for estimation of the\ntime-varying reproduction number. PLOS Computational Biology\n18:e1010618; doi:10.1371/journal.pcbi.1010618.\n\n\nJudge C, Vaughan T, Russell T, Abbott S, Plessis L, Stadler T, et al.\n2024. EpiFusion: Joint inference of the effective reproduction number by\nintegrating phylodynamic and epidemiological modelling with particle\nfiltering. PLOS Computational Biology 20:e1012528; doi:10.1371/journal.pcbi.1012528.\n\n\nLi T, White LF. 2021. Bayesian back-calculation and nowcasting for line\nlist data during the COVID-19 pandemic. PLOS Computational\nBiology 17:e1009210; doi:10.1371/journal.pcbi.1009210.\n\n\nLiu J, Cai Z, Gustafson P, McDonald DJ. 2024. Rtestim: Time-varying\nreproduction number estimation with trend filtering. PLOS Computational\nBiology 20:e1012324; doi:10.1371/journal.pcbi.1012324.\n\n\nNash RK, Bhatt S, Cori A, Nouvellet P. 2023. Estimating the epidemic\nreproduction number from temporally aggregated incidence data: A\nstatistical modelling approach and software tool. PLOS Computational\nBiology 19:e1011439; doi:10.1371/journal.pcbi.1011439.\n\n\nObadia T, Haneef R, Boëlle P-Y. 2012. The R0 package: A toolbox to\nestimate reproduction numbers for epidemic outbreaks. BMC medical\ninformatics and decision making 12: 1–9.\n\n\nParag KV. 2021. Improved estimation of time-varying reproduction numbers\nat low case incidence and between epidemic waves. PLOS Computational\nBiology 17:e1009347; doi:10.1371/journal.pcbi.1009347.\n\n\nParag KV, Donnelly CA. 2020. Using information theory to optimise\nepidemic models for real-time prediction and estimation. PLoS\nComputational Biology 16:e1007990; doi:10.1371/journal.pcbi.1007990.\n\n\nScire J, Huisman JS, Grosu A, Angst DC, Lison A, Li J, et al. 2023.\nestimateR: An R package to estimate and monitor the\neffective reproductive number. BMC Bioinformatics 24:310; doi:10.1186/s12859-023-05428-4.",
+    "objectID": "index.html#funding-authors-and-acknowledgements",
+    "href": "index.html#funding-authors-and-acknowledgements",
+    "title": "Reproductive Number \\(R(t)\\)",
+    "section": "Funding, authors, and acknowledgements",
+    "text": "Funding, authors, and acknowledgements\nThis work is supported by InsightNet grant #\nThe lead authors of this document are at Boston University in the School of Public Health:\n\nChad Milando, Laura White, and Christine Sangphet\n\nMany additional co-authors contributed to this document including:\n\nAnne Cori, Brennan Klein, Katelyn Gostic, Alessandra Urbinati, Guillaume St-Onge, George Vega Yon, Kaitlyn Johnson, …\n\n\n\n\n\nGostic KM, McGough L, Baskerville EB, Abbott S, Joshi K, Tedijanto C, et al. 2020. Practical considerations for measuring the effective reproductive number, Rt. PLOS Computational Biology 16:e1008409; doi:10.1371/journal.pcbi.1008409.",
     "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "packages.html#footnotes",
-    "href": "packages.html#footnotes",
-    "title": "Packages",
-    "section": "",
-    "text": "As of Dec 13, 2024↩︎",
-    "crumbs": [
-      "Packages"
-    ]
-  },
-  {
-    "objectID": "package_EpiEstim.html",
-    "href": "package_EpiEstim.html",
-    "title": "EpiEstim",
-    "section": "",
-    "text": "EpiEstim | Cori et al. (2013), Nash et al. (2023) | 🔗 | Aug 30, 2024 |\n\nBrief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\nfixed sliding windows\n\n\n\nSample code\n\n\n\n\nCori A, Ferguson NM, Fraser C, Cauchemez S. 2013. A New Framework and Software to Estimate Time-Varying Reproduction Numbers During Epidemics. American Journal of Epidemiology 178:1505–1512; doi:10.1093/aje/kwt133.\n\n\nNash RK, Bhatt S, Cori A, Nouvellet P. 2023. Estimating the epidemic reproduction number from temporally aggregated incidence data: A statistical modelling approach and software tool. PLOS Computational Biology 19:e1011439; doi:10.1371/journal.pcbi.1011439.",
-    "crumbs": [
-      "Packages",
-      "EpiEstim"
+      "Overview"
     ]
   },
   {
@@ -61,468 +40,6 @@
     ]
   },
   {
-    "objectID": "package_EpiEstim.html#link-to-cran",
-    "href": "package_EpiEstim.html#link-to-cran",
-    "title": "5  EpiEstim",
-    "section": "5.2 Link to cran",
-    "text": "5.2 Link to cran",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>EpiEstim</span>"
-    ]
-  },
-  {
-    "objectID": "package_EpiEstim.html#methods",
-    "href": "package_EpiEstim.html#methods",
-    "title": "5  EpiEstim",
-    "section": "5.3 Methods",
-    "text": "5.3 Methods\nThis package contains the following methods:\n\nfixed sliding windows",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>EpiEstim</span>"
-    ]
-  },
-  {
-    "objectID": "method_fixedwindow.html",
-    "href": "method_fixedwindow.html",
-    "title": "Fixed sliding windows",
-    "section": "",
-    "text": "A straightforward method of imposing structure on R(t) over time involves constraining R(t) to be drawn from the same distribution within moving time subsets, called sliding windows. We add the prefix of “fixed-size” to distinguish from methods that may adapt the size of the sliding window over time. &gt;&gt; make a destinction between deriving it and doing it by Bayesian.\nConsider the scenario where I(t) are drawn from a series of Poisson distributions and where R(t) are drawn from a series of Gamma distributions. Using a sliding window size, τ, of 5 days, R(t) on days 2 to 6 are assumed to be drawn from the Gamma distribution with parameters a_1 and b_1, R(t) days 3 to 7 are drawn from a Gamma distribution with parameters a_2 and b_2, and so on. In the above scenario, days 3 through 6 are in both windows and thus will be values that could be reasonably drawn from Gamma distributions with either a_1 and b_1 or a_2 and b_2. Using an assumption of Gamma distributions for the prior distribution of ω and R(t), Cori et. al. (2013)18 analytically derived a posterior distribution R(t) using fixed-size sliding windows, which has the following directly calculated (rather than inferred) mean and coefficient of variation of R(t):\nE[R(t)]=[a+ ∑_(i=max⁡(1, t-τ))^t▒I(i) ]/[1/b+∑_(i=max⁡(1, t-τ))^t▒Λ(i) ] (Eq.6) C.V.[R(t)]=[a+ ∑_(i=max⁡(1, t-τ))^t▒I(i) ]^(-1) (Eq.7)\nThus, sliding windows with larger τ improve the stability of the estimate of R(t) over smaller τ because the coefficient of variation of R(t) decreases as number of infections increases (see Web Appendix 1 of Cori et. al., 2013).18 Sliding windows are a key feature of EpiEstim.21 There are limitations of this derived sliding window approach, articulated well in Gostic et. al., (2020)1 and summarized here. There is no posterior distribution for the expected value of incidence In the fixed size sliding window approach, τ must be explicitly defined prior to inference. Shorter τ will lead to quicker response but more variable estimates of R(t), which increases the risk of over-fitting. At the extreme, if the τ is set to 1 day, the resulting R(t) will recover exactly the infection data. In addition, there is debate in the literature about where in time the estimate of R(t) for each window should go: Gostic et. al., (2020)1 recommends using the midpoint of each sliding window rather than time t. The choice of both τ and the location of the estimate of R(t) within each window results in gaps in predictions for R(t), barring other modifications: at the end of the modeling period to account for reporting delays or time between the midpoint of τ and the end of τ, and at the beginning of the time period to allow for enough cases to materialize. Web Appendix 4 of Cori. et. al (2013) gives the following recommendation for when to calculate R(t): “Overall, we suggest starting estimating once those three criteria are fulfilled: at least after , at least after one mean serial interval, and when at least 12 cases have been observed since the beginning of the epidemic.” The default recommendation for τ is one week (7 days);18 alternatively the package APEestim integrates with EpiEstim to propose a non-default choice of τ that minimizes one-step-ahead prediction errors.22",
-    "crumbs": [
-      "Methods",
-      "Fixed sliding windows"
-    ]
-  },
-  {
-    "objectID": "package_APEstim.html",
-    "href": "package_APEstim.html",
-    "title": "APEstim",
-    "section": "",
-    "text": "| Parag and Donnelly (2020) | 🔗 | Feb 12, 2021 |\n\nBrief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nParag KV, Donnelly CA. 2020. Using information theory to optimise epidemic models for real-time prediction and estimation. PLoS Computational Biology 16:e1007990; doi:10.1371/journal.pcbi.1007990.",
-    "crumbs": [
-      "Packages",
-      "APEstim"
-    ]
-  },
-  {
-    "objectID": "package_APEstim.html#link-to-cran",
-    "href": "package_APEstim.html#link-to-cran",
-    "title": "3  APEstim",
-    "section": "3.2 Link to cran",
-    "text": "3.2 Link to cran",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>APEstim</span>"
-    ]
-  },
-  {
-    "objectID": "package_APEstim.html#methods",
-    "href": "package_APEstim.html#methods",
-    "title": "3  APEstim",
-    "section": "3.3 Methods",
-    "text": "3.3 Methods\nThis package contains the following methods:\n\nfixed sliding windows",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>APEstim</span>"
-    ]
-  },
-  {
-    "objectID": "package_Epidemia.html",
-    "href": "package_Epidemia.html",
-    "title": "Epidemia",
-    "section": "",
-    "text": "| Flaxman et al. (2020) | 🔗 | Jun 23, 2021 |\n\nBrief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nFlaxman S, Mishra S, Gandy A, Unwin HJT, Mellan TA, Coupland H, et al. 2020. Estimating the effects of non-pharmaceutical interventions on COVID-19 in Europe. Nature 584:257–261; doi:10.1038/s41586-020-2405-7.",
-    "crumbs": [
-      "Packages",
-      "Epidemia"
-    ]
-  },
-  {
-    "objectID": "package_Epidemia.html#link-to-cran",
-    "href": "package_Epidemia.html#link-to-cran",
-    "title": "4  Epidemia",
-    "section": "4.2 Link to cran",
-    "text": "4.2 Link to cran",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Epidemia</span>"
-    ]
-  },
-  {
-    "objectID": "package_Epidemia.html#methods",
-    "href": "package_Epidemia.html#methods",
-    "title": "4  Epidemia",
-    "section": "4.3 Methods",
-    "text": "4.3 Methods\nThis package contains the following methods:\n\nfixed sliding windows",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Epidemia</span>"
-    ]
-  },
-  {
-    "objectID": "package_EpiLPS.html",
-    "href": "package_EpiLPS.html",
-    "title": "EpiLPS",
-    "section": "",
-    "text": "Brief description\nEpiLPS | Gressani et al. (2022) | 🔗 | Oct 24, 2024|\n\n\nLink to cran\n\n\nMethods\nThis package contains the following methods:\n\nMethod 1\n\n\n\nStarter code\n\n\n\n\nGressani O, Wallinga J, Althaus CL, Hens N, Faes C. 2022. EpiLPS: A fast and flexible Bayesian tool for estimation of the time-varying reproduction number. PLOS Computational Biology 18:e1010618; doi:10.1371/journal.pcbi.1010618.",
-    "crumbs": [
-      "Packages",
-      "EpiLPS"
-    ]
-  },
-  {
-    "objectID": "package_EpiLPS.html#link-to-cran",
-    "href": "package_EpiLPS.html#link-to-cran",
-    "title": "9  EpiLPS",
-    "section": "9.2 Link to cran",
-    "text": "9.2 Link to cran",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>EpiLPS</span>"
-    ]
-  },
-  {
-    "objectID": "package_EpiLPS.html#methods",
-    "href": "package_EpiLPS.html#methods",
-    "title": "9  EpiLPS",
-    "section": "9.3 Methods",
-    "text": "9.3 Methods\nThis package contains the following methods:",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>EpiLPS</span>"
-    ]
-  },
-  {
-    "objectID": "package_EpiFilter.html",
-    "href": "package_EpiFilter.html",
-    "title": "EpiFilter",
-    "section": "",
-    "text": "Brief description\nEpiFilter | Parag (2021) | 🔗 | Dec 9, 2023 |\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nParag KV. 2021. Improved estimation of time-varying reproduction numbers at low case incidence and between epidemic waves. PLOS Computational Biology 17:e1009347; doi:10.1371/journal.pcbi.1009347.",
-    "crumbs": [
-      "Packages",
-      "EpiFilter"
-    ]
-  },
-  {
-    "objectID": "package_EpiFilter.html#link-to-cran",
-    "href": "package_EpiFilter.html#link-to-cran",
-    "title": "3  EpiFilter",
-    "section": "3.2 Link to cran",
-    "text": "3.2 Link to cran",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>EpiFilter</span>"
-    ]
-  },
-  {
-    "objectID": "package_EpiFilter.html#methods",
-    "href": "package_EpiFilter.html#methods",
-    "title": "3  EpiFilter",
-    "section": "3.3 Methods",
-    "text": "3.3 Methods\nThis package contains the following methods:\n\nfixed sliding windows",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>EpiFilter</span>"
-    ]
-  },
-  {
-    "objectID": "package_EpiFusion.html",
-    "href": "package_EpiFusion.html",
-    "title": "EpiFusion",
-    "section": "",
-    "text": "Brief description\nEpiFusion | Judge et al. (2024) | 🔗 | Nov 30, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nJudge C, Vaughan T, Russell T, Abbott S, Plessis L, Stadler T, et al. 2024. EpiFusion: Joint inference of the effective reproduction number by integrating phylodynamic and epidemiological modelling with particle filtering. PLOS Computational Biology 20:e1012528; doi:10.1371/journal.pcbi.1012528.",
-    "crumbs": [
-      "Packages",
-      "EpiFusion"
-    ]
-  },
-  {
-    "objectID": "package_EpiFusion.html#link-to-cran",
-    "href": "package_EpiFusion.html#link-to-cran",
-    "title": "7  EpiFusion",
-    "section": "7.2 Link to cran",
-    "text": "7.2 Link to cran",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>EpiFusion</span>"
-    ]
-  },
-  {
-    "objectID": "package_EpiFusion.html#methods",
-    "href": "package_EpiFusion.html#methods",
-    "title": "7  EpiFusion",
-    "section": "7.3 Methods",
-    "text": "7.3 Methods\nThis package contains the following methods:\n\nfixed sliding windows",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>EpiFusion</span>"
-    ]
-  },
-  {
-    "objectID": "package_epigrowthfit.html",
-    "href": "package_epigrowthfit.html",
-    "title": "epigrowthfit",
-    "section": "",
-    "text": "Brief description\nepigrowthfit | Earn et al. (2020) | 🔗 | Aug 12, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nEarn DJD, Ma J, Poinar H, Dushoff J, Bolker BM. 2020. Acceleration of plague outbreaks in the second pandemic. Proceedings of the National Academy of Sciences 117:27703–27711; doi:10.1073/pnas.2004904117.",
-    "crumbs": [
-      "Packages",
-      "epigrowthfit"
-    ]
-  },
-  {
-    "objectID": "package_epigrowthfit.html#link-to-cran",
-    "href": "package_epigrowthfit.html#link-to-cran",
-    "title": "8  epigrowthfit",
-    "section": "8.2 Link to cran",
-    "text": "8.2 Link to cran",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>epigrowthfit</span>"
-    ]
-  },
-  {
-    "objectID": "package_epigrowthfit.html#methods",
-    "href": "package_epigrowthfit.html#methods",
-    "title": "8  epigrowthfit",
-    "section": "8.3 Methods",
-    "text": "8.3 Methods\nThis package contains the following methods:\n\nfixed sliding windows",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>epigrowthfit</span>"
-    ]
-  },
-  {
-    "objectID": "package_ern.html",
-    "href": "package_ern.html",
-    "title": "ern",
-    "section": "",
-    "text": "Brief description\nern | Champredon et al. (2024) | 🔗 | May 22, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nChampredon D, Papst I, Yusuf W. 2024. Ern: An R package to estimate the effective reproduction number using clinical and wastewater surveillance data. PLOS ONE 19:e0305550; doi:10.1371/journal.pone.0305550.",
-    "crumbs": [
-      "Packages",
-      "ern"
-    ]
-  },
-  {
-    "objectID": "package_ern.html#link-to-cran",
-    "href": "package_ern.html#link-to-cran",
-    "title": "[ern]{#sec-top, .quarto-section-identifier}",
-    "section": "Link to cran",
-    "text": "Link to cran",
-    "crumbs": [
-      "Packages",
-      "ern"
-    ]
-  },
-  {
-    "objectID": "package_ern.html#methods",
-    "href": "package_ern.html#methods",
-    "title": "[ern]{#sec-top, .quarto-section-identifier}",
-    "section": "Methods",
-    "text": "Methods\nThis package contains the following methods:",
-    "crumbs": [
-      "Packages",
-      "ern"
-    ]
-  },
-  {
-    "objectID": "package_EstimateR.html",
-    "href": "package_EstimateR.html",
-    "title": "EstimateR",
-    "section": "",
-    "text": "Brief description\nEstimateR | Scire et al. (2023) | 🔗 | Sep 10, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nScire J, Huisman JS, Grosu A, Angst DC, Lison A, Li J, et al. 2023. estimateR: An R package to estimate and monitor the effective reproductive number. BMC Bioinformatics 24:310; doi:10.1186/s12859-023-05428-4.",
-    "crumbs": [
-      "Packages",
-      "EstimateR"
-    ]
-  },
-  {
-    "objectID": "package_EstimateR.html#link-to-cran",
-    "href": "package_EstimateR.html#link-to-cran",
-    "title": "5  EpiEstim",
-    "section": "5.2 Link to cran",
-    "text": "5.2 Link to cran",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>EstimateR</span>"
-    ]
-  },
-  {
-    "objectID": "package_EstimateR.html#methods",
-    "href": "package_EstimateR.html#methods",
-    "title": "5  EpiEstim",
-    "section": "5.3 Methods",
-    "text": "5.3 Methods\nThis package contains the following methods:\n\nfixed sliding windows",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>EstimateR</span>"
-    ]
-  },
-  {
-    "objectID": "package_R0.html",
-    "href": "package_R0.html",
-    "title": "R0",
-    "section": "",
-    "text": "Brief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
-    "crumbs": [
-      "Packages",
-      "R0"
-    ]
-  },
-  {
-    "objectID": "package_R0.html#link-to-cran",
-    "href": "package_R0.html#link-to-cran",
-    "title": "6  EpiEstim",
-    "section": "6.2 Link to cran",
-    "text": "6.2 Link to cran",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>R0</span>"
-    ]
-  },
-  {
-    "objectID": "package_R0.html#methods",
-    "href": "package_R0.html#methods",
-    "title": "6  EpiEstim",
-    "section": "6.3 Methods",
-    "text": "6.3 Methods\nThis package contains the following methods:\n\nfixed sliding windows",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>R0</span>"
-    ]
-  },
-  {
-    "objectID": "package_EpiInvert.html",
-    "href": "package_EpiInvert.html",
-    "title": "EpiInvert",
-    "section": "",
-    "text": "Brief description\nEpiInvert | Alvarez et al. (2021) | 🔗 | Dec 31, 2023|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nAlvarez L, Colom M, Morel J-D, Morel J-M. 2021. Computing the daily reproduction number of COVID-19 by inverting the renewal equation using a variational technique. Proceedings of the National Academy of Sciences 118:e2105112118; doi:10.1073/pnas.2105112118.",
-    "crumbs": [
-      "Packages",
-      "EpiInvert"
-    ]
-  },
-  {
-    "objectID": "package_EpiInvert.html#link-to-cran",
-    "href": "package_EpiInvert.html#link-to-cran",
-    "title": "4  EpiEstim",
-    "section": "4.2 Link to cran",
-    "text": "4.2 Link to cran",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>EpiInvert</span>"
-    ]
-  },
-  {
-    "objectID": "package_EpiInvert.html#methods",
-    "href": "package_EpiInvert.html#methods",
-    "title": "4  EpiEstim",
-    "section": "4.3 Methods",
-    "text": "4.3 Methods\nThis package contains the following methods:\n\nfixed sliding windows",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>EpiInvert</span>"
-    ]
-  },
-  {
-    "objectID": "package_WhiteLabRt.html",
-    "href": "package_WhiteLabRt.html",
-    "title": "WhiteLabRt",
-    "section": "",
-    "text": "Brief description\nWhiteLabRt | Li and White (2021) | 🔗 | Aug 16, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nLi T, White LF. 2021. Bayesian back-calculation and nowcasting for line list data during the COVID-19 pandemic. PLOS Computational Biology 17:e1009210; doi:10.1371/journal.pcbi.1009210.",
-    "crumbs": [
-      "Packages",
-      "WhiteLabRt"
-    ]
-  },
-  {
-    "objectID": "package_WhiteLabRt.html#link-to-cran",
-    "href": "package_WhiteLabRt.html#link-to-cran",
-    "title": "7  EpiEstim",
-    "section": "7.2 Link to cran",
-    "text": "7.2 Link to cran",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>EpiEstim</span>"
-    ]
-  },
-  {
-    "objectID": "package_WhiteLabRt.html#methods",
-    "href": "package_WhiteLabRt.html#methods",
-    "title": "7  EpiEstim",
-    "section": "7.3 Methods",
-    "text": "7.3 Methods\nThis package contains the following methods:\n\nfixed sliding windows",
-    "crumbs": [
-      "Packages",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>EpiEstim</span>"
-    ]
-  },
-  {
-    "objectID": "package_EpiNow2.html",
-    "href": "package_EpiNow2.html",
-    "title": "EpiNow2",
-    "section": "",
-    "text": "Description\n\nCopied from the developer site\n\nEpiNow2 estimates the time-varying reproduction number on cases by date of infection (using a similar approach to that implemented in EpiEstim). True infections, treated as latent and unobserved, are estimated and then mapped to observed data (for example cases by date of report) via one or more delay distributions (in the examples in the package documentation these are an incubation period and a reporting delay) and a reporting model that can include weekly periodicity.\nUncertainty is propagated from all inputs into the final parameter estimates, helping to mitigate spurious findings. This is handled internally. The time-varying reproduction estimates and the uncertain generation time also give time-varying estimates of the rate of growth.\nForecasting is also supported for the time-varying reproduction number, infections, and reported cases using the same generative process approach as used for estimation.\nImportant links:\n\n\n\nREF:  Wellcome report (Peer reviewed: ❌)\nGithub (Updated: Mar 2025)\nCRAN (Updated: Feb 2025)\nDocs\n\n\n\n\n\nMethods\nThis package contains the following methods:\n\nGaussian Process\n\n\n\nAssessment\n\n\n\n\n\n\n\n\nCategory\nAssessment\nRationale\n\n\nUsage\n\n\n\n\nEase of installation\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nEase of use\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nEase of extracting outputs\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nRuntime length\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nFeatures\n\n\n\n\nAbility to nowcast/forcast\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nIncorporates delay distributions\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nEstimates expected cases and R(t)\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nCommunicates uncertainty\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nValidation\n\n\n\n\nPeer reviewed validation\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nClarity of documentation\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nIntrepetability of outputs\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\n\n\n\nStarter code\n\ncopy in from SummRT\nall things should use the same datasets\ncould make these shiny apps if we wanted",
-    "crumbs": [
-      "Packages",
-      "EpiNow2"
-    ]
-  },
-  {
-    "objectID": "introduction.html",
-    "href": "introduction.html",
-    "title": "Introduction",
-    "section": "",
-    "text": "Renewal equation estimates of R(t)\nThere are two primary classes methods of estimating R(t) from case count data that are used in most R software packages. The first class of methods assumes there is a formulaic relationship between infections and reproduction number, a relationship known as the renewal equation.10 These infections are then assumed to result in (some fraction of) the observed cases. A second class of methods involves empirically calculating a quantity that approximates the latent quantity represented by a reproduction number by fitting a curve to the case count time-series and finding the time-varying slope in log space (and then performing other transformations). Empirical calculations are discussed in detail below in our examination of ways in which R(t) is constrained over time.\nThe renewal equation relates R(t) and infections on day t, I(t), using a third parameter known as the generation interval. The generation interval, ω, is the time between infection in the infector and infection in the infectee, and assuming independence is the linear combination of incubation time, the time between infection and symptom onset in an individual, and transmission time, the time between symptom onset in the infector and infection of the infectee.11 A similar parameter to the generation interval is the serial interval, which is the time between symptom onset in the infector and symptom onset in the infectee. The serial interval and generation interval are interchangeable if the incubation time is independent from the transmission time, and some formulations of the renewal equation use generation interval. In this paper we use the generation interval ω described by a probability mass function with non-zero values from day 1 (assuming that disease incubation takes at least 1 day) to a maximum day s, i.e., the longest interval between symptom onset in infector and infectee. Taking care to note that R(t) is undefined on day 0 since there has been no transmission yet (and assuming the initial infections are I(0)), the formulation of the renewal equation is thus:\nI(t)=R(t) ∑_(i=max⁡(1, t-s+1))^t▒ω(i) I(t-i) (Eq.1)\nFor brevity, we write the inner sum of (Eq.1) as:\nThe assumptions of this formulation, as per Green et. al. 2022,12 are that incident infections can be described deterministically within each window of t∈[t-s+1,t] and that the generation interval distribution does not change over the modeling time. A common reframing of the renewal equation is to equate R(t) with an exponential growth rate, r. Under specific conditions and within a small time window (t∈[t-s+1,t]), infections can be assumed to grow exponentially at a constant rate (r).12–14 Using Eq. 1 in the time window t∈[t- s+1,t] and assuming some initial infections k, R(t) for t∈[t- s+1,t] can be inferred from only r and ω: I(t)=ke^rt,t∈[t-s+1,t] (Eq.3) R(t)=[∑_(i=max⁡(1, t-s+1))^t▒〖ω(i) e^(-ri) 〗]^(-1) ,t∈[t- s+1,t] (Eq.4) Again, we will omit the writing the bounds for time in remaining formulae. A single R(t) value, say R_0, can also be put in the form of an infection attack rate, z,15 or in the final size equation,16 to estimate the proportion of all individuals that were affected by a disease with this R_0:\nz=1-exp⁡(-R_0 z) (Eq.5)\nThe attack rate function and others are implemented in the package epigrowthfit.17 The major difference between calculating R(t) from a renewal equation or an exponential growth rate equation is whether I(t) is used. If for a given time window both r and ω can be estimated independently, then R(t) can be inferred without infection data. Otherwise, infection data are needed to estimate R(t).\nUsing the renewal equation (Eq. 1) and given that I(t) and ω are known, R(t) can be solved for algebraically starting with R(t=1) and iterating forwards in time. However, this will produce highly volatile estimates of R(t) that recover the incidence curve directly. This is undesirable for several reasons: real-world infectivity likely does not vary dramatically from day to day, and real-world infection data are rarely complete, especially in an emerging epidemic, meaning that a certain amount of uncertainty must be incorporated into any estimation framework. In addition, infection incidence, I(t), are the data of interest but it is impossible to observe, so many calculations instead may use the observed reported cases, C(t), which requires some additional processing to incorporate into calculations of R(t). Therefore, a variety of constraints on R(t) are added in the inferential process: using distributions on key variables, placing restrictions on how R(t) varies through time, and with additional data sources and delay distributions. These choices dictate which estimation framework is used, which can add additional constraints.",
-    "crumbs": [
-      "Methods",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#renewal-equation-estimates-of-rt",
-    "href": "introduction.html#renewal-equation-estimates-of-rt",
-    "title": "Introduction",
-    "section": "",
-    "text": "Λ(t)=∑_(i=max⁡(1,   t-s+1))^t ω(i) I(t-i)           (Eq.2)",
-    "crumbs": [
-      "Methods",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "package_bayEStim.html",
-    "href": "package_bayEStim.html",
-    "title": "bayEStim",
-    "section": "",
-    "text": "Brief description\nbayEStim | Lytras T, Sypsa V, Demosthenes P, Tsiodr S | 🔗 | Aug 3, 2020 |\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
-    "crumbs": [
-      "Packages",
-      "bayEStim"
-    ]
-  },
-  {
-    "objectID": "package_earlyR.html",
-    "href": "package_earlyR.html",
-    "title": "earlyR",
-    "section": "",
-    "text": "Brief description\nearlyR | Jombart T, Cori A, Nouvellet P, Skarp, J | 🔗 | Oct 27, 2020 |\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
-    "crumbs": [
-      "Packages",
-      "earlyR"
-    ]
-  },
-  {
-    "objectID": "package_epinowcast.html",
-    "href": "package_epinowcast.html",
-    "title": "epinowcast",
-    "section": "",
-    "text": "Brief description\nepinowcast | Abbott S, Lison A, Funk S, Pearson C, Gruson H, Guenther F, DeWitt M | 🔗| Sep 30, 2024 |\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
-    "crumbs": [
-      "Packages",
-      "epinowcast"
-    ]
-  },
-  {
     "objectID": "methods.html",
     "href": "methods.html",
     "title": "Estimating R(t)",
@@ -530,27 +47,6 @@
     "text": "To aid with interpretation of package outputs, we summarize the currently used inputs, data, methods and assumptions in \\(R(t)\\) estimation across the following categories:\n ⎘: How the relationship between \\(R(t)\\) and infections is defined   ⎘: How \\(R(t)\\) is constrained using distributions for key variables  ⎘: How \\(R(t)\\) is constrained over time  ⎘: Additional data and distributions that are used to constrain \\(R(t)\\)  ⎘: Inference frameworks that are used to estimate \\(R(t)\\)\nWe also present:\n ⎘: An Rshiny application for simulation of case data and \\(R(t)\\)  ⎘: A list of open research questions\nWe limit the methods discussed here to those for estimating historical to present-day \\(R(t)\\) values using daily case count data, where a case can be flexibly defined as an individual with a reported positive test (either through healthcare-seeking behavior, routine surveillance, or a hospital admission).\nOther methods not discussed here include:\n\ninference of \\(R(t)\\) exclusively from alternative data sources (e.g., genetic data,2 behavioral data,3 or viral loads in waste-water4),\ncalculations from compartmental, agent-based models, or network.5–7\n\nWe also limit the discussion to packages in the statistical software R,8 which may exclude some packages in other software programs that combine many of the methodological considerations discussed below.9\nThe methods discussed below and references to specific R packages are current as of December 1, 2024. We attempt to harmonize the mathematical choices between each package using terminology from each.",
     "crumbs": [
       "Estimating R(t)"
-    ]
-  },
-  {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "Reproductive Number \\(R(t)\\)",
-    "section": "",
-    "text": "R(t)\nInterpretation at time t\nOutbreak is ...\n\n\n&lt; 1\nEach infected person infects on average less than one additional person\nshrinking\n\n\n= 1\nEach infected person infects on average about one additional person\nstable\n\n\n&gt; 1\nEach infected person infects on average more than one additional person\ngrowing\n\n\n\n\n\n\n\n\n\nThe purpose of this document\n\nEach software package that estimates \\(R(t)\\) makes different assumptions, which leads to variations in estimated \\(R(t)\\) even if the same input data are used.\nTherefore, the purpose of this document is provide guidance about which software packages to choose for different analytical goals: see our Decision Matrix.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "methods_time.html",
-    "href": "methods_time.html",
-    "title": "Constraining \\(R(t)\\) over time",
-    "section": "",
-    "text": "Overview\nThe largest variety in constraints of R(t) exists in methods that impose structure on how R(t) varies with time. Each method confers various assumptions and implications for resulting estimates of R(t), and new methods represent a large area of innovation with regards to real-time infectious disease modeling. With these constraints, we can make inference from sampled case-count data as a signal of unobserved infections in the larger unobserved population.",
-    "crumbs": [
-      "Estimating R(t)",
-      "Constraining $R(t)$ over time"
     ]
   },
   {
@@ -576,6 +72,17 @@
     ]
   },
   {
+    "objectID": "methods_introduction.html#empirical-estimates-of-rt",
+    "href": "methods_introduction.html#empirical-estimates-of-rt",
+    "title": "Relating infections to \\(R(t)\\)",
+    "section": "Empirical estimates of \\(R(t)\\)",
+    "text": "Empirical estimates of \\(R(t)\\)\nIn contrast to models that assume that renewal equation defines the relationship between infections and R(t), smoothing or regression models calculate time-varying R(t) directly from slope of the log of the infections time-series. Using this method, the relationship between R(t) and infections is empirically defined, being only constrained by the smoothing parameters of curve fit to infections data.\nEPINOW2 also has a non-renewal equation-based approach https://epiforecasts.io/EpiNow2/articles/estimate_infections.html#non-mechanistic-infection-model\nZac’s Gam Rt: https://github.com/CDCgov/cfa-gam-rt A GAM model will estimate this using a hierarchical spline w different components and weights",
+    "crumbs": [
+      "Estimating R(t)",
+      "Relating infections to $R(t)$"
+    ]
+  },
+  {
     "objectID": "methods_distributions.html",
     "href": "methods_distributions.html",
     "title": "Distributions for key variables",
@@ -587,14 +94,36 @@
     ]
   },
   {
-    "objectID": "methods_distributions.html#renewal-equation-estimates-of-rt",
-    "href": "methods_distributions.html#renewal-equation-estimates-of-rt",
-    "title": "Introduction",
-    "section": "",
-    "text": "Λ(t)=∑_(i=max⁡(1,   t-s+1))^t ω(i) I(t-i)           (Eq.2)",
+    "objectID": "methods_distributions.html#distributions-used-to-define-new-offspring-from-cases",
+    "href": "methods_distributions.html#distributions-used-to-define-new-offspring-from-cases",
+    "title": "Distributions for key variables",
+    "section": "Distributions used to define new offspring from cases",
+    "text": "Distributions used to define new offspring from cases\nAnother primary component of constraining R(t) is how distributions are used to define the next generation of infections, or I(t) from I(t-1).\nThe renewal equation provides a mechanism for estimating the next batch of infectees that occur due to transmission from the current round of infectors, a branching process. For time = t-1 the I(t) calculated in the renewal equation provides the expected value for a draw from a discrete distribution, the value of which represents the next generation of infectees. The discrete distribution chosen is commonly a Poisson distribution (in which the mean and variance parameter λ(t)=I(t)). Thus, using this constraint, the time-series of I(t) represents draws from a series of Poisson distributions with means of λ(t). Alternatively, a Negative Binomial distribution can be used (with a mean parameter again equal to I(t)), although this requires additionally fitting the size parameter (roughly, the spread of the distribution) to account the infectee distribution being “over-dispersed”.20\nImportantly, if additional delay distributions are included in the process of estimating R(t), the parameter that distributions are being used to estimate for the next generation may change (e.g., from I(t) to D(t), the mean value for daily reported cases calculated after applying delay distributions to I(t)).",
     "crumbs": [
-      "Methods",
-      "Introduction"
+      "Estimating R(t)",
+      "Distributions for key variables"
+    ]
+  },
+  {
+    "objectID": "methods_time.html",
+    "href": "methods_time.html",
+    "title": "Constraining \\(R(t)\\) over time",
+    "section": "",
+    "text": "Overview\nThe largest variety in constraints of R(t) exists in methods that impose structure on how R(t) varies with time. Each method confers various assumptions and implications for resulting estimates of R(t), and new methods represent a large area of innovation with regards to real-time infectious disease modeling. With these constraints, we can make inference from sampled case-count data as a signal of unobserved infections in the larger unobserved population.",
+    "crumbs": [
+      "Estimating R(t)",
+      "Constraining $R(t)$ over time"
+    ]
+  },
+  {
+    "objectID": "methods_time.html#sec-fixedwindow",
+    "href": "methods_time.html#sec-fixedwindow",
+    "title": "Constraining \\(R(t)\\) over time",
+    "section": "Fixed sliding windows",
+    "text": "Fixed sliding windows\nA straightforward method of imposing structure on R(t) over time involves constraining R(t) to be drawn from the same distribution within moving time subsets, called sliding windows. We add the prefix of “fixed-size” to distinguish from methods that may adapt the size of the sliding window over time. &gt;&gt; make a destinction between deriving it and doing it by Bayesian.\nConsider the scenario where I(t) are drawn from a series of Poisson distributions and where R(t) are drawn from a series of Gamma distributions. Using a sliding window size, τ, of 5 days, R(t) on days 2 to 6 are assumed to be drawn from the Gamma distribution with parameters a_1 and b_1, R(t) days 3 to 7 are drawn from a Gamma distribution with parameters a_2 and b_2, and so on. In the above scenario, days 3 through 6 are in both windows and thus will be values that could be reasonably drawn from Gamma distributions with either a_1 and b_1 or a_2 and b_2. Using an assumption of Gamma distributions for the prior distribution of ω and R(t), Cori et. al. (2013)18 analytically derived a posterior distribution R(t) using fixed-size sliding windows, which has the following directly calculated (rather than inferred) mean and coefficient of variation of R(t):\nE[R(t)]=[a+ ∑_(i=max⁡(1, t-τ))^t▒I(i) ]/[1/b+∑_(i=max⁡(1, t-τ))^t▒Λ(i) ] (Eq.6) C.V.[R(t)]=[a+ ∑_(i=max⁡(1, t-τ))^t▒I(i) ]^(-1) (Eq.7)\nThus, sliding windows with larger τ improve the stability of the estimate of R(t) over smaller τ because the coefficient of variation of R(t) decreases as number of infections increases (see Web Appendix 1 of Cori et. al., 2013).18 Sliding windows are a key feature of EpiEstim.21 There are limitations of this derived sliding window approach, articulated well in Gostic et. al., (2020)1 and summarized here. There is no posterior distribution for the expected value of incidence In the fixed size sliding window approach, τ must be explicitly defined prior to inference. Shorter τ will lead to quicker response but more variable estimates of R(t), which increases the risk of over-fitting. At the extreme, if the τ is set to 1 day, the resulting R(t) will recover exactly the infection data. In addition, there is debate in the literature about where in time the estimate of R(t) for each window should go: Gostic et. al., (2020)1 recommends using the midpoint of each sliding window rather than time t. The choice of both τ and the location of the estimate of R(t) within each window results in gaps in predictions for R(t), barring other modifications: at the end of the modeling period to account for reporting delays or time between the midpoint of τ and the end of τ, and at the beginning of the time period to allow for enough cases to materialize. Web Appendix 4 of Cori. et. al (2013) gives the following recommendation for when to calculate R(t): “Overall, we suggest starting estimating once those three criteria are fulfilled: at least after , at least after one mean serial interval, and when at least 12 cases have been observed since the beginning of the epidemic.” The default recommendation for τ is one week (7 days);18 alternatively the package APEestim integrates with EpiEstim to propose a non-default choice of τ that minimizes one-step-ahead prediction errors.22",
+    "crumbs": [
+      "Estimating R(t)",
+      "Constraining $R(t)$ over time"
     ]
   },
   {
@@ -631,17 +160,6 @@
     ]
   },
   {
-    "objectID": "methods_introduction.html#empirical-estimates-of-rt",
-    "href": "methods_introduction.html#empirical-estimates-of-rt",
-    "title": "Relating infections to \\(R(t)\\)",
-    "section": "Empirical estimates of \\(R(t)\\)",
-    "text": "Empirical estimates of \\(R(t)\\)\nIn contrast to models that assume that renewal equation defines the relationship between infections and R(t), smoothing or regression models calculate time-varying R(t) directly from slope of the log of the infections time-series. Using this method, the relationship between R(t) and infections is empirically defined, being only constrained by the smoothing parameters of curve fit to infections data.\nEPINOW2 also has a non-renewal equation-based approach https://epiforecasts.io/EpiNow2/articles/estimate_infections.html#non-mechanistic-infection-model\nZac’s Gam Rt: https://github.com/CDCgov/cfa-gam-rt A GAM model will estimate this using a hierarchical spline w different components and weights",
-    "crumbs": [
-      "Estimating R(t)",
-      "Relating infections to $R(t)$"
-    ]
-  },
-  {
     "objectID": "methods_additionaldata.html",
     "href": "methods_additionaldata.html",
     "title": "Additional data",
@@ -650,39 +168,6 @@
     "crumbs": [
       "Estimating R(t)",
       "Additional data"
-    ]
-  },
-  {
-    "objectID": "methods_additionaldata.html#renewal-equation-estimates-of-rt",
-    "href": "methods_additionaldata.html#renewal-equation-estimates-of-rt",
-    "title": "Introduction",
-    "section": "",
-    "text": "Λ(t)=∑_(i=max⁡(1,   t-s+1))^t ω(i) I(t-i)           (Eq.2)",
-    "crumbs": [
-      "Methods",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "methods_inference.html",
-    "href": "methods_inference.html",
-    "title": "Inference frameworks",
-    "section": "",
-    "text": "Bayesian optimization\nFinally there are different ways of acutally calculating the numbers once you have the theory lined up.\n Assumes a distribution –&gt; solved analytically • EpiEstim o restricted set of GI options (gamma?) enables analytical solve for the posterior estimate of R(t) which is also a Gamma, using conjugate priors\n Doesn’t assume a distribution of R(t) or I(t) –&gt; Uses MCMC • EpiNow2, implemented in STAN • Hierarchical NUTS",
-    "crumbs": [
-      "Estimating R(t)",
-      "Inference frameworks"
-    ]
-  },
-  {
-    "objectID": "methods_inference.html#renewal-equation-estimates-of-rt",
-    "href": "methods_inference.html#renewal-equation-estimates-of-rt",
-    "title": "Introduction",
-    "section": "",
-    "text": "Λ(t)=∑_(i=max⁡(1,   t-s+1))^t ω(i) I(t-i)           (Eq.2)",
-    "crumbs": [
-      "Methods",
-      "Introduction"
     ]
   },
   {
@@ -719,6 +204,17 @@
     ]
   },
   {
+    "objectID": "methods_inference.html",
+    "href": "methods_inference.html",
+    "title": "Inference frameworks",
+    "section": "",
+    "text": "Bayesian optimization\nFinally there are different ways of acutally calculating the numbers once you have the theory lined up.\n Assumes a distribution –&gt; solved analytically • EpiEstim o restricted set of GI options (gamma?) enables analytical solve for the posterior estimate of R(t) which is also a Gamma, using conjugate priors\n Doesn’t assume a distribution of R(t) or I(t) –&gt; Uses MCMC • EpiNow2, implemented in STAN • Hierarchical NUTS",
+    "crumbs": [
+      "Estimating R(t)",
+      "Inference frameworks"
+    ]
+  },
+  {
     "objectID": "methods_inference.html#maxliklihood-optimization",
     "href": "methods_inference.html#maxliklihood-optimization",
     "title": "Inference frameworks",
@@ -727,46 +223,6 @@
     "crumbs": [
       "Estimating R(t)",
       "Inference frameworks"
-    ]
-  },
-  {
-    "objectID": "glossary.html",
-    "href": "glossary.html",
-    "title": "Glossary",
-    "section": "",
-    "text": "Effective reproduction number\nFrom Gostic et al. (2020):\n\nThe effective reproductive number, denoted as or \\(R_e\\) or \\(R_t\\), is the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible\n\nAlso called the instantaneous reproductive number.\n\n\n\n\nGostic KM, McGough L, Baskerville EB, Abbott S, Joshi K, Tedijanto C, et al. 2020. Practical considerations for measuring the effective reproductive number, Rt. PLOS Computational Biology 16:e1008409; doi:10.1371/journal.pcbi.1008409.",
-    "crumbs": [
-      "Glossary"
-    ]
-  },
-  {
-    "objectID": "index.html#the-purpose-of-this-document",
-    "href": "index.html#the-purpose-of-this-document",
-    "title": "Reproductive Number \\(R(t)\\)",
-    "section": "The purpose of this document",
-    "text": "The purpose of this document\nEach software package that estimates \\(R(t)\\) makes different assumptions, which leads to variations in estimated \\(R(t)\\) even if the same input data are used.\nTherefore, the purpose of this document is to discuss these different methods, with the goal of informing decision-making about which software packages to choose for different desired applications. In general, we recommend that users apply an ensemble of methods and packages to any estimation of \\(R(t)\\).",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "index.html#rt-values",
-    "href": "index.html#rt-values",
-    "title": "Reproductive Number \\(R(t)\\)",
-    "section": "\\(R(t)\\) values",
-    "text": "\\(R(t)\\) values\n\\(R(t)\\) has the following values and related interpretations:\n\n\n\n\n\n\n\n\\(R(t)\\) value\nInterpretation\n\n\n\n\n&lt; 1\nEach infected person infects on average less than one additional person,  i.e., epidemic is “shrinking”\n\n\n= 1\nEach infected person infects on average approximately one additional person,  i.e., epidemic is “stable”\n\n\n&gt; 1\nEach infected person infects on average more than one additional person,  i.e., epidemic is “growing”\n\n\n\n\nFunding, authors, and acknowledgements\nThis work is supported by InsightNet grant project #XYZ\nThe lead authors of this document are:\n\nChad Milando, PhD\nLaura White, PhD\nChristine Sangphet\n\nMany additional co-authors contributed to this document including: X,Y,Z\n\n\n\n\nGostic KM, McGough L, Baskerville EB, Abbott S, Joshi K, Tedijanto C, et al. 2020. Practical considerations for measuring the effective reproductive number, Rt. PLOS Computational Biology 16:e1008409; doi:10.1371/journal.pcbi.1008409.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "index.html#funding-authors-and-acknowledgements",
-    "href": "index.html#funding-authors-and-acknowledgements",
-    "title": "Reproductive Number \\(R(t)\\)",
-    "section": "Funding, authors, and acknowledgements",
-    "text": "Funding, authors, and acknowledgements\nThis work is supported by InsightNet grant #\nThe lead authors of this document are at Boston University in the School of Public Health:\n\nChad Milando, Laura White, and Christine Sangphet\n\nMany additional co-authors contributed to this document including:\n\nAnne Cori, Brennan Klein, Katelyn Gostic, Alessandra Urbinati, Guillaume St-Onge, George Vega Yon, Kaitlyn Johnson, …\n\n\n\n\n\nGostic KM, McGough L, Baskerville EB, Abbott S, Joshi K, Tedijanto C, et al. 2020. Practical considerations for measuring the effective reproductive number, Rt. PLOS Computational Biology 16:e1008409; doi:10.1371/journal.pcbi.1008409.",
-    "crumbs": [
-      "Overview"
     ]
   },
   {
@@ -781,25 +237,189 @@
     ]
   },
   {
-    "objectID": "methods_distributions.html#distributions-used-to-define-new-offspring-from-cases",
-    "href": "methods_distributions.html#distributions-used-to-define-new-offspring-from-cases",
-    "title": "Distributions for key variables",
-    "section": "Distributions used to define new offspring from cases",
-    "text": "Distributions used to define new offspring from cases\nAnother primary component of constraining R(t) is how distributions are used to define the next generation of infections, or I(t) from I(t-1).\nThe renewal equation provides a mechanism for estimating the next batch of infectees that occur due to transmission from the current round of infectors, a branching process. For time = t-1 the I(t) calculated in the renewal equation provides the expected value for a draw from a discrete distribution, the value of which represents the next generation of infectees. The discrete distribution chosen is commonly a Poisson distribution (in which the mean and variance parameter λ(t)=I(t)). Thus, using this constraint, the time-series of I(t) represents draws from a series of Poisson distributions with means of λ(t). Alternatively, a Negative Binomial distribution can be used (with a mean parameter again equal to I(t)), although this requires additionally fitting the size parameter (roughly, the spread of the distribution) to account the infectee distribution being “over-dispersed”.20\nImportantly, if additional delay distributions are included in the process of estimating R(t), the parameter that distributions are being used to estimate for the next generation may change (e.g., from I(t) to D(t), the mean value for daily reported cases calculated after applying delay distributions to I(t)).",
+    "objectID": "methods_research.html",
+    "href": "methods_research.html",
+    "title": "Open research questions",
+    "section": "",
+    "text": "Need to add a page of existing research questions\n\nsub-regional or pooling …\nother stuff, i think you had a list of this somehwere",
     "crumbs": [
       "Estimating R(t)",
-      "Distributions for key variables"
+      "Open research questions"
     ]
   },
   {
-    "objectID": "methods_time.html#sec-fixedwindow",
-    "href": "methods_time.html#sec-fixedwindow",
-    "title": "Constraining \\(R(t)\\) over time",
-    "section": "Fixed sliding windows",
-    "text": "Fixed sliding windows\nA straightforward method of imposing structure on R(t) over time involves constraining R(t) to be drawn from the same distribution within moving time subsets, called sliding windows. We add the prefix of “fixed-size” to distinguish from methods that may adapt the size of the sliding window over time. &gt;&gt; make a destinction between deriving it and doing it by Bayesian.\nConsider the scenario where I(t) are drawn from a series of Poisson distributions and where R(t) are drawn from a series of Gamma distributions. Using a sliding window size, τ, of 5 days, R(t) on days 2 to 6 are assumed to be drawn from the Gamma distribution with parameters a_1 and b_1, R(t) days 3 to 7 are drawn from a Gamma distribution with parameters a_2 and b_2, and so on. In the above scenario, days 3 through 6 are in both windows and thus will be values that could be reasonably drawn from Gamma distributions with either a_1 and b_1 or a_2 and b_2. Using an assumption of Gamma distributions for the prior distribution of ω and R(t), Cori et. al. (2013)18 analytically derived a posterior distribution R(t) using fixed-size sliding windows, which has the following directly calculated (rather than inferred) mean and coefficient of variation of R(t):\nE[R(t)]=[a+ ∑_(i=max⁡(1, t-τ))^t▒I(i) ]/[1/b+∑_(i=max⁡(1, t-τ))^t▒Λ(i) ] (Eq.6) C.V.[R(t)]=[a+ ∑_(i=max⁡(1, t-τ))^t▒I(i) ]^(-1) (Eq.7)\nThus, sliding windows with larger τ improve the stability of the estimate of R(t) over smaller τ because the coefficient of variation of R(t) decreases as number of infections increases (see Web Appendix 1 of Cori et. al., 2013).18 Sliding windows are a key feature of EpiEstim.21 There are limitations of this derived sliding window approach, articulated well in Gostic et. al., (2020)1 and summarized here. There is no posterior distribution for the expected value of incidence In the fixed size sliding window approach, τ must be explicitly defined prior to inference. Shorter τ will lead to quicker response but more variable estimates of R(t), which increases the risk of over-fitting. At the extreme, if the τ is set to 1 day, the resulting R(t) will recover exactly the infection data. In addition, there is debate in the literature about where in time the estimate of R(t) for each window should go: Gostic et. al., (2020)1 recommends using the midpoint of each sliding window rather than time t. The choice of both τ and the location of the estimate of R(t) within each window results in gaps in predictions for R(t), barring other modifications: at the end of the modeling period to account for reporting delays or time between the midpoint of τ and the end of τ, and at the beginning of the time period to allow for enough cases to materialize. Web Appendix 4 of Cori. et. al (2013) gives the following recommendation for when to calculate R(t): “Overall, we suggest starting estimating once those three criteria are fulfilled: at least after , at least after one mean serial interval, and when at least 12 cases have been observed since the beginning of the epidemic.” The default recommendation for τ is one week (7 days);18 alternatively the package APEestim integrates with EpiEstim to propose a non-default choice of τ that minimizes one-step-ahead prediction errors.22",
+    "objectID": "packages.html",
+    "href": "packages.html",
+    "title": "Packages",
+    "section": "",
+    "text": "Table 1. R(t) estimation R packages with a peer-reviewed journal reference describing the underlying methods \n  \n  \n    APEestim\n    Epidemia\n    EpiEstim\n    EpiFilter\n    EpiFusion\n    epigrowthfit\n    EpiLPS\n    ern\n    EstimateR\n    R0\n    RtEstim\n    EpiInvert\n    WhiteLabRt\n  \n  \n\n\n\n   Table 2. R(t) estimation R packages without a peer-reviewed journal reference describing the underlying methods \n  \n  \n    bayEStim\n    earlyR\n    EpiNow2\n    epinowcast",
     "crumbs": [
-      "Estimating R(t)",
-      "Constraining $R(t)$ over time"
+      "Packages"
+    ]
+  },
+  {
+    "objectID": "package_APEstim.html",
+    "href": "package_APEstim.html",
+    "title": "APEstim",
+    "section": "",
+    "text": "| Parag and Donnelly (2020) | 🔗 | Feb 12, 2021 |\n\nBrief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nParag KV, Donnelly CA. 2020. Using information theory to optimise epidemic models for real-time prediction and estimation. PLoS Computational Biology 16:e1007990; doi:10.1371/journal.pcbi.1007990.",
+    "crumbs": [
+      "Packages",
+      "APEstim"
+    ]
+  },
+  {
+    "objectID": "package_bayEStim.html",
+    "href": "package_bayEStim.html",
+    "title": "bayEStim",
+    "section": "",
+    "text": "Brief description\nbayEStim | Lytras T, Sypsa V, Demosthenes P, Tsiodr S | 🔗 | Aug 3, 2020 |\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
+    "crumbs": [
+      "Packages",
+      "bayEStim"
+    ]
+  },
+  {
+    "objectID": "package_earlyR.html",
+    "href": "package_earlyR.html",
+    "title": "earlyR",
+    "section": "",
+    "text": "Brief description\nearlyR | Jombart T, Cori A, Nouvellet P, Skarp, J | 🔗 | Oct 27, 2020 |\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
+    "crumbs": [
+      "Packages",
+      "earlyR"
+    ]
+  },
+  {
+    "objectID": "package_Epidemia.html",
+    "href": "package_Epidemia.html",
+    "title": "Epidemia",
+    "section": "",
+    "text": "| Flaxman et al. (2020) | 🔗 | Jun 23, 2021 |\n\nBrief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nFlaxman S, Mishra S, Gandy A, Unwin HJT, Mellan TA, Coupland H, et al. 2020. Estimating the effects of non-pharmaceutical interventions on COVID-19 in Europe. Nature 584:257–261; doi:10.1038/s41586-020-2405-7.",
+    "crumbs": [
+      "Packages",
+      "Epidemia"
+    ]
+  },
+  {
+    "objectID": "package_EpiEstim.html",
+    "href": "package_EpiEstim.html",
+    "title": "EpiEstim",
+    "section": "",
+    "text": "EpiEstim | Cori et al. (2013), Nash et al. (2023) | 🔗 | Aug 30, 2024 |\n\nBrief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\nfixed sliding windows\n\n\n\nSample code\n\n\n\n\nCori A, Ferguson NM, Fraser C, Cauchemez S. 2013. A New Framework and Software to Estimate Time-Varying Reproduction Numbers During Epidemics. American Journal of Epidemiology 178:1505–1512; doi:10.1093/aje/kwt133.\n\n\nNash RK, Bhatt S, Cori A, Nouvellet P. 2023. Estimating the epidemic reproduction number from temporally aggregated incidence data: A statistical modelling approach and software tool. PLOS Computational Biology 19:e1011439; doi:10.1371/journal.pcbi.1011439.",
+    "crumbs": [
+      "Packages",
+      "EpiEstim"
+    ]
+  },
+  {
+    "objectID": "package_EpiFilter.html",
+    "href": "package_EpiFilter.html",
+    "title": "EpiFilter",
+    "section": "",
+    "text": "Brief description\nEpiFilter | Parag (2021) | 🔗 | Dec 9, 2023 |\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nParag KV. 2021. Improved estimation of time-varying reproduction numbers at low case incidence and between epidemic waves. PLOS Computational Biology 17:e1009347; doi:10.1371/journal.pcbi.1009347.",
+    "crumbs": [
+      "Packages",
+      "EpiFilter"
+    ]
+  },
+  {
+    "objectID": "package_EpiFusion.html",
+    "href": "package_EpiFusion.html",
+    "title": "EpiFusion",
+    "section": "",
+    "text": "Brief description\nEpiFusion | Judge et al. (2024) | 🔗 | Nov 30, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nJudge C, Vaughan T, Russell T, Abbott S, Plessis L, Stadler T, et al. 2024. EpiFusion: Joint inference of the effective reproduction number by integrating phylodynamic and epidemiological modelling with particle filtering. PLOS Computational Biology 20:e1012528; doi:10.1371/journal.pcbi.1012528.",
+    "crumbs": [
+      "Packages",
+      "EpiFusion"
+    ]
+  },
+  {
+    "objectID": "package_epigrowthfit.html",
+    "href": "package_epigrowthfit.html",
+    "title": "epigrowthfit",
+    "section": "",
+    "text": "Brief description\nepigrowthfit | Earn et al. (2020) | 🔗 | Aug 12, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nEarn DJD, Ma J, Poinar H, Dushoff J, Bolker BM. 2020. Acceleration of plague outbreaks in the second pandemic. Proceedings of the National Academy of Sciences 117:27703–27711; doi:10.1073/pnas.2004904117.",
+    "crumbs": [
+      "Packages",
+      "epigrowthfit"
+    ]
+  },
+  {
+    "objectID": "package_EpiInvert.html",
+    "href": "package_EpiInvert.html",
+    "title": "EpiInvert",
+    "section": "",
+    "text": "Brief description\nEpiInvert | Alvarez et al. (2021) | 🔗 | Dec 31, 2023|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nAlvarez L, Colom M, Morel J-D, Morel J-M. 2021. Computing the daily reproduction number of COVID-19 by inverting the renewal equation using a variational technique. Proceedings of the National Academy of Sciences 118:e2105112118; doi:10.1073/pnas.2105112118.",
+    "crumbs": [
+      "Packages",
+      "EpiInvert"
+    ]
+  },
+  {
+    "objectID": "package_EpiLPS.html",
+    "href": "package_EpiLPS.html",
+    "title": "EpiLPS",
+    "section": "",
+    "text": "Brief description\nEpiLPS | Gressani et al. (2022) | 🔗 | Oct 24, 2024|\n\n\nLink to cran\n\n\nMethods\nThis package contains the following methods:\n\nMethod 1\n\n\n\nStarter code\n\n\n\n\nGressani O, Wallinga J, Althaus CL, Hens N, Faes C. 2022. EpiLPS: A fast and flexible Bayesian tool for estimation of the time-varying reproduction number. PLOS Computational Biology 18:e1010618; doi:10.1371/journal.pcbi.1010618.",
+    "crumbs": [
+      "Packages",
+      "EpiLPS"
+    ]
+  },
+  {
+    "objectID": "package_EpiNow2.html",
+    "href": "package_EpiNow2.html",
+    "title": "EpiNow2",
+    "section": "",
+    "text": "Description\n\nCopied from the developer site\n\nEpiNow2 estimates the time-varying reproduction number on cases by date of infection (using a similar approach to that implemented in EpiEstim). True infections, treated as latent and unobserved, are estimated and then mapped to observed data (for example cases by date of report) via one or more delay distributions (in the examples in the package documentation these are an incubation period and a reporting delay) and a reporting model that can include weekly periodicity.\nUncertainty is propagated from all inputs into the final parameter estimates, helping to mitigate spurious findings. This is handled internally. The time-varying reproduction estimates and the uncertain generation time also give time-varying estimates of the rate of growth.\nForecasting is also supported for the time-varying reproduction number, infections, and reported cases using the same generative process approach as used for estimation.\nImportant links:\n\n\n\n\n\n\n\n\n\nREF:  Wellcome report (Peer reviewed: ❌)\nDocs\nGithub (Updated: Mar 2025)\nCRAN (Updated: Feb 2025)\n\n\n\n\n\nMethods\nThis package contains the following methods:\n\nGaussian Process\n\n\n\nAssessment\n\n\n\n\n\n\n\n\nCategory\nAssessment\nRationale\n\n\nUsage\n\n\n\n\nEase of installation\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nEase of use\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nEase of extracting outputs\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nRuntime length\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nFeatures\n\n\n\n\nAbility to nowcast/forcast\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nIncorporates delay distributions\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nEstimates expected cases and R(t)\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nCommunicates uncertainty\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nValidation\n\n\n\n\nPeer reviewed validation\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nClarity of documentation\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nIntrepetability of outputs\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\n\n\n\nStarter code\n\ncopy in from SummRT\nall things should use the same datasets\ncould make these shiny apps if we wanted",
+    "crumbs": [
+      "Packages",
+      "EpiNow2"
+    ]
+  },
+  {
+    "objectID": "package_epinowcast.html",
+    "href": "package_epinowcast.html",
+    "title": "epinowcast",
+    "section": "",
+    "text": "Brief description\nepinowcast | Abbott S, Lison A, Funk S, Pearson C, Gruson H, Guenther F, DeWitt M | 🔗| Sep 30, 2024 |\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
+    "crumbs": [
+      "Packages",
+      "epinowcast"
+    ]
+  },
+  {
+    "objectID": "package_ern.html",
+    "href": "package_ern.html",
+    "title": "ern",
+    "section": "",
+    "text": "Brief description\nern | Champredon et al. (2024) | 🔗 | May 22, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nChampredon D, Papst I, Yusuf W. 2024. Ern: An R package to estimate the effective reproduction number using clinical and wastewater surveillance data. PLOS ONE 19:e0305550; doi:10.1371/journal.pone.0305550.",
+    "crumbs": [
+      "Packages",
+      "ern"
+    ]
+  },
+  {
+    "objectID": "package_EstimateR.html",
+    "href": "package_EstimateR.html",
+    "title": "EstimateR",
+    "section": "",
+    "text": "Brief description\nEstimateR | Scire et al. (2023) | 🔗 | Sep 10, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nScire J, Huisman JS, Grosu A, Angst DC, Lison A, Li J, et al. 2023. estimateR: An R package to estimate and monitor the effective reproductive number. BMC Bioinformatics 24:310; doi:10.1186/s12859-023-05428-4.",
+    "crumbs": [
+      "Packages",
+      "EstimateR"
+    ]
+  },
+  {
+    "objectID": "package_R0.html",
+    "href": "package_R0.html",
+    "title": "R0",
+    "section": "",
+    "text": "Brief description\nR0 | Obadia et al. (2012) | 🔗 | Sep 20, 2023|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nObadia T, Haneef R, Boëlle P-Y. 2012. The R0 package: A toolbox to estimate reproduction numbers for epidemic outbreaks. BMC medical informatics and decision making 12: 1–9.",
+    "crumbs": [
+      "Packages",
+      "R0"
     ]
   },
   {
@@ -814,14 +434,34 @@
     ]
   },
   {
-    "objectID": "methods_research.html",
-    "href": "methods_research.html",
-    "title": "Open research questions",
+    "objectID": "package_WhiteLabRt.html",
+    "href": "package_WhiteLabRt.html",
+    "title": "WhiteLabRt",
     "section": "",
-    "text": "Need to add a page of existing research questions\n\nsub-regional or pooling …\nother stuff, i think you had a list of this somehwere",
+    "text": "Brief description\nWhiteLabRt | Li and White (2021) | 🔗 | Aug 16, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nLi T, White LF. 2021. Bayesian back-calculation and nowcasting for line list data during the COVID-19 pandemic. PLOS Computational Biology 17:e1009210; doi:10.1371/journal.pcbi.1009210.",
     "crumbs": [
-      "Estimating R(t)",
-      "Open research questions"
+      "Packages",
+      "WhiteLabRt"
+    ]
+  },
+  {
+    "objectID": "glossary.html",
+    "href": "glossary.html",
+    "title": "Glossary",
+    "section": "",
+    "text": "Effective reproduction number\nFrom Gostic et al. (2020):\n\nThe effective reproductive number, denoted as or \\(R_e\\) or \\(R_t\\), is the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible\n\nAlso called the instantaneous reproductive number.\n\n\n\n\nGostic KM, McGough L, Baskerville EB, Abbott S, Joshi K, Tedijanto C, et al. 2020. Practical considerations for measuring the effective reproductive number, Rt. PLOS Computational Biology 16:e1008409; doi:10.1371/journal.pcbi.1008409.",
+    "crumbs": [
+      "Glossary"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Alvarez L, Colom M, Morel J-D, Morel J-M. 2021. Computing the daily\nreproduction number of COVID-19 by inverting the renewal\nequation using a variational technique. Proceedings of the National\nAcademy of Sciences 118:e2105112118; doi:10.1073/pnas.2105112118.\n\n\nChampredon D, Papst I, Yusuf W. 2024. Ern: An R package to\nestimate the effective reproduction number using clinical and wastewater\nsurveillance data. PLOS ONE 19:e0305550; doi:10.1371/journal.pone.0305550.\n\n\nCori A, Ferguson NM, Fraser C, Cauchemez S. 2013. A New\nFramework and Software to\nEstimate Time-Varying\nReproduction Numbers During\nEpidemics. American Journal of Epidemiology 178:1505–1512;\ndoi:10.1093/aje/kwt133.\n\n\nEarn DJD, Ma J, Poinar H, Dushoff J, Bolker BM. 2020. Acceleration of\nplague outbreaks in the second pandemic. Proceedings of the National\nAcademy of Sciences 117:27703–27711; doi:10.1073/pnas.2004904117.\n\n\nFlaxman S, Mishra S, Gandy A, Unwin HJT, Mellan TA, Coupland H, et al.\n2020. Estimating the effects of non-pharmaceutical interventions on\nCOVID-19 in Europe. Nature 584:257–261; doi:10.1038/s41586-020-2405-7.\n\n\nGostic KM, McGough L, Baskerville EB, Abbott S, Joshi K, Tedijanto C, et\nal. 2020. Practical considerations for measuring the effective\nreproductive number, Rt. PLOS Computational Biology\n16:e1008409; doi:10.1371/journal.pcbi.1008409.\n\n\nGressani O, Wallinga J, Althaus CL, Hens N, Faes C. 2022. EpiLPS: A fast\nand flexible Bayesian tool for estimation of the\ntime-varying reproduction number. PLOS Computational Biology\n18:e1010618; doi:10.1371/journal.pcbi.1010618.\n\n\nJudge C, Vaughan T, Russell T, Abbott S, Plessis L, Stadler T, et al.\n2024. EpiFusion: Joint inference of the effective reproduction number by\nintegrating phylodynamic and epidemiological modelling with particle\nfiltering. PLOS Computational Biology 20:e1012528; doi:10.1371/journal.pcbi.1012528.\n\n\nLi T, White LF. 2021. Bayesian back-calculation and nowcasting for line\nlist data during the COVID-19 pandemic. PLOS Computational\nBiology 17:e1009210; doi:10.1371/journal.pcbi.1009210.\n\n\nLiu J, Cai Z, Gustafson P, McDonald DJ. 2024. Rtestim: Time-varying\nreproduction number estimation with trend filtering. PLOS Computational\nBiology 20:e1012324; doi:10.1371/journal.pcbi.1012324.\n\n\nNash RK, Bhatt S, Cori A, Nouvellet P. 2023. Estimating the epidemic\nreproduction number from temporally aggregated incidence data: A\nstatistical modelling approach and software tool. PLOS Computational\nBiology 19:e1011439; doi:10.1371/journal.pcbi.1011439.\n\n\nObadia T, Haneef R, Boëlle P-Y. 2012. The R0 package: A toolbox to\nestimate reproduction numbers for epidemic outbreaks. BMC medical\ninformatics and decision making 12: 1–9.\n\n\nParag KV. 2021. Improved estimation of time-varying reproduction numbers\nat low case incidence and between epidemic waves. PLOS Computational\nBiology 17:e1009347; doi:10.1371/journal.pcbi.1009347.\n\n\nParag KV, Donnelly CA. 2020. Using information theory to optimise\nepidemic models for real-time prediction and estimation. PLoS\nComputational Biology 16:e1007990; doi:10.1371/journal.pcbi.1007990.\n\n\nScire J, Huisman JS, Grosu A, Angst DC, Lison A, Li J, et al. 2023.\nestimateR: An R package to estimate and monitor the\neffective reproductive number. BMC Bioinformatics 24:310; doi:10.1186/s12859-023-05428-4.",
+    "crumbs": [
+      "References"
     ]
   }
 ]
