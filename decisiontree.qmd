@@ -70,11 +70,69 @@ You can use the decision tool below to help choose which R packages may be right
 
 ### Assessment framework {#sec-assessment}
 
-An evaluative comparison of the performance of the methods in these packages would be highly complex, given the following challenges:
+An objective comparison of the performance of the methods in these packages would be highly complex, given the following challenges:
 
 - Some of the most widely-used packages are not accompanied with a peer-reviewed manuscript that describes or evaluates the theory behind modeling choices. 
 - Each package contains a subset of the methods below for constraining $R(t)$ in time, but with subtle variations in implementation that are often not well-documented. 
 - Some packages have not been recently updated, and even those that have are not maintained on CRAN, instead leaving updates on a development version on GitHub. 
 - Performance may vary widely considering additional factors like ease of implementation and computational time.
 
-Instead, we focus on a simple Huerstic
+Instead, we present some some subjective reflections on various aspects of utilizing each package. These were assessed by consensus among the various authors and co-authors:
+
+```{=html}
+<table>
+    <caption>Assessment rubric</caption>
+    <!---HEADING --->
+    <tr style="border-top: none;">
+      <th style="font-weight: bold; width: 20%">Category</th>
+      <th style="font-weight: bold; width: 30%">Notes</th>
+      <th style="font-weight: bold; width: 50%">Scales</th>
+    </tr>
+    <tr style="border-top: 2px solid;">
+        <td>Ease of installation</td>
+        <td>Some description</td>
+        <td>
+          ☐ Easy: description <div style="height:1px;"><br></div>
+          ☐ Moderate: description <div style="height:1px;"><br></div>
+          ☐ Challenging: description
+        </td>
+    </tr>
+        <tr>
+        <td>Ease of use</td>
+        <td>Some description</td>
+        <td>
+          ☐ Easy: description <div style="height:1px;"><br></div>
+          ☐ Moderate: description <div style="height:1px;"><br></div>
+          ☐ Challenging: description
+        </td>
+    </tr>
+            <tr>
+        <td>Runtime length</td>
+        <td>Some description</td>
+        <td>
+          ☐ Easy: description <div style="height:1px;"><br></div>
+          ☐ Moderate: description <div style="height:1px;"><br></div>
+          ☐ Challenging: description
+        </td>
+    </tr>
+                <tr>
+        <td>Ability to nowcast/forcast</td>
+        <td>Some description</td>
+        <td>
+          ☐ Easy: description <div style="height:1px;"><br></div>
+          ☐ Moderate: description <div style="height:1px;"><br></div>
+          ☐ Challenging: description
+        </td>
+    </tr>
+                    <tr>
+        <td>Incorporates delay distributions</td>
+        <td>Some description</td>
+        <td>
+          ☐ Easy: description <div style="height:1px;"><br></div>
+          ☐ Moderate: description <div style="height:1px;"><br></div>
+          ☐ Challenging: description
+        </td>
+    </tr>
+</table>
+
+```

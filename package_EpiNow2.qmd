@@ -2,12 +2,70 @@
 
 ### Description
 
-### Assessment table
+Lorem ipsum the world is burning
 
 ### Methods
 
 This package contains the following methods:
 
-- Method 1
+- [Gaussian Process](methods_time.qmd#sec-gaussianprocess)
+
+### Assessment
+
+```{=html}
+<table>
+    <!---HEADING --->
+    <tr style="border-top: none;">
+      <th style="font-weight: bold; width: 20%">Category</th>
+      <th style="font-weight: bold; width: 20%">Assessment</th>
+      <th style="font-weight: bold; width: 50%">Rationale</th>
+    </tr>
+    <tr style="border-top: 2px solid;">
+        <td>Ease of installation</td>
+        <td>
+          ☐ Easy <div style="height:1px;"><br></div>
+          ☑ <b>Moderate</b> <div style="height:1px;"><br></div>
+          ☐ Challenging
+        </td>
+        <td>Given rationale</td>
+    </tr>
+        <tr>
+        <td>Ease of use</td>
+        <td>
+          ☐ Easy <div style="height:1px;"><br></div>
+          ☑ <b>Moderate</b> <div style="height:1px;"><br></div>
+          ☐ Challenging
+        </td>
+        <td>Given rationale</td>
+    </tr>
+            <tr>
+        <td>Runtime length</td>
+        <td>
+          ☐ Easy <div style="height:1px;"><br></div>
+          ☑ <b>Moderate</b> <div style="height:1px;"><br></div>
+          ☐ Challenging
+        </td>
+        <td>Given rationale</td>
+    </tr>
+                <tr>
+        <td>Ability to nowcast/forcast</td>
+        <td>
+          ☐ Easy <div style="height:1px;"><br></div>
+          ☑ <b>Moderate</b> <div style="height:1px;"><br></div>
+          ☐ Challenging
+        </td>
+        <td>Given rationale</td>
+    </tr>
+                    <tr>
+        <td>Incorporates delay distributions</td>
+        <td>
+          ☐ Easy <div style="height:1px;"><br></div>
+          ☑ <b>Moderate</b> <div style="height:1px;"><br></div>
+          ☐ Challenging
+        </td>
+        <td>Given rationale</td>
+    </tr>
+</table>
+```
 
 ### Starter code
