@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Estimating R(t) – Reproductive Number $R(t)$</title>
+<title>Simulation tool – Reproductive Number $R(t)$</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./methods_introduction.html" rel="next">
-<link href="./decisiontree.html" rel="prev">
+<link href="./packages.html" rel="next">
+<link href="./methods_inference.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./methods.html">Estimating R(t)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./methods.html">Estimating R(t)</a></li><li class="breadcrumb-item"><a href="./simulation_tool.html">Simulation tool</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -149,7 +149,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./methods.html" class="sidebar-item-text sidebar-link active">
+            <a href="./methods.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Estimating R(t)</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -188,7 +188,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./simulation_tool.html" class="sidebar-item-text sidebar-link">
+  <a href="./simulation_tool.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Simulation tool</span></a>
   </div>
 </li>
@@ -330,9 +330,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./methods.html">Estimating R(t)</a></li><li class="breadcrumb-item"><a href="./simulation_tool.html">Simulation tool</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-top" class="quarto-section-identifier">Estimating R(t)</span></h1>
+<h1 class="title"><span id="sec-top" class="quarto-section-identifier">Simulation tool</span></h1>
 </div>
 
 
@@ -349,16 +349,9 @@ window.Quarto = {
 </header>
 
 
-<p>To aid with interpretation of package outputs, we summarize the currently used inputs, data, methods and assumptions in <span class="math inline">\(R(t)\)</span> estimation across the following categories:</p>
-<p> <a href="./methods_introduction.html#sec-top">⎘</a>: How the relationship between <span class="math inline">\(R(t)\)</span> and infections is defined <br>  <a href="./methods_distributions.html#sec-top">⎘</a>: How <span class="math inline">\(R(t)\)</span> is constrained using distributions for key variables<br>  <a href="./methods_time.html#sec-top">⎘</a>: How <span class="math inline">\(R(t)\)</span> is constrained over time<br>  <a href="./methods_additionaldata.html#sec-top">⎘</a>: Additional data and distributions that are used to constrain <span class="math inline">\(R(t)\)</span><br>  <a href="./methods_inference.html#sec-top">⎘</a>: Inference frameworks that are used to estimate <span class="math inline">\(R(t)\)</span><br></p>
-<p>We limit the methods discussed here to those for estimating historical to present-day <span class="math inline">\(R(t)\)</span> values using <strong>daily case count data</strong>, where a case can be flexibly defined as an individual with a reported positive test (either through healthcare-seeking behavior, routine surveillance, or a hospital admission).</p>
-<p>Other methods not discussed here include:</p>
-<ul>
-<li>inference of <span class="math inline">\(R(t)\)</span> exclusively from alternative data sources (e.g., genetic data,2 behavioral data,3 or viral loads in waste-water4),</li>
-<li>calculations from compartmental, agent-based models, or network.5–7</li>
-</ul>
-<p>We also limit the discussion to packages in the statistical software R,8 which may exclude some packages in other software programs that combine many of the methodological considerations discussed below.9</p>
-<p>The methods discussed below and references to specific R packages are current as of December 1, 2024. We attempt to harmonize the mathematical choices between each package using terminology from each.</p>
+<p>The tool below walks through the steps of simulating estimates of the instantaneous reproduction number,which can be helpful for surveillance and intervention planning of infectious diseases. For this simulation, we take several steps to simulate how cases spread from one person to another: (1) Simulate the individual-level incubation time distribution, then (2) simulate the individual-level transmission time distribution (assumed to be independent from the incubation time distribution). We then can derive distributions for the generation time and serial interval using the relationships, simulate the individual-level administrative delay in reporting, and simulate the population-level infectivity dynamics.</p>
+<hr>
+ <iframe id="example1" src="https://mobslab.shinyapps.io/simulate_infection_data/" style="border: none; width: 100%; height: 720px" frameborder="0"></iframe>
 
 
 
@@ -782,13 +775,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./decisiontree.html" class="pagination-link" aria-label="Decision matrix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Decision matrix</span>
+      <a href="./methods_inference.html" class="pagination-link" aria-label="Inference frameworks">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Inference frameworks</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./methods_introduction.html" class="pagination-link" aria-label="Relating infections to $R(t)$">
-        <span class="nav-page-text">Relating infections to <span class="math inline">\(R(t)\)</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./packages.html" class="pagination-link" aria-label="Packages">
+        <span class="nav-page-text">Packages</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
