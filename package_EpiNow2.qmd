@@ -1,6 +1,7 @@
 # EpiNow2 {.unnumbered}
 
 ### Description
+<div style="font-size:0.8em">Copied from the developer site<br><br></div>
 
 [EpiNow2](package_EpiNow2.qmd) estimates the time-varying reproduction number on cases by date of infection (using a similar approach to that implemented in [EpiEstim](package_EpiEstim.qmd)). True infections, treated as latent and unobserved, are estimated and then mapped to observed data (for example cases by date of report) via one or more delay distributions (in the examples in the package documentation these are an incubation period and a reporting delay) and a reporting model that can include weekly periodicity.
 
@@ -34,6 +35,7 @@ This package contains the following methods:
       <th style="font-weight: bold; width: 50%">Rationale</th>
     </tr>
     
+    <!------ SECTION 1: USAGE -------->
     <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
       <td> Usage </td>
     </tr>
@@ -46,6 +48,7 @@ This package contains the following methods:
           ☐ Challenging
         </td>
         <td>Given rationale</td>
+        
     </tr>
         <tr>
         <td>Ease of use</td>
@@ -57,7 +60,7 @@ This package contains the following methods:
         <td>Given rationale</td>
     </tr>
     
-                                  <tr>
+    <tr>
         <td>Ease of extracting outputs</td>
         <td>
           ☐ Easy <div style="height:1px;"><br></div>
@@ -67,7 +70,7 @@ This package contains the following methods:
         <td>Given rationale</td>
     </tr>
     
-            <tr>
+     <tr>
         <td>Runtime length</td>
         <td>
           ☐ Easy <div style="height:1px;"><br></div>
@@ -77,12 +80,12 @@ This package contains the following methods:
         <td>Given rationale</td>
     </tr>
     
-    
+    <!------ SECTION 2: FEATURES -------->
         <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
       <td> Features </td>
     </tr>
     
-                <tr>
+     <tr>
         <td>Ability to nowcast/forcast</td>
         <td>
           ☐ Easy <div style="height:1px;"><br></div>
@@ -91,7 +94,8 @@ This package contains the following methods:
         </td>
         <td>Given rationale</td>
     </tr>
-                    <tr>
+    
+    <tr>
         <td>Incorporates delay distributions</td>
         <td>
           ☐ Easy <div style="height:1px;"><br></div>
@@ -100,7 +104,18 @@ This package contains the following methods:
         </td>
         <td>Given rationale</td>
     </tr>
-                        <tr>
+
+    <tr>
+        <td>Estimates expected cases and R(t)</td>
+        <td>
+          ☐ Easy <div style="height:1px;"><br></div>
+          ☑ <b>Moderate</b> <div style="height:1px;"><br></div>
+          ☐ Challenging
+        </td>
+        <td>Given rationale</td>
+    </tr>
+    
+    <tr>
         <td>Communicates uncertainty</td>
         <td>
           ☐ Easy <div style="height:1px;"><br></div>
@@ -110,6 +125,7 @@ This package contains the following methods:
         <td>Given rationale</td>
     </tr>
     
+    <!------ SECTION 3: VALIDATION -------->
         <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
       <td> Validation</td>
     </tr>

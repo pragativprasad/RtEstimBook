@@ -186,6 +186,12 @@ window.Quarto = {
  <span class="menu-text">Inference frameworks</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./simulation_tool.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulation tool</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -383,7 +389,7 @@ Strong recommendation
 <td data-quarto-table-cell-role="th" style="font-weight: bold; width: 30%">Package options</td>
 </tr>
 <tr class="even" style="border-top: 2px solid;">
-<td rowspan="2">What will R(t) be next week
+<td rowspan="2">What will R(t) be <u>next week</u>
 <div style="height:10px;">
 <br>
 
@@ -412,7 +418,26 @@ Strong recommendation
 <td>no plan yet</td>
 </tr>
 <tr class="even" style="border-top: 2px solid;">
-<td rowspan="2">What was R(t) in the past</td>
+<td rowspan="2">What was R(t) in the <u>past week</u></td>
+<td>☐ Daily reported case counts
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Serial interval
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Reporting delay distribution</td>
+<td><a href="package_RtEstim.html#sec-top">RtEstim</a>, Option2</td>
+</tr>
+<tr class="odd">
+<td>Wastewater</td>
+<td>no plan yet</td>
+</tr>
+<tr class="even" style="border-top: 2px solid;">
+<td rowspan="2">What was R(t) historically</td>
 <td>☐ Daily reported case counts
 <div style="height:1px;">
 <br>
@@ -442,7 +467,9 @@ Strong recommendation
 <li>Each package contains a subset of the methods below for constraining <span class="math inline">\(R(t)\)</span> in time, but with subtle variations in implementation that are often not well-documented.</li>
 <li>Some packages have not been recently updated, and even those that have are not maintained on CRAN, instead leaving updates on a development version on GitHub.</li>
 <li>Performance may vary widely considering additional factors like ease of implementation and computational time.</li>
+<li>it also may be the case that some methods of temporal smoothing work better in some cases versus other (very low case counts, rapid changes)</li>
 </ul>
+<p>Indeed, many published validation efforts are often not “apples to apples”, i.e., comparing two models that are using different amounts of information in estimating R(t). For example, comparing a model that has used only data before time before t to estimate R(t) versus a model that uses the entire historical record to estimate R(t) at time t.</p>
 <p>Instead, we present some some subjective reflections on various aspects of utilizing each package. These were assessed by consensus among the various authors and co-authors:</p>
 <table class="caption-top table" data-quarto-postprocess="true">
 <caption>Assessment rubric</caption>
@@ -457,7 +484,12 @@ Strong recommendation
 <td data-quarto-table-cell-role="th" style="font-weight: bold; width: 30%">Notes</td>
 <td data-quarto-table-cell-role="th" style="font-weight: bold; width: 50%">Scales</td>
 </tr>
-<tr class="even" style="border-top: 2px solid;">
+<tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
+<td>Usage</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
 <td>Ease of installation</td>
 <td>Some description</td>
 <td>☐ Easy: description
@@ -472,8 +504,23 @@ Strong recommendation
 </div>
 ☐ Challenging: description</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Ease of use</td>
+<td>Some description</td>
+<td>☐ Easy: description
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Moderate: description
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Challenging: description</td>
+</tr>
+<tr class="odd">
+<td>Ease of extractring output</td>
 <td>Some description</td>
 <td>☐ Easy: description
 <div style="height:1px;">
@@ -502,7 +549,12 @@ Strong recommendation
 </div>
 ☐ Challenging: description</td>
 </tr>
-<tr class="odd">
+<tr class="odd" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
+<td>Features</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
 <td>Ability to nowcast/forcast</td>
 <td>Some description</td>
 <td>☐ Easy: description
@@ -517,8 +569,88 @@ Strong recommendation
 </div>
 ☐ Challenging: description</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Incorporates delay distributions</td>
+<td>Some description</td>
+<td>☐ Easy: description
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Moderate: description
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Challenging: description</td>
+</tr>
+<tr class="even">
+<td>Estimates expected cases and R(t)</td>
+<td>Some description</td>
+<td>☐ Easy: description
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Moderate: description
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Challenging: description</td>
+</tr>
+<tr class="odd">
+<td>Communicates uncertainty</td>
+<td>Some description</td>
+<td>☐ Easy: description
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Moderate: description
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Challenging: description</td>
+</tr>
+<tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
+<td>Validation</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Peer reviewed validation</td>
+<td>Some description</td>
+<td>☐ Easy: description
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Moderate: description
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Challenging: description</td>
+</tr>
+<tr class="even">
+<td>Clarity of documentation</td>
+<td>Some description</td>
+<td>☐ Easy: description
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Moderate: description
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Challenging: description</td>
+</tr>
+<tr class="odd">
+<td>Intrepetability of outputs</td>
 <td>Some description</td>
 <td>☐ Easy: description
 <div style="height:1px;">
