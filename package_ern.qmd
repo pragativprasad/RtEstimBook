@@ -2,6 +2,8 @@
 
 ### Brief description
 
+| [ern](package_ern.qmd#sec-top) | @Champredon2024ern | [🔗](https://github.com/phac-nml-phrsd/ern) | May 22, 2024|
+
 ### Assessment table
 
 ### Methods

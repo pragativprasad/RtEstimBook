@@ -3,6 +3,7 @@
 
 ### Brief description
 
+| [earlyR](package_earlyR.qmd#sec-top) |	Jombart T, Cori A, Nouvellet P, Skarp, J |	[🔗](https://github.com/reconhub/earlyR) |  Oct 27, 2020 |
 
 ### Methods
 

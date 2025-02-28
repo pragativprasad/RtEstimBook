@@ -2,6 +2,8 @@
 
 ### Brief description
 
+| [R0](package_R0.qmd#sec-top) | @obadia2012r0 | [🔗](https://github.com/tobadia/R0) | Sep 20, 2023|
+
 ### Assessment table
 
 ### Methods

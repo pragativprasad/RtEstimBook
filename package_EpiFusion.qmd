@@ -3,6 +3,8 @@
 
 ### Brief description
 
+| [EpiFusion](package_EpiFusion.qmd#sec-top) | @Judge2024EpiFusion | [🔗](https://github.com/ciarajudge/EpiFusion) | Nov 30, 2024|
+
 ### Assessment table
 
 ### Methods

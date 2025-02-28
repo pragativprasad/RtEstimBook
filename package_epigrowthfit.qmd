@@ -2,6 +2,8 @@
 
 ### Brief description
 
+| [epigrowthfit](package_epigrowthfit.qmd#sec-top) | @Earn2020Acceleration | [🔗](https://github.com/davidearn/epigrowthfit) | Aug 12, 2024|
+
 ### Assessment table
 
 ### Methods

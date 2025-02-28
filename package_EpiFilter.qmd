@@ -3,6 +3,8 @@
 
 ### Brief description
 
+| [EpiFilter](package_EpiFilter.qmd#sec-top) | @Parag2021Improved | [🔗](https://github.com/kpzoo/EpiFilter) | Dec 9, 2023 |
+
 ### Assessment table
 
 ### Methods

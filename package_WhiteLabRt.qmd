@@ -3,6 +3,8 @@
 
 ### Brief description
 
+| [WhiteLabRt](package_WhiteLabRt.qmd#sec-top) | @Li2021Bayesian | [🔗](https://github.com/cmilando/WhiteLabRt) | Aug 16, 2024|
+
 ### Assessment table
 
 ### Methods

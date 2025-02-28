@@ -3,6 +3,8 @@
 
 ### Brief description
 
+| [EstimateR](package_EstimateR.qmd#sec-top) | @Scire2023estimateR | [🔗](https://github.com/covid-19-Re/estimateR) | Sep 10, 2024|
+
 ### Assessment table
 
 ### Methods

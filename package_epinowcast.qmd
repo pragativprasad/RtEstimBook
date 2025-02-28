@@ -3,6 +3,7 @@
 
 ### Brief description
 
+| [epinowcast](package_epinowcast.qmd#sec-top) | Abbott S, Lison A, Funk S, Pearson C, Gruson H, Guenther F, DeWitt M	| [🔗](https://github.com/epinowcast/epinowcast)| Sep 30, 2024 |
 
 ### Methods
 

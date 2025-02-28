@@ -2,13 +2,19 @@
 
 ### Description
 
-Lorem ipsum the world is burning
+[EpiNow2](package_EpiNow2.qmd) estimates the time-varying reproduction number on cases by date of infection (using a similar approach to that implemented in [EpiEstim](package_EpiEstim.qmd)). True infections, treated as latent and unobserved, are estimated and then mapped to observed data (for example cases by date of report) via one or more delay distributions (in the examples in the package documentation these are an incubation period and a reporting delay) and a reporting model that can include weekly periodicity.
 
-Important links:
+Uncertainty is propagated from all inputs into the final parameter estimates, helping to mitigate spurious findings. This is handled internally. The time-varying reproduction estimates and the uncertain generation time also give time-varying estimates of the rate of growth.
+
+Forecasting is also supported for the time-varying reproduction number, infections, and reported cases using the same generative process approach as used for estimation.
+
+<small style="font-weight: bold;margin-bottom: 0;">Important links:</small>
 
 | | | | |
 |:-------------|:--------|:-------------|:--------|
-|<small>REF: </small>  [insert]<br><small>(Peer reviewed: no)</small> |[Github](https://github.com/kpzoo/model-selection-for-epidemic-renewal-models) <small><br>(Updated: Jan 2025)</small>| [CRAN]() <small><br>(Updated: Jan 2025)</small>| [Docs]() |
+|<small>REF: </small> [Wellcome report](https://wellcomeopenresearch.org/articles/5-112) <br><small>(Peer reviewed: ❌)</small> | [Github](https://github.com/epiforecasts/EpiNow2) <small><br>(Updated: Mar 2025)</small>| [CRAN](https://cran.r-project.org/web/packages/EpiNow2/index.html) <small><br>(Updated: Feb 2025)</small>|  [Docs](https://epiforecasts.io/EpiNow2/) |
+
+
 
 
 ### Methods
@@ -27,7 +33,12 @@ This package contains the following methods:
       <th style="font-weight: bold; width: 20%">Assessment</th>
       <th style="font-weight: bold; width: 50%">Rationale</th>
     </tr>
-    <tr style="border-top: 2px solid;">
+    
+    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
+      <td> Usage </td>
+    </tr>
+    
+    <tr>
         <td>Ease of installation</td>
         <td>
           ☐ Easy <div style="height:1px;"><br></div>
@@ -45,6 +56,17 @@ This package contains the following methods:
         </td>
         <td>Given rationale</td>
     </tr>
+    
+                                  <tr>
+        <td>Ease of extracting outputs</td>
+        <td>
+          ☐ Easy <div style="height:1px;"><br></div>
+          ☑ <b>Moderate</b> <div style="height:1px;"><br></div>
+          ☐ Challenging
+        </td>
+        <td>Given rationale</td>
+    </tr>
+    
             <tr>
         <td>Runtime length</td>
         <td>
@@ -54,6 +76,12 @@ This package contains the following methods:
         </td>
         <td>Given rationale</td>
     </tr>
+    
+    
+        <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
+      <td> Features </td>
+    </tr>
+    
                 <tr>
         <td>Ability to nowcast/forcast</td>
         <td>
@@ -81,6 +109,11 @@ This package contains the following methods:
         </td>
         <td>Given rationale</td>
     </tr>
+    
+        <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
+      <td> Validation</td>
+    </tr>
+    
                             <tr>
         <td>Peer reviewed validation</td>
         <td>
@@ -108,15 +141,7 @@ This package contains the following methods:
         </td>
         <td>Given rationale</td>
     </tr>
-                          <tr>
-        <td>Ease of extracting outputs</td>
-        <td>
-          ☐ Easy <div style="height:1px;"><br></div>
-          ☑ <b>Moderate</b> <div style="height:1px;"><br></div>
-          ☐ Challenging
-        </td>
-        <td>Given rationale</td>
-    </tr>
+
 </table>
 ```
 

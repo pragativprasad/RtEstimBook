@@ -1,6 +1,8 @@
 # Epidemia {#sec-top .unnumbered}
 
 
+|   | @Flaxman2020Estimating | [🔗](https://github.com/ImperialCollegeLondon/epidemia)   | Jun 23, 2021 |
+
 ### Brief description
 
 ### Assessment table

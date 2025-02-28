@@ -3,6 +3,8 @@
 
 ### Brief description
 
+| [EpiLPS](package_EpiLPS.qmd#sec-top) | @Gressani2022EpiLPS | [🔗](https://github.com/oswaldogressani/EpiLPS) | Oct 24, 2024|
+
 ### Link to cran
 
 ### Methods

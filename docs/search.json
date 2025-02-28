@@ -14,7 +14,7 @@
     "href": "packages.html",
     "title": "Packages",
     "section": "",
-    "text": "This page contains:",
+    "text": "Table 1. R(t) estimation R packages with a peer-reviewed journal reference describing the underlying methods \n  \n  \n    APEestim\n    Epidemia\n    EpiEstim\n    EpiFilter\n    EpiFusion\n    epigrowthfit\n    EpiLPS\n    ern\n    EstimateR\n    R0\n    RtEstim\n    EpiInvert\n    WhiteLabRt\n  \n  \n\n\n\n   Table 2. R(t) estimation R packages without a peer-reviewed journal reference describing the underlying methods \n  \n  \n    bayEStim\n    earlyR\n    EpiNow2\n    epinowcast",
     "crumbs": [
       "Packages"
     ]
@@ -34,7 +34,7 @@
     "href": "packages.html#footnotes",
     "title": "Packages",
     "section": "",
-    "text": "As of Dec 13, 2024↩︎\nAs of Dec 13, 2024↩︎",
+    "text": "As of Dec 13, 2024↩︎",
     "crumbs": [
       "Packages"
     ]
@@ -44,7 +44,7 @@
     "href": "package_EpiEstim.html",
     "title": "EpiEstim",
     "section": "",
-    "text": "Brief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\nfixed sliding windows\n\n\n\nSample code",
+    "text": "EpiEstim | Cori et al. (2013), Nash et al. (2023) | 🔗 | Aug 30, 2024 |\n\nBrief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\nfixed sliding windows\n\n\n\nSample code\n\n\n\n\nCori A, Ferguson NM, Fraser C, Cauchemez S. 2013. A New Framework and Software to Estimate Time-Varying Reproduction Numbers During Epidemics. American Journal of Epidemiology 178:1505–1512; doi:10.1093/aje/kwt133.\n\n\nNash RK, Bhatt S, Cori A, Nouvellet P. 2023. Estimating the epidemic reproduction number from temporally aggregated incidence data: A statistical modelling approach and software tool. PLOS Computational Biology 19:e1011439; doi:10.1371/journal.pcbi.1011439.",
     "crumbs": [
       "Packages",
       "EpiEstim"
@@ -98,7 +98,7 @@
     "href": "package_APEstim.html",
     "title": "APEstim",
     "section": "",
-    "text": "Brief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
+    "text": "| Parag and Donnelly (2020) | 🔗 | Feb 12, 2021 |\n\nBrief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nParag KV, Donnelly CA. 2020. Using information theory to optimise epidemic models for real-time prediction and estimation. PLoS Computational Biology 16:e1007990; doi:10.1371/journal.pcbi.1007990.",
     "crumbs": [
       "Packages",
       "APEstim"
@@ -131,7 +131,7 @@
     "href": "package_Epidemia.html",
     "title": "Epidemia",
     "section": "",
-    "text": "Brief description\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
+    "text": "| Flaxman et al. (2020) | 🔗 | Jun 23, 2021 |\n\nBrief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nFlaxman S, Mishra S, Gandy A, Unwin HJT, Mellan TA, Coupland H, et al. 2020. Estimating the effects of non-pharmaceutical interventions on COVID-19 in Europe. Nature 584:257–261; doi:10.1038/s41586-020-2405-7.",
     "crumbs": [
       "Packages",
       "Epidemia"
@@ -164,7 +164,7 @@
     "href": "package_EpiLPS.html",
     "title": "EpiLPS",
     "section": "",
-    "text": "Brief description\n\n\nLink to cran\n\n\nMethods\nThis package contains the following methods:\n\nMethod 1\n\n\n\nStarter code",
+    "text": "Brief description\nEpiLPS | Gressani et al. (2022) | 🔗 | Oct 24, 2024|\n\n\nLink to cran\n\n\nMethods\nThis package contains the following methods:\n\nMethod 1\n\n\n\nStarter code\n\n\n\n\nGressani O, Wallinga J, Althaus CL, Hens N, Faes C. 2022. EpiLPS: A fast and flexible Bayesian tool for estimation of the time-varying reproduction number. PLOS Computational Biology 18:e1010618; doi:10.1371/journal.pcbi.1010618.",
     "crumbs": [
       "Packages",
       "EpiLPS"
@@ -197,7 +197,7 @@
     "href": "package_EpiFilter.html",
     "title": "EpiFilter",
     "section": "",
-    "text": "Brief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
+    "text": "Brief description\nEpiFilter | Parag (2021) | 🔗 | Dec 9, 2023 |\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nParag KV. 2021. Improved estimation of time-varying reproduction numbers at low case incidence and between epidemic waves. PLOS Computational Biology 17:e1009347; doi:10.1371/journal.pcbi.1009347.",
     "crumbs": [
       "Packages",
       "EpiFilter"
@@ -230,7 +230,7 @@
     "href": "package_EpiFusion.html",
     "title": "EpiFusion",
     "section": "",
-    "text": "Brief description\n\n\nLink to cran\n\n\nMethods\nThis package contains the following methods:\n\nfixed sliding windows\n\n\n\nStarter code",
+    "text": "Brief description\nEpiFusion | Judge et al. (2024) | 🔗 | Nov 30, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nJudge C, Vaughan T, Russell T, Abbott S, Plessis L, Stadler T, et al. 2024. EpiFusion: Joint inference of the effective reproduction number by integrating phylodynamic and epidemiological modelling with particle filtering. PLOS Computational Biology 20:e1012528; doi:10.1371/journal.pcbi.1012528.",
     "crumbs": [
       "Packages",
       "EpiFusion"
@@ -263,7 +263,7 @@
     "href": "package_epigrowthfit.html",
     "title": "epigrowthfit",
     "section": "",
-    "text": "Brief description\n\n\nLink to cran\n\n\nMethods\nThis package contains the following methods:\n\nMethod 1\n\n\n\nStarter code",
+    "text": "Brief description\nepigrowthfit | Earn et al. (2020) | 🔗 | Aug 12, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nEarn DJD, Ma J, Poinar H, Dushoff J, Bolker BM. 2020. Acceleration of plague outbreaks in the second pandemic. Proceedings of the National Academy of Sciences 117:27703–27711; doi:10.1073/pnas.2004904117.",
     "crumbs": [
       "Packages",
       "epigrowthfit"
@@ -296,7 +296,7 @@
     "href": "package_ern.html",
     "title": "ern",
     "section": "",
-    "text": "Brief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
+    "text": "Brief description\nern | Champredon et al. (2024) | 🔗 | May 22, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nChampredon D, Papst I, Yusuf W. 2024. Ern: An R package to estimate the effective reproduction number using clinical and wastewater surveillance data. PLOS ONE 19:e0305550; doi:10.1371/journal.pone.0305550.",
     "crumbs": [
       "Packages",
       "ern"
@@ -329,7 +329,7 @@
     "href": "package_EstimateR.html",
     "title": "EstimateR",
     "section": "",
-    "text": "Brief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
+    "text": "Brief description\nEstimateR | Scire et al. (2023) | 🔗 | Sep 10, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nScire J, Huisman JS, Grosu A, Angst DC, Lison A, Li J, et al. 2023. estimateR: An R package to estimate and monitor the effective reproductive number. BMC Bioinformatics 24:310; doi:10.1186/s12859-023-05428-4.",
     "crumbs": [
       "Packages",
       "EstimateR"
@@ -395,7 +395,7 @@
     "href": "package_EpiInvert.html",
     "title": "EpiInvert",
     "section": "",
-    "text": "Brief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
+    "text": "Brief description\nEpiInvert | Alvarez et al. (2021) | 🔗 | Dec 31, 2023|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nAlvarez L, Colom M, Morel J-D, Morel J-M. 2021. Computing the daily reproduction number of COVID-19 by inverting the renewal equation using a variational technique. Proceedings of the National Academy of Sciences 118:e2105112118; doi:10.1073/pnas.2105112118.",
     "crumbs": [
       "Packages",
       "EpiInvert"
@@ -428,7 +428,7 @@
     "href": "package_WhiteLabRt.html",
     "title": "WhiteLabRt",
     "section": "",
-    "text": "Brief description\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
+    "text": "Brief description\nWhiteLabRt | Li and White (2021) | 🔗 | Aug 16, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nLi T, White LF. 2021. Bayesian back-calculation and nowcasting for line list data during the COVID-19 pandemic. PLOS Computational Biology 17:e1009210; doi:10.1371/journal.pcbi.1009210.",
     "crumbs": [
       "Packages",
       "WhiteLabRt"
@@ -461,7 +461,7 @@
     "href": "package_EpiNow2.html",
     "title": "EpiNow2",
     "section": "",
-    "text": "Description\nLorem ipsum the world is burning\nImportant links:\n\n\n\nREF:  [insert](Peer reviewed: no)\nGithub (Updated: Jan 2025)\nCRAN (Updated: Jan 2025)\nVignettes\n\n\n\n\n\nMethods\nThis package contains the following methods:\n\nGaussian Process\n\n\n\nAssessment\n\n\n\n\n\n\n\n\nCategory\nAssessment\nRationale\n\n\nEase of installation\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nEase of use\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nRuntime length\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nAbility to nowcast/forcast\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nIncorporates delay distributions\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nCommunicates uncertainty\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nPeer reviewed validation\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nClarity of documentation\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nIntrepetability of outputs\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nEase of extracting outputs\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\n\n\n\nStarter code\n\ncopy in from SummRT\nall things should use the same datasets\ncould make these shiny apps if we wanted",
+    "text": "Description\nEpiNow2 estimates the time-varying reproduction number on cases by date of infection (using a similar approach to that implemented in EpiEstim). True infections, treated as latent and unobserved, are estimated and then mapped to observed data (for example cases by date of report) via one or more delay distributions (in the examples in the package documentation these are an incubation period and a reporting delay) and a reporting model that can include weekly periodicity.\nUncertainty is propagated from all inputs into the final parameter estimates, helping to mitigate spurious findings. This is handled internally. The time-varying reproduction estimates and the uncertain generation time also give time-varying estimates of the rate of growth.\nForecasting is also supported for the time-varying reproduction number, infections, and reported cases using the same generative process approach as used for estimation.\nImportant links:\n\n\n\nREF:  Wellcome report (Peer reviewed: ❌)\nGithub (Updated: Mar 2025)\nCRAN (Updated: Feb 2025)\nDocs\n\n\n\n\n\nMethods\nThis package contains the following methods:\n\nGaussian Process\n\n\n\nAssessment\n\n\n\n\n\n\n\n\nCategory\nAssessment\nRationale\n\n\nUsage\n\n\n\n\nEase of installation\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nEase of use\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nEase of extracting outputs\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nRuntime length\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nFeatures\n\n\n\n\nAbility to nowcast/forcast\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nIncorporates delay distributions\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nCommunicates uncertainty\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nValidation\n\n\n\n\nPeer reviewed validation\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nClarity of documentation\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\nIntrepetability of outputs\n☐ Easy\n\n\n\n\n☑ Moderate\n\n\n\n\n☐ Challenging\nGiven rationale\n\n\n\n\n\nStarter code\n\ncopy in from SummRT\nall things should use the same datasets\ncould make these shiny apps if we wanted",
     "crumbs": [
       "Packages",
       "EpiNow2"
@@ -494,7 +494,7 @@
     "href": "package_bayEStim.html",
     "title": "bayEStim",
     "section": "",
-    "text": "Brief description\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
+    "text": "Brief description\nbayEStim | Lytras T, Sypsa V, Demosthenes P, Tsiodr S | 🔗 | Aug 3, 2020 |\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
     "crumbs": [
       "Packages",
       "bayEStim"
@@ -505,7 +505,7 @@
     "href": "package_earlyR.html",
     "title": "earlyR",
     "section": "",
-    "text": "Brief description\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
+    "text": "Brief description\nearlyR | Jombart T, Cori A, Nouvellet P, Skarp, J | 🔗 | Oct 27, 2020 |\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
     "crumbs": [
       "Packages",
       "earlyR"
@@ -516,7 +516,7 @@
     "href": "package_epinowcast.html",
     "title": "epinowcast",
     "section": "",
-    "text": "Brief description\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
+    "text": "Brief description\nepinowcast | Abbott S, Lison A, Funk S, Pearson C, Gruson H, Guenther F, DeWitt M | 🔗| Sep 30, 2024 |\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code",
     "crumbs": [
       "Packages",
       "epinowcast"
@@ -800,6 +800,17 @@
     "crumbs": [
       "Estimating R(t)",
       "Constraining $R(t)$ over time"
+    ]
+  },
+  {
+    "objectID": "package_RtEstim.html",
+    "href": "package_RtEstim.html",
+    "title": "RtEstim",
+    "section": "",
+    "text": "Brief description\nRtEstim | Liu et al. (2024) | 🔗 | Sep 25, 2024|\n\n\nAssessment table\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nSample code\n\n\n\n\nLiu J, Cai Z, Gustafson P, McDonald DJ. 2024. Rtestim: Time-varying reproduction number estimation with trend filtering. PLOS Computational Biology 20:e1012324; doi:10.1371/journal.pcbi.1012324.",
+    "crumbs": [
+      "Packages",
+      "RtEstim"
     ]
   }
 ]

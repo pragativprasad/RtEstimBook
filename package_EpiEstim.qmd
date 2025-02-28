@@ -1,6 +1,8 @@
 # EpiEstim {#sec-top .unnumbered}
 
 
+| [EpiEstim](package_EpiEstim.qmd#sec-top)  | @Cori2013New, @Nash2023Estimating | [🔗](https://github.com/mrc-ide/EpiEstim) | Aug 30, 2024 |
+
 ### Brief description
 
 

@@ -360,15 +360,17 @@ window.Quarto = {
 
 <section id="description" class="level3">
 <h3 class="anchored" data-anchor-id="description">Description</h3>
-<p>Lorem ipsum the world is burning</p>
-<p>Important links:</p>
+<p><a href="./package_EpiNow2.html">EpiNow2</a> estimates the time-varying reproduction number on cases by date of infection (using a similar approach to that implemented in <a href="./package_EpiEstim.html">EpiEstim</a>). True infections, treated as latent and unobserved, are estimated and then mapped to observed data (for example cases by date of report) via one or more delay distributions (in the examples in the package documentation these are an incubation period and a reporting delay) and a reporting model that can include weekly periodicity.</p>
+<p>Uncertainty is propagated from all inputs into the final parameter estimates, helping to mitigate spurious findings. This is handled internally. The time-varying reproduction estimates and the uncertain generation time also give time-varying estimates of the rate of growth.</p>
+<p>Forecasting is also supported for the time-varying reproduction number, infections, and reported cases using the same generative process approach as used for estimation.</p>
+<p><small style="font-weight: bold;margin-bottom: 0;">Important links:</small></p>
 <table class="caption-top table">
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><small>REF: </small> [insert]<br><small>(Peer reviewed: no)</small></td>
-<td style="text-align: left;"><a href="https://github.com/kpzoo/model-selection-for-epidemic-renewal-models">Github</a> <small><br>(Updated: Jan 2025)</small></td>
-<td style="text-align: left;"><a href="">CRAN</a> <small><br>(Updated: Jan 2025)</small></td>
-<td style="text-align: left;"><a href="">Docs</a></td>
+<td style="text-align: left;"><small>REF: </small> <a href="https://wellcomeopenresearch.org/articles/5-112">Wellcome report</a> <br><small>(Peer reviewed: ❌)</small></td>
+<td style="text-align: left;"><a href="https://github.com/epiforecasts/EpiNow2">Github</a> <small><br>(Updated: Mar 2025)</small></td>
+<td style="text-align: left;"><a href="https://cran.r-project.org/web/packages/EpiNow2/index.html">CRAN</a> <small><br>(Updated: Feb 2025)</small></td>
+<td style="text-align: left;"><a href="https://epiforecasts.io/EpiNow2/">Docs</a></td>
 </tr>
 </tbody>
 </table>
@@ -394,7 +396,12 @@ window.Quarto = {
 <td data-quarto-table-cell-role="th" style="font-weight: bold; width: 20%">Assessment</td>
 <td data-quarto-table-cell-role="th" style="font-weight: bold; width: 50%">Rationale</td>
 </tr>
-<tr class="even" style="border-top: 2px solid;">
+<tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
+<td>Usage</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
 <td>Ease of installation</td>
 <td>☐ Easy
 <div style="height:1px;">
@@ -409,8 +416,23 @@ window.Quarto = {
 ☐ Challenging</td>
 <td>Given rationale</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Ease of use</td>
+<td>☐ Easy
+<div style="height:1px;">
+<br>
+
+</div>
+☑ <strong>Moderate</strong>
+<div style="height:1px;">
+<br>
+
+</div>
+☐ Challenging</td>
+<td>Given rationale</td>
+</tr>
+<tr class="odd">
+<td>Ease of extracting outputs</td>
 <td>☐ Easy
 <div style="height:1px;">
 <br>
@@ -439,7 +461,12 @@ window.Quarto = {
 ☐ Challenging</td>
 <td>Given rationale</td>
 </tr>
-<tr class="odd">
+<tr class="odd" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
+<td>Features</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
 <td>Ability to nowcast/forcast</td>
 <td>☐ Easy
 <div style="height:1px;">
@@ -454,7 +481,7 @@ window.Quarto = {
 ☐ Challenging</td>
 <td>Given rationale</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Incorporates delay distributions</td>
 <td>☐ Easy
 <div style="height:1px;">
@@ -469,7 +496,7 @@ window.Quarto = {
 ☐ Challenging</td>
 <td>Given rationale</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Communicates uncertainty</td>
 <td>☐ Easy
 <div style="height:1px;">
@@ -483,6 +510,11 @@ window.Quarto = {
 </div>
 ☐ Challenging</td>
 <td>Given rationale</td>
+</tr>
+<tr class="odd" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
+<td>Validation</td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
 <td>Peer reviewed validation</td>
@@ -516,21 +548,6 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td>Intrepetability of outputs</td>
-<td>☐ Easy
-<div style="height:1px;">
-<br>
-
-</div>
-☑ <strong>Moderate</strong>
-<div style="height:1px;">
-<br>
-
-</div>
-☐ Challenging</td>
-<td>Given rationale</td>
-</tr>
-<tr class="odd">
-<td>Ease of extracting outputs</td>
 <td>☐ Easy
 <div style="height:1px;">
 <br>

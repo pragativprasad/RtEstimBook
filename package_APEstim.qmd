@@ -1,6 +1,8 @@
 # APEstim {#sec-top .unnumbered}
 
 
+|  | @Parag2020Using | [🔗](https://github.com/kpzoo/model-selection-for-epidemic-renewal-models)   | Feb 12, 2021 |
+
 ### Brief description
 
 ### Assessment table

@@ -1,1 +1,15 @@
-# RtEstim {.unnumbered}
+# RtEstim {#sec-top .unnumbered}
+
+### Brief description
+
+| [RtEstim](package_RtEstim.qmd#sec-top) | @Liu2024rtestim | [🔗](https://github.com/dajmcdon/rtestim) | Sep 25, 2024|
+
+### Assessment table
+
+### Methods
+
+This package contains the following methods:
+
+- 
+
+### Sample code

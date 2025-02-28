@@ -3,6 +3,8 @@
 
 ### Brief description
 
+| [EpiInvert](package_EpiInvert.qmd#sec-top) | @Alvarez2021Computing | [🔗](https://github.com/lalvarezmat/EpiInvert) | Dec 31, 2023|
+
 ### Assessment table
 
 ### Methods
