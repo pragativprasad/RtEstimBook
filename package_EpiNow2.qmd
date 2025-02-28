@@ -4,6 +4,13 @@
 
 Lorem ipsum the world is burning
 
+Important links:
+
+| | | | |
+|:-------------|:--------|:-------------|:--------|
+|<small>REF: </small>  [insert]<br><small>(Peer reviewed: no)</small> |[Github](https://github.com/kpzoo/model-selection-for-epidemic-renewal-models) <small><br>(Updated: Jan 2025)</small>| [CRAN]() <small><br>(Updated: Jan 2025)</small>| [Docs]() |
+
+
 ### Methods
 
 This package contains the following methods:
@@ -65,7 +72,56 @@ This package contains the following methods:
         </td>
         <td>Given rationale</td>
     </tr>
+                        <tr>
+        <td>Communicates uncertainty</td>
+        <td>
+          ☐ Easy <div style="height:1px;"><br></div>
+          ☑ <b>Moderate</b> <div style="height:1px;"><br></div>
+          ☐ Challenging
+        </td>
+        <td>Given rationale</td>
+    </tr>
+                            <tr>
+        <td>Peer reviewed validation</td>
+        <td>
+          ☐ Easy <div style="height:1px;"><br></div>
+          ☑ <b>Moderate</b> <div style="height:1px;"><br></div>
+          ☐ Challenging
+        </td>
+        <td>Given rationale</td>
+    </tr>
+                                <tr>
+        <td>Clarity of documentation</td>
+        <td>
+          ☐ Easy <div style="height:1px;"><br></div>
+          ☑ <b>Moderate</b> <div style="height:1px;"><br></div>
+          ☐ Challenging
+        </td>
+        <td>Given rationale</td>
+    </tr>
+                        <tr>
+        <td>Intrepetability of outputs</td>
+        <td>
+          ☐ Easy <div style="height:1px;"><br></div>
+          ☑ <b>Moderate</b> <div style="height:1px;"><br></div>
+          ☐ Challenging
+        </td>
+        <td>Given rationale</td>
+    </tr>
+                          <tr>
+        <td>Ease of extracting outputs</td>
+        <td>
+          ☐ Easy <div style="height:1px;"><br></div>
+          ☑ <b>Moderate</b> <div style="height:1px;"><br></div>
+          ☐ Challenging
+        </td>
+        <td>Given rationale</td>
+    </tr>
 </table>
 ```
 
 ### Starter code
+
+- copy in from SummRT
+- all things should use the same datasets
+- could make these shiny apps if we wanted

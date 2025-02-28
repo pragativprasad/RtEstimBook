@@ -186,6 +186,12 @@ window.Quarto = {
  <span class="menu-text">Inference frameworks</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./simulation_tool.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulation tool</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -352,7 +358,10 @@ window.Quarto = {
 </header>
 
 
+<section id="overview" class="level4">
+<h4 class="anchored" data-anchor-id="overview">Overview</h4>
 <p>The largest variety in constraints of R(t) exists in methods that impose structure on how R(t) varies with time. Each method confers various assumptions and implications for resulting estimates of R(t), and new methods represent a large area of innovation with regards to real-time infectious disease modeling. With these constraints, we can make inference from sampled case-count data as a signal of unobserved infections in the larger unobserved population.</p>
+</section>
 <section id="sec-fixedwindow" class="level2">
 <h2 class="anchored" data-anchor-id="sec-fixedwindow">Fixed sliding windows</h2>
 <p>A straightforward method of imposing structure on R(t) over time involves constraining R(t) to be drawn from the same distribution within moving time subsets, called sliding windows. We add the prefix of “fixed-size” to distinguish from methods that may adapt the size of the sliding window over time. &gt;&gt; make a destinction between deriving it and doing it by Bayesian.</p>

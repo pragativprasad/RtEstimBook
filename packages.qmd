@@ -5,6 +5,8 @@ This page contains:
 - @tbl-packages, R packages with an accompanying peer-reviewed journal manuscript 
 - @tbl-packages2, R packages without a peer-reviewed journal manuscript.
 
+<hr>
+
 | Package name  | Peer-reviewed reference | Github link | Last update[^1] | 
 |:--------|:--------|:--------|:--------|
 | [APEestim](package_APEstim.qmd#sec-top) | @Parag2020Using | [🔗](https://github.com/kpzoo/model-selection-for-epidemic-renewal-models)   | Feb 12, 2021 |
