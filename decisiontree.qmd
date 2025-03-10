@@ -118,42 +118,12 @@ Instead, we present some some subjective reflections on various aspects of utili
     <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
       <td> Usage </td>
     </tr>
-    
+
     <tr>
-        <td>Ease of installation</td>
-        <td>Some description</td>
-        <td>
-          ☐ Easy: description <div style="height:1px;"><br></div>
-          ☐ Moderate: description <div style="height:1px;"><br></div>
-          ☐ Challenging: description
-        </td>
-    </tr>
-        <tr>
-        <td>Ease of use</td>
-        <td>Some description</td>
-        <td>
-          ☐ Easy: description <div style="height:1px;"><br></div>
-          ☐ Moderate: description <div style="height:1px;"><br></div>
-          ☐ Challenging: description
-        </td>
-    </tr>
-    
-            <tr>
-        <td>Ease of extractring output</td>
-        <td>Some description</td>
-        <td>
-          ☐ Easy: description <div style="height:1px;"><br></div>
-          ☐ Moderate: description <div style="height:1px;"><br></div>
-          ☐ Challenging: description
-        </td>
-    </tr>
-            <tr>
         <td>Runtime length</td>
         <td>Some description</td>
         <td>
-          ☐ Easy: description <div style="height:1px;"><br></div>
-          ☐ Moderate: description <div style="height:1px;"><br></div>
-          ☐ Challenging: description
+          Time (minutes)
         </td>
     </tr>
       
@@ -161,32 +131,26 @@ Instead, we present some some subjective reflections on various aspects of utili
     <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
       <td> Features </td>
     </tr>
-                <tr>
+        <tr>
         <td>Ability to nowcast/forcast</td>
         <td>Some description</td>
         <td>
-          ☐ Easy: description <div style="height:1px;"><br></div>
-          ☐ Moderate: description <div style="height:1px;"><br></div>
-          ☐ Challenging: description
-        </td>
+          ☐ Yes/no
+                  </td>
     </tr>
                     <tr>
         <td>Incorporates delay distributions</td>
         <td>Some description</td>
         <td>
-          ☐ Easy: description <div style="height:1px;"><br></div>
-          ☐ Moderate: description <div style="height:1px;"><br></div>
-          ☐ Challenging: description
+          ☐ Yes/no
         </td>
     </tr>
     
                         <tr>
-        <td>Estimates expected cases and R(t)</td>
+        <td>Estimates expected cases </td>
         <td>Some description</td>
         <td>
-          ☐ Easy: description <div style="height:1px;"><br></div>
-          ☐ Moderate: description <div style="height:1px;"><br></div>
-          ☐ Challenging: description
+          ☐ Yes/no
         </td>
     </tr>
 
@@ -209,31 +173,18 @@ Instead, we present some some subjective reflections on various aspects of utili
         <td>Peer reviewed validation</td>
         <td>Some description</td>
         <td>
-          ☐ Easy: description <div style="height:1px;"><br></div>
-          ☐ Moderate: description <div style="height:1px;"><br></div>
-          ☐ Challenging: description
+          ☐ Yes/no
         </td>
     </tr>
     
                         <tr>
-        <td>Clarity of documentation</td>
+        <td>Replicable documentation</td>
         <td>Some description</td>
         <td>
-          ☐ Easy: description <div style="height:1px;"><br></div>
-          ☐ Moderate: description <div style="height:1px;"><br></div>
-          ☐ Challenging: description
+          ☐ Yes/no
         </td>
     </tr>
 
-                        <tr>
-        <td>Intrepetability of outputs</td>
-        <td>Some description</td>
-        <td>
-          ☐ Easy: description <div style="height:1px;"><br></div>
-          ☐ Moderate: description <div style="height:1px;"><br></div>
-          ☐ Challenging: description
-        </td>
-    </tr>
 
 </table>
 
