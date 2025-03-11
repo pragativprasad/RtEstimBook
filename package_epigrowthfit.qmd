@@ -40,7 +40,7 @@ This package contains the following methods:
       <td> Features </td>
     </tr>
         <tr>
-        <td>Ability to nowcast/forcast</td>
+        <td>Ability to nowcast/forecast</td>
         <td>Some description</td>
         <td>
           ☐ Yes/no

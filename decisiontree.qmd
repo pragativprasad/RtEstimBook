@@ -132,7 +132,7 @@ Instead, we present some some subjective reflections on various aspects of utili
       <td> Features </td>
     </tr>
         <tr>
-        <td>Ability to nowcast/forcast</td>
+        <td>Ability to nowcast/forecast</td>
         <td>Some description</td>
         <td>
           ☐ Yes/no
