@@ -23,6 +23,7 @@ This package contains the following methods:
 
 - [Gaussian Process](methods_time.qmd#sec-gaussianprocess)
 
+
 ### Assessment
 
 ```{=html}
@@ -110,6 +111,8 @@ This package contains the following methods:
 </table>
 
 ```
+
+
 
 ### Starter code
 
