@@ -67,9 +67,7 @@ This package contains the following methods:
         <td>Communicates uncertainty</td>
         <td>Some description</td>
         <td>
-          ☐ Easy: description <div style="height:1px;"><br></div>
-          ☐ Moderate: description <div style="height:1px;"><br></div>
-          ☐ Challenging: description
+☐ Yes/no
         </td>
     </tr>
 

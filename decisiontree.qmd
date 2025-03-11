@@ -158,9 +158,7 @@ Instead, we present some some subjective reflections on various aspects of utili
         <td>Communicates uncertainty</td>
         <td>Some description</td>
         <td>
-          ☐ Easy: description <div style="height:1px;"><br></div>
-          ☐ Moderate: description <div style="height:1px;"><br></div>
-          ☐ Challenging: description
+☐ Yes/no
         </td>
     </tr>
 
