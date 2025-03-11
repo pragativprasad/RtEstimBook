@@ -31,9 +31,9 @@ This package contains the following methods:
     <caption>Assessment rubric</caption>
     <!---HEADING --->
     <tr style="border-top: none;">
-      <th style="font-weight: bold; width: 20%">Category</th>
-      <th style="font-weight: bold; width: 30%">Notes</th>
-      <th style="font-weight: bold; width: 50%">Scales</th>
+      <th style="font-weight: bold; width: 40%">Category</th>
+      <th style="font-weight: bold; width: 40%">Notes</th>
+      <th style="font-weight: bold; width: 20%">Scales</th>
     </tr>
     
         <!------ SECTION 1: USAGE -------->
