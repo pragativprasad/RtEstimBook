@@ -2,109 +2,109 @@
 
 ### Brief description
 
-- The [ern](package_ern.qmd) package ultimately uses the [EpiEstim](package_EpiEstim.qmd) package for the core of the   computation as [EpiEstim](package_EpiEstim.qmd) already provides a robust and one of the fastest implementations of well-tested   estimation algorithms. However, [ern](package_ern.qmd) wraps complex and critical features for estimating   from real-world clinical and wastewater data that have not all been implemented in any one existing   package for   estimation
+The [ern](package_ern.qmd) package was developed to adapt the [EpiEstim](package_EpiEstim.qmd) package for real world data, including wastewater and clinical data. Specifically the package:
 
-Here, we present the  library [ern](package_ern.qmd) to address the gaps identified above, specifically:
-o	to disaggregate the clinical reports into a shorter time unit to enable estimation of  using an intrinsic generation interval on a useful timescale;
-o	to provide a framework to estimate  from wastewater data, consistent with an estimation based on clinical data;
-o	to provide a user-friendly interface geared at public-health practitioners that may have limited proficiency in the  programming language;
-o	to perform an efficient and rapid  estimation.
+-   disaggregates clinical reports into a shorter time unit to enable estimation of $R_t$ using an intrinsic generation interval on a useful timescale;
+-   provides a framework to estimate $R_t$ from wastewater data, consistent with an estimation based on clinical data;
+-   provides a user-friendly interface geared at public-health practitioners that may have limited proficiency in the R programming language;
+-   uses EpiEstim for efficient and rapid estimation.
 
-
-
-| [ern](package_ern.qmd#sec-top) | @Champredon2024ern | [🔗](https://github.com/phac-nml-phrsd/ern) | May 22, 2024|
+| [ern](package_ern.qmd#sec-top) \| @Champredon2024ern \| [🔗](https://github.com/phac-nml-phrsd/ern) \| May 22, 2024\|
 
 ### Methods
 
 This package contains the following methods:
 
-- 
+-   
 
 ### Assessment
 
-```{=html}
-<table>
-    <caption>Assessment rubric</caption>
-    <!---HEADING --->
-    <tr style="border-top: none;">
-      <th style="font-weight: bold; width: 40%">Category</th>
-      <th style="font-weight: bold; width: 40%">Notes</th>
-      <th style="font-weight: bold; width: 20%">Scales</th>
-    </tr>
-    
-        <!------ SECTION 1: USAGE -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Usage </td>
-    </tr>
+-   <div>
 
-    <tr>
-        <td>Runtime length</td>
-        <td>Some description</td>
-        <td>
-          Time (minutes)
-        </td>
-    </tr>
-      
-      <!------ SECTION 2: FEATURES -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Features </td>
-    </tr>
+    ```{=html}
+    <table>
+        <caption>Assessment rubric</caption>
+        <!---HEADING --->
+        <tr style="border-top: none;">
+          <th style="font-weight: bold; width: 40%">Category</th>
+          <th style="font-weight: bold; width: 40%">Notes</th>
+          <th style="font-weight: bold; width: 20%">Scales</th>
+        </tr>
+        
+            <!------ SECTION 1: USAGE -------->
+        <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
+          <td> Usage </td>
+        </tr>
+
         <tr>
-        <td>Ability to nowcast/forecast</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-                  </td>
-    </tr>
-                    <tr>
-        <td>Incorporates delay distributions</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
-    
+            <td>Runtime length</td>
+            <td>Runs with EpiEstim platform, which is fast and efficient.</td>
+            <td>
+              Time (minutes)
+            </td>
+        </tr>
+          
+          <!------ SECTION 2: FEATURES -------->
+        <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
+          <td> Features </td>
+        </tr>
+            <tr>
+            <td>Ability to nowcast/forecast</td>
+            <td>No documentation of this capability.</td>
+            <td>
+              No
+                      </td>
+        </tr>
                         <tr>
-        <td>Estimates expected cases </td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
+            <td>Incorporates delay distributions</td>
+            <td>Includes incubation period and reporting delay for clinical data.</td>
+            <td>
+              Yes
+            </td>
+        </tr>
+        
+                            <tr>
+            <td>Estimates expected cases </td>
+            <td>Doing this from wastewater or aggregated clincal case data.</td>
+            <td>
+              Yes
+            </td>
+        </tr>
 
-                        <tr>
-        <td>Communicates uncertainty</td>
-        <td>Some description</td>
-        <td>
-☐ Yes/no
-        </td>
-    </tr>
+                            <tr>
+            <td>Communicates uncertainty</td>
+            <td>Uncertainty from both EpiEstim approach, as well as assumptions made in estimating incident cases through resampling approach.</td>
+            <td>
+    ☐ Yes
+            </td>
+        </tr>
 
-      <!------ SECTION 3: Validation -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Validation </td>
-    </tr>
-    
-                        <tr>
-        <td>Peer reviewed validation</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
-    
-                        <tr>
-        <td>Replicable documentation</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
+          <!------ SECTION 3: Validation -------->
+        <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
+          <td> Validation </td>
+        </tr>
+        
+                            <tr>
+            <td>Peer reviewed validation</td>
+            <td>Some description</td>
+            <td>
+              ☐ Yes/no
+            </td>
+        </tr>
+        
+                            <tr>
+            <td>Replicable documentation</td>
+            <td>Some description</td>
+            <td>
+              ☐ Yes/no
+            </td>
+        </tr>
 
 
-</table>
+    </table>
+    ```
 
-```
-
+    </div>
 
 ### Sample code
+There is a lot of sample code and worked examples in the Plos One publication for this method [🔗](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0305550).
