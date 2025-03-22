@@ -2,13 +2,22 @@
 
 ### Brief description
 
+A package that implements existing methods to estimate $R_0$ and $R_t$. The advantage of this package is that it standardizes data formats and the parameterization of the generation interval.
+
+This package was developed in 2012 before many of the current methods were developed and most of the methods that are described in the package are not commonly used.
+
 | [R0](package_R0.qmd#sec-top) | @obadia2012r0 | [🔗](https://github.com/tobadia/R0) | Sep 20, 2023|
 
 ### Methods
 
 This package contains the following methods:
 
-- 
+- Function to define the generation interval. Options include empiric (i.e. multinomial), lognormal, gamma, and weibull distributions.
+- Estimation of $R_0$ as a function of the attack rate (user must provide this).
+- Method to estimate $R_0$ from the exponential growth rate described by [`Wallinga and Lipsitch`](https://pubmed.ncbi.nlm.nih.gov/17476782/).
+- Maximum likelihood based estimate of $R_0$ and serial interval introduced by [`White and Pagano`](https://pubmed.ncbi.nlm.nih.gov/18058829/).
+- Sequential Bayesian method to estimate time-varying reproductive number introduced by [`Bettencourt and Ribiero`](https://pubmed.ncbi.nlm.nih.gov/18478118/).
+- Retrospective estimation of the time-varying reproductive number introduced by [`Wallinga and Teunis`](https://pubmed.ncbi.nlm.nih.gov/15353409/).
 
 ### Assessment
 
@@ -29,9 +38,9 @@ This package contains the following methods:
 
     <tr>
         <td>Runtime length</td>
-        <td>Some description</td>
+        <td>Not described. But methods used are not computationally complex.</td>
         <td>
-          Time (minutes)
+          N/A
         </td>
     </tr>
       
@@ -41,32 +50,32 @@ This package contains the following methods:
     </tr>
         <tr>
         <td>Ability to nowcast/forecast</td>
-        <td>Some description</td>
+        <td>Not available in the provided methods.</td>
         <td>
-          ☐ Yes/no
+          No
                   </td>
     </tr>
                     <tr>
         <td>Incorporates delay distributions</td>
-        <td>Some description</td>
+        <td>Not available in the provided methods</td>
         <td>
-          ☐ Yes/no
+          No
         </td>
     </tr>
     
                         <tr>
         <td>Estimates expected cases </td>
-        <td>Some description</td>
+        <td>Not available in the provided methods</td>
         <td>
-          ☐ Yes/no
+          No
         </td>
     </tr>
 
                         <tr>
         <td>Communicates uncertainty</td>
-        <td>Some description</td>
+        <td>Some methods allow for this.</td>
         <td>
-☐ Yes/no
+Yes
         </td>
     </tr>
 
@@ -77,17 +86,17 @@ This package contains the following methods:
     
                         <tr>
         <td>Peer reviewed validation</td>
-        <td>Some description</td>
+        <td>Peer reviewed paper published describing the package.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
     
                         <tr>
         <td>Replicable documentation</td>
-        <td>Some description</td>
+        <td>Package is on CRAN.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
 

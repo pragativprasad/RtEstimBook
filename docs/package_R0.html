@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -56,10 +56,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bc11f644e0fd71aaf667f8c23dea1f98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -388,13 +388,20 @@ window.Quarto = {
 
 <section id="brief-description" class="level3">
 <h3 class="anchored" data-anchor-id="brief-description">Brief description</h3>
+<p>A package that implements existing methods to estimate <span class="math inline">\(R_0\)</span> and <span class="math inline">\(R_t\)</span>. The advantage of this package is that it standardizes data formats and the parameterization of the generation interval.</p>
+<p>This package was developed in 2012 before many of the current methods were developed and most of the methods that are described in the package are not commonly used.</p>
 <div class="line-block"><a href="./package_R0.html#sec-top">R0</a> | <span class="citation" data-cites="obadia2012r0">Obadia et al. (<a href="references.html#ref-obadia2012r0" role="doc-biblioref">2012</a>)</span> | <a href="https://github.com/tobadia/R0">🔗</a> | Sep 20, 2023|</div>
 </section>
 <section id="methods" class="level3">
 <h3 class="anchored" data-anchor-id="methods">Methods</h3>
 <p>This package contains the following methods:</p>
 <ul>
-<li></li>
+<li>Function to define the generation interval. Options include empiric (i.e.&nbsp;multinomial), lognormal, gamma, and weibull distributions.</li>
+<li>Estimation of <span class="math inline">\(R_0\)</span> as a function of the attack rate (user must provide this).</li>
+<li>Method to estimate <span class="math inline">\(R_0\)</span> from the exponential growth rate described by <a href="https://pubmed.ncbi.nlm.nih.gov/17476782/"><code>Wallinga and Lipsitch</code></a>.</li>
+<li>Maximum likelihood based estimate of <span class="math inline">\(R_0\)</span> and serial interval introduced by <a href="https://pubmed.ncbi.nlm.nih.gov/18058829/"><code>White and Pagano</code></a>.</li>
+<li>Sequential Bayesian method to estimate time-varying reproductive number introduced by <a href="https://pubmed.ncbi.nlm.nih.gov/18478118/"><code>Bettencourt and Ribiero</code></a>.</li>
+<li>Retrospective estimation of the time-varying reproductive number introduced by <a href="https://pubmed.ncbi.nlm.nih.gov/15353409/"><code>Wallinga and Teunis</code></a>.</li>
 </ul>
 </section>
 <section id="assessment" class="level3">
@@ -414,8 +421,8 @@ window.Quarto = {
 </tr>
 <tr class="odd">
 <td>Runtime length</td>
-<td>Some description</td>
-<td>Time (minutes)</td>
+<td>Not described. But methods used are not computationally complex.</td>
+<td>N/A</td>
 </tr>
 <tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
 <td>Features</td>
@@ -424,23 +431,23 @@ window.Quarto = {
 </tr>
 <tr class="odd">
 <td>Ability to nowcast/forecast</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td>Not available in the provided methods.</td>
+<td>No</td>
 </tr>
 <tr class="even">
 <td>Incorporates delay distributions</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td>Not available in the provided methods</td>
+<td>No</td>
 </tr>
 <tr class="odd">
 <td>Estimates expected cases</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td>Not available in the provided methods</td>
+<td>No</td>
 </tr>
 <tr class="even">
 <td>Communicates uncertainty</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td>Some methods allow for this.</td>
+<td>Yes</td>
 </tr>
 <tr class="odd" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
 <td>Validation</td>
@@ -449,13 +456,13 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td>Peer reviewed validation</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td>Peer reviewed paper published describing the package.</td>
+<td>Yes</td>
 </tr>
 <tr class="odd">
 <td>Replicable documentation</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td>Package is on CRAN.</td>
+<td>Yes</td>
 </tr>
 </tbody>
 </table>
@@ -556,6 +563,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -666,6 +675,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

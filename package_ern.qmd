@@ -15,7 +15,8 @@ The [ern](package_ern.qmd) package was developed to adapt the [EpiEstim](package
 
 This package contains the following methods:
 
--   
+- EpiEstim for estimation of $R_t$.
+- Disagregation of data into shorter time units, as necessary.
 
 ### Assessment
 

@@ -1,15 +1,30 @@
 # EstimateR {#sec-top .unnumbered}
 
-
 ### Brief description
 
-| [EstimateR](package_EstimateR.qmd#sec-top) | @Scire2023estimateR | [🔗](https://github.com/covid-19-Re/estimateR) | Sep 10, 2024|
+EstimateR is a package that is built on the EpiEstim framework for estimating $R_t$ and includes steps to smooth, backcalculate data to infection dates and create confidence intervals for estimates. Specifically, the method takes observed observations of infection events, such as case confirmations, hospital admissions, intensive care unit admissions, or deaths and performs the following four steps:
+
+-   Smooth the data to reduce noise in the data.
+-   Backcalculate data to date of infection.
+-   Estimate $R_t$ using EpiEstim.
+-   Calculate 95% confidence intervals using bootstrapping.
+
+Each of these tasks can be done separately and the users is not required to perform all tasks.
+
+There is apparently an option to nowcast data described and implemented in the package, though provided mathematical details are limited.
+
+| [EstimateR](package_EstimateR.qmd#sec-top) \| @Scire2023estimateR \| [🔗](https://github.com/covid-19-Re/estimateR) \| Sep 10, 2024\|
 
 ### Methods
 
 This package contains the following methods:
 
-- 
+-   Data is smoothed using LOESS with a first order polynomial. Users should adapt the smoothing parameter consistent with the noise in the input data.
+-   Deconvolution with an Expectation-Maximization (EM) algorithm is used to create an estimate of the time series of infection events.
+-   EpiEstim is used to estimate $R_t$ with a Bayesian framework.
+-   Block bootstrapping is used to estimate 95% confidence intervals.
+
+Details of the methods used are provided in the supplement of [`Scire et al. (2023)`](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-023-05428-4).
 
 ### Assessment
 
@@ -30,9 +45,9 @@ This package contains the following methods:
 
     <tr>
         <td>Runtime length</td>
-        <td>Some description</td>
+        <td>Comparison of Estimate R with epidemia and EpiNow2 on simulated data.</td>
         <td>
-          Time (minutes)
+          EstimateR: 9s; epidemia: 14 min; EpiNow2: 25 min
         </td>
     </tr>
       
@@ -42,32 +57,32 @@ This package contains the following methods:
     </tr>
         <tr>
         <td>Ability to nowcast/forecast</td>
-        <td>Some description</td>
+        <td>Appears possible; limited details provided.</td>
         <td>
-          ☐ Yes/no
+          Yes
                   </td>
     </tr>
                     <tr>
         <td>Incorporates delay distributions</td>
-        <td>Some description</td>
+        <td>Uses deconvolution.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
     
                         <tr>
         <td>Estimates expected cases </td>
-        <td>Some description</td>
+        <td>This is a separate module that is calculated.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
 
                         <tr>
         <td>Communicates uncertainty</td>
-        <td>Some description</td>
+        <td>Uses Block boostrapping to create 95% CIs.</td>
         <td>
-☐ Yes/no
+Yes
         </td>
     </tr>
 
@@ -78,25 +93,22 @@ This package contains the following methods:
     
                         <tr>
         <td>Peer reviewed validation</td>
-        <td>Some description</td>
+        <td>Peer reviewed publication.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
     
                         <tr>
         <td>Replicable documentation</td>
-        <td>Some description</td>
+        <td>GitHub site and R package.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
 
 
 </table>
-
 ```
-
-
 
 ### Sample code
