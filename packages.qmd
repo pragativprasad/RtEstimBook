@@ -6,7 +6,7 @@
   <div> <b>Table 1</b>. R(t) estimation R packages <u>with</u> a peer-reviewed journal reference describing the underlying methods </div>
   <hr style="margin-top:0;">
   <ul id="Tbl1" style="column-count: 3";>
-    <li><a href="package_APEstim.qmd#sec-top">APEestim</a></li>
+    <li><a href="package_APEestim.qmd#sec-top">APEestim</a></li>
     <li><a href="package_Epidemia.qmd#sec-top">Epidemia</a></li>
     <li><a href="package_EpiEstim.qmd#sec-top">EpiEstim</a></li>
     <li><a href="package_EpiFilter.qmd#sec-top">EpiFilter</a></li>

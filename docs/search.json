@@ -160,6 +160,17 @@
     ]
   },
   {
+    "objectID": "methods_time.html#sec-ape",
+    "href": "methods_time.html#sec-ape",
+    "title": "Constraining \\(R(t)\\) over time",
+    "section": "Accumulated Prediction Error (APE) framework",
+    "text": "Accumulated Prediction Error (APE) framework\nIn APEestim, Parag et al. adapt an approximation to MDL known as the accumulated prediction error (APE) to identify the k (window length) best justified by the available epi-curve, k*, to opitmizing the window length k.\nWe analytically derive the posterior predictive incidence distribution of the renewal model, which allows us to evaluate cumulative log-loss prediction scores at any k exactly. The APE choice, k*, minimises these scores and, additionally, optimises short-term prediction accuracy. This method is valid at all sample sizes, easily computed for arbitrary model dimensions and, unlike many selection criteria of similar computability, includes parametric complexity. Parametric complexity measures how functional relationships among parameters influence complexity, and when ignored (as in the Bayesian or Akaike information criteria) can lead to biased renewal model selection.\nThe APE metric designates the model that best predicts unseen data from the same underlying process, and not the one that best fits existing data, as optimal and of justified complexity. This is equivalent to minimising what is called the generalisation or out-of-sample error in machine learning, and is known to balance under and overfitting. Our APE-based approach therefore pinpoints and characterises only those Rt fluctuations that are integral to achieving reliable short-term incidence growth predictions.",
+    "crumbs": [
+      "Estimating R(t)",
+      "Constraining $R(t)$ over time"
+    ]
+  },
+  {
     "objectID": "methods_additionaldata.html",
     "href": "methods_additionaldata.html",
     "title": "Additional data",
@@ -258,14 +269,14 @@
     ]
   },
   {
-    "objectID": "package_APEstim.html",
-    "href": "package_APEstim.html",
-    "title": "APEstim",
+    "objectID": "package_APEestim.html",
+    "href": "package_APEestim.html",
+    "title": "APEestim",
     "section": "",
-    "text": "| Parag and Donnelly (2020) | 🔗 | Feb 12, 2021 |\n\nBrief description\n\n\nMethods\nThis package contains the following methods:\n\n\n\n\n\nAssessment\n\nAssessment rubric\n\n\nCategory\nNotes\nScales\n\n\nUsage\n\n\n\n\nRuntime length\nSome description\nTime (minutes)\n\n\nFeatures\n\n\n\n\nAbility to nowcast/forecast\nSome description\n☐ Yes/no\n\n\nIncorporates delay distributions\nSome description\n☐ Yes/no\n\n\nEstimates expected cases\nSome description\n☐ Yes/no\n\n\nCommunicates uncertainty\nSome description\n☐ Yes/no\n\n\nValidation\n\n\n\n\nPeer reviewed validation\nSome description\n☐ Yes/no\n\n\nReplicable documentation\nSome description\n☐ Yes/no\n\n\n\n\n\n\n\nSample code\n\n\n\n\nParag KV, Donnelly CA. 2020. Using information theory to optimise epidemic models for real-time prediction and estimation. PLoS Computational Biology 16:e1007990; doi:10.1371/journal.pcbi.1007990.",
+    "text": "| Parag and Donnelly (2020) | 🔗 | Feb 12, 2021 |\n\nDescription\n\nCopied from the developer site\n\nAPEestim estimates the time-varying reproduction number on cases by date of infection (using a similar approach to that implemented in EpiEstim).\nThe quality of this estimate is highly dependent on the size of a smoothing window (k) that is employed. This code presents a method for optimally selecting k in a manner that balances reliable R(t) estimation with short-term forecasts of incidence. This method is based on the accumulated prediction error (APE) idea from information theory.\nImportant links:\n\n\n\n\n\n\n\n\n\nREF:  PLOS Computational Biology (Peer reviewed: ✅)\nGithub (Updated: Mar 2025)\nCRAN (Updated: Feb 2025)\n\n\n\n\n\n\nMethods\nThis package aims to improve upon the limitation of fixed sliding windows. They employ:\n\nAPE Framework\n\n\n\nAssessment\n\nAssessment rubric\n\n\nCategory\nNotes\nScales\n\n\nUsage\n\n\n\n\nRuntime length\nSome description\nTime (minutes)\n\n\nFeatures\n\n\n\n\nAbility to nowcast/forecast\nSome description\n☐ Yes/no\n\n\nIncorporates delay distributions\nSome description\n☐ Yes/no\n\n\nEstimates expected cases\nSome description\n☐ Yes/no\n\n\nCommunicates uncertainty\nSome description\n☐ Yes/no\n\n\nValidation\n\n\n\n\nPeer reviewed validation\nSome description\n☐ Yes/no\n\n\nReplicable documentation\nSome description\n☐ Yes/no\n\n\n\n\n\n\n\n\n\nParag KV, Donnelly CA. 2020. Using information theory to optimise epidemic models for real-time prediction and estimation. PLoS Computational Biology 16:e1007990; doi:10.1371/journal.pcbi.1007990.",
     "crumbs": [
       "Packages",
-      "APEstim"
+      "APEestim"
     ]
   },
   {

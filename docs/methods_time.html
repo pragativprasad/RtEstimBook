@@ -214,8 +214,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./package_APEstim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">APEstim</span></a>
+  <a href="./package_APEestim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">APEestim</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -342,6 +342,7 @@ window.Quarto = {
   <li><a href="#sec-randomwalk" id="toc-sec-randomwalk" class="nav-link" data-scroll-target="#sec-randomwalk">Random walk</a></li>
   <li><a href="#sec-filtering" id="toc-sec-filtering" class="nav-link" data-scroll-target="#sec-filtering">Filtering</a></li>
   <li><a href="#sec-gaussianprocess" id="toc-sec-gaussianprocess" class="nav-link" data-scroll-target="#sec-gaussianprocess">Gausian Process models</a></li>
+  <li><a href="#sec-ape" id="toc-sec-ape" class="nav-link" data-scroll-target="#sec-ape">Accumulated Prediction Error (APE) framework</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/cmilando/RtEstimBook/edit/main/methods_time.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -403,6 +404,12 @@ EpiLPS:29</code></pre>
 <pre><code>    log⁡〖R(t)=log⁡R(t-1)+ GP(0,k(R(t),〖R(t〗^')))〗       (Eq.11)
     </code></pre>
 <p>The advantage of Gaussian Process models is that R(t) is enforced to change smoothly in time using Eq.10. Limitations include complexity and computational time: Gaussian Process models have a computational complexity of O(n^3) for n observations.27 Although EpiNow2 in practice implements faster approximations of Gaussian Process models,27 in general Gaussian Process runtimes and required computational resources are considerable as compared to other methods.</p>
+</section>
+<section id="sec-ape" class="level2">
+<h2 class="anchored" data-anchor-id="sec-ape">Accumulated Prediction Error (APE) framework</h2>
+<p>In APEestim, Parag et al.&nbsp;adapt an approximation to MDL known as the accumulated prediction error (APE) to identify the k (window length) best justified by the available epi-curve, k*, to opitmizing the window length k.</p>
+<p>We analytically derive the posterior predictive incidence distribution of the renewal model, which allows us to evaluate cumulative log-loss prediction scores at any k exactly. The APE choice, k*, minimises these scores and, additionally, optimises short-term prediction accuracy. This method is valid at all sample sizes, easily computed for arbitrary model dimensions and, unlike many selection criteria of similar computability, includes parametric complexity. Parametric complexity measures how functional relationships among parameters influence complexity, and when ignored (as in the Bayesian or Akaike information criteria) can lead to biased renewal model selection.</p>
+<p>The APE metric designates the model that best predicts unseen data from the same underlying process, and not the one that best fits existing data, as optimal and of justified complexity. This is equivalent to minimising what is called the generalisation or out-of-sample error in machine learning, and is known to balance under and overfitting. Our APE-based approach therefore pinpoints and characterises only those Rt fluctuations that are integral to achieving reliable short-term incidence growth predictions.</p>
 
 
 </section>

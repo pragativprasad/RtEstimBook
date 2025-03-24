@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>APEstim – Reproductive Number $R(t)$</title>
+<title>APEestim – Reproductive Number $R(t)$</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -129,7 +129,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_APEstim.html">APEstim</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_APEestim.html">APEestim</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -233,8 +233,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./package_APEstim.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">APEstim</span></a>
+  <a href="./package_APEestim.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">APEestim</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -357,19 +357,18 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#brief-description" id="toc-brief-description" class="nav-link active" data-scroll-target="#brief-description">Brief description</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
   <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
   <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a></li>
-  <li><a href="#sample-code" id="toc-sample-code" class="nav-link" data-scroll-target="#sample-code">Sample code</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/cmilando/RtEstimBook/edit/main/package_APEstim.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmilando/RtEstimBook/edit/main/package_APEestim.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_APEstim.html">APEstim</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_APEestim.html">APEestim</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-top" class="quarto-section-identifier">APEstim</span></h1>
+<h1 class="title"><span id="sec-top" class="quarto-section-identifier">APEestim</span></h1>
 </div>
 
 
@@ -387,14 +386,36 @@ window.Quarto = {
 
 
 <div class="line-block">&nbsp;| <span class="citation" data-cites="Parag2020Using">Parag and Donnelly (<a href="references.html#ref-Parag2020Using" role="doc-biblioref">2020</a>)</span> | <a href="https://github.com/kpzoo/model-selection-for-epidemic-renewal-models">🔗</a> | Feb 12, 2021 |</div>
-<section id="brief-description" class="level3">
-<h3 class="anchored" data-anchor-id="brief-description">Brief description</h3>
+<section id="description" class="level3">
+<h3 class="anchored" data-anchor-id="description">Description</h3>
+<div style="font-size:0.8em">
+Copied from the developer site<br><br>
+</div>
+<p><a href="./package_APEestim.html">APEestim</a> estimates the time-varying reproduction number on cases by date of infection (using a similar approach to that implemented in <a href="./package_EpiEstim.html">EpiEstim</a>).</p>
+<p>The quality of this estimate is highly dependent on the size of a smoothing window (k) that is employed. This code presents a method for optimally selecting k in a manner that balances reliable R(t) estimation with short-term forecasts of incidence. This method is based on the accumulated prediction error (APE) idea from information theory.</p>
+<p><small style="font-weight: bold;margin-bottom: 0;">Important links:</small></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 10%">
+<col style="width: 30%">
+<col style="width: 30%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><small>REF: </small> <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007990">PLOS Computational Biology</a> <br><small>(Peer reviewed: ✅)</small></td>
+<td style="text-align: left;"><a href="https://github.com/kpzoo/model-selection-for-epidemic-renewal-models">Github</a> <small><br>(Updated: Mar 2025)</small></td>
+<td style="text-align: left;"><a href="https://cran.r-project.org/web/packages/EpiNow2/index.html">CRAN</a> <small><br>(Updated: Feb 2025)</small></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="methods" class="level3">
 <h3 class="anchored" data-anchor-id="methods">Methods</h3>
-<p>This package contains the following methods:</p>
+<p>This package aims to improve upon the limitation of <a href="./methods_time.html#sec-fixedwindow">fixed sliding windows</a>. They employ:</p>
 <ul>
-<li></li>
+<li><a href="./methods_time.html#sec-ape">APE Framework</a></li>
 </ul>
 </section>
 <section id="assessment" class="level3">
@@ -461,9 +482,6 @@ window.Quarto = {
 </table>
 
 
-</section>
-<section id="sample-code" class="level3">
-<h3 class="anchored" data-anchor-id="sample-code">Sample code</h3>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -911,7 +929,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Reproductive Number R(t) - <a href="https://chadmilando.com/RtEstimBook/" target="_blank">https://chadmilando.com/RtEstimBook/</a></p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmilando/RtEstimBook/edit/main/package_APEstim.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmilando/RtEstimBook/edit/main/package_APEestim.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
