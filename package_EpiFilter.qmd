@@ -1,15 +1,28 @@
 # EpiFilter {#sec-top .unnumbered}
 
 
-### Brief description
+### Description
+<div style="font-size:0.8em">Copied from the developer site<br><br></div>
 
-| [EpiFilter](package_EpiFilter.qmd#sec-top) | @Parag2021Improved | [🔗](https://github.com/kpzoo/EpiFilter) | Dec 9, 2023 |
+[EpiFilter](package_EpiFilter.qmd#sec-top) estimates the time-varying reproduction number on cases by date of infection using  Bayesian recursive filtering and smoothing to maximise the information extracted from the incidence data used. It takes a forward-backward approach and provides estimates that combine advantages of EpiEstim and the Wallinga-Teunis method. Method is exact (and optimal given a grid over R) and deterministic (produces the same answer on the same data).
+
+EpiFilter is maximally informed, mean square error optimised estimates of reproduction numbers (R) over time.
+
+<small style="font-weight: bold;margin-bottom: 0;">Important links:</small>
+
+| | | | |
+|:---|:--|:----|:----|
+|<small>REF: </small> [PLOS Computational Biology](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009347) <br><small>(Peer reviewed: ✅)</small> | [Github](https://github.com/kpzoo/EpiFilter) <small><br>(Updated: 2020)</small>| 
+: {tbl-colwidths="[30,10,30,30]"}
 
 ### Methods
 
 This package contains the following methods:
 
-- 
+- [Renewal Equation]{methods_introduction#sec-renewal}
+- [Filtering](methods_time.qmd#sec-filtering)
+
+
 
 ### Assessment
 
