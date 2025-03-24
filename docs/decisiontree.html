@@ -473,13 +473,13 @@ Strong recommendation
 <p>An objective comparison of the performance of the methods in these packages would be highly complex, given the following challenges:</p>
 <ul>
 <li>Some of the most widely-used packages are not accompanied with a peer-reviewed manuscript that describes or evaluates the theory behind modeling choices.</li>
-<li>Each package contains a subset of the methods below for constraining <span class="math inline">\(R(t)\)</span> in time, but with subtle variations in implementation that are often not well-documented.</li>
+<li>Each package contains a subset of the methods below for constraining <span class="math inline">\(R(t)\)</span> in time, but with subtle variations in implementation and presentation that are often not well-documented and have large implications on evaluation metrics.</li>
 <li>Some packages have not been recently updated, and even those that have are not maintained on CRAN, instead leaving updates on a development version on GitHub.</li>
 <li>Performance may vary widely considering additional factors like ease of implementation and computational time.</li>
 <li>it also may be the case that some methods of temporal smoothing work better in some cases versus other (very low case counts, rapid changes)</li>
 </ul>
 <p>Indeed, many published validation efforts are often not “apples to apples”, i.e., comparing two models that are using different amounts of information in estimating R(t). For example, comparing a model that has used only data before time before t to estimate R(t) versus a model that uses the entire historical record to estimate R(t) at time t.</p>
-<p>Instead, we present some some subjective reflections on various aspects of utilizing each package. These were assessed by consensus among the various authors and co-authors:</p>
+<p>Instead, we present some quantifiable reflections on various aspects of utilizing each package. :</p>
 <table class="caption-top table" data-quarto-postprocess="true">
 <caption>Assessment rubric</caption>
 <tbody>
