@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -56,10 +56,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bc11f644e0fd71aaf667f8c23dea1f98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -388,13 +388,16 @@ window.Quarto = {
 
 <section id="brief-description" class="level3">
 <h3 class="anchored" data-anchor-id="brief-description">Brief description</h3>
+<p>Rtestim is a method that uses the renewal equation and a provided serial interval distribution to estimate <span class="math inline">\(R_t\)</span>. Distinct from other methods, it uses a frequentist approach with an L1 smoothing penalty which decreases computation time and allows for locally adaptive estimates. The method estimates confidence bands for <span class="math inline">\(R_t\)</span> and incidence.</p>
 <div class="line-block"><a href="./package_RtEstim.html#sec-top">RtEstim</a> | <span class="citation" data-cites="Liu2024rtestim">Liu et al. (<a href="references.html#ref-Liu2024rtestim" role="doc-biblioref">2024</a>)</span> | <a href="https://github.com/dajmcdon/rtestim">🔗</a> | Sep 25, 2024|</div>
 </section>
 <section id="methods" class="level3">
 <h3 class="anchored" data-anchor-id="methods">Methods</h3>
 <p>This package contains the following methods:</p>
 <ul>
-<li></li>
+<li>Locally adaptive estimator using Poisson trend filtering</li>
+<li>L1 smoothing</li>
+<li>Cross validation to select tuning parameters for the smoother</li>
 </ul>
 </section>
 <section id="assessment" class="level3">
@@ -414,8 +417,8 @@ window.Quarto = {
 </tr>
 <tr class="odd">
 <td>Runtime length</td>
-<td>Some description</td>
-<td>Time (minutes)</td>
+<td>Not provided, but states that runs take seconds.</td>
+<td>Not provided.</td>
 </tr>
 <tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
 <td>Features</td>
@@ -424,23 +427,23 @@ window.Quarto = {
 </tr>
 <tr class="odd">
 <td>Ability to nowcast/forecast</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td>Not described.</td>
+<td>No</td>
 </tr>
 <tr class="even">
 <td>Incorporates delay distributions</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td>Not described.</td>
+<td>No</td>
 </tr>
 <tr class="odd">
 <td>Estimates expected cases</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td>Predicts this based on estimated $R_t$.</td>
+<td>Yes</td>
 </tr>
 <tr class="even">
 <td>Communicates uncertainty</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td>Provides 95% confidence bands.</td>
+<td>Yes</td>
 </tr>
 <tr class="odd" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
 <td>Validation</td>
@@ -449,13 +452,13 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td>Peer reviewed validation</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td>Published paper in Plos Comp Biol.</td>
+<td>Yes</td>
 </tr>
 <tr class="odd">
 <td>Replicable documentation</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td>R package and details [`here`](https://dajmcdon.github.io/rtestim/).</td>
+<td>Yes</td>
 </tr>
 </tbody>
 </table>
@@ -556,6 +559,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -666,6 +671,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

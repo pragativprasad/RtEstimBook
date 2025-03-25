@@ -3,13 +3,17 @@
 
 ### Brief description
 
+This package implements methods described in [`Li & White`](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009210) for backcalculation and nowcasting and [`Zhou et al`](https://pubmed.ncbi.nlm.nih.gov/36048890/) for small area estimation using mobility data. The package uses stan to improve computational efficiency and stability. All methods are implemented in a Bayesian framework. Currently the package does not allow the user to incorporate both mobility data and do nowcasting and account for reporting delays.
+
 | [WhiteLabRt](package_WhiteLabRt.qmd#sec-top) | @Li2021Bayesian | [🔗](https://github.com/cmilando/WhiteLabRt) | Aug 16, 2024|
 
 ### Methods
 
 This package contains the following methods:
 
-- 
+- Bayesian methods to integrate multiple data sources.
+- Mobility data in a hierarchical model to obtain spatially granular estimates.
+- Adjustment for reporting delay and nowcasting estimates.
 
 ### Assessment
 
@@ -42,32 +46,32 @@ This package contains the following methods:
     </tr>
         <tr>
         <td>Ability to nowcast/forecast</td>
-        <td>Some description</td>
+        <td>Included in the package.</td>
         <td>
-          ☐ Yes/no
+          Yes
                   </td>
     </tr>
                     <tr>
         <td>Incorporates delay distributions</td>
-        <td>Some description</td>
+        <td>Bayesian implementation of this.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
     
                         <tr>
         <td>Estimates expected cases </td>
-        <td>Some description</td>
+        <td>Included in all methods.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
 
                         <tr>
         <td>Communicates uncertainty</td>
-        <td>Some description</td>
+        <td>Credible intervals included for all estimates.</td>
         <td>
-☐ Yes/no
+Yes
         </td>
     </tr>
 
@@ -78,17 +82,17 @@ This package contains the following methods:
     
                         <tr>
         <td>Peer reviewed validation</td>
-        <td>Some description</td>
+        <td>Peer reviewed publications for both methods.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
     
                         <tr>
         <td>Replicable documentation</td>
-        <td>Some description</td>
+        <td>Vignette and documentation provided.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
 
