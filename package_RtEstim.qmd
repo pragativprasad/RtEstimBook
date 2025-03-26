@@ -2,13 +2,17 @@
 
 ### Brief description
 
+Rtestim is a method that uses the renewal equation and a provided serial interval distribution to estimate $R_t$. Distinct from other methods, it uses a frequentist approach with an L1 smoothing penalty which decreases computation time and allows for locally adaptive estimates. The method estimates confidence bands for $R_t$ and incidence.
+
 | [RtEstim](package_RtEstim.qmd#sec-top) | @Liu2024rtestim | [🔗](https://github.com/dajmcdon/rtestim) | Sep 25, 2024|
 
 ### Methods
 
 This package contains the following methods:
 
-- 
+- Locally adaptive estimator using Poisson trend filtering
+- L1 smoothing
+- Cross validation to select tuning parameters for the smoother
 
 ### Assessment
 
@@ -29,9 +33,9 @@ This package contains the following methods:
 
     <tr>
         <td>Runtime length</td>
-        <td>Some description</td>
+        <td>Not provided, but states that runs take seconds.</td>
         <td>
-          Time (minutes)
+          Not provided.
         </td>
     </tr>
       
@@ -41,32 +45,32 @@ This package contains the following methods:
     </tr>
         <tr>
         <td>Ability to nowcast/forecast</td>
-        <td>Some description</td>
+        <td>Not described.</td>
         <td>
-          ☐ Yes/no
+          No
                   </td>
     </tr>
                     <tr>
         <td>Incorporates delay distributions</td>
-        <td>Some description</td>
+        <td>Not described.</td>
         <td>
-          ☐ Yes/no
+          No
         </td>
     </tr>
     
                         <tr>
         <td>Estimates expected cases </td>
-        <td>Some description</td>
+        <td>Predicts this based on estimated $R_t$.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
 
                         <tr>
         <td>Communicates uncertainty</td>
-        <td>Some description</td>
+        <td>Provides 95% confidence bands.</td>
         <td>
-☐ Yes/no
+Yes
         </td>
     </tr>
 
@@ -77,17 +81,17 @@ This package contains the following methods:
     
                         <tr>
         <td>Peer reviewed validation</td>
-        <td>Some description</td>
+        <td>Published paper in Plos Comp Biol.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
     
                         <tr>
         <td>Replicable documentation</td>
-        <td>Some description</td>
+        <td>R package and details [`here`](https://dajmcdon.github.io/rtestim/).</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
 
