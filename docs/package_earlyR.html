@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>earlyR – Reproductive Number $R(t)$</title>
+<title>earlyR – Reproductive Number \(R(t)\)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -221,7 +240,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_bayEStim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">bayEStim</span></a>
+ <span class="menu-text">bayEstim</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -298,6 +317,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./package_projections.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">projections</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./package_R0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R0</span></a>
   </div>
@@ -341,7 +366,7 @@ window.Quarto = {
   <li><a href="#brief-description" id="toc-brief-description" class="nav-link active" data-scroll-target="#brief-description">Brief description</a></li>
   <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
   <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a></li>
-  <li><a href="#sample-code" id="toc-sample-code" class="nav-link" data-scroll-target="#sample-code">Sample code</a></li>
+  <li><a href="#sample-code" id="toc-sample-code" class="nav-link" data-scroll-target="#sample-code">Sample Code</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/cmilando/RtEstimBook/edit/main/package_earlyR.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -350,7 +375,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_earlyR.html">earlyR</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-top" class="quarto-section-identifier">earlyR</span></h1>
+<h1 class="title">earlyR</h1>
 </div>
 
 
@@ -367,86 +392,110 @@ window.Quarto = {
 </header>
 
 
-<section id="brief-description" class="level3">
-<h3 class="anchored" data-anchor-id="brief-description">Brief description</h3>
-<div class="line-block"><a href="./package_earlyR.html#sec-top">earlyR</a> | Jombart T, Cori A, Nouvellet P, Skarp, J | <a href="https://github.com/reconhub/earlyR">🔗</a> | Oct 27, 2020 |</div>
-</section>
-<section id="methods" class="level3">
-<h3 class="anchored" data-anchor-id="methods">Methods</h3>
-<p>This package contains the following methods:</p>
-<ul>
-<li></li>
-</ul>
-</section>
-<section id="assessment" class="level3">
-<h3 class="anchored" data-anchor-id="assessment">Assessment</h3>
-<table class="caption-top table" data-quarto-postprocess="true">
-<caption>Assessment rubric</caption>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
 <tbody>
-<tr class="odd" style="border-top: none;">
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 40%">Category</td>
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 40%">Notes</td>
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 20%">Scales</td>
-</tr>
-<tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-<td>Usage</td>
-<td></td>
-<td></td>
-</tr>
 <tr class="odd">
-<td>Runtime length</td>
-<td>Some description</td>
-<td>Time (minutes)</td>
-</tr>
-<tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-<td>Features</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Ability to nowcast/forecast</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">REF</td>
+<td style="text-align: left;">None</td>
 </tr>
 <tr class="even">
-<td>Incorporates delay distributions</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">Peer reviewed</td>
+<td style="text-align: left;">❌</td>
 </tr>
 <tr class="odd">
-<td>Estimates expected cases</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">Docs</td>
+<td style="text-align: left;"><a href="https://www.repidemicsconsortium.org/earlyR/articles/earlyR.html">repidemicsconsortium.org/earlyR/articles/earlyR.html</a></td>
 </tr>
 <tr class="even">
-<td>Communicates uncertainty</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
-</tr>
-<tr class="odd" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-<td>Validation</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Peer reviewed validation</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">Github</td>
+<td style="text-align: left;"><a href="https://github.com/reconhub/earlyR">github.com/reconhub/earlyR</a></td>
 </tr>
 <tr class="odd">
-<td>Replicable documentation</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">Last commit</td>
+<td style="text-align: left;">October 27, 2020</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Installation</td>
+<td style="text-align: left;"><a href="https://cran.r-project.org/web/packages/earlyR/index.html">CRAN</a></td>
 </tr>
 </tbody>
 </table>
-
-
+<section id="brief-description" class="level3">
+<h3 class="anchored" data-anchor-id="brief-description">Brief description</h3>
+<div style="font-size:0.8em">
+Copied from the developer site<br><br>
+</div>
+<p>Implements a simple, likelihood-based estimation of the reproduction number (R0) using a branching process with a Poisson likelihood. This model requires knowledge of the serial interval distribution, and dates of symptom onsets. Infectiousness is determined by weighting R0 by the probability mass function of the serial interval on the corresponding day. It is a simplified version of the model introduced by <span class="citation" data-cites="Cori2013New">Cori et al. (<a href="references.html#ref-Cori2013New" role="doc-biblioref">2013</a>)</span>.</p>
+</section>
+<section id="methods" class="level3">
+<h3 class="anchored" data-anchor-id="methods">Methods</h3>
+<p>This package does not constrain R in time, instead this is meant to predict a single R value (R0) and then uses this to nowcast and forecast cases.</p>
+</section>
+<section id="assessment" class="level3">
+<h3 class="anchored" data-anchor-id="assessment">Assessment</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Usage</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Runtime</td>
+<td style="text-align: left;">similar to <a href="./package_EpiEstim.html">EpiEstim</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Features</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ability to nowcast/forecast</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Incorporates delay distributions</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Estimates expected cases</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Communicates uncertainty</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Validation</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Peer reviewed validation</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Replicable documentation</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="sample-code" class="level3">
-<h3 class="anchored" data-anchor-id="sample-code">Sample code</h3>
+<h3 class="anchored" data-anchor-id="sample-code">Sample Code</h3>
+<p><a href="https://cran.r-project.org/web/packages/earlyR/vignettes/earlyR.html">This vignette</a> gives a basic example of usage</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Cori2013New" class="csl-entry" role="listitem">
+Cori A, Ferguson NM, Fraser C, Cauchemez S. 2013. A <span>New</span> <span>Framework</span> and <span>Software</span> to <span>Estimate</span> <span>Time</span>-<span>Varying</span> <span>Reproduction</span> <span>Numbers</span> <span>During</span> <span>Epidemics</span>. American Journal of Epidemiology 178:1505–1512; doi:<a href="https://doi.org/10.1093/aje/kwt133">10.1093/aje/kwt133</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -869,8 +918,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./package_bayEStim.html" class="pagination-link" aria-label="bayEStim">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">bayEStim</span>
+      <a href="./package_bayEStim.html" class="pagination-link" aria-label="bayEstim">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">bayEstim</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

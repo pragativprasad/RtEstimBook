@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Packages – Reproductive Number \(R(t)\)</title>
+<title>projections – Reproductive Number \(R(t)\)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./package_APEestim.html" rel="next">
-<link href="./methods_research.html" rel="prev">
+<link href="./package_R0.html" rel="next">
+<link href="./package_EstimateR.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_projections.html">projections</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -205,7 +205,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./packages.html" class="sidebar-item-text sidebar-link active">
+            <a href="./packages.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Packages</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -298,7 +298,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./package_projections.html" class="sidebar-item-text sidebar-link">
+  <a href="./package_projections.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">projections</span></a>
   </div>
 </li>
@@ -339,15 +339,22 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#brief-description" id="toc-brief-description" class="nav-link active" data-scroll-target="#brief-description">Brief description</a></li>
+  <li><a href="#sample-code" id="toc-sample-code" class="nav-link" data-scroll-target="#sample-code">Sample Code</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmilando/RtEstimBook/edit/main/package_projections.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_projections.html">projections</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Packages</h1>
+<h1 class="title">projections</h1>
 </div>
 
 
@@ -364,63 +371,48 @@ window.Quarto = {
 </header>
 
 
-<div>
-  <div> <b>Table 1</b>. R(t) estimation R packages <u>with</u> a peer-reviewed journal reference describing the underlying methods </div>
-  <hr style="margin-top:0;">
-  <ul id="Tbl1" style="column-count: 3" ;="">
-    <li><a href="./package_APEestim.html">APEestim</a></li>
-    <li><a href="./package_Epidemia.html">Epidemia</a></li>
-    <li><a href="./package_EpiEstim.html">EpiEstim</a></li>
-    <li><a href="./package_EpiFilter.html">EpiFilter</a></li>
-    <li><a href="./package_EpiFusion.html">EpiFusion</a></li>
-    <li><a href="./package_epigrowthfit.html">epigrowthfit</a></li>
-    <li><a href="./package_EpiLPS.html">EpiLPS</a></li>
-    <li><a href="./package_ern.html">ern</a></li>
-    <li><a href="./package_EstimateR.html">EstimateR</a></li>
-    <li><a href="./package_R0.html">R0</a></li>
-    <li><a href="./package_RtEstim.html">RtEstim</a></li>
-    <li><a href="./package_EpiInvert.html">EpiInvert</a></li>
-    <li><a href="./package_WhiteLabRt.html">WhiteLabRt</a></li>
-  </ul>
-  <hr style="margin-top:0;">
-</div>
-<br>
-<div>
-  <div> <b>Table 2</b>. R(t) estimation R packages <u>without</u> a peer-reviewed journal reference describing the underlying methods </div>
-  <hr style="margin-top:0;">
-  <ul id="Tbl2" style="column-count: 3" ;="">
-    <li><a href="./package_bayEStim.html">bayEStim</a></li>
-    <li><a href="./package_earlyR.html">earlyR</a></li>
-    <li><a href="./package_EpiNow2.html">EpiNow2</a></li>
-    <li><a href="./package_epinowcast.html">epinowcast</a></li>
-  </ul>
-  <hr style="margin-top:0;">
-</div>
-<script>
-const sortList = list => [...list].sort((a, b) => {
-  const A = a.textContent.toLowerCase(), B = b.textContent.toLowerCase();
-  return (A < B) ? -1 : (A > B) ? 1 : 0;
-});
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">REF</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Peer reviewed</td>
+<td style="text-align: left;">❌✅</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Docs</td>
+<td style="text-align: left;"><a href="https://www.repidemicsconsortium.org/projections/">www.repidemicsconsortium.org/projections</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Github</td>
+<td style="text-align: left;"><a href="https://github.com/reconhub/projections">github.com/reconhub/projections</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Last commit</td>
+<td style="text-align: left;">Dec 6, 2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Installation</td>
+<td style="text-align: left;"><a href="https://cloud.r-project.org/web/packages/projections/index.html">CRAN</a></td>
+</tr>
+</tbody>
+</table>
+<section id="brief-description" class="level3">
+<h3 class="anchored" data-anchor-id="brief-description">Brief description</h3>
+<p>This package permits now-casting and forecasting given incidence data, so it can be combined with many other packages.</p>
+</section>
+<section id="sample-code" class="level3">
+<h3 class="anchored" data-anchor-id="sample-code">Sample Code</h3>
+<p>See the vignettes at <a href="https://www.repidemicsconsortium.org/projections/">www.repidemicsconsortium.org/projections</a>.</p>
 
 
-window.addEventListener("load", function() {
-
-  ///
-  const ul = document.getElementById("Tbl1");
-  const list = ul.querySelectorAll("li");
-  ul.append(...sortList(list));
-  
-  ///
-  const ul = document.getElementById("Tbl2");
-  const list = ul.querySelectorAll("li");
-  ul.append(...sortList(list));
-})
-
-
-
-</script>
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -842,13 +834,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./methods_research.html" class="pagination-link" aria-label="Open research questions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Open research questions</span>
+      <a href="./package_EstimateR.html" class="pagination-link" aria-label="EstimateR">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">EstimateR</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./package_APEestim.html" class="pagination-link" aria-label="APEestim">
-        <span class="nav-page-text">APEestim</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./package_R0.html" class="pagination-link" aria-label="R0">
+        <span class="nav-page-text">R0</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -860,7 +852,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Reproductive Number R(t) - <a href="https://chadmilando.com/RtEstimBook/" target="_blank">https://chadmilando.com/RtEstimBook/</a></p>
-<div class="toc-actions"><ul><li><a href="https://github.com/cmilando/RtEstimBook/edit/main/packages.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmilando/RtEstimBook/edit/main/package_projections.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

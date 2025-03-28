@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>APEestim – Reproductive Number $R(t)$</title>
+<title>APEestim – Reproductive Number \(R(t)\)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -240,7 +240,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_bayEStim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">bayEStim</span></a>
+ <span class="menu-text">bayEstim</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -317,6 +317,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./package_projections.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">projections</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./package_R0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R0</span></a>
   </div>
@@ -360,6 +366,7 @@ window.Quarto = {
   <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
   <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
   <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a></li>
+  <li><a href="#sample-code" id="toc-sample-code" class="nav-link" data-scroll-target="#sample-code">Sample Code</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/cmilando/RtEstimBook/edit/main/package_APEestim.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -368,7 +375,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages</a></li><li class="breadcrumb-item"><a href="./package_APEestim.html">APEestim</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-top" class="quarto-section-identifier">APEestim</span></h1>
+<h1 class="title">APEestim</h1>
 </div>
 
 
@@ -385,7 +392,38 @@ window.Quarto = {
 </header>
 
 
-<div class="line-block">&nbsp;| <span class="citation" data-cites="Parag2020Using">Parag and Donnelly (<a href="references.html#ref-Parag2020Using" role="doc-biblioref">2020</a>)</span> | <a href="https://github.com/kpzoo/model-selection-for-epidemic-renewal-models">🔗</a> | Feb 12, 2021 |</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">REF</td>
+<td style="text-align: left;"><span class="citation" data-cites="Parag2020Using">Parag and Donnelly (<a href="references.html#ref-Parag2020Using" role="doc-biblioref">2020</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Peer reviewed</td>
+<td style="text-align: left;">✅</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Docs</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Github</td>
+<td style="text-align: left;"><a href="https://github.com/kpzoo/model-selection-for-epidemic-renewal-models">Github</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Last commit</td>
+<td style="text-align: left;">Feb 12, 2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Installation</td>
+<td style="text-align: left;">None, this is code to augment <a href="./package_EpiEstim.html">EpiEstim</a></td>
+</tr>
+</tbody>
+</table>
 <section id="description" class="level3">
 <h3 class="anchored" data-anchor-id="description">Description</h3>
 <div style="font-size:0.8em">
@@ -393,95 +431,65 @@ Copied from the developer site<br><br>
 </div>
 <p><a href="./package_APEestim.html">APEestim</a> estimates the time-varying reproduction number on cases by date of infection (using a similar approach to that implemented in <a href="./package_EpiEstim.html">EpiEstim</a>).</p>
 <p>The quality of this estimate is highly dependent on the size of a smoothing window (k) that is employed. This code presents a method for optimally selecting k in a manner that balances reliable R(t) estimation with short-term forecasts of incidence. This method is based on the accumulated prediction error (APE) idea from information theory.</p>
-<p><small style="font-weight: bold;margin-bottom: 0;">Important links:</small></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 30%">
-<col style="width: 10%">
-<col style="width: 30%">
-<col style="width: 30%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><small>REF: </small> <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007990">PLOS Computational Biology</a> <br><small>(Peer reviewed: ✅)</small></td>
-<td style="text-align: left;"><a href="https://github.com/kpzoo/model-selection-for-epidemic-renewal-models">Github</a> <small><br>(Updated: Mar 2025)</small></td>
-<td style="text-align: left;"><a href="https://cran.r-project.org/web/packages/EpiNow2/index.html">CRAN</a> <small><br>(Updated: Feb 2025)</small></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
 </section>
 <section id="methods" class="level3">
 <h3 class="anchored" data-anchor-id="methods">Methods</h3>
-<p>This package aims to improve upon the limitation of <a href="./methods_time.html#sec-fixedwindow">fixed sliding windows</a>. They employ:</p>
-<ul>
-<li><a href="./methods_time.html#sec-ape">APE Framework</a></li>
-</ul>
+<p>This package aims to improve upon the limitation of <a href="./methods_time.html#sec-fixedwindow">fixed sliding windows</a>, specifically by optimizing the choice of the window size in an <a href="./methods_time.html#sec-ape">APE Framework</a>.</p>
 </section>
 <section id="assessment" class="level3">
 <h3 class="anchored" data-anchor-id="assessment">Assessment</h3>
-<table class="caption-top table" data-quarto-postprocess="true">
-<caption>Assessment rubric</caption>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
 <tbody>
-<tr class="odd" style="border-top: none;">
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 40%">Category</td>
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 40%">Notes</td>
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 20%">Scales</td>
-</tr>
-<tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-<td>Usage</td>
-<td></td>
-<td></td>
-</tr>
 <tr class="odd">
-<td>Runtime length</td>
-<td>Some description</td>
-<td>Time (minutes)</td>
-</tr>
-<tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-<td>Features</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Ability to nowcast/forecast</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;"><strong>Usage</strong></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td>Incorporates delay distributions</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">Runtime</td>
+<td style="text-align: left;">similar to <a href="./package_EpiEstim.html">EpiEstim</a></td>
 </tr>
 <tr class="odd">
-<td>Estimates expected cases</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;"><strong>Features</strong></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td>Communicates uncertainty</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
-</tr>
-<tr class="odd" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-<td>Validation</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Peer reviewed validation</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">Ability to nowcast/forecast</td>
+<td style="text-align: left;">No</td>
 </tr>
 <tr class="odd">
-<td>Replicable documentation</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">Incorporates delay distributions</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Estimates expected cases</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Communicates uncertainty</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Validation</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Peer reviewed validation</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Replicable documentation</td>
+<td style="text-align: left;">No</td>
 </tr>
 </tbody>
 </table>
-
-
+</section>
+<section id="sample-code" class="level3">
+<h3 class="anchored" data-anchor-id="sample-code">Sample Code</h3>
+<p>See <a href="https://github.com/kpzoo/model-selection-for-epidemic-renewal-models/blob/master/apeExamples.R">this file</a> in the Github repo.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -916,8 +924,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./package_bayEStim.html" class="pagination-link" aria-label="bayEStim">
-        <span class="nav-page-text">bayEStim</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./package_bayEStim.html" class="pagination-link" aria-label="bayEstim">
+        <span class="nav-page-text">bayEstim</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

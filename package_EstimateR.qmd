@@ -1,4 +1,13 @@
-# EstimateR {#sec-top .unnumbered}
+# EstimateR { .unnumbered}
+
+| | 
+|:---|:--------|
+| REF| |
+| Peer reviewed| ❌✅|
+| Docs| |
+| Github|  |
+| Installation | |
+: {tbl-colwidths="[20,80]"}
 
 ### Brief description
 
@@ -13,7 +22,7 @@ Each of these tasks can be done separately and the users is not required to perf
 
 There is apparently an option to nowcast data described and implemented in the package, though provided mathematical details are limited.
 
-| [EstimateR](package_EstimateR.qmd#sec-top) \| @Scire2023estimateR \| [🔗](https://github.com/covid-19-Re/estimateR) \| Sep 10, 2024\|
+| [EstimateR](package_EstimateR.qmd) \| @Scire2023estimateR \| [🔗](https://github.com/covid-19-Re/estimateR) \| Sep 10, 2024\|
 
 ### Methods
 

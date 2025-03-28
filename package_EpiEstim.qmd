@@ -1,10 +1,21 @@
-# EpiEstim {#sec-top .unnumbered}
+# EpiEstim { .unnumbered}
 
-
-| [EpiEstim](package_EpiEstim.qmd#sec-top)  | @Cori2013New, @Nash2023Estimating | [🔗](https://github.com/mrc-ide/EpiEstim) | Aug 30, 2024 |
+| | 
+|:---|:--------|
+| REF|@Cori2013New, @Nash2023Estimating|
+| Peer reviewed| ❌✅|
+| Docs| [mrc-ide.github.io/EpiEstim](https://mrc-ide.github.io/EpiEstim/)|
+| Github| [github.com/mrc-ide/EpiEstim](https://github.com/mrc-ide/EpiEstim) |
+| Last commit| Aug 30, 2024|
+| Installation | [CRAN](https://cran.r-project.org/web/packages/EpiEstim/index.html)|
+: {tbl-colwidths="[20,80]"}
 
 ### Brief description
+<div style="font-size:0.8em">Copied from the developer site<br><br></div>
 
+EpiEstim is a tool to estimate the time-varying instantaneous reproduction number during epidemics. In order to estimate Rt, EpiEstim needs to be supplied with an estimate of the serial interval distribution (step A) and the incidence of confirmed cases (step B). Once you have an incidence object (based on the dates of symptom onset) and information on the serial interval distribution, we can use the renewal equation (a form of branching process model) to estimate Rt. The incidence of symptom onset at time t is approximated by a Poisson process using the renewal equation. 
+
+Note: EpiEstim runs quickly owing
 
 
 ### Methods
@@ -16,90 +27,22 @@ This package contains the following methods:
 
 ### Assessment
 
-```{=html}
-<table>
-    <caption>Assessment rubric</caption>
-    <!---HEADING --->
-    <tr style="border-top: none;">
-      <th style="font-weight: bold; width: 40%">Category</th>
-      <th style="font-weight: bold; width: 40%">Notes</th>
-      <th style="font-weight: bold; width: 20%">Scales</th>
-    </tr>
-    
-        <!------ SECTION 1: USAGE -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Usage </td>
-    </tr>
+| | 
+|:---|:--------|
+|<strong>Usage</strong>||
+|Runtime| minutes|
+|<strong>Features</strong>||
+| Ability to nowcast/forecast| Yes, when combined with the [projections](package_projections.qmd) package|
+| Incorporates delay distributions| No, although some right-censoring is included|
+| Estimates expected cases| Yes, when combined with the [projections](package_projections.qmd) package|
+| Communicates uncertainty| Yes|
+|<strong>Validation</strong>||
+| Peer reviewed validation| Yes|
+| Replicable documentation| Yes|
+: {tbl-colwidths="[40,60]"}
 
-    <tr>
-        <td>Runtime length</td>
-        <td>Some description</td>
-        <td>
-          Time (minutes)
-        </td>
-    </tr>
-      
-      <!------ SECTION 2: FEATURES -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Features </td>
-    </tr>
-        <tr>
-        <td>Ability to nowcast/forecast</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-                  </td>
-    </tr>
-                    <tr>
-        <td>Incorporates delay distributions</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
-    
-                        <tr>
-        <td>Estimates expected cases </td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
+### Sample Code
 
-                        <tr>
-        <td>Communicates uncertainty</td>
-        <td>Some description</td>
-        <td>
-☐ Yes/no
-        </td>
-    </tr>
+[This vignette](https://mrc-ide.github.io/EpiEstim/articles/full_EpiEstim_vignette.html) gives a basic example of usage of EpiEstim.
 
-      <!------ SECTION 3: Validation -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Validation </td>
-    </tr>
-    
-                        <tr>
-        <td>Peer reviewed validation</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
-    
-                        <tr>
-        <td>Replicable documentation</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
-
-
-</table>
-
-```
-
-
-
-### Sample code
+For forecasting applications, see [this vignette](https://www.repidemicsconsortium.org/projections/).

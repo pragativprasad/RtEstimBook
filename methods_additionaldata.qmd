@@ -1,4 +1,4 @@
-# Additional data {#sec-introduction .unnumbered}
+# Additional data { .unnumbered}
 
 Estimates of R(t) can also be improved using additional data. , you can beef up the calculation by including other pieces of information about counts.
 

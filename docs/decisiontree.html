@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Decision matrix – Reproductive Number $R(t)$</title>
+<title>Decision matrix – Reproductive Number \(R(t)\)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -221,7 +221,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_bayEStim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">bayEStim</span></a>
+ <span class="menu-text">bayEstim</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -298,6 +298,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./package_projections.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">projections</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./package_R0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R0</span></a>
   </div>
@@ -347,7 +353,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-top" class="quarto-section-identifier">Decision matrix</span></h1>
+<h1 class="title">Decision matrix</h1>
 </div>
 
 
@@ -398,12 +404,7 @@ Strong recommendation
 <td data-quarto-table-cell-role="th" style="font-weight: bold; width: 30%">Package options</td>
 </tr>
 <tr class="even" style="border-top: 2px solid;">
-<td rowspan="2">What will R(t) be <u>next week</u>
-<div style="height:10px;">
-<br>
-
-</div>
-<span class="small">i.e., forcasting or nowcasting applications</span></td>
+<td rowspan="2">What will R(t) be <u>next week</u></td>
 <td>☐ Daily reported case counts
 <div style="height:1px;">
 <br>
@@ -415,7 +416,7 @@ Strong recommendation
 
 </div>
 ☐ Reporting delay distribution</td>
-<td><a href="package_EpiNow2.html#sec-top">EpiNow2</a>, Option2</td>
+<td><a href="package_EpiNow2.html">EpiNow2</a>, <a href="package_earlyR.html">earlyR</a>, <a href="package_EpiEstim.html">EpiEstim</a> + <a href="package_projections.html">projections</a></td>
 </tr>
 <tr class="odd">
 <td>☐ Wastewater suriveillance data
@@ -439,7 +440,7 @@ Strong recommendation
 
 </div>
 ☐ Reporting delay distribution</td>
-<td><a href="package_RtEstim.html#sec-top">RtEstim</a>, Option2</td>
+<td><a href="package_EpiNow2.html">EpiNow2</a>, <a href="package_earlyR.html">earlyR</a>, <a href="package_EpiEstim.html">EpiEstim</a> + <a href="package_projections.html">projections</a></td>
 </tr>
 <tr class="odd">
 <td>Wastewater</td>
@@ -458,7 +459,7 @@ Strong recommendation
 
 </div>
 ☐ Reporting delay distribution</td>
-<td><a href="package_EpiEstim.html#sec-top">EpiEstim</a>, Option2</td>
+<td><a href="package_EpiEstim.html">EpiEstim</a>, <a href="package_APEestim.html">APEestim</a>,</td>
 </tr>
 <tr class="odd">
 <td>Wastewater</td>
@@ -474,7 +475,7 @@ Strong recommendation
 <ul>
 <li>Some of the most widely-used packages are not accompanied with a peer-reviewed manuscript that describes or evaluates the theory behind modeling choices.</li>
 <li>Each package contains a subset of the methods below for constraining <span class="math inline">\(R(t)\)</span> in time, but with subtle variations in implementation and presentation that are often not well-documented and have large implications on evaluation metrics.</li>
-<li>Some packages have not been recently updated, and even those that have are not maintained on CRAN, instead leaving updates on a development version on GitHub.</li>
+<li>Some packages have not been recently updated, and even those that have are not maintained on Installation, instead leaving updates on a development version on GitHub.</li>
 <li>Performance may vary widely considering additional factors like ease of implementation and computational time.</li>
 <li>it also may be the case that some methods of temporal smoothing work better in some cases versus other (very low case counts, rapid changes)</li>
 </ul>

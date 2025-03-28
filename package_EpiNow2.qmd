@@ -1,6 +1,15 @@
 # EpiNow2 {.unnumbered}
 
-### Description
+| | 
+|:---|:--------|
+| REF| |
+| Peer reviewed| ❌✅|
+| Docs| |
+| Github|  |
+| Installation | |
+: {tbl-colwidths="[20,80]"}
+
+### Brief Description
 <div style="font-size:0.8em">Copied from the developer site<br><br></div>
 
 [EpiNow2](package_EpiNow2.qmd) estimates the time-varying reproduction number on cases by date of infection (using a similar approach to that implemented in [EpiEstim](package_EpiEstim.qmd)). True infections, treated as latent and unobserved, are estimated and then mapped to observed data (for example cases by date of report) via one or more delay distributions (in the examples in the package documentation these are an incubation period and a reporting delay) and a reporting model that can include weekly periodicity.
@@ -13,7 +22,7 @@ Forecasting is also supported for the time-varying reproduction number, infectio
 
 | | | | |
 |:---|:--|:----|:----|
-|<small>REF: </small> [Wellcome report](https://wellcomeopenresearch.org/articles/5-112) <br><small>(Peer reviewed: ❌)</small> | [Docs](https://epiforecasts.io/EpiNow2/) | [Github](https://github.com/epiforecasts/EpiNow2) <small><br>(Updated: Mar 2025)</small>| [CRAN](https://cran.r-project.org/web/packages/EpiNow2/index.html) <small><br>(Updated: Feb 2025)</small>|  
+|<small>REF: </small> [Wellcome report](https://wellcomeopenresearch.org/articles/5-112) <br><small>(Peer reviewed: ❌)</small> | [Docs](https://epiforecasts.io/EpiNow2/) | [Github](https://github.com/epiforecasts/EpiNow2) <small><br>(Updated: Mar 2025)</small>| [Installation](https://cran.r-project.org/web/packages/EpiNow2/index.html) <small><br>(Updated: Feb 2025)</small>|  
 : {tbl-colwidths="[30,10,30,30]"}
 
 

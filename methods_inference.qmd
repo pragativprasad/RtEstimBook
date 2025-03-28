@@ -1,4 +1,4 @@
-# Inference frameworks {#sec-introduction .unnumbered}
+# Inference frameworks { .unnumbered}
 
 Finally there are different ways of acutally calculating the numbers once you have the theory lined up.
 

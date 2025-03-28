@@ -1,8 +1,17 @@
-# epinowcast {#sec-top .unnumbered}
+# epinowcast { .unnumbered}
+
+| | 
+|:---|:--------|
+| REF| |
+| Peer reviewed| ❌✅|
+| Docs| |
+| Github|  |
+| Installation | |
+: {tbl-colwidths="[20,80]"}
 
 ### Description
 
-| [epinowcast](package_epinowcast.qmd#sec-top) \| Abbott S, Lison A, Funk S, Pearson C, Gruson H, Guenther F, DeWitt M \| [🔗](https://github.com/epinowcast/epinowcast)\| Sep 30, 2024 \|
+| [epinowcast](package_epinowcast.qmd) \| Abbott S, Lison A, Funk S, Pearson C, Gruson H, Guenther F, DeWitt M \| [🔗](https://github.com/epinowcast/epinowcast)\| Sep 30, 2024 \|
 
 ::: {style="font-size:0.8em"}
 Copied from the developer site<br><br>

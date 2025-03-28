@@ -1,9 +1,17 @@
-# EpiInvert {#sec-top .unnumbered}
+# EpiInvert { .unnumbered}
 
+| | 
+|:---|:--------|
+| REF| |
+| Peer reviewed| ❌✅|
+| Docs| |
+| Github|  |
+| Installation | |
+: {tbl-colwidths="[20,80]"}
 
 ### Brief description
 
-| [EpiInvert](package_EpiInvert.qmd#sec-top) | @Alvarez2021Computing | [🔗](https://github.com/lalvarezmat/EpiInvert) | Dec 31, 2023|
+| [EpiInvert](package_EpiInvert.qmd) | @Alvarez2021Computing | [🔗](https://github.com/lalvarezmat/EpiInvert) | Dec 31, 2023|
 
 ::: {style="font-size:0.8em"}
 Brief summary of the method from the paper <br><br>

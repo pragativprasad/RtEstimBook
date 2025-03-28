@@ -1,9 +1,17 @@
-# EpiFusion {#sec-top .unnumbered}
+# EpiFusion { .unnumbered}
 
+| | 
+|:---|:--------|
+| REF| |
+| Peer reviewed| ❌✅|
+| Docs| |
+| Github|  |
+| Installation | |
+: {tbl-colwidths="[20,80]"}
 
 ### Brief description
 
-| [EpiFusion](package_EpiFusion.qmd#sec-top) | @Judge2024EpiFusion | [🔗](https://github.com/ciarajudge/EpiFusion) | Nov 30, 2024|
+| [EpiFusion](package_EpiFusion.qmd) | @Judge2024EpiFusion | [🔗](https://github.com/ciarajudge/EpiFusion) | Nov 30, 2024|
 
 ::: {style="font-size:0.8em"}
 Brief summary of EpiFusion method from the paper<br><br>

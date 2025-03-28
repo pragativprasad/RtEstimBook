@@ -6,19 +6,19 @@
   <div> <b>Table 1</b>. R(t) estimation R packages <u>with</u> a peer-reviewed journal reference describing the underlying methods </div>
   <hr style="margin-top:0;">
   <ul id="Tbl1" style="column-count: 3";>
-    <li><a href="package_APEestim.qmd#sec-top">APEestim</a></li>
-    <li><a href="package_Epidemia.qmd#sec-top">Epidemia</a></li>
-    <li><a href="package_EpiEstim.qmd#sec-top">EpiEstim</a></li>
-    <li><a href="package_EpiFilter.qmd#sec-top">EpiFilter</a></li>
-    <li><a href="package_EpiFusion.qmd#sec-top">EpiFusion</a></li>
-    <li><a href="package_epigrowthfit.qmd#sec-top">epigrowthfit</a></li>
-    <li><a href="package_EpiLPS.qmd#sec-top">EpiLPS</a></li>
-    <li><a href="package_ern.qmd#sec-top">ern</a></li>
-    <li><a href="package_EstimateR.qmd#sec-top">EstimateR</a></li>
-    <li><a href="package_R0.qmd#sec-top">R0</a></li>
-    <li><a href="package_RtEstim.qmd#sec-top">RtEstim</a></li>
-    <li><a href="package_EpiInvert.qmd#sec-top">EpiInvert</a></li>
-    <li><a href="package_WhiteLabRt.qmd#sec-top">WhiteLabRt</a></li>
+    <li><a href="package_APEestim.qmd">APEestim</a></li>
+    <li><a href="package_Epidemia.qmd">Epidemia</a></li>
+    <li><a href="package_EpiEstim.qmd">EpiEstim</a></li>
+    <li><a href="package_EpiFilter.qmd">EpiFilter</a></li>
+    <li><a href="package_EpiFusion.qmd">EpiFusion</a></li>
+    <li><a href="package_epigrowthfit.qmd">epigrowthfit</a></li>
+    <li><a href="package_EpiLPS.qmd">EpiLPS</a></li>
+    <li><a href="package_ern.qmd">ern</a></li>
+    <li><a href="package_EstimateR.qmd">EstimateR</a></li>
+    <li><a href="package_R0.qmd">R0</a></li>
+    <li><a href="package_RtEstim.qmd">RtEstim</a></li>
+    <li><a href="package_EpiInvert.qmd">EpiInvert</a></li>
+    <li><a href="package_WhiteLabRt.qmd">WhiteLabRt</a></li>
   </ul>
   <hr style="margin-top:0;">
 </div>
@@ -27,10 +27,10 @@
   <div> <b>Table 2</b>. R(t) estimation R packages <u>without</u> a peer-reviewed journal reference describing the underlying methods </div>
   <hr style="margin-top:0;">
   <ul id="Tbl2" style="column-count: 3";>
-    <li><a href="package_bayEStim.qmd#sec-top">bayEStim</a></li>
-    <li><a href="package_earlyR.qmd#sec-top">earlyR</a></li>
-    <li><a href="package_EpiNow2.qmd#sec-top">EpiNow2</a></li>
-    <li><a href="package_epinowcast.qmd#sec-top">epinowcast</a></li>
+    <li><a href="package_bayEStim.qmd">bayEStim</a></li>
+    <li><a href="package_earlyR.qmd">earlyR</a></li>
+    <li><a href="package_EpiNow2.qmd">EpiNow2</a></li>
+    <li><a href="package_epinowcast.qmd">epinowcast</a></li>
   </ul>
   <hr style="margin-top:0;">
 </div>

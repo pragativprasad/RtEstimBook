@@ -1,10 +1,19 @@
-# RtEstim {#sec-top .unnumbered}
+# RtEstim { .unnumbered}
+
+| | 
+|:---|:--------|
+| REF| |
+| Peer reviewed| ❌✅|
+| Docs| |
+| Github|  |
+| Installation | |
+: {tbl-colwidths="[20,80]"}
 
 ### Brief description
 
 Rtestim is a method that uses the renewal equation and a provided serial interval distribution to estimate $R_t$. Distinct from other methods, it uses a frequentist approach with an L1 smoothing penalty which decreases computation time and allows for locally adaptive estimates. The method estimates confidence bands for $R_t$ and incidence.
 
-| [RtEstim](package_RtEstim.qmd#sec-top) | @Liu2024rtestim | [🔗](https://github.com/dajmcdon/rtestim) | Sep 25, 2024|
+| [RtEstim](package_RtEstim.qmd) | @Liu2024rtestim | [🔗](https://github.com/dajmcdon/rtestim) | Sep 25, 2024|
 
 ### Methods
 

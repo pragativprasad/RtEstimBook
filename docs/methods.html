@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Estimating R(t) – Reproductive Number $R(t)$</title>
+<title>Estimating R(t) – Reproductive Number \(R(t)\)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -221,7 +221,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_bayEStim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">bayEStim</span></a>
+ <span class="menu-text">bayEstim</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -298,6 +298,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./package_projections.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">projections</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./package_R0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R0</span></a>
   </div>
@@ -341,7 +347,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-top" class="quarto-section-identifier">Estimating R(t)</span></h1>
+<h1 class="title">Estimating R(t)</h1>
 </div>
 
 
@@ -359,9 +365,9 @@ window.Quarto = {
 
 
 <p>To aid with interpretation of package outputs, we summarize the currently used inputs, data, methods and assumptions in <span class="math inline">\(R(t)\)</span> estimation across the following categories:</p>
-<p> <a href="./methods_introduction.html#sec-top">⎘</a>: How the relationship between <span class="math inline">\(R(t)\)</span> and infections is defined <br>  <a href="./methods_distributions.html#sec-top">⎘</a>: How <span class="math inline">\(R(t)\)</span> is constrained using distributions for key variables<br>  <a href="./methods_time.html#sec-top">⎘</a>: How <span class="math inline">\(R(t)\)</span> is constrained over time<br>  <a href="./methods_additionaldata.html#sec-top">⎘</a>: Additional data and distributions that are used to constrain <span class="math inline">\(R(t)\)</span><br>  <a href="./methods_inference.html#sec-top">⎘</a>: Inference frameworks that are used to estimate <span class="math inline">\(R(t)\)</span><br></p>
+<p> <a href="./methods_introduction.html">⎘</a>: How the relationship between <span class="math inline">\(R(t)\)</span> and infections is defined <br>  <a href="./methods_distributions.html">⎘</a>: How <span class="math inline">\(R(t)\)</span> is constrained using distributions for key variables<br>  <a href="./methods_time.html">⎘</a>: How <span class="math inline">\(R(t)\)</span> is constrained over time<br>  <a href="./methods_additionaldata.html">⎘</a>: Additional data and distributions that are used to constrain <span class="math inline">\(R(t)\)</span><br>  <a href="./methods_inference.html">⎘</a>: Inference frameworks that are used to estimate <span class="math inline">\(R(t)\)</span><br></p>
 <p>We also present:</p>
-<p> <a href="./simulation_tool.html#">⎘</a>: An Rshiny application for simulation of case data and <span class="math inline">\(R(t)\)</span><br>  <a href="./methods_research.html#sec-top">⎘</a>: A list of open research questions<br></p>
+<p> <a href="./simulation_tool.html#">⎘</a>: An Rshiny application for simulation of case data and <span class="math inline">\(R(t)\)</span><br>  <a href="./methods_research.html">⎘</a>: A list of open research questions<br></p>
 <p>We limit the methods discussed here to those for estimating historical to present-day <span class="math inline">\(R(t)\)</span> values using <strong>daily case count data</strong>, where a case can be flexibly defined as an individual with a reported positive test (either through healthcare-seeking behavior, routine surveillance, or a hospital admission).</p>
 <p>Other methods not discussed here include:</p>
 <ul>

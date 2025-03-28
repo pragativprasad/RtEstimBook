@@ -1,7 +1,14 @@
-# APEestim {#sec-top .unnumbered}
+# APEestim { .unnumbered}
 
-
-|  | @Parag2020Using | [🔗](https://github.com/kpzoo/model-selection-for-epidemic-renewal-models)   | Feb 12, 2021 |
+| | 
+|:---|:--------|
+| REF| @Parag2020Using|
+| Peer reviewed| ✅|
+| Docs| None|
+| Github|  [Github](https://github.com/kpzoo/model-selection-for-epidemic-renewal-models)|
+| Last commit|Feb 12, 2021|
+| Installation | None, this is code to augment [EpiEstim](package_EpiEstim.qmd)|
+: {tbl-colwidths="[20,80]"}
 
 ### Description
 <div style="font-size:0.8em">Copied from the developer site<br><br></div>
@@ -10,101 +17,26 @@
 
 The quality of this estimate is highly dependent on the size of a smoothing window (k) that is employed. This code presents a method for optimally selecting k in a manner that balances reliable R(t) estimation with short-term forecasts of incidence. This method is based on the accumulated prediction error (APE) idea from information theory.
 
-<small style="font-weight: bold;margin-bottom: 0;">Important links:</small>
-
-| | | | |
-|:---|:--|:----|:----|
-|<small>REF: </small> [PLOS Computational Biology](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007990) <br><small>(Peer reviewed: ✅)</small> | [Github](https://github.com/kpzoo/model-selection-for-epidemic-renewal-models) <small><br>(Updated: Mar 2025)</small>| [CRAN](https://cran.r-project.org/web/packages/EpiNow2/index.html) <small><br>(Updated: Feb 2025)</small>|  
-: {tbl-colwidths="[30,10,30,30]"}
-
 ### Methods
 
-This package aims to improve upon the limitation of [fixed sliding windows](methods_time.qmd#sec-fixedwindow). They employ:
-
-- [APE Framework](methods_time.qmd#sec-ape)
+This package aims to improve upon the limitation of [fixed sliding windows](methods_time.qmd#sec-fixedwindow), specifically by optimizing the choice of the window size in an [APE Framework](methods_time.qmd#sec-ape).
 
 ### Assessment
 
-```{=html}
-<table>
-    <caption>Assessment rubric</caption>
-    <!---HEADING --->
-    <tr style="border-top: none;">
-      <th style="font-weight: bold; width: 40%">Category</th>
-      <th style="font-weight: bold; width: 40%">Notes</th>
-      <th style="font-weight: bold; width: 20%">Scales</th>
-    </tr>
-    
-        <!------ SECTION 1: USAGE -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Usage </td>
-    </tr>
+| | 
+|:---|:--------|
+|<strong>Usage</strong>||
+|Runtime| similar to [EpiEstim](package_EpiEstim.qmd)|
+|<strong>Features</strong>||
+| Ability to nowcast/forecast| No|
+| Incorporates delay distributions| No|
+| Estimates expected cases| No|
+| Communicates uncertainty| Yes|
+|<strong>Validation</strong>||
+| Peer reviewed validation| Yes|
+| Replicable documentation| No|
+: {tbl-colwidths="[40,60]"}
 
-    <tr>
-        <td>Runtime length</td>
-        <td>Some description</td>
-        <td>
-          Time (minutes)
-        </td>
-    </tr>
-      
-      <!------ SECTION 2: FEATURES -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Features </td>
-    </tr>
-        <tr>
-        <td>Ability to nowcast/forecast</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-                  </td>
-    </tr>
-                    <tr>
-        <td>Incorporates delay distributions</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
-    
-                        <tr>
-        <td>Estimates expected cases </td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
+### Sample Code
 
-                        <tr>
-        <td>Communicates uncertainty</td>
-        <td>Some description</td>
-        <td>
-☐ Yes/no
-        </td>
-    </tr>
-
-      <!------ SECTION 3: Validation -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Validation </td>
-    </tr>
-    
-                        <tr>
-        <td>Peer reviewed validation</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
-    
-                        <tr>
-        <td>Replicable documentation</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
-
-
-</table>
-
-```
+See [this file](https://github.com/kpzoo/model-selection-for-epidemic-renewal-models/blob/master/apeExamples.R) in the Github repo.

@@ -1,4 +1,4 @@
-# Distributions for key variables {#sec-top .unnumbered}
+# Distributions for key variables { .unnumbered}
 
 ## Distributions for key variables
 

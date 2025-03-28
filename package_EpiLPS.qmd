@@ -1,9 +1,17 @@
-# EpiLPS {#sec-top .unnumbered}
+# EpiLPS {.unnumbered}
 
+| | 
+|:---|:--------|
+| REF| |
+| Peer reviewed| ❌✅|
+| Docs| |
+| Github|  |
+| Installation | |
+: {tbl-colwidths="[20,80]"}
 
 ### Brief description
 
-| [EpiLPS](package_EpiLPS.qmd#sec-top) | @Gressani2022EpiLPS | [🔗](https://github.com/oswaldogressani/EpiLPS) | Oct 24, 2024|
+| [EpiLPS](package_EpiLPS.qmd) | @Gressani2022EpiLPS | [🔗](https://github.com/oswaldogressani/EpiLPS) | Oct 24, 2024|
 
 ::: {style="font-size:0.8em"}
 Brief summary of the method from the paper<br><br>

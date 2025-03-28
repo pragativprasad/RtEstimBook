@@ -1,4 +1,13 @@
-# R0 {#sec-top .unnumbered}
+# R0 { .unnumbered}
+
+| | 
+|:---|:--------|
+| REF| |
+| Peer reviewed| ❌✅|
+| Docs| |
+| Github|  |
+| Installation | |
+: {tbl-colwidths="[20,80]"}
 
 ### Brief description
 
@@ -6,7 +15,7 @@ A package that implements existing methods to estimate $R_0$ and $R_t$. The adva
 
 This package was developed in 2012 before many of the current methods were developed and most of the methods that are described in the package are not commonly used.
 
-| [R0](package_R0.qmd#sec-top) | @obadia2012r0 | [🔗](https://github.com/tobadia/R0) | Sep 20, 2023|
+| [R0](package_R0.qmd) | @obadia2012r0 | [🔗](https://github.com/tobadia/R0) | Sep 20, 2023|
 
 ### Methods
 
@@ -94,7 +103,7 @@ Yes
     
                         <tr>
         <td>Replicable documentation</td>
-        <td>Package is on CRAN.</td>
+        <td>Package is on Installation.</td>
         <td>
           Yes
         </td>

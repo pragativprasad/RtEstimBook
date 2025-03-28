@@ -1,4 +1,4 @@
-# Open research questions {#sec-top .unnumbered}
+# Open research questions { .unnumbered}
 
 * Need to add a page of existing research questions
     * sub-regional or pooling ...

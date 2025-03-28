@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -221,7 +240,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package_bayEStim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">bayEStim</span></a>
+ <span class="menu-text">bayEstim</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -338,11 +357,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-fixedwindow" id="toc-sec-fixedwindow" class="nav-link active" data-scroll-target="#sec-fixedwindow">Fixed sliding windows</a></li>
+  <li><a href="#sec-fixedwindow" id="toc-sec-fixedwindow" class="nav-link active" data-scroll-target="#sec-fixedwindow">Fixed sliding windows</a>
+  <ul class="collapse">
+  <li><a href="#sec-ape" id="toc-sec-ape" class="nav-link" data-scroll-target="#sec-ape">Accumulated Prediction Error (APE) framework</a></li>
+  </ul></li>
   <li><a href="#sec-randomwalk" id="toc-sec-randomwalk" class="nav-link" data-scroll-target="#sec-randomwalk">Random walk</a></li>
   <li><a href="#sec-filtering" id="toc-sec-filtering" class="nav-link" data-scroll-target="#sec-filtering">Filtering</a></li>
   <li><a href="#sec-gaussianprocess" id="toc-sec-gaussianprocess" class="nav-link" data-scroll-target="#sec-gaussianprocess">Gausian Process models</a></li>
-  <li><a href="#sec-ape" id="toc-sec-ape" class="nav-link" data-scroll-target="#sec-ape">Accumulated Prediction Error (APE) framework</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/cmilando/RtEstimBook/edit/main/methods_time.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -351,7 +372,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./methods.html">Estimating R(t)</a></li><li class="breadcrumb-item"><a href="./methods_time.html">Constraining <span class="math inline">\(R(t)\)</span> over time</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-top" class="quarto-section-identifier">Constraining <span class="math inline">\(R(t)\)</span> over time</span></h1>
+<h1 class="title">Constraining <span class="math inline">\(R(t)\)</span> over time</h1>
 </div>
 
 
@@ -377,7 +398,12 @@ window.Quarto = {
 <p>A straightforward method of imposing structure on R(t) over time involves constraining R(t) to be drawn from the same distribution within moving time subsets, called sliding windows. We add the prefix of “fixed-size” to distinguish from methods that may adapt the size of the sliding window over time. &gt;&gt; make a destinction between deriving it and doing it by Bayesian.</p>
 <p>Consider the scenario where I(t) are drawn from a series of Poisson distributions and where R(t) are drawn from a series of Gamma distributions. Using a sliding window size, τ, of 5 days, R(t) on days 2 to 6 are assumed to be drawn from the Gamma distribution with parameters a_1 and b_1, R(t) days 3 to 7 are drawn from a Gamma distribution with parameters a_2 and b_2, and so on. In the above scenario, days 3 through 6 are in both windows and thus will be values that could be reasonably drawn from Gamma distributions with either a_1 and b_1 or a_2 and b_2. Using an assumption of Gamma distributions for the prior distribution of ω and R(t), Cori et. al.&nbsp;(2013)18 analytically derived a posterior distribution R(t) using fixed-size sliding windows, which has the following directly calculated (rather than inferred) mean and coefficient of variation of R(t):</p>
 <p>E[R(t)]=[a+ ∑_(i=max⁡(1, t-τ))^t▒I(i) ]/[1/b+∑_(i=max⁡(1, t-τ))^t▒Λ(i) ] (Eq.6) C.V.[R(t)]=[a+ ∑_(i=max⁡(1, t-τ))^t▒I(i) ]^(-1) (Eq.7)</p>
-<p>Thus, sliding windows with larger τ improve the stability of the estimate of R(t) over smaller τ because the coefficient of variation of R(t) decreases as number of infections increases (see Web Appendix 1 of Cori et. al., 2013).18 Sliding windows are a key feature of EpiEstim.21 There are limitations of this derived sliding window approach, articulated well in Gostic et. al., (2020)1 and summarized here. There is no posterior distribution for the expected value of incidence In the fixed size sliding window approach, τ must be explicitly defined prior to inference. Shorter τ will lead to quicker response but more variable estimates of R(t), which increases the risk of over-fitting. At the extreme, if the τ is set to 1 day, the resulting R(t) will recover exactly the infection data. In addition, there is debate in the literature about where in time the estimate of R(t) for each window should go: Gostic et. al., (2020)1 recommends using the midpoint of each sliding window rather than time t. The choice of both τ and the location of the estimate of R(t) within each window results in gaps in predictions for R(t), barring other modifications: at the end of the modeling period to account for reporting delays or time between the midpoint of τ and the end of τ, and at the beginning of the time period to allow for enough cases to materialize. Web Appendix 4 of Cori. et. al (2013) gives the following recommendation for when to calculate R(t): “Overall, we suggest starting estimating once those three criteria are fulfilled: at least after , at least after one mean serial interval, and when at least 12 cases have been observed since the beginning of the epidemic.” The default recommendation for τ is one week (7 days);18 alternatively the package APEestim integrates with EpiEstim to propose a non-default choice of τ that minimizes one-step-ahead prediction errors.22</p>
+<p>Thus, sliding windows with larger τ improve the stability of the estimate of R(t) over smaller τ because the coefficient of variation of R(t) decreases as number of infections increases (see Web Appendix 1 of Cori et. al., 2013).18 Sliding windows are a key feature of EpiEstim.21 There are limitations of this derived sliding window approach, articulated well in Gostic et. al., (2020)1 and summarized here. There is no posterior distribution for the expected value of incidence In the fixed size sliding window approach, τ must be explicitly defined prior to inference. Shorter τ will lead to quicker response but more variable estimates of R(t), which increases the risk of over-fitting. At the extreme, if the τ is set to 1 day, the resulting R(t) will recover exactly the infection data. In addition, there is debate in the literature about where in time the estimate of R(t) for each window should go: Gostic et. al., (2020)1 recommends using the midpoint of each sliding window rather than time t. The choice of both τ and the location of the estimate of R(t) within each window results in gaps in predictions for R(t), barring other modifications: at the end of the modeling period to account for reporting delays or time between the midpoint of τ and the end of τ, and at the beginning of the time period to allow for enough cases to materialize. Web Appendix 4 of Cori. et. al (2013) gives the following recommendation for when to calculate R(t): “Overall, we suggest starting estimating once those three criteria are fulfilled: at least after , at least after one mean serial interval, and when at least 12 cases have been observed since the beginning of the epidemic.” The default recommendation for τ is one week (7 days);18</p>
+<section id="sec-ape" class="level3">
+<h3 class="anchored" data-anchor-id="sec-ape">Accumulated Prediction Error (APE) framework</h3>
+<p>Alternatively the package <a href="./package_APEestim.html">APEestim</a> integrates with <a href="./package_EpiEstim.html">EpiEstim</a> to propose a non-default choice of τ that minimizes one-step-ahead prediction errors (<span class="citation" data-cites="Parag2020Using">Parag and Donnelly (<a href="references.html#ref-Parag2020Using" role="doc-biblioref">2020</a>)</span>).</p>
+<p>In APEestim, Parag et al.&nbsp;adapt an approximation known as the accumulated prediction error (APE) to identify the window length best justified by the available epi-curve, k*, to opitmizing the window length k.</p>
+</section>
 </section>
 <section id="sec-randomwalk" class="level2">
 <h2 class="anchored" data-anchor-id="sec-randomwalk">Random walk</h2>
@@ -404,14 +430,13 @@ EpiLPS:29</code></pre>
 <pre><code>    log⁡〖R(t)=log⁡R(t-1)+ GP(0,k(R(t),〖R(t〗^')))〗       (Eq.11)
     </code></pre>
 <p>The advantage of Gaussian Process models is that R(t) is enforced to change smoothly in time using Eq.10. Limitations include complexity and computational time: Gaussian Process models have a computational complexity of O(n^3) for n observations.27 Although EpiNow2 in practice implements faster approximations of Gaussian Process models,27 in general Gaussian Process runtimes and required computational resources are considerable as compared to other methods.</p>
-</section>
-<section id="sec-ape" class="level2">
-<h2 class="anchored" data-anchor-id="sec-ape">Accumulated Prediction Error (APE) framework</h2>
-<p>In APEestim, Parag et al.&nbsp;adapt an approximation to MDL known as the accumulated prediction error (APE) to identify the k (window length) best justified by the available epi-curve, k*, to opitmizing the window length k.</p>
-<p>We analytically derive the posterior predictive incidence distribution of the renewal model, which allows us to evaluate cumulative log-loss prediction scores at any k exactly. The APE choice, k*, minimises these scores and, additionally, optimises short-term prediction accuracy. This method is valid at all sample sizes, easily computed for arbitrary model dimensions and, unlike many selection criteria of similar computability, includes parametric complexity. Parametric complexity measures how functional relationships among parameters influence complexity, and when ignored (as in the Bayesian or Akaike information criteria) can lead to biased renewal model selection.</p>
-<p>The APE metric designates the model that best predicts unseen data from the same underlying process, and not the one that best fits existing data, as optimal and of justified complexity. This is equivalent to minimising what is called the generalisation or out-of-sample error in machine learning, and is known to balance under and overfitting. Our APE-based approach therefore pinpoints and characterises only those Rt fluctuations that are integral to achieving reliable short-term incidence growth predictions.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Parag2020Using" class="csl-entry" role="listitem">
+Parag KV, Donnelly CA. 2020. Using information theory to optimise epidemic models for real-time prediction and estimation. PLoS Computational Biology 16:e1007990; doi:<a href="https://doi.org/10.1371/journal.pcbi.1007990">10.1371/journal.pcbi.1007990</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

@@ -1,4 +1,13 @@
-# ern {#sec-top .unnumbered}
+# ern { .unnumbered}
+
+| | 
+|:---|:--------|
+| REF| |
+| Peer reviewed| ❌✅|
+| Docs| |
+| Github|  |
+| Installation | |
+: {tbl-colwidths="[20,80]"}
 
 ### Brief description
 
@@ -9,7 +18,7 @@ The [ern](package_ern.qmd) package was developed to adapt the [EpiEstim](package
 -   provides a user-friendly interface geared at public-health practitioners that may have limited proficiency in the R programming language;
 -   uses EpiEstim for efficient and rapid estimation.
 
-| [ern](package_ern.qmd#sec-top) \| @Champredon2024ern \| [🔗](https://github.com/phac-nml-phrsd/ern) \| May 22, 2024\|
+| [ern](package_ern.qmd) \| @Champredon2024ern \| [🔗](https://github.com/phac-nml-phrsd/ern) \| May 22, 2024\|
 
 ### Methods
 

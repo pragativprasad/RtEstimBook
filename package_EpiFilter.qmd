@@ -1,9 +1,17 @@
-# EpiFilter {#sec-top .unnumbered}
+# EpiFilter { .unnumbered}
 
+| | 
+|:---|:--------|
+| REF| |
+| Peer reviewed| ❌✅|
+| Docs| |
+| Github|  |
+| Installation | |
+: {tbl-colwidths="[20,80]"}
 
 ### Brief description
 
-| [EpiFilter](package_EpiFilter.qmd#sec-top) | @Parag2021Improved | [🔗](https://github.com/kpzoo/EpiFilter) | Dec 9, 2023 |
+| [EpiFilter](package_EpiFilter.qmd) | @Parag2021Improved | [🔗](https://github.com/kpzoo/EpiFilter) | Dec 9, 2023 |
 
 ### Methods
 

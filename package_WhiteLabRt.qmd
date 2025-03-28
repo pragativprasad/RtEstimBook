@@ -1,11 +1,19 @@
-# WhiteLabRt {#sec-top .unnumbered}
+# WhiteLabRt { .unnumbered}
 
+| | 
+|:---|:--------|
+| REF| |
+| Peer reviewed| ❌✅|
+| Docs| |
+| Github|  |
+| Installation | |
+: {tbl-colwidths="[20,80]"}
 
 ### Brief description
 
 This package implements methods described in [`Li & White`](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009210) for backcalculation and nowcasting and [`Zhou et al`](https://pubmed.ncbi.nlm.nih.gov/36048890/) for small area estimation using mobility data. The package uses stan to improve computational efficiency and stability. All methods are implemented in a Bayesian framework. Currently the package does not allow the user to incorporate both mobility data and do nowcasting and account for reporting delays.
 
-| [WhiteLabRt](package_WhiteLabRt.qmd#sec-top) | @Li2021Bayesian | [🔗](https://github.com/cmilando/WhiteLabRt) | Aug 16, 2024|
+| [WhiteLabRt](package_WhiteLabRt.qmd) | @Li2021Bayesian | [🔗](https://github.com/cmilando/WhiteLabRt) | Aug 16, 2024|
 
 ### Methods
 
