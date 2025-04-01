@@ -16,75 +16,78 @@ You can use the decision tool below to help choose which R packages may be right
 ```{=html}
 <table>
     <caption>Decision matrix for choosing R(t) estimation tool</caption>
+    <!////////////////////////////////////////////////////////////////////>
     <!---HEADING --->
+    <!////////////////////////////////////////////////////////////////////>
     <tr style="border-top: none; background-color: lightgrey;">
       <th style="font-weight: bold; width: 30%">Desired output</th>
-      <th style="font-weight: bold; width: 40%">Data required</th>
-      <th style="font-weight: bold; width: 30%">Package options</th>
+      <th style="font-weight: bold; width: 20%">Runtime</th>
+      <th style="font-weight: bold; width: 50%">Package</th>
     </tr>
-    <!---GROUP 1: FORECASTING --->
+    <!////////////////////////////////////////////////////////////////////>
+    <!---GROUP 1: FORECASTING -------------------------------------------->
+    <!////////////////////////////////////////////////////////////////////>
     <tr style="border-top: 2px solid;">
-        <td rowspan="2">
-          What will R(t) be <u>next week</u>
-        </td>
-        <td>
-          ☐ Daily reported case counts <div style="height:1px;"><br></div>
-          ☐ Serial interval <div style="height:1px;"><br></div>
-          ☐ Reporting delay distribution
-        </td>
-        <td>
-            <a href="package_EpiNow2.html">EpiNow2</a>,
-            <a href="package_earlyR.html">earlyR</a>,
-            <a href="package_EpiEstim.html">EpiEstim</a> + <a href="package_projections.html">projections</a> 
-        </td>
+        <td> <u>Forecasting</u>: what will R(t) be next week</td>
+        <td></td>
+        <td>  <a href="package_projections.html">projections</a> and any package with <a href="package_EpiEstim.html">EpiEstim</a>, including: <a href="package_EpiFilter.html">EpiFilter</a> </td>
+        
     </tr>
     <tr>
-        <td> 
-          ☐ Wastewater suriveillance data <div style="height:1px;"><br></div>
-          ☐ 
-        </td>
-        <td>no plan yet</td>
-    </tr>
-    <!---GROUP 2: NOW-CASTING --->
-    <tr style="border-top: 2px solid;">
-        <td rowspan="2">
-          What was R(t) in the <u> past week</u>
-        </td>
-        <td>
-          ☐ Daily reported case counts <div style="height:1px;"><br></div>
-          ☐ Serial interval <div style="height:1px;"><br></div>
-          ☐ Reporting delay distribution
-        </td>
-        <td>
-             <a href="package_EpiNow2.html">EpiNow2</a>, 
-             <a href="package_earlyR.html">earlyR</a>,
-             <a href="package_EpiEstim.html">EpiEstim</a> + <a href="package_projections.html">projections</a> 
-        </td>
+            <td></td>
+    <td></td>
+       <td><a href="package_earlyR.html">earlyR</a></td>
     </tr>
     <tr>
-        <td>Wastewater </td>
-        <td>no plan yet</td>
+            <td></td>
+    <td></td>
+        <td><a href="package_EpiNow2.html">EpiNow2</a></td>
+    </tr>
+
+
+    <!////////////////////////////////////////////////////////////////////>
+    <!---GROUP 2: NOW-CASTING -------------------------------------------->
+    <!////////////////////////////////////////////////////////////////////>
+    <tr style="border-top: 2px solid;">
+        <td> <u>Nowcasting</u>: what was R(t) in the past week</td>
+        <td></td>
+        <td>  <a href="package_projections.html">projections</a> and any package with <a href="package_EpiEstim.html">EpiEstim</a>, including: <a href="package_EpiFilter.html">EpiFilter</a> </td>
+        
+    </tr>
+    <tr>
+            <td></td>
+    <td></td>
+       <td><a href="package_earlyR.html">earlyR</a></td>
+    </tr>
+    <tr>
+            <td></td>
+    <td></td>
+        <td><a href="package_EpiNow2.html">EpiNow2</a></td>
     </tr>
     
-        <!---GROUP 3: Past Historical --->
+    
+    <!////////////////////////////////////////////////////////////////////>
+    <!---GROUP 3: Historical -------------------------------------------->
+    <!////////////////////////////////////////////////////////////////////>
     <tr style="border-top: 2px solid;">
-        <td rowspan="2">
-          What was R(t) historically
-        </td>
-        <td>
-          ☐ Daily reported case counts <div style="height:1px;"><br></div>
-          ☐ Serial interval <div style="height:1px;"><br></div>
-          ☐ Reporting delay distribution
-        </td>
-        <td>
-            <a href="package_EpiEstim.html">EpiEstim</a>, 
-            <a href="package_APEestim.html">APEestim</a>,
-        </td>
+        <td> <u>Historical</u>: what was R(t) over the past month</td>
+        <td></td>
+        <td>  <a href="package_EpiEstim.html">EpiEstim</a> 
+        (modified by <a href="package_APEestim.html">APEestim</a>)</td>
+        
     </tr>
     <tr>
-        <td>Wastewater </td>
-        <td>no plan yet</td>
+            <td></td>
+    <td></td>
+       <td></td>
     </tr>
+    <tr>
+            <td></td>
+    <td></td>
+        <td></td>
+    </tr>
+
+
     
 </table>
 
@@ -116,7 +119,7 @@ Instead, we present some quantifiable reflections on various aspects of utilizin
     </tr>
     
         <!------ SECTION 1: USAGE -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
+    <tr columnspan="2", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
       <td> Usage </td>
     </tr>
 

@@ -3,7 +3,7 @@
 | | 
 |:---|:--------|
 | REF|@Cori2013New, @Nash2023Estimating|
-| Peer reviewed| ❌✅|
+| Peer reviewed| ✅|
 | Docs| [mrc-ide.github.io/EpiEstim](https://mrc-ide.github.io/EpiEstim/)|
 | Github| [github.com/mrc-ide/EpiEstim](https://github.com/mrc-ide/EpiEstim) |
 | Last commit| Aug 30, 2024|
@@ -43,6 +43,5 @@ This package contains the following methods:
 
 ### Sample Code
 
-[This vignette](https://mrc-ide.github.io/EpiEstim/articles/full_EpiEstim_vignette.html) gives a basic example of usage of EpiEstim.
+[This vignette](https://mrc-ide.github.io/EpiEstim/articles/full_EpiEstim_vignette.html) gives a basic example of usage of EpiEstim, including using forecasting via the [projections](package_projects.qmd) package.
 
-For forecasting applications, see [this vignette](https://www.repidemicsconsortium.org/projections/).

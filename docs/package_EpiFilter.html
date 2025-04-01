@@ -317,6 +317,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./package_projections.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">projections</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./package_R0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R0</span></a>
   </div>
@@ -394,11 +400,11 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">REF</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="citation" data-cites="Parag2021Improved">Parag (<a href="references.html#ref-Parag2021Improved" role="doc-biblioref">2021</a>)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Peer reviewed</td>
-<td style="text-align: left;">❌✅</td>
+<td style="text-align: left;">✅</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Docs</td>
@@ -406,9 +412,13 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td style="text-align: left;">Github</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://github.com/kpzoo/EpiFilter">https://github.com/kpzoo/EpiFilter</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Last commit</td>
+<td style="text-align: left;">Dec 9, 2023</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Installation</td>
 <td style="text-align: left;"></td>
 </tr>
@@ -416,82 +426,73 @@ window.Quarto = {
 </table>
 <section id="brief-description" class="level3">
 <h3 class="anchored" data-anchor-id="brief-description">Brief description</h3>
-<div class="line-block"><a href="./package_EpiFilter.html">EpiFilter</a> | <span class="citation" data-cites="Parag2021Improved">Parag (<a href="references.html#ref-Parag2021Improved" role="doc-biblioref">2021</a>)</span> | <a href="https://github.com/kpzoo/EpiFilter">🔗</a> | Dec 9, 2023 |</div>
+<div style="font-size:0.8em">
+Copied from the developer site<br><br>
+</div>
+<p>Maximally informed, mean square error optimised estimates of reproduction numbers (R) over time.</p>
+<p>Uses Bayesian recursive filtering and smoothing to maximise the information extracted from the incidence data used. Takes a forward-backward approach and provides estimates that combine advantages of <a href="./package_EpiEstim.html">EpiEstim</a> and the Wallinga-Teunis method. Method is exact (and optimal given a grid over R) and deterministic (produces the same answer on the same data).</p>
 </section>
 <section id="methods" class="level3">
 <h3 class="anchored" data-anchor-id="methods">Methods</h3>
-<p>This package contains the following methods:</p>
+<p>This package contains the following methods to solve for <span class="math inline">\(R(t)\)</span> in time:</p>
 <ul>
-<li></li>
+<li><a href="./methods_time.html#sec-filtering">filtering</a></li>
 </ul>
 </section>
 <section id="assessment" class="level3">
 <h3 class="anchored" data-anchor-id="assessment">Assessment</h3>
-<table class="caption-top table" data-quarto-postprocess="true">
-<caption>Assessment rubric</caption>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
 <tbody>
-<tr class="odd" style="border-top: none;">
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 40%">Category</td>
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 40%">Notes</td>
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 20%">Scales</td>
-</tr>
-<tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-<td>Usage</td>
-<td></td>
-<td></td>
-</tr>
 <tr class="odd">
-<td>Runtime length</td>
-<td>Some description</td>
-<td>Time (minutes)</td>
-</tr>
-<tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-<td>Features</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Ability to nowcast/forecast</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;"><strong>Usage</strong></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td>Incorporates delay distributions</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">Runtime</td>
+<td style="text-align: left;">minutes (uses EpiEstim)</td>
 </tr>
 <tr class="odd">
-<td>Estimates expected cases</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;"><strong>Features</strong></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td>Communicates uncertainty</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
-</tr>
-<tr class="odd" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-<td>Validation</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Peer reviewed validation</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">Ability to nowcast/forecast</td>
+<td style="text-align: left;">Yes, when combined with the <a href="./package_projections.html">projections</a> package</td>
 </tr>
 <tr class="odd">
-<td>Replicable documentation</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">Incorporates delay distributions</td>
+<td style="text-align: left;">No, although some right-censoring is included</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Estimates expected cases</td>
+<td style="text-align: left;">Yes, when combined with the <a href="./package_projections.html">projections</a> package</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Communicates uncertainty</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Validation</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Peer reviewed validation</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Replicable documentation</td>
+<td style="text-align: left;">No</td>
 </tr>
 </tbody>
 </table>
-
-
 </section>
 <section id="sample-code" class="level3">
 <h3 class="anchored" data-anchor-id="sample-code">Sample code</h3>
+<p>The primary sample code comes from <a href="https://github.com/kpzoo/EpiFilter/blob/master/R%20files/vignette.R">this R script</a>.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">

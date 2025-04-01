@@ -404,7 +404,7 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td style="text-align: left;">Peer reviewed</td>
-<td style="text-align: left;">❌✅</td>
+<td style="text-align: left;">✅</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Docs</td>
@@ -426,6 +426,11 @@ window.Quarto = {
 </table>
 <section id="brief-description" class="level3">
 <h3 class="anchored" data-anchor-id="brief-description">Brief description</h3>
+<div style="font-size:0.8em">
+Copied from the developer site<br><br>
+</div>
+<p>EpiEstim is a tool to estimate the time-varying instantaneous reproduction number during epidemics. In order to estimate Rt, EpiEstim needs to be supplied with an estimate of the serial interval distribution (step A) and the incidence of confirmed cases (step B). Once you have an incidence object (based on the dates of symptom onset) and information on the serial interval distribution, we can use the renewal equation (a form of branching process model) to estimate Rt. The incidence of symptom onset at time t is approximated by a Poisson process using the renewal equation.</p>
+<p>Note: EpiEstim runs quickly owing</p>
 </section>
 <section id="methods" class="level3">
 <h3 class="anchored" data-anchor-id="methods">Methods</h3>
@@ -487,8 +492,7 @@ window.Quarto = {
 </section>
 <section id="sample-code" class="level3">
 <h3 class="anchored" data-anchor-id="sample-code">Sample Code</h3>
-<p><a href="https://mrc-ide.github.io/EpiEstim/articles/full_EpiEstim_vignette.html">This vignette</a> gives a basic example of usage of EpiEstim.</p>
-<p>For forecasting applications, see <a href="https://www.repidemicsconsortium.org/projections/">this vignette</a>.</p>
+<p><a href="https://mrc-ide.github.io/EpiEstim/articles/full_EpiEstim_vignette.html">This vignette</a> gives a basic example of usage of EpiEstim, including using forecasting via the <a href="package_projects.qmd">projections</a> package.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">

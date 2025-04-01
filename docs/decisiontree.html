@@ -392,78 +392,56 @@ Strong recommendation
 </div>
 <table class="caption-top table" data-quarto-postprocess="true">
 <caption>Decision matrix for choosing R(t) estimation tool</caption>
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
 <tbody>
 <tr class="odd" style="border-top: none; background-color: lightgrey;">
 <td data-quarto-table-cell-role="th" style="font-weight: bold; width: 30%">Desired output</td>
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 40%">Data required</td>
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 30%">Package options</td>
+<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 20%">Runtime</td>
+<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 50%">Package</td>
 </tr>
 <tr class="even" style="border-top: 2px solid;">
-<td rowspan="2">What will R(t) be <u>next week</u></td>
-<td>☐ Daily reported case counts
-<div style="height:1px;">
-<br>
-
-</div>
-☐ Serial interval
-<div style="height:1px;">
-<br>
-
-</div>
-☐ Reporting delay distribution</td>
-<td><a href="package_EpiNow2.html">EpiNow2</a>, <a href="package_earlyR.html">earlyR</a>, <a href="package_EpiEstim.html">EpiEstim</a> + <a href="package_projections.html">projections</a></td>
+<td><u>Forecasting</u>: what will R(t) be next week</td>
+<td></td>
+<td><a href="package_projections.html">projections</a> and any package with <a href="package_EpiEstim.html">EpiEstim</a>, including: <a href="package_EpiFilter.html">EpiFilter</a></td>
 </tr>
 <tr class="odd">
-<td>☐ Wastewater suriveillance data
-<div style="height:1px;">
-<br>
-
-</div>
-☐</td>
-<td>no plan yet</td>
+<td></td>
+<td></td>
+<td><a href="package_earlyR.html">earlyR</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td><a href="package_EpiNow2.html">EpiNow2</a></td>
+</tr>
+<tr class="odd" style="border-top: 2px solid;">
+<td><u>Nowcasting</u>: what was R(t) in the past week</td>
+<td></td>
+<td><a href="package_projections.html">projections</a> and any package with <a href="package_EpiEstim.html">EpiEstim</a>, including: <a href="package_EpiFilter.html">EpiFilter</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td><a href="package_earlyR.html">earlyR</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td><a href="package_EpiNow2.html">EpiNow2</a></td>
 </tr>
 <tr class="even" style="border-top: 2px solid;">
-<td rowspan="2">What was R(t) in the <u>past week</u></td>
-<td>☐ Daily reported case counts
-<div style="height:1px;">
-<br>
-
-</div>
-☐ Serial interval
-<div style="height:1px;">
-<br>
-
-</div>
-☐ Reporting delay distribution</td>
-<td><a href="package_EpiNow2.html">EpiNow2</a>, <a href="package_earlyR.html">earlyR</a>, <a href="package_EpiEstim.html">EpiEstim</a> + <a href="package_projections.html">projections</a></td>
+<td><u>Historical</u>: what was R(t) over the past month</td>
+<td></td>
+<td><a href="package_EpiEstim.html">EpiEstim</a> (modified by <a href="package_APEestim.html">APEestim</a>)</td>
 </tr>
 <tr class="odd">
-<td>Wastewater</td>
-<td>no plan yet</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="even" style="border-top: 2px solid;">
-<td rowspan="2">What was R(t) historically</td>
-<td>☐ Daily reported case counts
-<div style="height:1px;">
-<br>
-
-</div>
-☐ Serial interval
-<div style="height:1px;">
-<br>
-
-</div>
-☐ Reporting delay distribution</td>
-<td><a href="package_EpiEstim.html">EpiEstim</a>, <a href="package_APEestim.html">APEestim</a>,</td>
-</tr>
-<tr class="odd">
-<td>Wastewater</td>
-<td>no plan yet</td>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -489,7 +467,7 @@ Strong recommendation
 <td data-quarto-table-cell-role="th" style="font-weight: bold; width: 40%">Notes</td>
 <td data-quarto-table-cell-role="th" style="font-weight: bold; width: 20%">Scales</td>
 </tr>
-<tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
+<tr class="even" data-columnspan="2" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
 <td>Usage</td>
 <td></td>
 <td></td>
