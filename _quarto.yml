@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  google-analytics: G-GKYYSYJKPZ
+  google-analytics: G-NRY8TV1Q8G
   title: "Reproductive Number $R(t)$"
   repo-url: https://github.com/cmilando/RtEstimBook
   page-footer: Reproductive Number R(t) - [https://chadmilando.com/RtEstimBook/](https://chadmilando.com/RtEstimBook/){target="_blank"}
