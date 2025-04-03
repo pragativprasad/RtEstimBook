@@ -1,8 +1,14 @@
 ## Overview {.unnumbered}
 
-Since the onset of the COVID-19 pandemic in early 2020, there has been a proliferation of software tools that make inference about the current state of an infectious disease outbreak. 
+Since the onset of the COVID-19 pandemic in early 2020, there has been a proliferation of software tools that make inference about the current state of an infectious disease outbreak. A widely used parameter in these tools is the <a class="definition" href="glossary.qmd#effectiveRt">effective reproductive number</a>, $R(t)$.
 
-A widely used parameter in these tools is the <a class="definition" href="glossary.qmd#effectiveRt">effective reproductive number</a>, $R(t)$, defined in @Gostic2020Practical as: "... the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible." $R(t)$ has the following values and interpretations:
+### What is the reproductive number?
+
+$R(t)$ is defined in @Gostic2020Practical as: "... the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible." 
+
+$R(t)$ represents a combination of dynamic processes, including disease characteristics (e.g., infectiousness under various conditions, mode of transport) and extrinsic factors (e.g., lockdowns that reduce person-to-person contact).
+
+$R(t)$ has the following values and interpretations:
 
 ```{=html}
 <table>
@@ -31,7 +37,22 @@ A widely used parameter in these tools is the <a class="definition" href="glossa
 ```
 <div style="height:15px;"><br></div>
 
-Importantly, $R(t)$ *cannot be measured directly*, it can only be estimated from observable variables (like reported case counts). It  represents a combination of dynamic processes, including disease characteristics (e.g., infectiousness under various conditions, mode of transport) and extrinsic factors (e.g., lockdowns that reduce person-to-person contact). 
+### How is the reproductive number used?
+
+$R(t)$ has two main uses:
+
+1. **Retrospective** understanding of the dynamics of historical outbreaks, and
+2. **Real time tracking** ongoing infectious diseases. 
+
+For 1, one might wish to understand the impact on transmission of vaccines or non pharmaceutical interventions, such as masking or physical distancing. 
+
+For real time tracking of ongoing infectious diseases, there is often interest in determining if the current outbreak is getting worse, better or staying the same. In this case, live dashboards are often used to track $R(t)$ as new data on diagnosed cases emerges. This is currently done for COVID-19 and Influenza by the CDC and CA (add refs).
+
+### How is the reproductive number estimated?
+
+Importantly, $R(t)$ *cannot be measured directly*, it can only be estimated from observable variables (like reported case counts). The ideal estimator of $R(t)$ requires a list of the number of newly *infected* cases by infection date and the <a class="definition" href="glossary.qmd#getInt">generation interval</a>, which is the time between the infection date of an infector and infectee pair. 
+
+In reality we usually only observe the new number of newly *diagnosed* cases and can only estimate the <a class="definition" href="glossary.qmd#serialInt">serial interval</a>, which is the time between symptom onset of an infector-infectee pair. In this case the estimate of $R(t)$ will lag reality without some adjustments. 
 
 <div style="border: 2px dotted black; border-radius: 15px;padding: 5px; background-color: lightyellow;">
 <h3 style="margin-top: 5px; font-size: 1.25em;">The purpose of this document</h3>
