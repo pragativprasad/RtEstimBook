@@ -348,8 +348,14 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#other-methods-not-discussed-here-include" id="toc-other-methods-not-discussed-here-include" class="nav-link active" data-scroll-target="#other-methods-not-discussed-here-include">Other methods not discussed here include:</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmilando/RtEstimBook/edit/main/methods.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -378,7 +384,8 @@ window.Quarto = {
 <p>We also present:</p>
 <p> <a href="./simulation_tool.html#">⎘</a>: An Rshiny application for simulation of case data and <span class="math inline">\(R(t)\)</span><br>  <a href="./methods_research.html">⎘</a>: A list of open research questions<br></p>
 <p>We limit the methods discussed here to those for estimating historical to present-day <span class="math inline">\(R(t)\)</span> values using <strong>daily case count data</strong>, where a case can be flexibly defined as an individual with a reported positive test (either through healthcare-seeking behavior, routine surveillance, or a hospital admission).</p>
-<p>Other methods not discussed here include:</p>
+<section id="other-methods-not-discussed-here-include" class="level3">
+<h3 class="anchored" data-anchor-id="other-methods-not-discussed-here-include">Other methods not discussed here include:</h3>
 <ul>
 <li>inference of <span class="math inline">\(R(t)\)</span> exclusively from alternative data sources (e.g., genetic data,2 behavioral data,3 or viral loads in waste-water4),</li>
 <li>calculations from compartmental, agent-based models, or network.5–7</li>
@@ -387,6 +394,7 @@ window.Quarto = {
 <p>The methods discussed below and references to specific R packages are current as of December 1, 2024. We attempt to harmonize the mathematical choices between each package using terminology from each.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -826,7 +834,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Reproductive Number R(t) - <a href="https://chadmilando.com/RtEstimBook/" target="_blank">https://chadmilando.com/RtEstimBook/</a></p>
-<div class="toc-actions"><ul><li><a href="https://github.com/cmilando/RtEstimBook/edit/main/methods.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmilando/RtEstimBook/edit/main/methods.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

@@ -2,7 +2,7 @@
 
 The tool below walks through the steps of simulating estimates of the instantaneous reproduction number,which can be helpful for surveillance and intervention planning of infectious diseases. For this simulation, we take several steps to simulate how cases spread from one person to another: (1) Simulate the individual-level incubation time distribution, then (2) simulate the individual-level transmission time distribution (assumed to be independent from the incubation time distribution). We then can derive distributions for the generation time and serial interval using the relationships, simulate the individual-level administrative delay in reporting, and simulate the population-level infectivity dynamics.
 
-<hr>
+## Simulation tool
 
 ```{=html}
  <iframe id="example1" src="https://mobslab.shinyapps.io/simulate_infection_data/" style="border: none; width: 100%; height: 720px" frameborder="0"></iframe>

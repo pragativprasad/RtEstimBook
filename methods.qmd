@@ -15,7 +15,7 @@ We also present:
 
 We limit the methods discussed here to those for estimating historical to present-day $R(t)$ values using **daily case count data**, where a case can be flexibly defined as an individual with a reported positive test (either through healthcare-seeking behavior, routine surveillance, or a hospital admission). 
 
-Other methods not discussed here include:
+### Other methods not discussed here include:
 
 - inference of $R(t)$ exclusively from alternative data sources (e.g., genetic data,2 behavioral data,3 or viral loads in waste-water4), 
 - calculations from compartmental, agent-based models, or network.5–7 
