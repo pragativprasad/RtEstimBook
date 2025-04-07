@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chadmilando.com/RtEstimBook/index.html</loc>
-    <lastmod>2025-03-27T16:34:05.095Z</lastmod>
+    <lastmod>2025-04-03T21:14:49.049Z</lastmod>
   </url>
   <url>
     <loc>https://chadmilando.com/RtEstimBook/decisiontree.html</loc>
-    <lastmod>2025-03-28T23:20:25.738Z</lastmod>
+    <lastmod>2025-04-01T17:00:37.419Z</lastmod>
   </url>
   <url>
     <loc>https://chadmilando.com/RtEstimBook/methods.html</loc>
-    <lastmod>2025-03-27T16:34:05.096Z</lastmod>
+    <lastmod>2025-04-02T18:28:38.039Z</lastmod>
   </url>
   <url>
     <loc>https://chadmilando.com/RtEstimBook/methods_introduction.html</loc>
-    <lastmod>2025-03-27T16:34:05.094Z</lastmod>
+    <lastmod>2025-04-03T00:52:03.307Z</lastmod>
   </url>
   <url>
     <loc>https://chadmilando.com/RtEstimBook/methods_distributions.html</loc>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://chadmilando.com/RtEstimBook/simulation_tool.html</loc>
-    <lastmod>2025-03-27T16:34:05.096Z</lastmod>
+    <lastmod>2025-04-02T18:31:14.184Z</lastmod>
   </url>
   <url>
     <loc>https://chadmilando.com/RtEstimBook/methods_research.html</loc>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://chadmilando.com/RtEstimBook/package_EpiEstim.html</loc>
-    <lastmod>2025-03-28T22:19:08.010Z</lastmod>
+    <lastmod>2025-04-01T16:36:44.139Z</lastmod>
   </url>
   <url>
     <loc>https://chadmilando.com/RtEstimBook/package_EpiFilter.html</loc>
@@ -101,6 +101,10 @@
     <lastmod>2025-03-27T16:34:05.092Z</lastmod>
   </url>
   <url>
+    <loc>https://chadmilando.com/RtEstimBook/package_projections.html</loc>
+    <lastmod>2025-03-27T18:56:35.097Z</lastmod>
+  </url>
+  <url>
     <loc>https://chadmilando.com/RtEstimBook/package_R0.html</loc>
     <lastmod>2025-03-27T16:34:05.093Z</lastmod>
   </url>
@@ -114,7 +118,7 @@
   </url>
   <url>
     <loc>https://chadmilando.com/RtEstimBook/glossary.html</loc>
-    <lastmod>2025-03-27T16:34:05.095Z</lastmod>
+    <lastmod>2025-04-03T19:58:57.337Z</lastmod>
   </url>
   <url>
     <loc>https://chadmilando.com/RtEstimBook/references.html</loc>
@@ -122,14 +126,10 @@
   </url>
   <url>
     <loc>https://chadmilando.com/RtEstimBook/Reproductive-Number-$R-t-$.pdf</loc>
-    <lastmod>2025-03-27T15:31:45.751Z</lastmod>
+    <lastmod>2025-04-02T18:17:21.353Z</lastmod>
   </url>
   <url>
     <loc>https://chadmilando.com/RtEstimBook/Reproductive-Number-$R-t-$.epub</loc>
-    <lastmod>2025-03-27T15:31:46.835Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chadmilando.com/RtEstimBook/package_projections.html</loc>
-    <lastmod>2025-03-27T18:56:35.097Z</lastmod>
+    <lastmod>2025-04-02T18:17:22.600Z</lastmod>
   </url>
 </urlset>

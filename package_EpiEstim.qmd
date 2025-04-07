@@ -43,5 +43,5 @@ This package contains the following methods:
 
 ### Sample Code
 
-[This vignette](https://mrc-ide.github.io/EpiEstim/articles/full_EpiEstim_vignette.html) gives a basic example of usage of EpiEstim, including using forecasting via the [projections](package_projects.qmd) package.
+[This vignette](https://mrc-ide.github.io/EpiEstim/articles/full_EpiEstim_vignette.html) gives a basic example of usage of EpiEstim, including using forecasting via the [projections](package_projections.qmd) package.
 

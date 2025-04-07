@@ -21,26 +21,25 @@ You can use the decision tool below to help choose which R packages may be right
     <!////////////////////////////////////////////////////////////////////>
     <tr style="border-top: none; background-color: lightgrey;">
       <th style="font-weight: bold; width: 30%">Desired output</th>
-      <th style="font-weight: bold; width: 20%">Runtime</th>
-      <th style="font-weight: bold; width: 50%">Package</th>
+      <th style="font-weight: bold; width: 25%">Runtime</th>
+      <th style="font-weight: bold; width: 45%; text-align: center;">Package</th>
     </tr>
     <!////////////////////////////////////////////////////////////////////>
     <!---GROUP 1: FORECASTING -------------------------------------------->
     <!////////////////////////////////////////////////////////////////////>
     <tr style="border-top: 2px solid;">
-        <td> <u>Forecasting</u>: what will R(t) be next week</td>
-        <td></td>
+        <td rowspan="3" style="vertical-align: middle;"> <u>Forecasting</u>: what will R(t) be next week</td>
+        <td rowspan="2" style="vertical-align: middle;" >~1 min</td>
         <td>  <a href="package_projections.html">projections</a> and any package with <a href="package_EpiEstim.html">EpiEstim</a>, including: <a href="package_EpiFilter.html">EpiFilter</a> </td>
         
     </tr>
     <tr>
-            <td></td>
-    <td></td>
+            
        <td><a href="package_earlyR.html">earlyR</a></td>
     </tr>
     <tr>
-            <td></td>
-    <td></td>
+            
+    <td>10+ min</td>
         <td><a href="package_EpiNow2.html">EpiNow2</a></td>
     </tr>
 
@@ -49,19 +48,19 @@ You can use the decision tool below to help choose which R packages may be right
     <!---GROUP 2: NOW-CASTING -------------------------------------------->
     <!////////////////////////////////////////////////////////////////////>
     <tr style="border-top: 2px solid;">
-        <td> <u>Nowcasting</u>: what was R(t) in the past week</td>
-        <td></td>
+        <td rowspan="3" style="vertical-align: middle;"> <u>Nowcasting</u>: what was R(t) in the past week</td>
+        <td>~1 min</td>
         <td>  <a href="package_projections.html">projections</a> and any package with <a href="package_EpiEstim.html">EpiEstim</a>, including: <a href="package_EpiFilter.html">EpiFilter</a> </td>
         
     </tr>
     <tr>
-            <td></td>
-    <td></td>
+            <td>1-10 min</td>
+
        <td><a href="package_earlyR.html">earlyR</a></td>
     </tr>
     <tr>
-            <td></td>
-    <td></td>
+            <td>10+ min</td>
+
         <td><a href="package_EpiNow2.html">EpiNow2</a></td>
     </tr>
     
@@ -70,20 +69,20 @@ You can use the decision tool below to help choose which R packages may be right
     <!---GROUP 3: Historical -------------------------------------------->
     <!////////////////////////////////////////////////////////////////////>
     <tr style="border-top: 2px solid;">
-        <td> <u>Historical</u>: what was R(t) over the past month</td>
-        <td></td>
+        <td rowspan="3" style="vertical-align: middle; border-bottom: 2px solid;"> <u>Historical</u>: what was R(t) over the past month</td>
+        <td>~1 min</td>
         <td>  <a href="package_EpiEstim.html">EpiEstim</a> 
         (modified by <a href="package_APEestim.html">APEestim</a>)</td>
         
     </tr>
     <tr>
-            <td></td>
-    <td></td>
+
+    <td>1-10 min</td>
        <td></td>
     </tr>
-    <tr>
-            <td></td>
-    <td></td>
+    <tr style="border-bottom: 2px solid;">
+
+    <td>10+ min</td>
         <td></td>
     </tr>
 
@@ -92,6 +91,8 @@ You can use the decision tool below to help choose which R packages may be right
 </table>
 
 ```
+
+Note: runtime calculations are approximate, assuming a personal laptop with modest resources and applied to different vignettes.
 
 ### Assessment framework {#sec-assessment}
 

@@ -8,3 +8,11 @@ From @Gostic2020Practical:
 > The effective reproductive number, denoted as or $R_e$ or $R_t$, is the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible
 
 Also called the instantaneous reproductive number.
+
+##### Generation interval {#genInt}
+
+The time between the infection date of an individual and the infection date of the person who infected them. This is typically described by a statistical distribution, such as a gamma, lognormal or weibull.
+
+##### Serial interval {#serialInt}
+
+The time between the infection date of an individual and the infection date of the person who infected them. This is typically described by a statistical distribution, such as a gamma, lognormal or weibull.
