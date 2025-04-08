@@ -3,7 +3,7 @@
 | | 
 |:---|:--------|
 | REF| |
-| Peer reviewed| ❌✅|
+| Peer reviewed| ✅|
 | Docs| |
 | Github|  |
 | Installation | |
@@ -57,32 +57,31 @@ This package contains the following methods:
     </tr>
         <tr>
         <td>Ability to nowcast/forecast</td>
-        <td>Some description</td>
+        <td>Designed for retrospective analysis.</td>
         <td>
-          ☐ Yes/no
+          no
                   </td>
     </tr>
                     <tr>
         <td>Incorporates delay distributions</td>
-        <td>Some description</td>
+        <td>Handles delays between infection and reporting implicitly.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
     
                         <tr>
         <td>Estimates expected cases </td>
-        <td>Some description</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
 
                         <tr>
         <td>Communicates uncertainty</td>
-        <td>Some description</td>
+        <td>Highest Posterior Density (HPD) intervals</td>
         <td>
-☐ Yes/no
+Yes
         </td>
     </tr>
 
@@ -93,17 +92,17 @@ This package contains the following methods:
     
                         <tr>
         <td>Peer reviewed validation</td>
-        <td>Some description</td>
+        <td>Peer reviewed publication.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
     
                         <tr>
         <td>Replicable documentation</td>
-        <td>Some description</td>
+        <td>GitHub site.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
 

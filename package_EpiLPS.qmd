@@ -3,7 +3,7 @@
 | | 
 |:---|:--------|
 | REF| |
-| Peer reviewed| ❌✅|
+| Peer reviewed| ✅|
 | Docs| |
 | Github|  |
 | Installation | |
@@ -55,32 +55,31 @@ This package contains the following methods:
     </tr>
         <tr>
         <td>Ability to nowcast/forecast</td>
-        <td>Some description</td>
+        <td>Nowcasting adjusts for underreporting by estimating unreported infections and combining them with reported cases to reflect actual daily epidemics.</td>
         <td>
-          ☐ Yes/no
+          Yes
                   </td>
     </tr>
                     <tr>
         <td>Incorporates delay distributions</td>
-        <td>Some description</td>
+        <td>It accounts for the uncertainty associated with reporting delays</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
     
                         <tr>
         <td>Estimates expected cases </td>
-        <td>Some description</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
 
                         <tr>
         <td>Communicates uncertainty</td>
-        <td>Some description</td>
+        <td>The credible intervals are calculated via the delta method.</td>
         <td>
-☐ Yes/no
+Yes
         </td>
     </tr>
 
@@ -91,17 +90,17 @@ This package contains the following methods:
     
                         <tr>
         <td>Peer reviewed validation</td>
-        <td>Some description</td>
+        <td>Peer reviewed publication.</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
     
                         <tr>
         <td>Replicable documentation</td>
-        <td>Some description</td>
+        <td>GitHub site and R package</td>
         <td>
-          ☐ Yes/no
+          Yes
         </td>
     </tr>
 
