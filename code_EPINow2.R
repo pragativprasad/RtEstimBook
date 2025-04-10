@@ -21,49 +21,43 @@ library(EpiNow2)
 
 ## ============================================================================
 
-url <- "https://raw.githubusercontent.com/cmilando/RtEval/main/all_data.RDS"
-all_data <- readRDS(url(url))
-
-#
-all_data$cases <- all_data$cases[1:45, ]
-
-## impose vintages
-MAX_DAY <- max(all_data$cases$day)
-ReportPX <- all_data$reporting_delay %>% arrange(-Day)
-names(ReportPX)[1] <- 'rev_day'
-all_data$cases$rev_day <- (nrow(all_data$cases) - 1):0
-all_data$cases <- left_join(all_data$cases, ReportPX)
-all_data$cases$Px[which(is.na(all_data$cases$Px))] <- 0
-all_data$cases$Px_rev <- 1 - all_data$cases$Px
-all_data$cases$daily_reports_vintage <-
-  all_data$cases$daily_reports * all_data$cases$Px_rev
-
-# columsn are called `date` and `confirm`
-incidence_df = data.frame(
-  date = lubridate::make_date(2020, 3, 20) + all_data$cases$day,
-  confirm = as.integer(as.vector(all_data$cases$daily_reports_vintage)))
-
-dim(incidence_df)
-
 ####
 # does this have to start with 0? i think so
-gi_pmf <- NonParametric(pmf = c(0, all_data$serial$Px))
+generation_interval <- c(
+  0.0610, 0.1540, 0.2198, 0.2178, 0.1536, 0.1122, 0.0486, 0.0224,
+  0.0078, 0.0022, 0.0004, 0.0002
+)
+gi_pmf <- NonParametric(pmf = c(0, generation_interval))
 gi_pmf
 ###
 
-sym_report_delay_pmf <- NonParametric(pmf = all_data$reporting_delay$Px)
+# Delays
+# - time from taking a test to it getting into a state database
+reporting_pmf <- c(0.3786, 0.3724, 0.1662, 0.0622, 0.0166, 0.0034, 0.0006)
+sym_report_delay_pmf <- NonParametric(pmf = reporting_pmf)
 
 sym_report_delay_pmf
 
-incubation_pmf <- NonParametric(pmf = all_data$incubation$Px)
+# Incidence to taking a test
+# sum of: infect to symtpom onset + symptom onset to taking a test
+# for this, assuming symptom onset to taking a test = 0
+infect_to_test_pmf <- c(
+  0.1422, 0.2714, 0.2664, 0.1832, 0.0846, 0.0340, 0.0136, 0.0030,
+  0.0014, 0.0002
+)
+infect_to_test <- NonParametric(pmf = infect_to_test_pmf)
+infect_to_test
 
 # ----------------------------------------------------------------
-# WOW THIS TAKES A LONG TIME ~ 10min for 60 day example
+incidence_data$confirm <- as.integer(incidence_data$confirm)
+incidence_data$date <- as.Date(incidence_data$report_date)
 
 res_epinow <- epinow(
-  data = incidence_df,
+  data = incidence_data,
   generation_time = generation_time_opts(gi_pmf),
-  delays = delay_opts(incubation_pmf + sym_report_delay_pmf),
+  delays = delay_opts(infect_to_test),
+  truncation = trunc_opts(),
+  #rt = rt_opts(rw = 1),
   backcalc = backcalc_opts(prior = 'reports'),
   stan = stan_opts(chains = 4, cores = 4)
 )

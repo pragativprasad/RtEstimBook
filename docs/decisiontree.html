@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./methods.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./simulation_tool.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -155,6 +155,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./simulation_tool.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example of R(t) usage</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./decisiontree.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Decision matrix</span></a>
   </div>
@@ -196,12 +202,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./methods_inference.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Inference frameworks</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./simulation_tool.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulation tool</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -382,7 +382,7 @@ window.Quarto = {
 <p>You can use the decision tool below to help choose which R packages may be right for your application:</p>
 <ol type="1">
 <li>Look first for the desired output that you want to produce</li>
-<li>Then see which set of required data you have. If you do not have the required data for a specific package, use a different one</li>
+<li>Then make a decision about whether you want to incorporate delay distributions.</li>
 <li>Finally, estimate <span class="math inline">\(R(t)\)</span> using the packages that are appropriate for your use case</li>
 </ol>
 <p><small>See below the table for the assessment framework used to decide which packages to recommend.</small></p>
@@ -399,61 +399,55 @@ Strong recommendation
 <p><strong>Use multiple packages</strong> in your analysis; an ensemble of approaches will be the best way to ensure a robust estimate of <span class="math inline">\(R(t)\)</span> for your use case.</p>
 </div>
 </div>
+<style>
+  table td, table th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+</style>
+
 <table class="caption-top table" data-quarto-postprocess="true">
 <caption>Decision matrix for choosing R(t) estimation tool</caption>
 <tbody>
 <tr class="odd" style="border-top: none; background-color: lightgrey;">
 <td data-quarto-table-cell-role="th" style="font-weight: bold; width: 30%">Desired output</td>
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 25%">Runtime</td>
+<td data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; width: 25%;">Incorporates Delay distributions?</td>
 <td data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; width: 45%;">Package</td>
 </tr>
 <tr class="even" style="border-top: 2px solid;">
-<td rowspan="3" style="vertical-align: middle"><u>Forecasting</u>: what will R(t) be next week</td>
-<td rowspan="2" style="vertical-align: middle">~1 min</td>
-<td style="text-align: center;"><a href="package_projections.html">projections</a> and any package with <a href="package_EpiEstim.html">EpiEstim</a>, including: <a href="package_EpiFilter.html">EpiFilter</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="package_earlyR.html">earlyR</a></td>
-</tr>
-<tr class="even">
-<td>10+ min</td>
+<td style="vertical-align: middle"><u>Forecasting</u>: what will R(t) be next week</td>
+<td style="text-align: center;">Yes</td>
 <td style="text-align: center;"><a href="package_EpiNow2.html">EpiNow2</a></td>
 </tr>
 <tr class="odd" style="border-top: 2px solid;">
-<td rowspan="3" style="vertical-align: middle"><u>Nowcasting</u>: what was R(t) in the past week</td>
-<td>~1 min</td>
-<td style="text-align: center;"><a href="package_projections.html">projections</a> and any package with <a href="package_EpiEstim.html">EpiEstim</a>, including: <a href="package_EpiFilter.html">EpiFilter</a></td>
-</tr>
-<tr class="even">
-<td>1-10 min</td>
-<td style="text-align: center;"><a href="package_earlyR.html">earlyR</a></td>
-</tr>
-<tr class="odd">
-<td>10+ min</td>
+<td rowspan="2" style="vertical-align: middle"><u>Nowcasting</u>: what was R(t) in the past week</td>
+<td style="text-align: center;">Yes</td>
 <td style="text-align: center;"><a href="package_EpiNow2.html">EpiNow2</a></td>
 </tr>
-<tr class="even" style="border-top: 2px solid;">
-<td rowspan="3" style="vertical-align: middle; border-bottom: 2px solid"><u>Historical</u>: what was R(t) over the past month</td>
-<td>~1 min</td>
-<td style="text-align: center;"><a href="package_EpiEstim.html">EpiEstim</a> (modified by <a href="package_APEestim.html">APEestim</a>)</td>
+<tr class="even" style="border-top: 0.75px solid;">
+<td style="text-align: center;">No</td>
+<td style="text-align: center;"><a href="package_EpiLPS.html">EpiLPS</a></td>
 </tr>
-<tr class="odd">
-<td>1-10 min</td>
-<td style="text-align: center;"></td>
+<tr class="odd" style="border-top: 2px solid;">
+<td rowspan="2" style="vertical-align: middle"><u>Historical</u>: what was R(t) over the past month</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;"><a href="package_EpiNow2.html">EpiNow2</a></td>
 </tr>
-<tr class="even" style="border-bottom: 2px solid;">
-<td>10+ min</td>
-<td style="text-align: center;"></td>
+<tr class="even" style="border-bottom: 2px solid;border-top: 0.75px solid;">
+<td style="text-align: center;">No</td>
+<td style="text-align: center;"><a href="package_EpiLPS.html">EpiLPS</a>, <a href="package_EpiEstim.html">EpiEstim</a></td>
 </tr>
 </tbody>
 </table>
 
 
-<p>Note: runtime calculations are approximate, assuming a personal laptop with modest resources and applied to different vignettes.</p>
 <section id="sec-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="sec-assessment">Assessment framework</h3>
 <p>An objective comparison of the performance of the methods in these packages would be highly complex, given the following challenges:</p>
 <ul>
+<li>These packages are really a combination of mathematical modeling, available data, and implementation. Any evaluation would have to disaggregate these features.</li>
 <li>Some of the most widely-used packages are not accompanied with a peer-reviewed manuscript that describes or evaluates the theory behind modeling choices.</li>
 <li>Each package contains a subset of the methods below for constraining <span class="math inline">\(R(t)\)</span> in time, but with subtle variations in implementation and presentation that are often not well-documented and have large implications on evaluation metrics.</li>
 <li>Some packages have not been recently updated, and even those that have are not maintained on Installation, instead leaving updates on a development version on GitHub.</li>
@@ -466,19 +460,9 @@ Strong recommendation
 <caption>Assessment rubric</caption>
 <tbody>
 <tr class="odd" style="border-top: none;">
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 40%">Category</td>
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 40%">Notes</td>
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 20%">Scales</td>
-</tr>
-<tr class="even" data-columnspan="2" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-<td>Usage</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Runtime length</td>
-<td>Some description</td>
-<td>Time (minutes)</td>
+<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 30%">Category</td>
+<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 50%">Notes</td>
+<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 20%">Metric</td>
 </tr>
 <tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
 <td>Features</td>
@@ -487,22 +471,22 @@ Strong recommendation
 </tr>
 <tr class="odd">
 <td>Ability to nowcast/forecast</td>
-<td>Some description</td>
+<td>Does the package have functionality to incorporate both right-truncated data from reporting delays and forecasting of near-future cases and/or R(t) values</td>
 <td>☐ Yes/no</td>
 </tr>
 <tr class="even">
 <td>Incorporates delay distributions</td>
-<td>Some description</td>
+<td>Does the package have methodology for incorporating delay distributions (e.g., transmission times, administrative delays)</td>
 <td>☐ Yes/no</td>
 </tr>
 <tr class="odd">
 <td>Estimates expected cases</td>
-<td>Some description</td>
+<td>Does the package provide an estimate of expected cases and/or infections, or just R(t)</td>
 <td>☐ Yes/no</td>
 </tr>
 <tr class="even">
 <td>Communicates uncertainty</td>
-<td>Some description</td>
+<td>Does the package detail how uncertainty is incorporated into presented outputs</td>
 <td>☐ Yes/no</td>
 </tr>
 <tr class="odd" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
@@ -511,13 +495,13 @@ Strong recommendation
 <td></td>
 </tr>
 <tr class="even">
-<td>Peer reviewed validation</td>
-<td>Some description</td>
+<td>Report detailing package details</td>
+<td>Is there a written report (or published manuscript) that describes the theory behind modeling choices and/or implementation</td>
 <td>☐ Yes/no</td>
 </tr>
 <tr class="odd">
 <td>Replicable documentation</td>
-<td>Some description</td>
+<td>Are there sufficiently detailed vignettes that would permit a new user to implement key package features</td>
 <td>☐ Yes/no</td>
 </tr>
 </tbody>
@@ -948,8 +932,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Overview">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
+      <a href="./simulation_tool.html" class="pagination-link" aria-label="Example of R(t) usage">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Example of R(t) usage</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

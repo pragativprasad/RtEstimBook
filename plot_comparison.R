@@ -1,5 +1,6 @@
 
 library(tidyverse)
+library(ggpubr)
 
 url <- "https://raw.githubusercontent.com/cmilando/RtEval/main/all_data.RDS"
 all_data <- readRDS(url(url))
@@ -12,11 +13,27 @@ plot_data <- rbind(
 # ----------------------------------------------------------------
 # R(t)
 
+# how does the estimate for April 1 change over time
+# projection and update
+# -- stability of the estimate
+# -- accuracy of the estimate
+# you care about R(t) because you care about the infections
 
+## this is kind of a function of the nowcasting algorithm  you use.
+
+
+INCUBATION_SHIFT  = 3
+REPORTINGDELAY_SHIFT = 1
+REPORT_TRUNC = 3
 
 p1 <- as_tibble(plot_data) %>%
-  ggplot() +
-  geom_hline(yintercept = 1, linetype = "11") +
+  ggplot() + theme_classic2() +
+  geom_hline(yintercept = 1, linewidth = 0.25) +
+  geom_vline(xintercept = make_date(2020, 04, 29) + 0.5 +
+               INCUBATION_SHIFT + REPORTINGDELAY_SHIFT)  +
+  geom_vline(xintercept = make_date(2020, 04, 29) + 0.5 - REPORT_TRUNC +
+               INCUBATION_SHIFT + REPORTINGDELAY_SHIFT,
+             linetype = '11')+
   coord_cartesian(xlim = c(
     make_date(2020,3,15), make_date(2020,5,20)
   ), ylim = c(0, 5)) +
@@ -41,12 +58,17 @@ p1 <- as_tibble(plot_data) %>%
 ## HMM SO THIS GIVES AN ESTIMATE OF CASES ON DAY 0
 
 p2 <- as_tibble(plot_data) %>%
-  ggplot() +
+  ggplot() + theme_classic2() +
+  geom_vline(xintercept = make_date(2020, 04, 29) + 0.5 +
+               INCUBATION_SHIFT + REPORTINGDELAY_SHIFT)  +
+  geom_vline(xintercept = make_date(2020, 04, 29) + 0.5 - REPORT_TRUNC +
+               INCUBATION_SHIFT + REPORTINGDELAY_SHIFT,
+             linetype = '11')+
   # *******
   # this is the true r(t), back-calculated
   geom_col(data = all_data$cases,
            mapping = aes(x = day + lubridate::make_date(2020,3,20),
-               y = daily_infections), fill = 'grey', color = NA) +
+               y = daily_infections), fill = grey(0.9), color = NA) +
   # *******
   geom_ribbon(aes(x = date, ymin = infections_lb,
                   ymax = infections_ub, fill = package),

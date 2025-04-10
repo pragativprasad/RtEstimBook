@@ -14,6 +14,7 @@ book:
     collapse-level: 1
   chapters:
     - index.qmd
+    - simulation_tool.qmd
     - decisiontree.qmd
     - part: methods.qmd
       chapters:
@@ -22,7 +23,6 @@ book:
         - methods_time.qmd
         - methods_additionaldata.qmd
         - methods_inference.qmd
-        - simulation_tool.qmd
         - methods_research.qmd
     - part: packages.qmd
       chapters:
