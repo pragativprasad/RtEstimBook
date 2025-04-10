@@ -4,7 +4,7 @@ project:
 
 book:
   google-analytics: G-NRY8TV1Q8G
-  title: "Reproductive Number $R(t)$"
+  title: "Disease outbreaks and metrics"
   repo-url: https://github.com/cmilando/RtEstimBook
   page-footer: Reproductive Number R(t) - [https://chadmilando.com/RtEstimBook/](https://chadmilando.com/RtEstimBook/){target="_blank"}
   repo-branch: main

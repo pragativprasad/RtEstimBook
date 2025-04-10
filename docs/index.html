@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reproductive Number R(t)</title>
+<title>Disease outbreaks and metrics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -152,7 +133,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Reproductive Number <span class="math inline">\(R(t)\)</span></a> 
+      <a href="./">Disease outbreaks and metrics</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/cmilando/RtEstimBook" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
@@ -325,12 +306,6 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./package_projections.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">projections</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./package_R0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R0</span></a>
   </div>
@@ -373,9 +348,7 @@ window.Quarto = {
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
-  <li><a href="#what-is-the-reproductive-number" id="toc-what-is-the-reproductive-number" class="nav-link" data-scroll-target="#what-is-the-reproductive-number">What is the reproductive number?</a></li>
-  <li><a href="#how-is-the-reproductive-number-used" id="toc-how-is-the-reproductive-number-used" class="nav-link" data-scroll-target="#how-is-the-reproductive-number-used">How is the reproductive number used?</a></li>
-  <li><a href="#how-is-the-reproductive-number-estimated" id="toc-how-is-the-reproductive-number-estimated" class="nav-link" data-scroll-target="#how-is-the-reproductive-number-estimated">How is the reproductive number estimated?</a></li>
+  <li><a href="#how-to-choose-a-tool-to-estimate-rt" id="toc-how-to-choose-a-tool-to-estimate-rt" class="nav-link" data-scroll-target="#how-to-choose-a-tool-to-estimate-rt">How to choose a tool to estimate <span class="math inline">\(R(t)\)</span></a></li>
   </ul></li>
   <li><a href="#funding-authors-and-acknowledgements" id="toc-funding-authors-and-acknowledgements" class="nav-link" data-scroll-target="#funding-authors-and-acknowledgements">Funding, authors, and acknowledgements</a></li>
   </ul>
@@ -386,7 +359,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Reproductive Number <span class="math inline">\(R(t)\)</span></h1>
+<h1 class="title">Disease outbreaks and metrics</h1>
 </div>
 
 
@@ -405,12 +378,24 @@ window.Quarto = {
 
 <section id="overview" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="overview">Overview</h2>
-<p>Since the onset of the COVID-19 pandemic in early 2020, there has been a proliferation of software tools that make inference about the current state of an infectious disease outbreak. A widely used parameter in these tools is the <a class="definition" href="./glossary.html#effectiveRt">effective reproductive number</a>, <span class="math inline">\(R(t)\)</span>.</p>
-<section id="what-is-the-reproductive-number" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-the-reproductive-number">What is the reproductive number?</h3>
-<p><span class="math inline">\(R(t)\)</span> is defined in <span class="citation" data-cites="Gostic2020Practical">Gostic et al. (<a href="references.html#ref-Gostic2020Practical" role="doc-biblioref">2020</a>)</span> as: “… the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible.”</p>
-<p><span class="math inline">\(R(t)\)</span> represents a combination of dynamic processes, including disease characteristics (e.g., infectiousness under various conditions, mode of transport) and extrinsic factors (e.g., lockdowns that reduce person-to-person contact).</p>
-<p><span class="math inline">\(R(t)\)</span> has the following values and interpretations:</p>
+<p>When an infectious disease outbreak begins, a time-sensitive question arises: “are things getting better or worse?” A great deal of research has gone into how to answer this question, and making sense of the findings is the purpose of this website.</p>
+<p>Suppose you work at a public health agency, and you have the following reported case data in blue:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="img/Tomorrow.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>You may want to know, are cases tomorrow going to be a) higher than today or b) lower than today. Just looking visually, either seems plausible: in case a) perhaps today’s cases are a outlier, and the true trend will continue upwards, and in case b) perhaps today’s cases are not an outlier, and tomorrow’s cases will be lower.</p>
+<p>To make a more informed decision, there are <strong>two critical questions</strong> we need to answer:</p>
+<p><strong>1. How long does it take for an infected person to infect others?</strong> If you knew that it took at least 2 days for an infected person to infect others, you might be more inclined to think that tomorrow’s cases may be higher than today’s, as they are in a). However, if you knew that it only took 1 day at most for each infected person to infect others, you might think it more likely that tomorrow’s cases will be lower than today’s, as they are in b).</p>
+<p>Therefore, this quantity, known as the <a class="definition" href="./glossary.html#genInt">generation interval</a>, can help you make an informed decision about whether you think cases tomorrow will be higher or lower than today. The generation interval can estimated by a number of methods, including analyzing data of <a href="https://journals.lww.com/epidem/FullText/2009/05000/Estimation_of_the_Serial_Interval_of_Influenza.7.aspx?casa_token=ryVMHOD5AEgAAAAA:dTLXhhBPGA_sFo1yyON5_GDSwqV7cvMxb7p7FJAfHlO3OnpLfbTDLdgiWKNNz3_P4rQm18po9HSte9PtG_Sa0MQKRL0">infector-infectee pairs</a>.</p>
+<p><strong>2. How many previous days of information do you want to look at when deciding what tomorrow’s cases will be?</strong> Again looking at the figure above, if you want to use the previous 4 days to make your decision, you will probably guess that tomorrow’s cases will be higher than today’s. However, if you choose a smaller window of time, you may be inclined to think that tomorrow’s cases will be lower.</p>
+<p>The question of how many days to consider in your estimation (and how much weight each previous day recieves in estimating what the next day of cases will be) is characterized in a parameter known as the <a class="definition" href="./glossary.html#effectiveRt">effective reproductive number</a>, or <span class="math inline">\(R(t)\)</span>.</p>
+<p>Knowing <span class="math inline">\(R(t)\)</span> can help you begin to make an informed guess as to the current state of a disease outbreak, as it has the following values and interpretations <em>at a specific point in time</em>:</p>
 <table class="caption-top table" data-quarto-postprocess="true">
 <tbody>
 <tr class="odd" style="border-top: none; line-height: 1; padding: 2;">
@@ -420,7 +405,7 @@ window.Quarto = {
 </tr>
 <tr class="even" style="line-height: 1; padding: 2;">
 <td>&lt; 1</td>
-<td style="font-size: 0.9em">Each infected person infects <em>on average</em> less than one additional person</td>
+<td style="font-size: 0.9em">Each infected person infects <em>on average</em> fewer than one additional person</td>
 <td>shrinking</td>
 </tr>
 <tr class="odd" style="line-height: 1; padding: 2;">
@@ -438,27 +423,18 @@ window.Quarto = {
 <div style="height:15px;">
 <br>
 </div>
-</section>
-<section id="how-is-the-reproductive-number-used" class="level3">
-<h3 class="anchored" data-anchor-id="how-is-the-reproductive-number-used">How is the reproductive number used?</h3>
-<p><span class="math inline">\(R(t)\)</span> has two main uses:</p>
-<ol type="1">
-<li><strong>Retrospective</strong> understanding of the dynamics of historical outbreaks, and</li>
-<li><strong>Real time tracking</strong> ongoing infectious diseases.</li>
-</ol>
-<p>For 1, one might wish to understand the impact on transmission of vaccines or non pharmaceutical interventions, such as masking or physical distancing.</p>
-<p>For real time tracking of ongoing infectious diseases, there is often interest in determining if the current outbreak is getting worse, better or staying the same. In this case, live dashboards are often used to track <span class="math inline">\(R(t)\)</span> as new data on diagnosed cases emerges. This is currently done for COVID-19 and Influenza by the CDC and CA (add refs).</p>
-</section>
-<section id="how-is-the-reproductive-number-estimated" class="level3">
-<h3 class="anchored" data-anchor-id="how-is-the-reproductive-number-estimated">How is the reproductive number estimated?</h3>
-<p>Importantly, <span class="math inline">\(R(t)\)</span> <em>cannot be measured directly</em>, it can only be estimated from observable variables (like reported case counts). The ideal estimator of <span class="math inline">\(R(t)\)</span> requires a list of the number of newly <em>infected</em> cases by infection date and the <a class="definition" href="./glossary.html#getInt">generation interval</a>, which is the time between the infection date of an infector and infectee pair.</p>
-<p>In reality we usually only observe the new number of newly <em>diagnosed</em> cases and can only estimate the <a class="definition" href="./glossary.html#serialInt">serial interval</a>, which is the time between symptom onset of an infector-infectee pair. In this case the estimate of <span class="math inline">\(R(t)\)</span> will lag reality without some adjustments.</p>
+<p>However, estimating <span class="math inline">\(R(t)\)</span> is not straightforward, and is the subject of a wealth of academic research and proliferation of software packages. Guidance in choosing a choosing a method (and a package) is the purpose of this website.</p>
+<section id="how-to-choose-a-tool-to-estimate-rt" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-choose-a-tool-to-estimate-rt">How to choose a tool to estimate <span class="math inline">\(R(t)\)</span></h3>
+<p>There has been a proliferation of software tools that make inference about the current state of an infectious disease outbreak.</p>
+<p>Important to keep in mind when choosing a tool to estimate <span class="math inline">\(R(t)\)</span> is this fact: <span class="math inline">\(R(t)\)</span> is a <em>latent</em> variable, which means <em>cannot be measured directly</em>. Instead, it can only be estimated from observable variables (like reported case counts).</p>
+<p>The ideal estimator of <span class="math inline">\(R(t)\)</span> requires a list of the number of newly <em>infected</em> cases by infection date and the <a class="definition" href="./glossary.html#getInt">generation interval</a>. This is because we want to know about the state of disease based on when people are infected, not when they report having symptoms. In reality we usually only observe the new number of newly <em>reported</em> cases and can only estimate the <a class="definition" href="./glossary.html#serialInt">serial interval</a>, which is the time between symptom onset of an infector-infectee pair. In this case the estimate of <span class="math inline">\(R(t)\)</span> will lag reality without some adjustments.</p>
+<p>Each software package that estimates <span class="math inline">\(R(t)\)</span> makes different adjustments and assumptions about how these parameters relate, which leads to variations in estimated <span class="math inline">\(R(t)\)</span> <em>even if the same input data are used</em>. In addition, different packages require different levels on input data to provide additional robustness in estimated outputs.</p>
 <div style="border: 2px dotted black; border-radius: 15px;padding: 5px; background-color: lightyellow;">
 <h3 style="margin-top: 5px; font-size: 1.25em;" class="anchored">
 The purpose of this document
 </h3>
-<p>Each software package that estimates <span class="math inline">\(R(t)\)</span> makes different assumptions, which leads to variations in estimated <span class="math inline">\(R(t)\)</span> <em>even if the same input data are used</em>.</p>
-<p>Therefore, the purpose of this document is provide guidance about which software packages to choose for different analytical goals: see our <a href="./decisiontree.html">Decision Matrix</a>.</p>
+<p>Therefore, the purpose of this document is to provide guidance about which <span class="math inline">\(R(t)\)</span> estimation software to choose for different analytical goals: see our <a href="./decisiontree.html">Decision Matrix</a>.</p>
 </div>
 </section>
 </section>
@@ -475,11 +451,6 @@ The purpose of this document
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-Gostic2020Practical" class="csl-entry" role="listitem">
-Gostic KM, McGough L, Baskerville EB, Abbott S, Joshi K, Tedijanto C, et al. 2020. Practical considerations for measuring the effective reproductive number, <span>Rt</span>. PLOS Computational Biology 16:e1008409; doi:<a href="https://doi.org/10.1371/journal.pcbi.1008409">10.1371/journal.pcbi.1008409</a>.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->

@@ -1,14 +1,26 @@
 ## Overview {.unnumbered}
 
-Since the onset of the COVID-19 pandemic in early 2020, there has been a proliferation of software tools that make inference about the current state of an infectious disease outbreak. A widely used parameter in these tools is the <a class="definition" href="glossary.qmd#effectiveRt">effective reproductive number</a>, $R(t)$.
+When an infectious disease outbreak begins, a time-sensitive question arises: "are things getting better or worse?" A great deal of research has gone into how to answer this question, and making sense of the findings is the purpose of this website.
 
-### What is the reproductive number?
+Suppose you work at a public health agency, and you have the following reported case data in blue:
 
-$R(t)$ is defined in @Gostic2020Practical as: "... the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible." 
+```{r pressure, echo=FALSE, fig.cap="", out.width = '80%'}
+knitr::include_graphics("img/Tomorrow.png")
+```
 
-$R(t)$ represents a combination of dynamic processes, including disease characteristics (e.g., infectiousness under various conditions, mode of transport) and extrinsic factors (e.g., lockdowns that reduce person-to-person contact).
+You may want to know, are cases tomorrow going to be a) higher than today or b) lower than today. Just looking visually, either seems plausible: in case a) perhaps today's cases are a outlier, and the true trend will continue upwards, and in case b) perhaps today's cases are not an outlier, and tomorrow's cases will be lower. 
 
-$R(t)$ has the following values and interpretations:
+To make a more informed decision, there are **two critical questions** we need to answer:
+
+**1. How long does it take for an infected person to infect others?** If you knew that it took at least 2 days for an infected person to infect others, you might be more inclined to think that tomorrow's cases may be higher than today's, as they are in a). However, if you knew that it only took 1 day at most for each infected person to infect others, you might think it more likely that tomorrow's cases will be lower than today's, as they are in b).
+
+Therefore, this quantity, known as the <a class="definition" href="glossary.qmd#genInt">generation interval</a>, can help you make an informed decision about whether you think cases tomorrow will be higher or lower than today. The generation interval can estimated by a number of methods, including analyzing data of [infector-infectee pairs](https://journals.lww.com/epidem/FullText/2009/05000/Estimation_of_the_Serial_Interval_of_Influenza.7.aspx?casa_token=ryVMHOD5AEgAAAAA:dTLXhhBPGA_sFo1yyON5_GDSwqV7cvMxb7p7FJAfHlO3OnpLfbTDLdgiWKNNz3_P4rQm18po9HSte9PtG_Sa0MQKRL0).
+
+**2. How many previous days of information do you want to look at when deciding what tomorrow's cases will be?** Again looking at the figure above, if you want to use the previous 4 days to make your decision, you will probably guess that tomorrow's cases will be higher than today's. However, if you choose a smaller window of time, you may be inclined to think that tomorrow's cases will be lower. 
+
+The question of how many days to consider in your estimation (and how much weight each previous day recieves in estimating what the next day of cases will be) is characterized in a parameter known as the <a class="definition" href="glossary.qmd#effectiveRt">effective reproductive number</a>, or $R(t)$. 
+
+Knowing $R(t)$ can help you begin to make an informed guess as to the current state of a disease outbreak, as it has the following values and interpretations *at a specific point in time*: 
 
 ```{=html}
 <table>
@@ -20,7 +32,7 @@ $R(t)$ has the following values and interpretations:
     </tr>
     <tr style="line-height: 1; padding: 2;">
       <td>< 1</td>
-      <td style="font-size: 0.9em;">Each infected person infects <em>on average</em> less than one additional person</td>
+      <td style="font-size: 0.9em;">Each infected person infects <em>on average</em> fewer than one additional person</td>
       <td>shrinking</td>
     </tr>
     <tr style="line-height: 1; padding: 2;">
@@ -37,28 +49,22 @@ $R(t)$ has the following values and interpretations:
 ```
 <div style="height:15px;"><br></div>
 
-### How is the reproductive number used?
+However, estimating $R(t)$ is not straightforward, and is the subject of a wealth of academic research and proliferation of software packages. Guidance in choosing a choosing a method (and a package) is the purpose of this website.
 
-$R(t)$ has two main uses:
+### How to choose a tool to estimate $R(t)$
 
-1. **Retrospective** understanding of the dynamics of historical outbreaks, and
-2. **Real time tracking** ongoing infectious diseases. 
+There has been a proliferation of software tools that make inference about the current state of an infectious disease outbreak.
 
-For 1, one might wish to understand the impact on transmission of vaccines or non pharmaceutical interventions, such as masking or physical distancing. 
+Important to keep in mind when choosing a tool to estimate $R(t)$ is this fact: $R(t)$ is a *latent* variable, which means *cannot be measured directly*. Instead, it can only be estimated from observable variables (like reported case counts). 
 
-For real time tracking of ongoing infectious diseases, there is often interest in determining if the current outbreak is getting worse, better or staying the same. In this case, live dashboards are often used to track $R(t)$ as new data on diagnosed cases emerges. This is currently done for COVID-19 and Influenza by the CDC and CA (add refs).
+The ideal estimator of $R(t)$ requires a list of the number of newly *infected* cases by infection date and the <a class="definition" href="glossary.qmd#getInt">generation interval</a>. This is because we want to know about the state of disease based on when people are infected, not when they report having symptoms. In reality we usually only observe the new number of newly *reported* cases and can only estimate the <a class="definition" href="glossary.qmd#serialInt">serial interval</a>, which is the time between symptom onset of an infector-infectee pair. In this case the estimate of $R(t)$ will lag reality without some adjustments. 
 
-### How is the reproductive number estimated?
-
-Importantly, $R(t)$ *cannot be measured directly*, it can only be estimated from observable variables (like reported case counts). The ideal estimator of $R(t)$ requires a list of the number of newly *infected* cases by infection date and the <a class="definition" href="glossary.qmd#getInt">generation interval</a>, which is the time between the infection date of an infector and infectee pair. 
-
-In reality we usually only observe the new number of newly *diagnosed* cases and can only estimate the <a class="definition" href="glossary.qmd#serialInt">serial interval</a>, which is the time between symptom onset of an infector-infectee pair. In this case the estimate of $R(t)$ will lag reality without some adjustments. 
+Each software package that estimates $R(t)$ makes different adjustments and assumptions about how these parameters relate, which leads to variations in estimated $R(t)$ _even if the same input data are used_. In addition, different packages require different levels on input data to provide additional robustness in estimated outputs.
 
 <div style="border: 2px dotted black; border-radius: 15px;padding: 5px; background-color: lightyellow;">
 <h3 style="margin-top: 5px; font-size: 1.25em;">The purpose of this document</h3>
-Each software package that estimates $R(t)$ makes different assumptions, which leads to variations in estimated $R(t)$ _even if the same input data are used_. 
 
-Therefore, the purpose of this document is provide guidance about which software packages to choose for different analytical goals: see our [Decision Matrix](decisiontree.qmd).
+Therefore, the purpose of this document is to provide guidance about which $R(t)$ estimation software to choose for different analytical goals: see our [Decision Matrix](decisiontree.qmd).
 </div>
 
 ## Funding, authors, and acknowledgements
