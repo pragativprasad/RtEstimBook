@@ -2,11 +2,11 @@
 
 | | 
 |:---|:--------|
-| REF| |
-| Peer reviewed| ❌✅|
-| Docs| |
-| Github|  |
-| Installation | |
+| REF| [Wellcome report](https://wellcomeopenresearch.org/articles/5-112)|
+| Docs| [Docs](https://epiforecasts.io/EpiNow2/) |
+| Github|  [Github](https://github.com/epiforecasts/EpiNow2) |
+| Last commit|Feb 25, 2021|
+| Installation | [Installation](https://cran.r-project.org/web/packages/EpiNow2/index.html)|
 : {tbl-colwidths="[20,80]"}
 
 ### Brief Description
@@ -20,12 +20,6 @@ Forecasting is also supported for the time-varying reproduction number, infectio
 
 <small style="font-weight: bold;margin-bottom: 0;">Important links:</small>
 
-| | | | |
-|:---|:--|:----|:----|
-|<small>REF: </small> [Wellcome report](https://wellcomeopenresearch.org/articles/5-112) <br><small>(Peer reviewed: ❌)</small> | [Docs](https://epiforecasts.io/EpiNow2/) | [Github](https://github.com/epiforecasts/EpiNow2) <small><br>(Updated: Mar 2025)</small>| [Installation](https://cran.r-project.org/web/packages/EpiNow2/index.html) <small><br>(Updated: Feb 2025)</small>|  
-: {tbl-colwidths="[30,10,30,30]"}
-
-
 ### Methods
 
 This package contains the following methods:
@@ -35,94 +29,19 @@ This package contains the following methods:
 
 ### Assessment
 
-```{=html}
-<table>
-    <caption>Assessment rubric</caption>
-    <!---HEADING --->
-    <tr style="border-top: none;">
-      <th style="font-weight: bold; width: 40%">Category</th>
-      <th style="font-weight: bold; width: 40%">Notes</th>
-      <th style="font-weight: bold; width: 20%">Scales</th>
-    </tr>
-    
-        <!------ SECTION 1: USAGE -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Usage </td>
-    </tr>
-
-    <tr>
-        <td>Runtime length</td>
-        <td>Some description</td>
-        <td>
-          Time (minutes)
-        </td>
-    </tr>
-      
-      <!------ SECTION 2: FEATURES -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Features </td>
-    </tr>
-        <tr>
-        <td>Ability to nowcast/forecast</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-                  </td>
-    </tr>
-                    <tr>
-        <td>Incorporates delay distributions</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
-    
-                        <tr>
-        <td>Estimates expected cases </td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
-
-                        <tr>
-        <td>Communicates uncertainty</td>
-        <td>Some description</td>
-        <td>
-☐ Yes/no
-        </td>
-    </tr>
-
-      <!------ SECTION 3: Validation -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Validation </td>
-    </tr>
-    
-                        <tr>
-        <td>Peer reviewed validation</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
-    
-                        <tr>
-        <td>Replicable documentation</td>
-        <td>Some description</td>
-        <td>
-          ☐ Yes/no
-        </td>
-    </tr>
-
-
-</table>
-
-```
-
+| | 
+|:---|:--------|
+|<strong>Features</strong>||
+| Ability to nowcast/forecast| Yes|
+| Incorporates delay distributions| Yes|
+| Estimates expected cases| Yes|
+| Communicates uncertainty| Yes|
+|<strong>Validation</strong>||
+| Documentation of package methods| Yes|
+| Documentation of package implementation| Yes|
+: {tbl-colwidths="[40,60]"}
 
 
 ### Starter code
 
-- copy in from SummRT
-- all things should use the same datasets
-- could make these shiny apps if we wanted
+ 

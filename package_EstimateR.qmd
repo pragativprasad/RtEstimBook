@@ -101,7 +101,7 @@ Yes
     </tr>
     
                         <tr>
-        <td>Peer reviewed validation</td>
+        <td>Documentation of package methods</td>
         <td>Peer reviewed publication.</td>
         <td>
           Yes
@@ -109,7 +109,7 @@ Yes
     </tr>
     
                         <tr>
-        <td>Replicable documentation</td>
+        <td>Documentation of package implementation</td>
         <td>GitHub site and R package.</td>
         <td>
           Yes

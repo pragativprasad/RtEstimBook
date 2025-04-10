@@ -40,7 +40,6 @@ book:
       - package_epinowcast.qmd
       - package_ern.qmd
       - package_EstimateR.qmd
-      - package_projections.qmd
       - package_R0.qmd
       - package_RtEstim.qmd
       - package_WhiteLabRt.qmd

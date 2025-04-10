@@ -89,7 +89,7 @@ Yes
     </tr>
     
                         <tr>
-        <td>Peer reviewed validation</td>
+        <td>Documentation of package methods</td>
         <td>Published paper in Plos Comp Biol.</td>
         <td>
           Yes
@@ -97,7 +97,7 @@ Yes
     </tr>
     
                         <tr>
-        <td>Replicable documentation</td>
+        <td>Documentation of package implementation</td>
         <td>R package and details [`here`](https://dajmcdon.github.io/rtestim/).</td>
         <td>
           Yes

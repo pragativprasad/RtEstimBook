@@ -155,6 +155,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./simulation_tool.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example of R(t) usage</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./decisiontree.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Decision matrix</span></a>
   </div>
@@ -196,12 +202,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./methods_inference.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Inference frameworks</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./simulation_tool.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulation tool</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -390,23 +390,23 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">REF</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://wellcomeopenresearch.org/articles/5-112">Wellcome report</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Peer reviewed</td>
-<td style="text-align: left;">❌✅</td>
+<td style="text-align: left;">Docs</td>
+<td style="text-align: left;"><a href="https://epiforecasts.io/EpiNow2/">Docs</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Docs</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Github</td>
+<td style="text-align: left;"><a href="https://github.com/epiforecasts/EpiNow2">Github</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Github</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Last commit</td>
+<td style="text-align: left;">Feb 25, 2021</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Installation</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://cran.r-project.org/web/packages/EpiNow2/index.html">Installation</a></td>
 </tr>
 </tbody>
 </table>
@@ -419,22 +419,6 @@ Copied from the developer site<br><br>
 <p>Uncertainty is propagated from all inputs into the final parameter estimates, helping to mitigate spurious findings. This is handled internally. The time-varying reproduction estimates and the uncertain generation time also give time-varying estimates of the rate of growth.</p>
 <p>Forecasting is also supported for the time-varying reproduction number, infections, and reported cases using the same generative process approach as used for estimation.</p>
 <p><small style="font-weight: bold;margin-bottom: 0;">Important links:</small></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 30%">
-<col style="width: 10%">
-<col style="width: 30%">
-<col style="width: 30%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><small>REF: </small> <a href="https://wellcomeopenresearch.org/articles/5-112">Wellcome report</a> <br><small>(Peer reviewed: ❌)</small></td>
-<td style="text-align: left;"><a href="https://epiforecasts.io/EpiNow2/">Docs</a></td>
-<td style="text-align: left;"><a href="https://github.com/epiforecasts/EpiNow2">Github</a> <small><br>(Updated: Mar 2025)</small></td>
-<td style="text-align: left;"><a href="https://cran.r-project.org/web/packages/EpiNow2/index.html">Installation</a> <small><br>(Updated: Feb 2025)</small></td>
-</tr>
-</tbody>
-</table>
 </section>
 <section id="methods" class="level3">
 <h3 class="anchored" data-anchor-id="methods">Methods</h3>
@@ -445,76 +429,49 @@ Copied from the developer site<br><br>
 </section>
 <section id="assessment" class="level3">
 <h3 class="anchored" data-anchor-id="assessment">Assessment</h3>
-<table class="caption-top table" data-quarto-postprocess="true">
-<caption>Assessment rubric</caption>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
 <tbody>
-<tr class="odd" style="border-top: none;">
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 40%">Category</td>
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 40%">Notes</td>
-<td data-quarto-table-cell-role="th" style="font-weight: bold; width: 20%">Scales</td>
-</tr>
-<tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-<td>Usage</td>
-<td></td>
-<td></td>
-</tr>
 <tr class="odd">
-<td>Runtime length</td>
-<td>Some description</td>
-<td>Time (minutes)</td>
-</tr>
-<tr class="even" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-<td>Features</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Ability to nowcast/forecast</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;"><strong>Features</strong></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td>Incorporates delay distributions</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">Ability to nowcast/forecast</td>
+<td style="text-align: left;">Yes</td>
 </tr>
 <tr class="odd">
-<td>Estimates expected cases</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">Incorporates delay distributions</td>
+<td style="text-align: left;">Yes</td>
 </tr>
 <tr class="even">
-<td>Communicates uncertainty</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
-</tr>
-<tr class="odd" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-<td>Validation</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Peer reviewed validation</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">Estimates expected cases</td>
+<td style="text-align: left;">Yes</td>
 </tr>
 <tr class="odd">
-<td>Replicable documentation</td>
-<td>Some description</td>
-<td>☐ Yes/no</td>
+<td style="text-align: left;">Communicates uncertainty</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Validation</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Documentation of package methods</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Documentation of package implementation</td>
+<td style="text-align: left;">Yes</td>
 </tr>
 </tbody>
 </table>
-
-
 </section>
 <section id="starter-code" class="level3">
 <h3 class="anchored" data-anchor-id="starter-code">Starter code</h3>
-<ul>
-<li>copy in from SummRT</li>
-<li>all things should use the same datasets</li>
-<li>could make these shiny apps if we wanted</li>
-</ul>
 
 
 </section>

@@ -3,7 +3,6 @@
 | | 
 |:---|:--------|
 | REF| [medrxiv.org/content/10.1101/2020.09.19.20198028v1](https://www.medrxiv.org/content/10.1101/2020.09.19.20198028v1)|
-| Peer reviewed| ❌|
 | Docs| None|
 | Github| [github.com/thlytras/bayEStim](https://github.com/thlytras/bayEStim) |
 | Last commit| Aug 3, 2020|

@@ -91,7 +91,7 @@ This package contains the following methods:
     </tr>
     
                         <tr>
-        <td>Peer reviewed validation</td>
+        <td>Documentation of package methods</td>
         <td>Some description</td>
         <td>
           ☐ Yes/no
@@ -99,7 +99,7 @@ This package contains the following methods:
     </tr>
     
                         <tr>
-        <td>Replicable documentation</td>
+        <td>Documentation of package implementation</td>
         <td>Some description</td>
         <td>
           ☐ Yes/no

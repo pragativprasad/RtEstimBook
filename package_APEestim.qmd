@@ -3,7 +3,6 @@
 | | 
 |:---|:--------|
 | REF| @Parag2020Using|
-| Peer reviewed| ✅|
 | Docs| None|
 | Github|  [Github](https://github.com/kpzoo/model-selection-for-epidemic-renewal-models)|
 | Last commit|Feb 12, 2021|
@@ -25,16 +24,14 @@ This package aims to improve upon the limitation of [fixed sliding windows](meth
 
 | | 
 |:---|:--------|
-|<strong>Usage</strong>||
-|Runtime| similar to [EpiEstim](package_EpiEstim.qmd)|
 |<strong>Features</strong>||
 | Ability to nowcast/forecast| No|
 | Incorporates delay distributions| No|
 | Estimates expected cases| No|
 | Communicates uncertainty| Yes|
 |<strong>Validation</strong>||
-| Peer reviewed validation| Yes|
-| Replicable documentation| No|
+| Documentation of package methods| Yes|
+| Documentation of package implementation| No|
 : {tbl-colwidths="[40,60]"}
 
 ### Sample Code

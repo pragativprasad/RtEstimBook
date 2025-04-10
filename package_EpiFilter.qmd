@@ -3,7 +3,6 @@
 | | 
 |:---|:--------|
 | REF| @Parag2021Improved|
-| Peer reviewed| ✅|
 | Docs| |
 | Github| [https://github.com/kpzoo/EpiFilter](https://github.com/kpzoo/EpiFilter) |
 | Last commit| Dec 9, 2023 |
@@ -27,16 +26,14 @@ This package contains the following methods to solve for $R(t)$ in time:
 
 | | 
 |:---|:--------|
-|<strong>Usage</strong>||
-|Runtime| minutes (uses EpiEstim)|
 |<strong>Features</strong>||
-| Ability to nowcast/forecast| Yes, when combined with the [projections](package_projections.qmd) package|
+| Ability to nowcast/forecast| No|
 | Incorporates delay distributions| No, although some right-censoring is included|
-| Estimates expected cases| Yes, when combined with the [projections](package_projections.qmd) package|
+| Estimates expected cases| No|
 | Communicates uncertainty| Yes|
 |<strong>Validation</strong>||
-| Peer reviewed validation| Yes|
-| Replicable documentation| No|
+| Documentation of package methods| Yes|
+| Documentation of package implementation| No|
 : {tbl-colwidths="[40,60]"}
 
 

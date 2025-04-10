@@ -3,7 +3,6 @@
 | | 
 |:---|:--------|
 | REF| None|
-| Peer reviewed| ❌|
 | Docs| [repidemicsconsortium.org/earlyR/articles/earlyR.html](https://www.repidemicsconsortium.org/earlyR/articles/earlyR.html)|
 | Github| [github.com/reconhub/earlyR](https://github.com/reconhub/earlyR) |
 | Last commit| October 27, 2020|
@@ -23,16 +22,14 @@ This package does not constrain R in time, instead this is meant to predict a si
 
 | | 
 |:---|:--------|
-|<strong>Usage</strong>||
-|Runtime| similar to [EpiEstim](package_EpiEstim.qmd)|
 |<strong>Features</strong>||
 | Ability to nowcast/forecast| Yes|
 | Incorporates delay distributions| No|
 | Estimates expected cases| Yes|
 | Communicates uncertainty| Yes|
 |<strong>Validation</strong>||
-| Peer reviewed validation| No|
-| Replicable documentation| Yes|
+| Documentation of package methods| No|
+| Documentation of package implementation| Yes|
 : {tbl-colwidths="[40,60]"}
 
 ### Sample Code

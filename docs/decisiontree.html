@@ -307,12 +307,6 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./package_projections.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">projections</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./package_R0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R0</span></a>
   </div>
@@ -417,25 +411,29 @@ Strong recommendation
 <td data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; width: 45%;">Package</td>
 </tr>
 <tr class="even" style="border-top: 2px solid;">
-<td style="vertical-align: middle"><u>Forecasting</u>: what will R(t) be next week</td>
+<td rowspan="2" style="vertical-align: middle"><u>Forecasting</u>: what will R(t) be next week</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;"><a href="package_EpiNow2.html">EpiNow2</a></td>
 </tr>
-<tr class="odd" style="border-top: 2px solid;">
+<tr class="odd" style="border-top: 0.75px solid;">
+<td style="text-align: center;">No</td>
+<td style="text-align: center;"><a href="package_EpiInvert.html">EpiInvert</a></td>
+</tr>
+<tr class="even" style="border-top: 2px solid;">
 <td rowspan="2" style="vertical-align: middle"><u>Nowcasting</u>: what was R(t) in the past week</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;"><a href="package_EpiNow2.html">EpiNow2</a></td>
 </tr>
-<tr class="even" style="border-top: 0.75px solid;">
+<tr class="odd" style="border-top: 0.75px solid;">
 <td style="text-align: center;">No</td>
-<td style="text-align: center;"><a href="package_EpiLPS.html">EpiLPS</a></td>
+<td style="text-align: center;"><a href="package_EpiLPS.html">EpiLPS</a>, <a href="package_EpiInverg.html">EpiInvert</a></td>
 </tr>
-<tr class="odd" style="border-top: 2px solid;">
+<tr class="even" style="border-top: 2px solid;">
 <td rowspan="2" style="vertical-align: middle"><u>Historical</u>: what was R(t) over the past month</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;"><a href="package_EpiNow2.html">EpiNow2</a></td>
 </tr>
-<tr class="even" style="border-bottom: 2px solid;border-top: 0.75px solid;">
+<tr class="odd" style="border-bottom: 2px solid;border-top: 0.75px solid;">
 <td style="text-align: center;">No</td>
 <td style="text-align: center;"><a href="package_EpiLPS.html">EpiLPS</a>, <a href="package_EpiEstim.html">EpiEstim</a></td>
 </tr>
@@ -490,17 +488,17 @@ Strong recommendation
 <td>☐ Yes/no</td>
 </tr>
 <tr class="odd" data-columnspan="3" data-,="" style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-<td>Validation</td>
+<td>Documentation</td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Report detailing package details</td>
+<td>Documentation of package methods</td>
 <td>Is there a written report (or published manuscript) that describes the theory behind modeling choices and/or implementation</td>
 <td>☐ Yes/no</td>
 </tr>
 <tr class="odd">
-<td>Replicable documentation</td>
+<td>Documentation of package implementation</td>
 <td>Are there sufficiently detailed vignettes that would permit a new user to implement key package features</td>
 <td>☐ Yes/no</td>
 </tr>

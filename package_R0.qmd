@@ -94,7 +94,7 @@ Yes
     </tr>
     
                         <tr>
-        <td>Peer reviewed validation</td>
+        <td>Documentation of package methods</td>
         <td>Peer reviewed paper published describing the package.</td>
         <td>
           Yes
@@ -102,7 +102,7 @@ Yes
     </tr>
     
                         <tr>
-        <td>Replicable documentation</td>
+        <td>Documentation of package implementation</td>
         <td>Package is on Installation.</td>
         <td>
           Yes

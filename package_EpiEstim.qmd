@@ -29,19 +29,18 @@ This package contains the following methods:
 
 | | 
 |:---|:--------|
-|<strong>Usage</strong>||
-|Runtime| minutes|
 |<strong>Features</strong>||
-| Ability to nowcast/forecast| Yes, when combined with the [projections](package_projections.qmd) package|
+| Ability to nowcast/forecast| No|
 | Incorporates delay distributions| No, although some right-censoring is included|
-| Estimates expected cases| Yes, when combined with the [projections](package_projections.qmd) package|
+| Estimates expected cases| No|
 | Communicates uncertainty| Yes|
 |<strong>Validation</strong>||
-| Peer reviewed validation| Yes|
-| Replicable documentation| Yes|
+| Documentation of package methods| Yes|
+| Documentation of package implementation| Yes|
 : {tbl-colwidths="[40,60]"}
 
 ### Sample Code
 
-[This vignette](https://mrc-ide.github.io/EpiEstim/articles/full_EpiEstim_vignette.html) gives a basic example of usage of EpiEstim, including using forecasting via the [projections](package_projections.qmd) package.
+[This vignette](https://mrc-ide.github.io/EpiEstim/articles/full_EpiEstim_vignette.html) gives a basic example of usage of EpiEstim.
 
+The end of this vignette suggests using the `projections` package to estimate future cases, and we cannot recommend this package. The estimation of future values of R(t) in this package comes from resampling different past values of R(t) rather than trends dervied from recent infections. 
