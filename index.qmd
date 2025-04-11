@@ -69,14 +69,14 @@ Therefore, the purpose of this document is to provide guidance about which $R(t)
 
 ## Funding, authors, and acknowledgements
 
-This work is supported by InsightNet grant #
+This work is supported by CDC grant NU38FT000013.
 
 The lead authors of this document are at Boston University in the School of Public Health:
 
-- Chad Milando, Laura White, and Christine Sangphet
+- Chad Milando, Laura White
 
 Many additional co-authors contributed to this document including:
 
-- Anne Cori, Brennan Klein, Katelyn Gostic, Alessandra Urbinati, Guillaume St-Onge, George Vega Yon, Kaitlyn Johnson, ...
+- Anne Cori, Brennan Klein, Katelyn Gostic, Alessandra Urbinati, Guillaume St-Onge, George Vega Yon, Kaitlyn Johnson, Christine Sangphet, ...
 
 

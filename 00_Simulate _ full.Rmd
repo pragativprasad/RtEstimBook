@@ -1,4 +1,7 @@
 ---
+title: "Simulating infectious disease data"
+author: Chad Milando, PhD*^[Boston University, School of Public Health, Department of Environmental Health, cmilando@bu.edu]; Laura White, PhD^[Boston University, School of Public Health, Department of Biostatistics]; 
+date: "2024-09-24"
 output: html_document
 runtime: shiny
 ---
@@ -25,40 +28,62 @@ library(purrr)
 library(shiny)
 library(splines)
 library(tidyverse)
-library(shiny.blueprint)
 options(shiny.plot.res=96)
 ```
 
-This document helps visualize the various steps occurring in an infectious disease outbreak.
+This document walks through the steps of simulating estimates of the instantaneous reproduction number, $R(t)$, which can be helpful for surveillance and intervention planning of infectious diseases. 
+
+Throughout, we define $R(t)$ as the instantaneous reproduction number defined in [Gostic et. al. (2020)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008409), "The **instantaneous reproductive number** measures transmission at a specific point in time, [and] is more appropriate for analyses estimating the reproductive number of the infected population on specific dates, especially when aiming to study how interventions or other extrinsic factors have affected transmission at a given point in time."
+
+To do this, we'll simulate **line-list data**, which means there is a single row for each case that has dates for: infection, symptom onset, and when the case was reported to public health agencies.
+
+In this document, we use the following terms from [Lehtinen et. al. (2021)](https://royalsocietypublishing.org/doi/10.1098/rsif.2020.0756):
 
 ```{r pressure, echo=FALSE, fig.cap="Figure 1 from Lehtinen et. al. (2021)", out.width = '60%'}
 knitr::include_graphics("img/Lehtinen_fig1.jpg")
 ```
 
+* $G_{ij}$ is the generation time, the time between infection in i and infection in j
+* $I_i$ is the incubation time, between infection and sympton onset
+* $P_{ij}$ is the transmission time, defined as the time between symptom onset in i and infection in j
+* $S_{ij}$ is the serial interval, the time between sympton onset in i and symptom onset in j
+
+**NOTE:** Each of these is in reference to the **infector**, so the **infector** ($i$) has a serial interval and a generation interval that is applied to each **infectee** ($j$). This is very important for calculation of the true $R(t)$ from a single simulation.
+
 For this simulation, we take several steps to simulate how cases spread from one person to another: 
 
-1. First, we simulate the **incubation time** distribution, $I_i$, the time between between infection and sympton onset (/when one person can infect another)
-2. Next, we simulate the **transmission time** distribution, $P_{ij}$. This is the defined as the time between symptom onset in one person and infection in another. When transmission time and incubation time are assumed to be independent, the generation interval $G_{ij}$ (the time between infections), and the serial interval, $S_{ij}$ (the time between disease onsets) are equivalent.
-3. Third, we simulate the the individual-level **administrative delay** in reporting, the time between **symptom onset** and **case reporting** to a public health agency (not shown above).
-4. Finally, we simulate the population-level infectivity dynamics, i.e., $R(t)$ (not shown above).
+1. Simulate the individual-level incubation time distribution, then 
+2. Simulate the individual-level transmission time distribution (assumed to be independent from the incubation time distribution). 
 
-With all of these factors together, we can see how a disease outbreak gets reported to administrative databases that then can be used to calculate $R(t)$ that informs public health decision making.
+We then can derive distributions for the generation time and serial interval using the relationships described in [Lehtinen et. al. (2021)](https://royalsocietypublishing.org/doi/10.1098/rsif.2020.0756):
 
-```{r seed_set, echo = F,include=F}
+3. Simulate the individual-level administrative delay in reporting, and 
+4. Simulate the population-level infectivity dynamics. 
+
+The result is simulated individual line-list and aggregated count data. 
+
+For reproducibility, we fix the random seed.
+
+```{r seed_set, echo = F}
 inputPanel(shiny::helpText("set.seed(123)"))
 set.seed(123)
 ```
 
+##### Assumptions
 
-<div style="border: 2px dotted black; border-radius: 15px;padding: 5px; background-color: lightyellow;">
-<h3 style="margin-top: 5px; font-size: 1.25em;">How to read the distribution graphs below</h3>
+We make several assumptions on this sheet:
 
-In each of the distribution graphs below, the y-axis says P(x). This is the probability of an individual having a incubation time (or other distribution) on that specific day. So the most number of people will have a incubation time where P(x) is the highest
-</div>
+* We parameterize all distributions using right-truncated Negative Binomial (NB) distributions. Throughout, NB size is a measure of distribution dispersion (smaller size means more over-dispersion, which means variance != mean. Higher size means the distribution gets closer to Poisson). For more information see [Zeileis](https://edoc.unibas.ch/15400/).
+* Offspring in each generation can be described using either a Poisson or NB distribution with a defined NB size parameter.
+* We assume that infectivity happens on the day of symptom onset. 
+* We assume that the incubation and transmission distributions are independent. 
 
+#### Acknowledgements
+
+This page was developed in preparation for the InsightNet Collabathon, Sept 24-26 in Boston, MA, USA. We would like to acknowledge the funding from EpiStorm (CDC NU38FT000013), as well as contributions of code and thoughts from Tenglong Li, PhD^[Boston University, School of Public Health, Department of Biostatistics], Zhenwei Zhou, PhD^[Boston University, School of Public Health, Department of Biostatistics], Christine Sangphet, BA^[Boston University], and Anne Cori, PhD^[Imperial College, London]. The code for this page is available on [Github](https://github.com/cmilando/RtEval).
 
 ### Incubation time distribution
-Incubation time is defined as the time between **infection** and **symptom onset** for an individual. We used a minimum incubation time (1 day) and a maximum incubation time (user defined). The "spread" of the distribution is controlled by the "size" parameter. The Incubation of exactly 1 day can be achieved by setting Size = 1e-10. 
+Incubation time is defined as the time between **infection** and **symptom onset** for an individual. We used a minimum incubation time (1 day) and a maximum incubation time (user defined). Incubation of exactly 1 day can be achieved by setting NB size = 1e-10. 
 
 ```{r inc_interval, echo=FALSE}
 INC_MIN = 1
@@ -66,8 +91,8 @@ INC_MIN = 1
 ## INPUTS
 inputPanel(
   # row 1
-  sliderInput("inc_i_mean", label = "Mean (days)", value = 2, min = 1, max = 15),
-  sliderInput("inc_i_size", label = "Size", pre = '1e', value = 2, min = -10, max = 10),
+  sliderInput("inc_i_mean", label = "NB mean (days)", value = 2, min = 1, max = 15),
+  sliderInput("inc_i_size", label = "NB size", pre = '1e', value = 2, min = -10, max = 10),
   sliderInput("maxinc", label = "Max. incubation time (days)", value = 11,
               min = 5, max = 15, step = 1)
 )
@@ -109,7 +134,7 @@ renderPlot({
 ```
 
 ### Transmission time distribution
-Transmission time is defined as the time beteween between **symptom onset** in **infector** and **infection** in **infectee** for an individual. In this simulation we assume that the transmission time distribution is **independent** from the incubation time distribution. The "spread" of the distribution is controlled by the "size" parameter. Transmission of exactly 0 days can be achieved by setting Mean = 0, or Size = 1e-10. 
+Transmission time is defined as the time beteween between **symptom onset** in **infector** and **infection** in **infectee** for an individual. In this simulation we assume that the transmission time distribution is **independent** from the incubation time distribution. We parameterized using a right-truncated Negative Binomial (NB) distribution defined by a minimum transmission time (0 days) and a maximum transmission time (user defined). Transmission of exactly 0 days can be achieved by setting NB mean = 0, or NB size = 1e-10. 
 
 ```{r trans_interval, echo=FALSE}
 TRANS_MIN = 0
@@ -117,8 +142,8 @@ TRANS_MIN = 0
 ## INPUTS
 inputPanel(
   # row 1
-  sliderInput("trans_i_mean", label = "Mean (days)", value = 1, min = 0, max = 15),
-  sliderInput("trans_i_size", label = "Size", pre = '1e', value = 2, min = -10, max = 10),
+  sliderInput("trans_i_mean", label = "NB mean (days)", value = 1, min = 0, max = 15),
+  sliderInput("trans_i_size", label = "NB size", pre = '1e', value = 2, min = -10, max = 10),
   sliderInput("maxtrans", label = "Max. transmission time (days)", value = 10,
               min = 5, max = 15, step = 1),
 )
@@ -158,8 +183,8 @@ renderPlot({
 ```
 
 
-### Generation time distribution
-Generation time is the time between **infection** in the **infector** and **infection** in the **infectee**, dervied as $G_{ij} = I_{i} + P_{ij}$ (Eq. 2.1b from [Lehtinen et. al. (2021)](https://royalsocietypublishing.org/doi/10.1098/rsif.2020.0756)). Changes above to the incubation time or transmission time will affect this distribution. In this simulation we assume that the transmission time distribution is **independent** from the incubation time distribution, so the generation time distribution and serial interval distribution (below) are the same.
+### Derived Generation time distribution
+Generation time is the time between **infection** in the **infector** and **infection** in the **infectee**, dervied as $G_{ij} = I_{i} + P_{ij}$ (Eq. 2.1b from [Lehtinen et. al. (2021)](https://royalsocietypublishing.org/doi/10.1098/rsif.2020.0756)). In this simulation we assume that the transmission time distribution is **independent** from the incubation time distribution, so the generation time distribution and serial interval distribution (below) are the same.
 
 ```{r gen_interval, echo=FALSE}
 
@@ -201,8 +226,8 @@ renderPlot({
 ```
 
 
-### Serial interval distribution
-The serial interval is derived from the generation time distribution and the incubation time distribution: $S_{ij} = P_{ij} + I_j$ (Eq. 2.1a from [Lehtinen et. al. (2021)](https://royalsocietypublishing.org/doi/10.1098/rsif.2020.0756)). Changes above to the incubation time or transmission time will affect this distribution. In this simulation we assume that the transmission time distribution is **independent** from the incubation time distribution, so the serial interval distribution and generation time distribution (above) are the same.
+### Derived Serial interval distribution
+The serial interval is derived from the generation time distribution and the incubation time distribution: $S_{ij} = P_{ij} + I_j$ (Eq. 2.1a from [Lehtinen et. al. (2021)](https://royalsocietypublishing.org/doi/10.1098/rsif.2020.0756)). In this simulation we assume that the transmission time distribution is **independent** from the incubation time distribution, so the serial interval distribution and generation time distribution (above) are the same.
 
 ```{r serial_interval, echo=FALSE}
 
@@ -245,14 +270,14 @@ renderPlot({
 
 
 ### Reporting delay distribution
-Finally, we model a reporting delay distribution, the time between **symptom onset** and **case reporting** to a public health agency. **In real-world settings this is likely two separate distributions**: one for how long it takes someone to get a positive test once their symptoms show, and the other for how long that positive test takes to be recorded in an administrative dataset. For the purpose of demonstration, we lump these together. Perfect (i.e., instantaneous) reporting can be modeled with NB mean of 0. 
+Finally, we model a reporting delay distribution, the time between **sympotom onset** and **case reporting** to a public health agency.  Perfect (i.e., instantaneous) reporting can be modeled with NB mean of 0. 
 
 ```{r, echo=FALSE}
 ## INPUTS
 inputPanel(
   # row 1
-  sliderInput("NB_m", label = "Mean (days)", value = 5, min = 0., max = 20),
-  sliderInput("NB_r", label = "Size", pre = '1e', value = 2, min = -1, max = 20),
+  sliderInput("NB_m", label = "NB mean (days)", value = 1, min = 0., max = 20),
+  sliderInput("NB_r", label = "NB size", pre = '1e', value = 2, min = -1, max = 20),
   sliderInput("maxdelay", label = "Max. reporting delay (days)", value = 11,
               min = 10, max = 15, step = 1),
 )
@@ -288,7 +313,9 @@ renderPlot({
 ```
 ### R(t) simulation
 
-We first describe the daily infections, onsets, and reporting days of the first generation, i.e. the first round of infectees in the data. For example, this could be people that were exposed at a conference out of state that then traveled home and are now reporting in their home state. The number of initial cases (infectors) is set below, and the distributions defined above. Take a minute here to look at the graph below and compare to your distributions for incubation and transmission (and reporting delay, if you included that) - do they make sense?
+We first describe the daily infections, onsets, and reporting days of the first generation, i.e. the first round of infectees in the data. For example, this could be people that were exposed at a conference out of state that then traveled home and are now reporting in their home state. The number of initial cases (infectors) is set below, and the distributions defined above. Take a second here to look at the graph below and compare to your distributions for incubation and transmission (and reporting delay, if you included that) - do they make sense?
+
+**NOTE:** We are modeling symptom onset time as synonymous with infectivity, although this may not be true for many diseases. We also assume that the simulation **STARTS on DAY=0**. So the earliest infections will happen on Day 0, and the earliest onsets will happen on Day 1. 
 
 ```{r get_curves2, echo=FALSE}
 
@@ -384,7 +411,7 @@ renderPlot({
 }, height = 200)
 ```
 
-Now, create your $R(t)$ curve so you can simulate the next generation(s) of cases. Pre-defining the shape of $R(t)$ allows you to simulate infectious disease dynamics, interventions, etc. 
+Now, create your $R(t)$ curve so you can simulate the next generation(s) of cases (**starting at $t=1$**). Pre-defining the shape of $R(t)$ allows you to simulate infectious disease dynamics, interventions, etc. The dotted line at $R(t)=1$ shows the span of $R(t)$, from $t=[1, T]$, where $T$ is the simulation end date. $R(t > T)$ are set to 1. If $R(t) > 1$ for all $t$, the cases will exponentially increase, and the code may not complete for modeling windows greater than 30 days (a population limit of 10,000 is set to limit computation time). You can change the code to have a different spline degree between knots. 
 
 
 ```{r bsdeg, echo=FALSE}
@@ -550,9 +577,9 @@ observe({
 ```
 </div>
 
-Now, create the all subsequent generations within the modeling window (generation # is indicated by fill color in the graph below, with lighter being later generations. The first generation is outlined in red). The offspring of each generation are based on the $R(t)$ value given by the **generation time** of the previous generation. This means that if you are infected, but then there is a lockdown, the $R(t)$ value that determines how many people you infect will decrease to reflect this change. 
+Now, create the all subsequent generations within the modeling window (generation # is indicated by fill color in the graph below, with lighter being later generations. The first generation is outlined in red). The offspring of each generation are based on the $R(t)$ value given by the **GENERATION INTERVAL** of the previous generation. This means that if you are infected, but then there is a lockdown, the $R(t)$ value that determines how many people you infect will decrease to reflect this change. 
 
-Importantly, you may look at the daily reports and notice that the end of the graph and notice that the daily reports trail off as you approach "present day". This is a phenomena known as **right-truncation**, and is due to the reporting delay distribution. At any point in time, due to the administrative delay in reporting, not all recent reports have been entered into the database. After sufficient time has passed these reports will come in but at the present time there is always a lag. The purple line represents reports that will eventually be captured. 
+**NOTE: ** The generation to generation offspring are modeled as either a Poisson distribution or an NB distribution, with an expected value of $\mu(t+1)=R(t) * g(t)$ (and, if the distribution is NB, a size determined by the user). $g(t)$ reflects the distribution of the previous generation's generation interval. So for example, a generation of 90 people will have a generation interval distribution that spreads out across several days, lets say 50 on day t+1, and 40 on day t+2. So the expected value of the offspring on day t+1 is $50 * R(t+1)$, and on day t+2 its $40 * R(t+2)$. Then the next generation of individuals on days t+1 and t+2 are set. 
 
 ```{r echo=FALSE}
 dat_all <- reactive({
@@ -772,72 +799,18 @@ allRt <- reactive({
 
 renderPlot({
   
-  # do I want to add in the reporting delay distribution here?
-  df <- dat_all()
-  # print(head(df))
-  
- # now add in right truncation
- reporting_pmf <- as_tibble(reporting_dist()) %>% rename(Day = x,Px = n)
- # print(reporting_pmf)
-  
- Px <- rev(cumsum(reporting_pmf$Px))
- nPx = length(Px)
- Ind = (input$ld - nPx + 1):input$ld
- 
- rows_to_remove <- c()
- 
- for(i in 1:nPx) {
-   # first get all the 
-   all_indices <- which(df$d1 == Ind[i])
-   
-   # select which to keep based on bernoulli
-   to_remove <- which(rbinom(length(all_indices), 1, 1 - Px[i]) == 1)
-   
-   if(length(to_remove) > 0 ) {
-     rows_to_remove <- c(rows_to_remove, all_indices[to_remove])
-   }
- }
- 
- # print("this")
- # print(rows_to_remove)
- 
- df <- df[-rows_to_remove, ]
- 
- # print(Px)
- 
- df2 <-   as_tibble(df) %>%
-  select(-gi1) %>% ## remove g1
-  rename("Daily Infections" = i1, 
-         "Daily Onsets" = o1, 
-         "Daily Reports" = d1) %>%
-  pivot_longer(cols = c("Daily Infections", "Daily Onsets", 
-                        "Daily Reports")) %>%
-  filter(!(value > input$ld))
- 
- # 
-  # get data first
-  true_reports <- as_tibble(dat_all()) %>%
+  ## summary plot
+  # Curves
+  as_tibble(dat_all()) %>%
     select(-gi1) %>% ## remove g1
     rename("Daily Infections" = i1, 
            "Daily Onsets" = o1, 
            "Daily Reports" = d1) %>%
     pivot_longer(cols = c("Daily Infections", "Daily Onsets", 
                           "Daily Reports")) %>%
-    group_by(name, value) %>% tally() %>%
-    filter(name == 'Daily Reports') %>%
-    filter(!(value > input$ld))
-
-  ## summary plot
-  # Curves
-  df2 %>%
     group_by(name, gen_i_c, value) %>% tally() %>%
     mutate(is_gen_1 = gen_i_c == 1) %>%
     ggplot(.) +
-    #
-    geom_path(data = true_reports, 
-              mapping = aes(x = value, y = n), 
-              color = 'purple', linewidth = 1) +
-    #
     geom_bar(aes(x = value, fill = gen_i_c, y = n,
                  color = is_gen_1, lwd = is_gen_1),
              position = 'stack', stat = 'identity', width = 1) +
@@ -859,16 +832,148 @@ renderPlot({
 }, height = 200 )
 ```
 
-Here is another way to visualize right truncation: you can change the present day and view the reports that will have come in on that day as a function of the reporting delay. The red line represents the reports that are actually captured as a function of time, and the grey line represents reports that will eventually be captured. 
+### Calculating R(t) from aggregated data
+
+Now, what is the "true" R(t) for infectivity that was calculated here? The R(t) value above is the expected value, but we'd have to predict many scenarios in order estimate that without bias. Instead, we want to calculate what the $R(t)$ was in this specific realization of the expected value.
+
+It is possible to calculate the realized $R(t)$ by inverting the renewal equation (i.e., $m(t) = \Sigma_{\tau < t} ~ R(t) ~ \omega(\tau) ~ m(t-\tau)$, where $m$ is the vector of cases and $\omega$ is the serial interval) to solve for $R(t)$. The black line below replicates the $R(t)$ that is used as the expected value to create the data and the red line is are the draws from the Poisson and NB processes that are described above. Each infector has an assigned generation interval that is used to define when the next generation of cases arise, and the $R(t)$ values for those infection dates  determine the next size of the next round of offspring. 
+
+**NOTE:** The beginning of the curve has some expected instability. This is because we are drawing randomly from a Poisson (or NB) process that has no preceding values to anchor it. If there is any transmission distribution, these values become shifted, and thus the calculated $R(t)$ based on the generation interval is much higher than it should be. You can see the impact of this effect by setting the transmission distribution to instantaneous. What this tells us is that when you have instantaneous transmission, all of the day 0 cases immediately have an impact as specified by the expected value of R(t) on that day. 
+
+```{r}
+get_Rt <- function(m, w) {
+
+  R <- rep(NA, length(m))
+  
+  for(t in 2:length(m)) {
+    tau_end = min(length(w), t - 1)
+    c_mat <- w[1:tau_end] %*% m[t - 1:tau_end]
+    R[t] <- m[t] / c_mat
+  }
+  
+  return(R)
+}
+```
+
+
+```{r echo=FALSE}
+
+calc_rt <- reactive({
+  
+      ## first, get cases
+    m = aggDat()$daily_infections
+    m[is.na(m)] <- 0
+    
+    # print("**w")
+    ## using generation data, because its infections
+    ## but will be thes ame as serial_interval
+    w = as_tibble(gen_data())$n
+
+    # print(w)
+    calc_rt = get_Rt(m, w)
+    calc_rt_df <- data.frame(rt = calc_rt)
+    calc_rt_df$x = aggDat()$day
+
+    calc_rt_df <- calc_rt_df %>%
+     filter(!is.na(rt), x <= input$ld)
+    
+    calc_rt_df
+  
+})
+
+renderPlot({
+    
+    # get calculated RT
+    calc_rt_df <- calc_rt()
+    
+    ###
+    my_rescale <- function(x, a, b) {
+      new_length = b - a
+      scale_factor = 1.0
+      scaled_p = x / scale_factor
+      new_length * scaled_p + a
+    }
+
+    sx = -0.6
+    
+    second_axis <- data.frame(
+      xmin = c(sx),
+      xmax = c(sx),
+      ymin = c(0.0 - 0.005),
+      ymax = c(0.73 + 0.005)
+    )
+    
+    plotlab <- data.frame(
+      x = -0.2 + 0.1,
+      y = 0.82,
+      lab = 'Transmission P(x)'
+    )
+    shift_fct = input$ld / 30
+    second_axis_ticks <- data.frame(
+      xmin = rep(sx-0.1 * shift_fct, 5),
+      xmax = c(sx, sx, sx, sx, sx),
+      ymin = my_rescale(c(0, 0.25, 0.5, 0.75, 1), 0.0, 0.73),
+      ymax = my_rescale(c(0, 0.25, 0.5, 0.75, 1), 0.0, 0.73),
+      lab = c("", "0.25", '', '0.75', "")
+    )
+    
+    ####
+    ggplot( as_tibble(allRt()) %>% 
+              filter(!is.na(y), x <= input$ld), aes(x = x, y = y) ) +
+    geom_line() + 
+      geom_point() +
+    # *****
+    geom_path(data = calc_rt_df, aes(x = x , y = rt), color = 'red') +
+    geom_point(data = calc_rt_df, aes(x = x , y = rt), color = 'red') +
+    # *****
+    xlab('Day') + ylab('R(t)') +
+    # geom_vline(xintercept = input$ld, color = 'purple', linetype = 'dashed') +
+    geom_col(data = as_tibble(trans_data()), 
+                 aes(x = x, y = my_rescale(n, 0, 0.73)),
+              fill = '#FF6666', alpha = 0.5) +
+    coord_cartesian(ylim = c(0, 2)) +
+        geom_text(data = plotlab, aes(x = x, y = y, label = lab), size = 3,
+            family = 'Arial') +
+    ##
+    geom_segment(data = second_axis, aes(x = xmin, xend = xmax, 
+                                   y = ymin, yend = ymax), linewidth = 0.4) +
+    geom_segment(data = second_axis_ticks, aes(x = xmin, xend = xmax, 
+                                               y = ymin, yend = ymax), 
+                 linewidth = 0.2) +
+    geom_text(data = second_axis_ticks, aes(x = xmin - (0.4 + 0.3*shift_fct),  
+                                            y = ymin, label = lab), size = 3,
+              family = 'Arial') +
+    
+    theme(
+      axis.text = element_text(size = 10),
+      axis.title = element_text(size = 14))
+  
+  
+}, height = 200 )
+
+```
+
+In theory, all R(t) packages should predict the red line (a single realization of the expected value), as the black line is not easily recoverable without multiple simulations to define the expected value. This will depend on the extent to which the packages take into account onset and reporting delays (if these are included). So if you are using a package that doesn't take into account reporting delays, use a simulation with no reporting delay.
+
+### Adding vintages
+
+Adding functionality to add vintages
+
 
 ```{r, echo = FALSE}
 
 inputPanel(
 
   renderUI({
-      sliderInput('vintage_limit', 'Present day:', min = 10, max = input$ld, step = 1,
+      sliderInput('vintage_limit', 'Vintage day:', min = 10, max = input$ld, step = 1,
               value = 15)
     
+  }),
+  
+  renderUI({
+      sliderInput('vintage_every', 'Vintage every:', min = 7, 
+                  max = min(20, input$ld), step = 1,
+              value = 7)
   })
   
 )
@@ -881,22 +986,18 @@ get_vintage_data <- function(data_x, vintage_limit) {
       # first, remove anything after vintage day
     data_x_true <- data_x %>% filter(value <= vintage_limit)
     data_x_vintage <- data_x %>% filter(value <= vintage_limit)
-    data_x_vintage$Px <- 1
-    n_days <- nrow(data_x_vintage)
     
     # now, just for the reports
-    reporting_pmf <- as_tibble(reporting_dist()) %>% rename(Day = x,Px = n)
-    # print(reporting_pmf)
-    
-    Px <- rev(cumsum(reporting_pmf$Px))
-    # print(Px)
-    len_px <- length(Px)
-    
-    data_x_vintage$Px[(n_days - len_px + 1):n_days] <- Px
-
-    
+    max_d = max(data_x_vintage$value)
+    report_x <- as_tibble(reporting_dist())%>%rename(Day = x,Px = n)
+    report_x$rev_Px = rev(report_x$Px)
+    report_x$value = max_d - report_x$Day
+    report_x$Day <- NULL
+    report_x$Px <- NULL
+    data_x_vintage <- data_x_vintage %>% full_join(report_x, by = join_by(value))
+    data_x_vintage$rev_Px[is.na(data_x_vintage$rev_Px)] <- 1
     # so the simplest version is just to take the fraction, so lets start with that
-    data_x_vintage$n_vintage = data_x_vintage$n * data_x_vintage$Px
+    data_x_vintage$n_vintage = data_x_vintage$n * data_x_vintage$rev_Px
     data_x_vintage$vintage_limit = vintage_limit
     # i suppose you could sample as well, but this probably does it well enough
     return(data_x_vintage)
@@ -942,17 +1043,149 @@ renderPlot({
   
 }, height = 200, width = 250)
 
+renderPlot({
+    
+    if(is.null(input$vintage_limit)) return()
+  
+    # get data first
+    data_x <- as_tibble(dat_all()) %>%
+      select(-gi1) %>% ## remove g1
+      rename("Daily Infections" = i1, 
+             "Daily Onsets" = o1, 
+             "Daily Reports" = d1) %>%
+      pivot_longer(cols = c("Daily Infections", "Daily Onsets", 
+                            "Daily Reports")) %>%
+      group_by(name, value) %>% tally() %>%
+      filter(name == 'Daily Reports')
+
+    # first, remove anything after vintage day
+    every_x_days = seq(from = input$vintage_every, 
+                       to = input$ld, by = input$vintage_every)
+    data_x_vintage_l <- lapply(
+      every_x_days, function(limit_i) {
+        get_vintage_data(data_x, vintage_limit = limit_i) })
+    data_x_vintage = do.call(rbind, data_x_vintage_l)
+    
+    # plot
+    data_x_vintage %>% 
+      ggplot(.) +
+      geom_path(data = data_x, aes(x = value, y = n), color = 'grey') +
+      geom_path(mapping = aes(x = value, y = n_vintage), color = 'red', size = 2) +
+      facet_wrap(~vintage_limit, ncol = 3) + 
+      ylab('N') + xlab('Day') +
+      scale_fill_continuous(name = 'Gen. #') +
+      scale_color_manual(name = "", values = c("transparent", "red")) +
+      scale_linewidth_manual(name = "", values = c(0, 1)) +
+      geom_vline(aes(xintercept = vintage_limit), color = 'purple', 
+                 linetype = '22')+
+      theme_gray() + 
+      coord_cartesian(xlim = c(0, input$ld)) +
+      theme(legend.position = 'none',
+                  axis.text = element_text(size = 10),
+            axis.title = element_text(size = 14),
+            strip.text = element_text(size = 14))
+  
+})
+
+```
+
+
+### Adding dropout
+
+Adding a function to randomly drop out days, from Z.S.
+
+```{r, echo=FALSE}
+#' Corrupt an epidemic timeseries by dropping out points
+#'
+#' @param cases An integer vector of cases
+#' @param p_dropout A double between 0 and 1 of the number of elements to remove
+#' @param seed The random seed
+#' @return An integer vector of cases with `p_dropout` cases removed`
+#'
+#' @export
+apply_dropout <- function(cases, p_dropout, seed) {
+  if (p_dropout < 0 || p_dropout > 1) {
+    stop("arg `p_dropout` must be between 0 and 1")
+  }
+
+  withr::with_seed(seed, {
+    # Choose indices to set to 0
+    N <- length(cases)
+    
+    # Not sure this works as intended?
+    # dropout <- rnbinom(N, size = 1, prob = p_dropout)
+    
+    # simple but maybe works
+    dropout <- sample(1:N,size = round(N * p_dropout))
+
+    # Apply indices
+    cases[dropout] = 0
+   })
+
+  return(cases)
+}
+
+inputPanel(
+  sliderInput('drop_prob', label = 'Dropout probability', 
+              min = 0, max = 1, value = 0.0),
+  numericInput('drop_seed', label = 'Dropout seed', 
+              min = 1, max = 1000, step = 1, value = 123)
+)
+
+renderPlot({
+    
+    if(is.null(input$vintage_limit)) return()
+  
+    # get data first
+    data_x <- as_tibble(dat_all()) %>%
+      select(-gi1) %>% ## remove g1
+      rename("Daily Infections" = i1, 
+             "Daily Onsets" = o1, 
+             "Daily Reports" = d1) %>%
+      pivot_longer(cols = c("Daily Infections", "Daily Onsets", 
+                            "Daily Reports")) %>%
+      group_by(name, value) %>% tally() %>%
+      filter(name == 'Daily Reports')
+
+    # apply dropout
+    data_x_dropout <- data_x
+
+    data_x_dropout$n <- apply_dropout(data_x_dropout$n, 
+                                      input$drop_prob,
+                                      input$drop_seed)
+    
+    # plot
+    data_x %>% 
+      ggplot(.) +
+      geom_path(aes(x = value, y = n), color = 'grey') +
+      geom_point(data = data_x_dropout,
+                mapping = aes(x = value, y = n), color = 'red', size = 2) +
+      ylab('N') + xlab('Day') +
+      scale_fill_continuous(name = 'Gen. #') +
+      scale_color_manual(name = "", values = c("transparent", "red")) +
+      scale_linewidth_manual(name = "", values = c(0, 1)) +
+      theme_gray() + 
+      coord_cartesian(xlim = c(0, input$ld)) +
+      theme(legend.position = 'none',
+                  axis.text = element_text(size = 10),
+            axis.title = element_text(size = 14),
+            strip.text = element_text(size = 14))
+  
+}, height = 200, width = 250)
+
+
 ```
 
 
 ### Download data
 
-Finally, you can now download **line-list** data for every person within the modeling window, or **aggregated** infections, onsets, and reports by day. The aggregated data has right-truncation built in, while the line list data do not. \
+Now can now download **line-list** data for every person within the modeling window, or **aggregated** infections, onsets, and reports by day. \
 
 ```{r, echo = FALSE}
 inputPanel(
   downloadButton("downloadData", "LineList data"),
   downloadButton("downloadAggData", "Aggregated data"),
+  downloadButton("downloadVintageData", "Vintage data"),
 )
 
 output$downloadData <- downloadHandler(
@@ -979,59 +1212,38 @@ output$downloadAggData <- downloadHandler(
     },
     
     content = function(file) {
-      
-      # do I want to add in the reporting delay distribution here?
-      df <- dat_all()
-      # print(head(df))
-      
-     # now add in right truncation
-     reporting_pmf <- as_tibble(reporting_dist()) %>% 
-       rename(Day = x,Px = n)
-     # print(reporting_pmf)
-      
-     Px <- rev(cumsum(reporting_pmf$Px))
-     nPx = length(Px)
-     Ind = (input$ld - nPx + 1):input$ld
-     
-     rows_to_remove <- c()
-     
-     for(i in 1:nPx) {
-       # first get all the 
-       all_indices <- which(df$d1 == Ind[i])
-       
-       # select which to keep based on bernoulli
-       to_remove <- which(rbinom(length(all_indices), 1, 
-                                 1 - Px[i]) == 1)
-       
-       if(length(to_remove) > 0 ) {
-         rows_to_remove <- c(rows_to_remove, all_indices[to_remove])
-       }
-     }
-     
-     # print("this")
-     # print(rows_to_remove)
-     
-     df <- df[-rows_to_remove, ]
-     
-     # print(Px)
-     
-     df2 <-   as_tibble(df) %>%
+        write.csv(  as_tibble(aggDat()), file, row.names = F)
+    }
+)
+
+output$downloadVintageData <- downloadHandler(
+    filename = function() {
+        paste("vintage_data", Sys.Date(), ".csv", sep = "")
+    },
+    
+    content = function(file) {
+          data_x <- as_tibble(dat_all()) %>%
       select(-gi1) %>% ## remove g1
       rename("Daily Infections" = i1, 
              "Daily Onsets" = o1, 
              "Daily Reports" = d1) %>%
       pivot_longer(cols = c("Daily Infections", "Daily Onsets", 
                             "Daily Reports")) %>%
-      filter(!(value > input$ld))
+      group_by(name, value) %>% tally() %>%
+      filter(name == 'Daily Reports')
+
+    # first, remove anything after vintage day
+    every_x_days = seq(from = input$vintage_every, 
+                       to = input$ld, by = input$vintage_every)
+    data_x_vintage_l <- lapply(
+      every_x_days, function(limit_i) {
+        get_vintage_data(data_x, vintage_limit = limit_i) })
+    data_x_vintage = do.call(rbind, data_x_vintage_l)
       
-     
-        df3 <- df2 %>%
-    group_by(name, gen_i_c, value) %>% tally() %>%
-    mutate(is_gen_1 = gen_i_c == 1)
-      
-        write.csv(df3, file, row.names = F)
+        write.csv(  as_tibble(data_x_vintage), file, row.names = F)
     }
 )
+
 
 ```
 
@@ -1127,6 +1339,56 @@ output$dist_rt <- downloadHandler(
 
 ```
 
-#### Acknowledgements
+\
+You can also download an RDS of all data. \
 
-This page was developed in preparation for the InsightNet Collabathon, Sept 24-26 in Boston, MA, USA. We would like to acknowledge the funding from EpiStorm (CDC NU38FT000013), as well as contributions of code and thoughts from Tenglong Li, PhD^[Boston University, School of Public Health, Department of Biostatistics], Zhenwei Zhou, PhD^[Boston University, School of Public Health, Department of Biostatistics], Christine Sangphet, BA^[Boston University], and Anne Cori, PhD^[Imperial College, London]. The code for this page is available on [Github](https://github.com/cmilando/RtEval).
+```{r, echo = FALSE, out.width='100%'}
+inputPanel(
+    downloadButton("all_rds", "Save RDS")
+)
+
+##
+output$all_rds <- downloadHandler(
+    filename = function() {
+        paste0('all_data.RDS')
+    },
+    
+    content = function(file) {
+        
+      data_x <- as_tibble(dat_all()) %>%
+      select(-gi1) %>% ## remove g1
+      rename("Daily Infections" = i1, 
+             "Daily Onsets" = o1, 
+             "Daily Reports" = d1) %>%
+      pivot_longer(cols = c("Daily Infections", "Daily Onsets", 
+                            "Daily Reports")) %>%
+      group_by(name, value) %>% tally() %>%
+      filter(name == 'Daily Reports')
+
+    # first, remove anything after vintage day
+    every_x_days = seq(from = input$vintage_every, 
+                       to = input$ld, by = input$vintage_every)
+    data_x_vintage_l <- lapply(
+      every_x_days, function(limit_i) {
+        get_vintage_data(data_x, vintage_limit = limit_i) })
+    data_x_vintage = do.call(rbind, data_x_vintage_l)
+      
+      
+        saveRDS(object = list(
+          'incubation' = as_tibble(inc_data())%>%rename(Day = x,"Px" = n),
+          'generation' = as_tibble(gen_data())%>%rename(Day = x,"Px" = n),
+          'transmission' = as_tibble(trans_data())%>%rename(Day = x,"Px" = n),
+          'serial' = as_tibble(serial_data())%>%rename(Day = x,"Px" = n),
+          'reporting_delay' = as_tibble(reporting_dist())%>%rename(Day = x,"Px" = n),
+          'rt' = as_tibble(allRt() %>% rename(Day = x,
+                           "Rt" = y) %>%
+                             left_join(calc_rt() %>%
+                                         rename(Day = x, 'Rt_calc' = rt))),
+          'cases' = as_tibble(aggDat()),
+          'vintage' = data_x_vintage
+        ), file = file)
+    }
+)
+
+```
+
