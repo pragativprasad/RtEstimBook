@@ -787,14 +787,22 @@ renderPlot({
  rows_to_remove <- c()
  
  for(i in 1:nPx) {
+   if(round(Px[i],6) == 1) next(i)
    # first get all the 
    all_indices <- which(df$d1 == Ind[i])
    
    # select which to keep based on bernoulli
-   to_remove <- which(rbinom(length(all_indices), 1, 1 - Px[i]) == 1)
-   
-   if(length(to_remove) > 0 ) {
-     rows_to_remove <- c(rows_to_remove, all_indices[to_remove])
+   if(length(all_indices) > 0) {
+     x <- rbinom(length(all_indices), 1, 1 - Px[i])
+     to_remove <- which(x == 1)
+     if(any(is.na(x))) {
+       print(i)
+       stop()
+     }
+     
+     if(length(to_remove) > 0 ) {
+       rows_to_remove <- c(rows_to_remove, all_indices[to_remove])
+     }
    }
  }
  
@@ -825,7 +833,8 @@ renderPlot({
                           "Daily Reports")) %>%
     group_by(name, value) %>% tally() %>%
     filter(name == 'Daily Reports') %>%
-    filter(!(value > input$ld))
+    filter(value <= input$ld,
+           value >= (input$ld - nPx + 1))
 
   ## summary plot
   # Curves
@@ -944,6 +953,15 @@ renderPlot({
 
 ```
 
+# Final thoughts
+
+This document summarizes the various steps occurring in an infectious disease outbreak. Each of the various steps can be modeled differently. Download data below to try for yourself! 
+
+<div style="border: 2px dotted black; border-radius: 15px;padding: 5px; background-color: lightyellow;">
+<h3 style="margin-top: 5px; font-size: 1.25em;">Next steps</h3>
+
+Each different components of disease outbreak that can be modeled differently: see our [Decision tool](decisiontree.qmd) for how to choose software for different analytical goals.
+</div>
 
 ### Download data
 

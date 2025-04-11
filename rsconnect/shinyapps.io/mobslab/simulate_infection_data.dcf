@@ -1,0 +1,15 @@
+name: simulate_infection_data
+title: simulate_infection_data
+username: mobslab
+account: mobslab
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12745756
+bundleId: 10100899
+url: https://mobslab.shinyapps.io/simulate_infection_data/
+version: 1
+quarto_version: 1.6.40
+quarto_engines: knitr, markdown
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: _extensions/debruine/glossary/_extension.yml|_extensions/debruine/glossary/glossary.css|_extensions/debruine/glossary/glossary.lua|_quarto.yml|.nojekyll|00_Simulate _ full.Rmd|calc_reports.R|code_EpiEstim.R|code_EpiLPS.R|code_EPINow2.R|code_makeData.R|code_RtEstim.R|code_truncSim.R|cover.png|custom.scss|decisiontree.qmd|ExtendR.R|get_case_gen.R|glossary.qmd|glossary.quarto_ipynb|glossary.yml|img/RtEval.png|img/Tomorrow.png|index.qmd|markdown-style.scss|methods_additionaldata.qmd|methods_distributions.qmd|methods_inference.qmd|methods_introduction.qmd|methods_research.qmd|methods_time.qmd|methods.qmd|nature.csl|nowcaster.R|package_APEestim.qmd|package_bayEStim.qmd|package_earlyR.qmd|package_Epidemia.qmd|package_EpiEstim.qmd|package_EpiFilter.qmd|package_EpiFusion.qmd|package_epigrowthfit.qmd|package_EpiInvert.qmd|package_EpiLPS.qmd|package_EpiNow2.qmd|package_epinowcast.qmd|package_ern.qmd|package_EstimateR.qmd|package_R0.qmd|package_RtEstim.qmd|package_WhiteLabRt.qmd|packages.qmd|packages.quarto_ipynb|plot_comparison.R|plot_objects/plot_data_EpiEstim_report.RDS|plot_objects/plot_data_EpiNow2_report.RDS|Presentation1.pptx|project_local.R|README.md|references.aux|references.bib|references.log|references.qmd|references.tex|sim_data.RDS|simulation_tool.qmd|styles.css|test.R|utility.R|_book|docs

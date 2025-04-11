@@ -64,7 +64,7 @@ Each software package that estimates $R(t)$ makes different adjustments and assu
 <div style="border: 2px dotted black; border-radius: 15px;padding: 5px; background-color: lightyellow;">
 <h3 style="margin-top: 5px; font-size: 1.25em;">The purpose of this document</h3>
 
-Therefore, the purpose of this document is to provide guidance about which $R(t)$ estimation software to choose for different analytical goals: see our [Decision Matrix](decisiontree.qmd).
+Therefore, the purpose of this document is to provide guidance about which $R(t)$ estimation software to choose for different analytical goals. First, see our [Example outbreak](simulation_tool.qmd) for the different components of disease outbreak that can be modeled differently. Next, see our [Decision tool](decisiontree.qmd) for how to choose software for different analytical goals.
 </div>
 
 ## Funding, authors, and acknowledgements
