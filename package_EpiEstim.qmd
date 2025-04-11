@@ -3,7 +3,6 @@
 | | 
 |:---|:--------|
 | REF|@Cori2013New, @Nash2023Estimating|
-| Peer reviewed| ✅|
 | Docs| [mrc-ide.github.io/EpiEstim](https://mrc-ide.github.io/EpiEstim/)|
 | Github| [github.com/mrc-ide/EpiEstim](https://github.com/mrc-ide/EpiEstim) |
 | Last commit| Aug 30, 2024|

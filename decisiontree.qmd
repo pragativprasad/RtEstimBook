@@ -17,9 +17,11 @@ You can use the decision tool below to help choose which R packages may be right
 
 <small>See below the table for the assessment framework used to decide which packages to recommend.</small>
 
-::: {.callout-important}
-## Strong recommendation
-**Use multiple packages** in your analysis; an ensemble of approaches will be the best way to ensure a robust estimate of $R(t)$ for your use case. 
+::: {.callout-note}
+## Focus of this matrix
+The table below focuses on **R packages** that esimate $R(t)$ using **reported cases**. 
+
+Future efforts include expanding this table to include **alternative data sources** (e.g., wastewater) and packages in **other coding languages** (e.g., Python).
 :::
 
 ```{=html}
@@ -32,7 +34,7 @@ You can use the decision tool below to help choose which R packages may be right
   }
 </style>
 <table>
-    <caption>Decision matrix for choosing R(t) estimation tool</caption>
+    <caption>Decision matrix for choosing an R package for R(t) estimation</caption>
     <!////////////////////////////////////////////////////////////////////>
     <!---HEADING --->
     <!////////////////////////////////////////////////////////////////////>
@@ -69,7 +71,8 @@ You can use the decision tool below to help choose which R packages may be right
             <u>Nowcasting</u>: what was R(t) in the past week
         </td>
         <td style="text-align: center;">Yes</td>
-        <td style="text-align: center;"><a href="package_EpiNow2.html">EpiNow2</a></td>
+        <td style="text-align: center;"><a href="package_EpiNow2.html">EpiNow2</a>,
+        <a href="package_epinowcast.html">epinowcast</a></td>
     </tr><tr style="border-top: 0.75px solid;">
 
         <td style="text-align: center;">No</td>

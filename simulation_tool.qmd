@@ -1,4 +1,4 @@
-# Example of R(t) usage { .unnumbered}
+# Example outbreak { .unnumbered}
 
 ```{=html}
  <iframe id="example1" src="https://mobslab.shinyapps.io/simulate_infection_data/" style="border: none; width: 100%; height: 720px" frameborder="0"></iframe>

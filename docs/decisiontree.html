@@ -175,7 +175,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./simulation_tool.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Example of R(t) usage</span></a>
+ <span class="menu-text">Example outbreak</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -406,17 +406,18 @@ window.Quarto = {
 <li>Finally, estimate <span class="math inline">\(R(t)\)</span> using the packages that are appropriate for your use case</li>
 </ol>
 <p><small>See below the table for the assessment framework used to decide which packages to recommend.</small></p>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Strong recommendation
+Focus of this matrix
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Use multiple packages</strong> in your analysis; an ensemble of approaches will be the best way to ensure a robust estimate of <span class="math inline">\(R(t)\)</span> for your use case.</p>
+<p>The table below focuses on <strong>R packages</strong> that esimate <span class="math inline">\(R(t)\)</span> using <strong>reported cases</strong>.</p>
+<p>Future efforts include expanding this table to include <strong>alternative data sources</strong> (e.g., wastewater) and packages in <strong>other coding languages</strong> (e.g., Python).</p>
 </div>
 </div>
 <style>
@@ -429,7 +430,7 @@ Strong recommendation
 </style>
 
 <table class="caption-top table" data-quarto-postprocess="true">
-<caption>Decision matrix for choosing R(t) estimation tool</caption>
+<caption>Decision matrix for choosing an R package for R(t) estimation</caption>
 <tbody>
 <tr class="odd" style="border-top: none; background-color: lightgrey;">
 <td data-quarto-table-cell-role="th" style="font-weight: bold; width: 30%">Desired output</td>
@@ -448,7 +449,7 @@ Strong recommendation
 <tr class="even" style="border-top: 2px solid;">
 <td rowspan="2" style="vertical-align: middle"><u>Nowcasting</u>: what was R(t) in the past week</td>
 <td style="text-align: center;">Yes</td>
-<td style="text-align: center;"><a href="package_EpiNow2.html">EpiNow2</a></td>
+<td style="text-align: center;"><a href="package_EpiNow2.html">EpiNow2</a>, <a href="package_epinowcast.html">epinowcast</a></td>
 </tr>
 <tr class="odd" style="border-top: 0.75px solid;">
 <td style="text-align: center;">No</td>
@@ -961,8 +962,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./simulation_tool.html" class="pagination-link" aria-label="Example of R(t) usage">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Example of R(t) usage</span>
+      <a href="./simulation_tool.html" class="pagination-link" aria-label="Example outbreak">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Example outbreak</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

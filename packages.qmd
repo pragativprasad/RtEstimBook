@@ -3,7 +3,7 @@
 
 ```{=html}
 <div>
-  <div> <b>Table 1</b>. R(t) estimation R packages <u>with</u> a peer-reviewed journal reference describing the underlying methods </div>
+  <div> <b>Table 1</b>. R(t) estimation **R packages** from **reported cases** </div>
   <hr style="margin-top:0;">
   <ul id="Tbl1" style="column-count: 3";>
     <li><a href="package_APEestim.qmd">APEestim</a></li>
@@ -19,14 +19,6 @@
     <li><a href="package_RtEstim.qmd">RtEstim</a></li>
     <li><a href="package_EpiInvert.qmd">EpiInvert</a></li>
     <li><a href="package_WhiteLabRt.qmd">WhiteLabRt</a></li>
-  </ul>
-  <hr style="margin-top:0;">
-</div>
-<br>
-<div>
-  <div> <b>Table 2</b>. R(t) estimation R packages <u>without</u> a peer-reviewed journal reference describing the underlying methods </div>
-  <hr style="margin-top:0;">
-  <ul id="Tbl2" style="column-count: 3";>
     <li><a href="package_bayEStim.qmd">bayEStim</a></li>
     <li><a href="package_earlyR.qmd">earlyR</a></li>
     <li><a href="package_EpiNow2.qmd">EpiNow2</a></li>
@@ -34,6 +26,29 @@
   </ul>
   <hr style="margin-top:0;">
 </div>
+<br>
+
+<div>
+  <div> <b>Table 2</b>. R(t) estimation **R packages** from **alternative data sources** </div>
+  <hr style="margin-top:0;">
+  <ul id="Tbl2" style="column-count: 3";>
+  In progress
+  </ul>
+  <hr style="margin-top:0;">
+</div>
+<br>
+
+<div>
+  <div> <b>Table 3</b>. R(t) estimation *Python packages** from **reported cases** </div>
+  <hr style="margin-top:0;">
+  <ul id="Tbl3" style="column-count: 3";>
+  In progress
+  </ul>
+  <hr style="margin-top:0;">
+</div>
+<br>
+
+
 <script>
 const sortList = list => [...list].sort((a, b) => {
   const A = a.textContent.toLowerCase(), B = b.textContent.toLowerCase();
@@ -52,6 +67,12 @@ window.addEventListener("load", function() {
   const ul = document.getElementById("Tbl2");
   const list = ul.querySelectorAll("li");
   ul.append(...sortList(list));
+  
+    ///
+  const ul = document.getElementById("Tbl3");
+  const list = ul.querySelectorAll("li");
+  ul.append(...sortList(list));
+  
 })
 
 

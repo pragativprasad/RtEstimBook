@@ -3,9 +3,9 @@
 | | 
 |:---|:--------|
 | REF| |
-| Peer reviewed| ❌✅|
 | Docs| |
 | Github|  |
+| Last commit||
 | Installation | |
 : {tbl-colwidths="[20,80]"}
 

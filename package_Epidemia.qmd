@@ -3,7 +3,6 @@
 | | 
 |:---|:--------|
 | REF| @Flaxman2020Estimating|
-| Peer reviewed| ✅|
 | Docs| [imperialcollegelondon.github.io/epidemia](https://imperialcollegelondon.github.io/epidemia/index.html)|
 | Github| [github.com/ImperialCollegeLondon/epidemia](https://github.com/ImperialCollegeLondon/epidemia) |
 | Last commit|Feb 12, 2021|

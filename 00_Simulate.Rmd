@@ -960,7 +960,7 @@ This document summarizes the various steps occurring in an infectious disease ou
 <div style="border: 2px dotted black; border-radius: 15px;padding: 5px; background-color: lightyellow;">
 <h3 style="margin-top: 5px; font-size: 1.25em;">Next steps</h3>
 
-Each different components of disease outbreak that can be modeled differently: see our [Decision tool](decisiontree.qmd) for how to choose software for different analytical goals.
+Each different components of disease outbreak that can be modeled differently: see our [Decision tool](https://chadmilando.com/RtEstimBook/decisiontree.html) for how to choose software for different analytical goals.
 </div>
 
 ### Download data
