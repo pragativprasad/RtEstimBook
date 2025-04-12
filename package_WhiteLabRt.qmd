@@ -2,113 +2,41 @@
 
 | | 
 |:---|:--------|
-| REF| |
-| Docs| |
-| Github|  |
-| Last commit| |
-| Installation | |
+| REF|  @Li2021Bayesian @zhou2022estimation|
+| Docs| None |
+| Github|  [https://github.com/cmilando/WhiteLabRt](https://github.com/cmilando/WhiteLabRt)|
+| Last commit| Aug 16, 2024|
+| Installation | [CRAN](https://cran.r-project.org/web/packages/WhiteLabRt/index.html) |
 : {tbl-colwidths="[20,80]"}
 
 ### Brief description
 
-This package implements methods described in [`Li & White`](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009210) for backcalculation and nowcasting and [`Zhou et al`](https://pubmed.ncbi.nlm.nih.gov/36048890/) for small area estimation using mobility data. The package uses stan to improve computational efficiency and stability. All methods are implemented in a Bayesian framework. Currently the package does not allow the user to incorporate both mobility data and do nowcasting and account for reporting delays.
-
-| [WhiteLabRt](package_WhiteLabRt.qmd) | @Li2021Bayesian | [🔗](https://github.com/cmilando/WhiteLabRt) | Aug 16, 2024|
+This package implements methods described in @Li2021Bayesian for backcalculation and nowcasting and @zhou2022estimation for small area estimation using mobility data. The package uses STAN to improve computational efficiency and stability. All methods are implemented in a Bayesian framework. Currently the package does not allow the user to incorporate both mobility data and do nowcasting and account for reporting delays.
 
 ### Methods
 
 This package contains the following methods:
 
-- Bayesian methods to integrate multiple data sources.
+@Li2021Bayesian
+- Adjustment for reporting delay and nowcasting estimates
+
+@zhou2022estimation
 - Mobility data in a hierarchical model to obtain spatially granular estimates.
-- Adjustment for reporting delay and nowcasting estimates.
 
 ### Assessment
 
-```{=html}
-<table>
-    <caption>Assessment rubric</caption>
-    <!---HEADING --->
-    <tr style="border-top: none;">
-      <th style="font-weight: bold; width: 20%">Category</th>
-      <th style="font-weight: bold; width: 50%">Notes</th>
-      <th style="font-weight: bold; width: 20%">Scales</th>
-    </tr>
-    
-        <!------ SECTION 1: USAGE -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Usage </td>
-    </tr>
-
-    <tr>
-        <td>Runtime length</td>
-        <td>Some description</td>
-        <td>
-          Time (minutes)
-        </td>
-    </tr>
-      
-      <!------ SECTION 2: FEATURES -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Features </td>
-    </tr>
-        <tr>
-        <td>Ability to nowcast/forecast</td>
-        <td>Included in the package.</td>
-        <td>
-          Yes
-                  </td>
-    </tr>
-                    <tr>
-        <td>Incorporates delay distributions</td>
-        <td>Bayesian implementation of this.</td>
-        <td>
-          Yes
-        </td>
-    </tr>
-    
-                        <tr>
-        <td>Estimates expected cases </td>
-        <td>Included in all methods.</td>
-        <td>
-          Yes
-        </td>
-    </tr>
-
-                        <tr>
-        <td>Communicates uncertainty</td>
-        <td>Credible intervals included for all estimates.</td>
-        <td>
-Yes
-        </td>
-    </tr>
-
-      <!------ SECTION 3: Validation -------->
-    <tr columnspan="3", style="background-color: lightgrey;border-top: 2px solid;margin-top: 1;margin-bottom: 1; line-height: 1;font-size: 0.8em;">
-      <td> Validation </td>
-    </tr>
-    
-                        <tr>
-        <td>Documentation of package methods</td>
-        <td>Peer reviewed publications for both methods.</td>
-        <td>
-          Yes
-        </td>
-    </tr>
-    
-                        <tr>
-        <td>Documentation of package implementation</td>
-        <td>Vignette and documentation provided.</td>
-        <td>
-          Yes
-        </td>
-    </tr>
-
-
-</table>
-
-```
-
-
+| | 
+|:---|:--------|
+|<strong>Features</strong>||
+| Ability to nowcast/forecast| Nowcasting, not forecasting |
+| Incorporates delay distributions| No, but some functions that calculate a reporting delay distribution from missing line-list data |
+| Estimates expected cases| Yes|
+| Communicates uncertainty| Yes|
+|<strong>Validation</strong>||
+| Documentation of package methods| Yes|
+| Documentation of package implementation| Yes|
+: {tbl-colwidths="[40,60]"}
 
 ### Sample code
+
+See vignettes for [back-calculation of missing reporting delay information](https://cran.r-project.org/web/packages/WhiteLabRt/vignettes/backcalc.html) and [spatial R(t) between various regions](https://cran.r-project.org/web/packages/WhiteLabRt/vignettes/spatialRt.html)

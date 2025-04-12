@@ -32,7 +32,7 @@
   <div> <b>Table 2</b>. R(t) estimation **R packages** from **alternative data sources** </div>
   <hr style="margin-top:0;">
   <ul id="Tbl2" style="column-count: 3";>
-  In progress
+  In progress, need to look <a href="https://www.medrxiv.org/content/10.1101/2024.11.06.24316856v1.full.pdf">here</a>
   </ul>
   <hr style="margin-top:0;">
 </div>

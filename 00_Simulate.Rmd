@@ -4,12 +4,17 @@ runtime: shiny
 ---
 
 ```{=html}
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 <style type="text/css">
 .main-container {
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
 }
+  body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.75em; /* Slightly bigger than default (1em) */
+  }
 </style>
 ```
 
