@@ -20,6 +20,8 @@ Therefore, this quantity, known as the <a class="definition" href="glossary.qmd#
 
 The question of how many days to consider in your estimation (and how much weight each previous day recieves in estimating what the next day of cases will be) is characterized in a parameter known as the <a class="definition" href="glossary.qmd#effectiveRt">effective reproductive number</a>, or $R(t)$. 
 
+$R(t)$ provides a link between reported cases of a disease and many additional dynamic processes, including disease characteristics (e.g., infectiousness under various conditions, mode of transport) and extrinsic factors (e.g., lockdowns that reduce person-to-person contact). It represents "... the expected number of new infections caused by an infectious individual in a population where some individuals may no longer be susceptible" (@Gostic2020Practical).
+
 Knowing $R(t)$ can help you begin to make an informed guess as to the current state of a disease outbreak, as it has the following values and interpretations *at a specific point in time*: 
 
 ```{=html}
