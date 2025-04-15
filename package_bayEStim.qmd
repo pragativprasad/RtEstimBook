@@ -26,10 +26,10 @@ This package contains the following methods:
 | | 
 |:---|:--------|
 |<strong>Features</strong>||
-| Ability to nowcast/forecast| No|
+| Ability to nowcast/forecast| Yes|
 | Incorporates delay distributions| No, although some right-censoring is included|
 | Estimates expected cases| No|
-| Communicates uncertainty| No|
+| Communicates uncertainty| Yes|
 |<strong>Validation</strong>| No|
 | Documentation of package methods| No|
 | Documentation of package implementation| No|
